@@ -13,4 +13,4 @@ jobs:
         with:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex ffcode libertine minted fvextra catchfile xstring framed tcolorbox environ pgf l3build
-      - run: l3build check -q --show-log-on-error
+      - run: l3build ctan

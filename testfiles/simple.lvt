@@ -2,7 +2,6 @@
 \documentclass{article}
 \usepackage{phi}
 \begin{document}
-\START
 
 \begin{phiquation*}
 a -> [
