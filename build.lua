@@ -4,6 +4,7 @@ typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
 tagfiles = {"build.lua", "phi.dtx"}
 docfiles = {"cactus.pdf"}
+cleanfiles = {"*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty"}
 
 uploadconfig = {
   pkg = "phi",
