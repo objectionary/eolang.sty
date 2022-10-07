@@ -15,7 +15,7 @@ jobs:
           packages: scheme-basic xetex ffcode libertine l3build href-ul newtx
       - run: ls -al
       - run: pdflatex phi.ins
-      - run: pdflatex phi.dtx
+      - run: pdflatex --shell-escape phi.dtx
       - run: l3build ctan --show-log-on-error --halt-on-error
   publish:
     runs-on: ubuntu-20.04
