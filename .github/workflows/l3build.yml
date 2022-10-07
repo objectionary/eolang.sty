@@ -12,7 +12,7 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v2.4.1
         with:
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex ffcode libertine l3build href-ul newtx
+          packages: scheme-basic xetex ffcode libertine microtype hypdoc l3build href-ul newtx
       - run: ls -al
       - run: pdflatex phi.ins
       - run: pdflatex --shell-escape phi.dtx
