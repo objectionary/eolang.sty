@@ -14,16 +14,3 @@ jobs:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex ffcode libertine microtype hypdoc l3build href-ul newtx
       - run: l3build ctan --show-log-on-error --halt-on-error
-  publish:
-    runs-on: ubuntu-20.04
-    needs: l3build
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - run: pdflatex *.ins
-      - run: pdflatex --shell-escape *.dtx
-      - run: mkdir gh-pages && cp build/local/* gh-pages
-      - uses: JamesIves/github-pages-deploy-action@v4.4.0
-        with:
-          branch: gh-pages
-          folder: gh-pages
-          clean: false
