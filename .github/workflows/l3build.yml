@@ -13,6 +13,7 @@ jobs:
         with:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex ffcode libertine minted fvextra catchfile xstring framed tcolorbox environ pgf l3build
+      - run: ls -al
       - run: l3build ctan --show-log-on-error --halt-on-error
   publish:
     runs-on: ubuntu-20.04
