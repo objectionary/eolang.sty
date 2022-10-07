@@ -19,7 +19,7 @@ jobs:
     needs: l3build
     if: github.ref == 'refs/heads/master'
     steps:
-      - run: mkdir gh-pages && cp *.sty gh-pages && cp *.cls gh-pages
+      - run: mkdir gh-pages && cp build/local/* gh-pages
       - uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: gh-pages
