@@ -50,7 +50,7 @@
 %<package>\NeedsTeXFormat{LaTeX2e}
 %<package>\ProvidesPackage{phigures}
 %<*package>
-[0000-00-000 0.0.0 Formulas and Graphs of 𝜑-calculus]
+[0000-00-000 0.0.0 Formulas and Graphs of phi-calculus]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -90,13 +90,11 @@
 \documentclass{article}
 \usepackage{phigures}
 \begin{document}
-\begin{equation}
-\begin{split}
-& x \a \ll \br
-& \quad \varphi \a \ff{memory}(\ff{0}), \br
-& \quad \ff{set}(p) \a \rho.\ff{write}(p) \rr.
-\end{split}
-\end{equation}
+\begin{phiquation}
+x -> [
+  \varphi -> |memory|(|0|),
+  |set|(p) -> \rho.|write|(p) ].
+\end{phiquation}
 \end{document}
 \end{verbatim}
 %\iffalse
@@ -120,18 +118,16 @@
 
 % First, we include a few packages:
 %    \begin{macrocode}
-\RequirePackage{pgfkeys}
+\RequirePackage{amsfonts}
 %    \end{macrocode}
 
 % \begin{macro}{\phigures}
 % Then, we define |\phigures| command.
 % It is implemented with the help of |\ShellEscape| from |shellesc| package:
 %    \begin{macrocode}
-\newcommand{\br}{\\[-4pt]}
-\newcommand{\a}{\mapsto}
-\newcommand{\sattr}{\mapstochar\dashrightarrow}
-\newcommand{\ll}{\llbracket}
-\newcommand{\rr}{\rrbracket}
+\newcommand\br{\\[-4pt]}
+\newcommand\attr{\@ifstar{\mapstochar\dashrightarrow}{\mapsto}}
+\newcommand\abstract[1]{\llbracket #1 \rrbracket}
 %    \end{macrocode}
 % \end{macro}
 
@@ -142,3 +138,42 @@
 %\PrintChanges
 %\clearpage
 %\PrintIndex
+
+\usepackage{stmaryrd}
+\usepackage{amsmath}
+\usepackage{/code/ctan/iexec/iexec}
+\usepackage{ffcode}
+\NewDocumentEnvironment{phiquation}{b}{%
+  \iexec[trace]{(
+    /bin/echo -n '\\begin{equation}\\begin{split} &';
+    /bin/echo -n '\detokenize{#1}'
+      | perl -pe 's/^\\r\\+//g'
+      | perl -pe 's/\\r\\+$//g'
+      | perl -pe 's/\\|(.+?)\\|/\\\\ff{\\1}/g'
+      | perl -pe 's/->/\\\\mapsto/g'
+      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
+      | perl -pe 's/\\[/\\\\llbracket/g'
+      | perl -pe 's/\\]/\\\\rrbracket/g'
+      | perl -pe 's/\\r\\r/\\\\\\\\ \&/g'
+      | perl -pe 's/\\r/\\\\\\\\[-4pt] \&/g'
+      | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
+      | perl -pe 's/ {2}/\\\\quad{}/g'
+      ;
+    /bin/echo -n '\\end{split}\\end{equation}'
+    )}%
+}{}
+\AddToHook{env/phiquation/before}{\obeylines\obeyspaces}
+\begin{document}
+Here we have a first note:
+\begin{phiquation}
+a -> [
+  b -> [ c -> |x|(56),
+    \rho -> |hello|(\xi),
+    \Delta ~> |01-FE| ]
+]
+
+x -> []
+\end{phiquation}
+Good bye.
+\end{document}
+\end{document}
