@@ -1,3 +1,5 @@
-hard shellesc
-hard pgfkeys
-hard xkeyval
+hard stmaryrd
+hard amsmath
+hard amsfonts
+hard iexec
+hard ffcode

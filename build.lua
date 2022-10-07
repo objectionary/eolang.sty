@@ -1,25 +1,26 @@
-module = "phigures"
+module = "phi"
 ctanupload = true
 typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
-tagfiles = {"build.lua", "phigures.dtx"}
+tagfiles = {"build.lua", "phi.dtx"}
+docfiles = {"cactus.pdf"}
 
 uploadconfig = {
-  pkg = "phigures",
+  pkg = "phi",
   version = "0.0.0",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
   note = "Bug fixes",
   announcement = "",
-  ctanPath = "/macros/latex/contrib/phigures",
-  bugtracker = "https://github.com/yegor256/phigures/issues",
+  ctanPath = "/macros/latex/contrib/phi",
+  bugtracker = "https://github.com/yegor256/phi/issues",
   home = "",
-  description = "This package helps you format expressions of 𝜑-calculus and draw SOT graphs",
+  description = "This package helps you format expressions of 𝜑-calculus and draw SOT graphs for EO programming language",
   development = "",
   license = "mit",
   summary = "Formulas and graphs of 𝜑-calculus",
-  repository = "https://github.com/yegor256/phigures",
+  repository = "https://github.com/yegor256/phi",
   support = "",
   topic = {"graph"}
 }

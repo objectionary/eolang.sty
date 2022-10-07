@@ -1,16 +1,17 @@
-[![l3build](https://github.com/yegor256/phigures/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/phigures/actions/workflows/l3build.yml)
-[![CTAN](https://img.shields.io/ctan/v/phigures)](https://ctan.org/pkg/phigures)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/phigures/blob/master/LICENSE.txt)
+[![l3build](https://github.com/yegor256/phi/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/phi/actions/workflows/l3build.yml)
+[![CTAN](https://img.shields.io/ctan/v/phi)](https://ctan.org/pkg/phi)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/phi/blob/master/LICENSE.txt)
 
-This LaTeX package helps you write 𝜑-calculus formulas and graphs.
+This LaTeX package helps you write 𝜑-calculus formulas and graphs
+for [EO](https://www.eolang.org) programming language.
 
 First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
-from [CTAN](https://ctan.org/pkg/phigures)
+from [CTAN](https://ctan.org/pkg/phi)
 and then use in the preamble:
 
 ```tex
 \documentclass{article}
-\usepackage{phigures}
+\usepackage{phi}
 \begin{document}
 \begin{phiquation}
 x -> [
@@ -21,7 +22,7 @@ x -> [
 ```
 
 If you want to contribute yourself, make a fork, then create a branch, 
-then run `make` in the root directory.
+then run `l3build ctan` in the root directory.
 It should compile everything without errors. If not, submit an issue and wait.
-Otherwise, make your changes and then run `make` again. If the build is
+Otherwise, make your changes and then run `l3build ctan` again. If the build is
 still clean, submit a pull request.

@@ -40,15 +40,15 @@
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 
-% \GetFileInfo{phigures.dtx}
+% \GetFileInfo{phi.dtx}
 % \DoNotIndex{\endgroup,\begingroup,\let,\else,\fi,\newcommand,\newenvironment}
 
 % \iffalse
 %<*driver>
-\ProvidesFile{phigures.dtx}
+\ProvidesFile{phi.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{phigures}
+%<package>\ProvidesPackage{phi}
 %<*package>
 [0000-00-000 0.0.0 Formulas and Graphs of phi-calculus]
 %</package>
@@ -56,21 +56,24 @@
 \documentclass{ltxdoc}
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
-\usepackage{phigures}
+\usepackage{phi}
+\usepackage{ffcode}
+\usepackage{graphicx}
 \usepackage{href-ul}
+\usepackage[libertine]{newtxmath}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
 \begin{document}
-	\DocInput{phigures.dtx}
+	\DocInput{phi.dtx}
 	\PrintChanges
 	\PrintIndex
 \end{document}
 %</driver>
 % \fi
 
-% \title{|phigures|: \LaTeX{} Package \\ for Formulas and Graphs of $\varphi$-calculus\thanks{The sources are in GitHub at \href{https://github.com/yegor256/phigures}{yegor256/phigures}}}
+% \title{\includegraphics[height=1in]{cactus.pdf} \\ |phi|: \LaTeX{} Package \\ for Formulas and Graphs of $\varphi$-calculus\thanks{The sources are in GitHub at \href{https://github.com/yegor256/phi}{yegor256/phi}}}
 % \author{Yegor Bugayenko \\ \texttt{yegor256@gmail.com}}
 % \date{\filedate, \fileversion}
 %
@@ -88,13 +91,16 @@
 %\fi
 \begin{verbatim}
 \documentclass{article}
-\usepackage{phigures}
+\usepackage{phi}
 \begin{document}
-\begin{phiquation}
-x -> [
-  \varphi -> |memory|(|0|),
-  |set|(p) -> \rho.|write|(p) ].
-\end{phiquation}
+\begin{phiquation*}
+a -> [
+  b -> [ c -> |x|(56),
+    \rho -> |hello|(\xi),
+    \Delta ~> |01-FE-C3| ]],
+
+x -> [ \lambda ~> M_1 ].
+\end{phiquation*}
 \end{document}
 \end{verbatim}
 %\iffalse
@@ -103,11 +109,30 @@ x -> [
 %
 % \columnbreak
 %
-% Today is hehll
+% \begin{phiquation*}
+% a -> [
+%   b -> [ c -> |x|(56),
+%     \rho -> |hello|(\xi),
+%     \Delta ~> |01-FE-C3| ]],
+
+% x -> [ \lambda ~> M_1 ].
+% \end{phiquation*}
 % \end{multicols}
 
-% \begin{macro}{\attr}
-% ...
+% \textbf{NB!}
+% You must run \TeX{} processor with |--shell-escape| option
+% and you must have \href{https://www.perl.org}{Perl} installed.
+
+% \begin{macro}{phiquation}
+% The environment |phiquation| lets you write a $\varphi$-calculus expressions
+% using simple plain-text notation, where:
+% \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|->|'' maps to ``$\mapsto$'' (|\mapsto|),
+%   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$'' (|\mapstochar\dashrightarrow|),
+%   \item ``|[|'' maps to ``$\llbracket$'' (|\llbracket|),
+%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
+%   \item ``\texttt{$\vert$foo$\vert$}'' maps to ``$\ff{foo}$'' (|\ff{foo}|).
+% \end{itemize}
 % \end{macro}
 
 % \StopEventually{}
@@ -118,35 +143,22 @@ x -> [
 
 % First, we include a few packages:
 %    \begin{macrocode}
+\RequirePackage{stmaryrd}
+\RequirePackage{amsmath}
 \RequirePackage{amsfonts}
+\RequirePackage{iexec}
+\RequirePackage{ffcode}
 %    \end{macrocode}
 
-% \begin{macro}{\phigures}
-% Then, we define |\phigures| command.
-% It is implemented with the help of |\ShellEscape| from |shellesc| package:
+% \begin{macro}{\phi@env}
+% Then, we define |\phi@env| supplementary command.
+% It is implemented with the help of |\iexec| from
+% \href{https://github.com/yegor256/iexec}{iexec} package:
 %    \begin{macrocode}
-\newcommand\br{\\[-4pt]}
-\newcommand\attr{\@ifstar{\mapstochar\dashrightarrow}{\mapsto}}
-\newcommand\abstract[1]{\llbracket #1 \rrbracket}
-%    \end{macrocode}
-% \end{macro}
-
-% \Finale
-
-%\clearpage
-%
-%\PrintChanges
-%\clearpage
-%\PrintIndex
-
-\usepackage{stmaryrd}
-\usepackage{amsmath}
-\usepackage{/code/ctan/iexec/iexec}
-\usepackage{ffcode}
-\NewDocumentEnvironment{phiquation}{b}{%
+\makeatletter\newcommand\phi@env[2]{
   \iexec[trace]{(
-    /bin/echo -n '\\begin{equation}\\begin{split} &';
-    /bin/echo -n '\detokenize{#1}'
+    /bin/echo -n '\\begin{#1}\\begin{split} &';
+    /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/\\|(.+?)\\|/\\\\ff{\\1}/g'
@@ -159,21 +171,32 @@ x -> [
       | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
       | perl -pe 's/ {2}/\\\\quad{}/g'
       ;
-    /bin/echo -n '\\end{split}\\end{equation}'
+    /bin/echo -n '\\end{split}\\end{#1}'
     )}%
-}{}
-\AddToHook{env/phiquation/before}{\obeylines\obeyspaces}
-\begin{document}
-Here we have a first note:
-\begin{phiquation}
-a -> [
-  b -> [ c -> |x|(56),
-    \rho -> |hello|(\xi),
-    \Delta ~> |01-FE| ]
-]
+}\makeatother
+%    \end{macrocode}
+% \end{macro}
 
-x -> []
-\end{phiquation}
-Good bye.
-\end{document}
-\end{document}
+% \begin{macro}{phiquation}
+% Then, we define |phiquation| and |phiquation*| environments:
+%    \begin{macrocode}
+\makeatletter
+\NewDocumentEnvironment{phiquation*}{b}{%
+  \phi@env{equation*}{#1}
+}{}
+\NewDocumentEnvironment{phiquation}{b}{%
+  \phi@env{equation}{#1}
+}{}
+\makeatother
+\AddToHook{env/phiquation*/before}{\obeylines\obeyspaces}
+\AddToHook{env/phiquation/before}{\obeylines\obeyspaces}
+%    \end{macrocode}
+% \end{macro}
+
+% \Finale
+
+%\clearpage
+%
+%\PrintChanges
+%\clearpage
+%\PrintIndex
