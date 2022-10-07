@@ -82,7 +82,6 @@
 % \section{Introduction}
 %
 % This package helps you print formulas of $\varphi$-calculus:
-%
 % \begin{multicols}{2}
 % \setlength{\parskip}{0pt}
 % \raggedcolumns
@@ -114,7 +113,7 @@ x -> [ \lambda ~> M_1 ].
 %   b -> [ c -> |x|(56),
 %     \rho -> |hello|(\xi),
 %     \Delta ~> |01-FE-C3| ]],
-
+%
 % x -> [ \lambda ~> M_1 ].
 % \end{phiquation*}
 % \end{multicols}
@@ -133,6 +132,40 @@ x -> [ \lambda ~> M_1 ].
 %   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
 %   \item ``\texttt{$\vert$foo$\vert$}'' maps to ``$\ff{foo}$'' (|\ff{foo}|).
 % \end{itemize}
+% \end{macro}
+
+% \begin{macro}{\phiq}
+% The command |\phiq| lets you inline a $\varphi$-calculus expressions
+% using the same simple plain-text notation:
+% \begin{multicols}{2}
+% \setlength{\parskip}{0pt}
+% \raggedcolumns
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\documentclass{article}
+\usepackage{phi}
+\begin{document}
+A simple object
+\phiq{x -> [\varphi -> y]}
+is a decorator of
+the data object
+\phiq{y -> [\Delta ~> 42]}.
+\end{document}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+%
+% \columnbreak
+%
+% A simple object
+% \phiq{x -> [\varphi -> y]}
+% is a decorator of
+% the data object
+% \phiq{y -> [\Delta ~> 42]}.
+% \end{multicols}
 % \end{macro}
 
 % \StopEventually{}
@@ -171,7 +204,7 @@ x -> [ \lambda ~> M_1 ].
       | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
       | perl -pe 's/ {2}/\\\\quad{}/g'
       ;
-    /bin/echo -n '\\end{split}\\end{#1}'
+    /bin/echo -n '\\end{split}\\end{#1}\\endinput'
     )}%
 }\makeatother
 %    \end{macrocode}
@@ -190,6 +223,25 @@ x -> [ \lambda ~> M_1 ].
 \makeatother
 \AddToHook{env/phiquation*/before}{\obeylines\obeyspaces}
 \AddToHook{env/phiquation/before}{\obeylines\obeyspaces}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiq}
+% Then, we define |\phiq| command:
+%    \begin{macrocode}
+\newcommand\phiq[1]{
+  \iexec[trace]{(
+    /bin/echo -n '$';
+    /bin/echo -n '\detokenize{#1}'
+      | perl -pe 's/\\|(.+?)\\|/\\\\ff{\\1}/g'
+      | perl -pe 's/->/\\\\mapsto/g'
+      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
+      | perl -pe 's/\\[/\\\\llbracket/g'
+      | perl -pe 's/\\]/\\\\rrbracket/g'
+      ;
+    /bin/echo -n '$\\endinput'
+    )}%
+}
 %    \end{macrocode}
 % \end{macro}
 
