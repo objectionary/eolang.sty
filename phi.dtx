@@ -54,6 +54,8 @@
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
+\usepackage[maxnames=1,minnames=1,maxbibnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\addbibresource{main.bib}
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
 \usepackage{phi}
@@ -81,7 +83,9 @@
 %
 % \section{Introduction}
 %
-% This package helps you print formulas of $\varphi$-calculus:
+% This package helps you print formulas of $\varphi$-calculus,
+% which is a formal foundation of \href{https://www.eolang.org}{EO}
+% programming language~\citep{bugayenko2021eolang}:
 % \begin{multicols}{2}
 % \setlength{\parskip}{0pt}
 % \raggedcolumns
@@ -248,7 +252,9 @@ the data object
 % \Finale
 
 %\clearpage
-%
+
+% \printbibliography
+
 %\PrintChanges
 %\clearpage
 %\PrintIndex
