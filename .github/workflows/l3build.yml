@@ -14,3 +14,14 @@ jobs:
           package-file: DEPENDS.txt
           packages: scheme-basic xetex ffcode libertine minted fvextra catchfile xstring framed tcolorbox environ pgf l3build
       - run: l3build ctan
+  publish:
+    runs-on: ubuntu-20.04
+    needs: l3build
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - run: mkdir gh-pages && cp *.sty gh-pages && cp *.cls gh-pages
+      - uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: gh-pages
+          folder: gh-pages
+          clean: false
