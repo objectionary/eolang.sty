@@ -3,7 +3,7 @@ ctanupload = true
 typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
 tagfiles = {"build.lua", "phi.dtx"}
-docfiles = {"cactus.pdf"}
+docfiles = {"cactus.pdf", "main.bib"}
 cleanfiles = {"*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "phi.pdf"}
 typesetruns = 2
 
