@@ -3,3 +3,4 @@ hard amsmath
 hard amsfonts
 hard iexec
 hard ffcode
+hard hypdoc
