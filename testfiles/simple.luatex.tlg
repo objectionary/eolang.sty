@@ -1,18 +1,8 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma ->
- [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| 
-]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' |
- perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>
-/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\
-]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g'
- | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/
-echo -n '\end{split}\end{equation*}\endinput' ) >iexec.tmp)...executed
-iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) >iexec.tmp]
 ! Undefined control sequence.
-\\iexec ...tent of '\iexec@stdout ' (\pdffilesize 
-                                                  {} bytes)...
-}\input {\iex...
+\\iexec ...eys {/iexec}{#1}\ifnum \pdfshellescape 
+                                                  =1\else \PackageError {iex...
 l. ...\end
        {phiquation*}
 The control sequence at the end of the top line
@@ -20,7 +10,30 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-iexec: We include the content of 'iexec.tmp' ({} bytes)...
+! Missing number, treated as zero.
+<to be read again> 
+=
+l. ...\end
+       {phiquation*}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+! Package iexec Error: You must run latex with --shell-escape option.
+See the iexec package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...\end
+       {phiquation*}
+(That was another \errmessage.)
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma ->
+ [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| 
+]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' |
+ perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>
+/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\
+]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g'
+ | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/
+echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp)...executed
+iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp]
 (iexec.tmp
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -28,25 +41,9 @@ LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: The content of 'iexec.tmp' was included into the document
 iexec: Due to 'trace' option, the file 'iexec.tmp' was not deleted
-runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 
-xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' >si
-mple.tex.phi)...executed
-iexec: [ perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' >simple.tex.phi]
-iexec: this is the content of simple.tex.phi:
-\begin{phig}
-\node[,phi-object] (v0) {$\Phi$};
-\node[,below right=+1cm and -2cm of v0,phi-data] (v1) {$v_1$} node[phi-box] at (v1.south east) {|42|};
-\draw[] (v0) -- pic[sloped,phi-rho]{parallel arrow={-0.3,-0.15}} node [phi-attr] {$x$} (v1);
-\node[,below right=+1cm and +1cm of v0,phi-atom] (v2) {$v_2$} node[phi-box] at (v2.south east) {$\xi.x+1$};
-\draw[] (v1) edge [bend right=-15] node [phi-attr] {$\ff{hi}$} (v2);
-\draw[,phi-pi] (v2) edge [bend right=10] node [phi-attr] {$\pi$} (v0);
-\end{phig}
-\endinput
-<EOF>
 ! Undefined control sequence.
-\\iexec ...tent of '\iexec@stdout ' (\pdffilesize 
-                                                  {} bytes)
-}\else \message ...
+\\iexec ...eys {/iexec}{#1}\ifnum \pdfshellescape 
+                                                  =1\else \PackageError {iex...
 l. ...\end
        {phigure}
 The control sequence at the end of the top line
@@ -54,6 +51,25 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-iexec: Due to 'quiet' option we didn't read the content of 'simple.tex.phi' ({} bytes)
+! Missing number, treated as zero.
+<to be read again> 
+=
+l. ...\end
+       {phigure}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+! Package iexec Error: You must run latex with --shell-escape option.
+See the iexec package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...\end
+       {phigure}
+(That was another \errmessage.)
+runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 
+xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > s
+imple.tex.phi)...executed
+iexec: [ perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi]
+iexec: Due to 'quiet' we didn't read the content of 'simple.tex.phi'
 iexec: Due to 'trace' option, the file 'simple.tex.phi' was not deleted
 (simple.tex.phi)

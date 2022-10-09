@@ -238,7 +238,7 @@ v2->v0 pi bend:10
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
-\RequirePackage{/code/ctan/iexec/iexec}
+\RequirePackage{iexec}
 \RequirePackage{ffcode}
 %    \end{macrocode}
 
@@ -389,7 +389,7 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\iexec[null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
+\iexec[trace,stdout=/dev/null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
 %    \end{macrocode}
 % \end{macro}
 
@@ -444,7 +444,7 @@ print '\end{phig}', "\n", '\endinput';
 % Then, create a new environment |figure|:
 %    \begin{macrocode}
 \NewDocumentEnvironment{phigure}{b}{%
-  \iexec[log,trace,quiet,stdout=\jobname.tex.phi]{
+  \iexec[trace,quiet,stdout=\jobname.tex.phi]{
     perl \jobname.pl.phi '\detokenize{#1}'}}{}
 \AddToHook{env/phigure/begin}{\obeylines\obeyspaces}
 \AddToHook{env/phigure/after}{\input{\jobname.tex.phi}}
