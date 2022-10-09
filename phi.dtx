@@ -209,7 +209,7 @@ the data object
       | perl -pe 's/ {2}/\\\\quad{}/g'
       ;
     /bin/echo -n '\\end{split}\\end{#1}\\endinput'
-    )}%
+  )}%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -225,8 +225,8 @@ the data object
   \phi@env{equation}{#1}
 }{}
 \makeatother
-\AddToHook{env/phiquation*/before}{\obeylines\obeyspaces}
-\AddToHook{env/phiquation/before}{\obeylines\obeyspaces}
+\AddToHook{env/phiquation*/begin}{\obeylines\obeyspaces}
+\AddToHook{env/phiquation/begin}{\obeylines\obeyspaces}
 %    \end{macrocode}
 % \end{macro}
 
@@ -244,7 +244,7 @@ the data object
       | perl -pe 's/\\]/\\\\rrbracket/g'
       ;
     /bin/echo -n '$\\endinput'
-    )}%
+  )}%
 }
 %    \end{macrocode}
 % \end{macro}
