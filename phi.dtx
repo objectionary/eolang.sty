@@ -59,7 +59,6 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
 \usepackage{phi}
-\usepackage{ffcode}
 \usepackage{graphicx}
 \usepackage{href-ul}
 % \usepackage[libertine]{newtxmath}
@@ -134,8 +133,7 @@ x -> [ \lambda ~> M_1 ].
 %   \item ``|->|'' maps to ``$\mapsto$'' (|\mapsto|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$'' (|\mapstochar\dashrightarrow|),
 %   \item ``|[|'' maps to ``$\llbracket$'' (|\llbracket|),
-%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
-%   \item ``\texttt{$\vert$foo$\vert$}'' maps to ``$\ff{foo}$'' (|\ff{foo}|).
+%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|).
 % \end{itemize}
 % \end{macro}
 
@@ -188,7 +186,7 @@ v0
 v1 xy:v0,-2,+1 data:|42|
 v0->v1 a:$x$ rho
 v2 xy:v0,+1,+1 atom:$\xi.x+1$
-v1->v2 a:$\ff{hi}$ bend:-15
+v1->v2 a:|hi| bend:-15
 v2->v0 pi bend:10
 \end{phigure}
 \end{document}
@@ -203,7 +201,7 @@ v2->v0 pi bend:10
 % v1 xy:v0,-2,+1 data:|42|
 % v0->v1 a:$x$ rho
 % v2 xy:v0,+1,+1 atom:$\xi.x+1$
-% v1->v2 a:$\ff{hi}$ bend:-15
+% v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10
 % \end{phigure}
 % \end{multicols}
@@ -241,7 +239,6 @@ v2->v0 pi bend:10
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{iexec}
-\RequirePackage{ffcode}
 %    \end{macrocode}
 
 % \begin{macro}{\phi@env}
@@ -255,7 +252,6 @@ v2->v0 pi bend:10
     /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
-      | perl -pe 's/\\|(.+?)\\|/\\\\ff{\\1}/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
       | perl -pe 's/\\[/\\\\llbracket/g'
@@ -294,7 +290,6 @@ v2->v0 pi bend:10
   \iexec[trace]{(
     /bin/echo -n '$';
     /bin/echo -n '\detokenize{#1}'
-      | perl -pe 's/\\|(.+?)\\|/\\\\ff{\\1}/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
       | perl -pe 's/\\[/\\\\llbracket/g'
