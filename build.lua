@@ -2,6 +2,7 @@ module = "phi"
 ctanupload = true
 typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
+checkengines = {"pdftex", "luatex"}
 tagfiles = {"build.lua", "phi.dtx"}
 docfiles = {"cactus.pdf", "main.bib"}
 cleanfiles = {"*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "phi.pdf"}
