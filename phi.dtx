@@ -183,10 +183,11 @@ the data object
 \begin{document}
 \begin{phigure}
 v0
-v1 xy:v0,-2,+1
+v1 xy:v0,-2,+1 data:|42|
 v0->v1 a:$x$ rho
 v2 xy:v0,+1,+1 atom:$\xi.x+1$
-v1->v2 a:$\ff{hi}$ bend:+15
+v1->v2 a:$\ff{hi}$ bend:-15
+v2->v0 pi bend:10
 \end{phigure}
 \end{document}
 \end{verbatim}
@@ -197,10 +198,11 @@ v1->v2 a:$\ff{hi}$ bend:+15
 % \columnbreak
 % \begin{phigure}
 % v0
-% v1 xy:v0,-2,+1
+% v1 xy:v0,-2,+1 data:|42|
 % v0->v1 a:$x$ rho
 % v2 xy:v0,+1,+1 atom:$\xi.x+1$
-% v1->v2 a:$\ff{hi}$ bend:+15
+% v1->v2 a:$\ff{hi}$ bend:-15
+% v2->v0 pi bend:10
 % \end{phigure}
 % \end{multicols}
 % \end{macro}
@@ -305,7 +307,7 @@ v1->v2 a:$\ff{hi}$ bend:+15
 % \begin{macro}{.phi.pl}
 % Then, create a Perl script:
 %    \begin{macrocode}
-\begin{VerbatimOut}{\jobname.phi.pl}
+\begin{VerbatimOut}{\jobname.pl.phi}
 $tex = $ARGV[0];
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
@@ -387,7 +389,7 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\iexec[null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.phi.pl}
+\iexec[null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
 %    \end{macrocode}
 % \end{macro}
 
@@ -412,10 +414,10 @@ print '\end{phig}', "\n", '\endinput';
 %    \begin{macrocode}
 \newenvironment{phig}%
   {\noindent\begin{tikzpicture}[
-    om,pics/parallel arrow/.style={
+    ->,>=stealth',node distance=0,thick,
+    pics/parallel arrow/.style={
       code={\draw[-latex,phi-rho] (##1) -- (-##1);}}]}%
   {\end{tikzpicture}}
-  \tikzstyle{om} = [->,>=stealth',node distance=2.5cm,thick]
   \tikzstyle{transforms} = [fill=white!80!black, single arrow,
     minimum height=0.5cm, minimum width=0.5cm,
     single arrow head extend=2mm]
@@ -442,10 +444,10 @@ print '\end{phig}', "\n", '\endinput';
 % Then, create a new environment |figure|:
 %    \begin{macrocode}
 \NewDocumentEnvironment{phigure}{b}{%
-  \iexec[log,trace,quiet,stdout=\jobname.phi.tex]{
-    perl \jobname.phi.pl '\detokenize{#1}'}}{}
+  \iexec[log,trace,quiet,stdout=\jobname.tex.phi]{
+    perl \jobname.pl.phi '\detokenize{#1}'}}{}
 \AddToHook{env/phigure/begin}{\obeylines\obeyspaces}
-\AddToHook{env/phigure/after}{\input{\jobname.phi.tex}}
+\AddToHook{env/phigure/after}{\input{\jobname.tex.phi}}
 %    \end{macrocode}
 % \end{macro}
 

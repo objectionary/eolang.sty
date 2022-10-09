@@ -2,6 +2,7 @@
 \documentclass{article}
 \usepackage{phi}
 \begin{document}
+\START
 
 \begin{phiquation*}
 a -> [
@@ -11,5 +12,14 @@ a -> [
 
 x -> [ \lambda ~> M_1 ]
 \end{phiquation*}
+
+\begin{phigure}
+v0
+v1 xy:v0,-2,+1 data:|42|
+v0->v1 a:$x$ rho
+v2 xy:v0,+1,+1 atom:$\xi.x+1$
+v1->v2 a:$\ff{hi}$ bend:-15
+v2->v0 pi bend:10
+\end{phigure}
 
 \END

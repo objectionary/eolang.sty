@@ -2,6 +2,7 @@
 build/
 _minted-*/
 phi.tex
+*.phi
 *.zip
 *.toc
 phi.pdf
