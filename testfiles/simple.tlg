@@ -1,16 +1,1017 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp)...executed.
-iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\|(.+?)\|/\\ff{\1}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp]
-(iexec.tmp
-LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
-(../Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line ....
-LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+Overfull \hbox (2.74681pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 (@cmds)  my ($\OML/cmm/m/it/10 head;$\OT1/cmr/m/n/10 tail) = split (/ /, $\OML/cmm/m/it/10 c; \OT1/cmr/m/n/10 2); \OML/cmm/m/it/10 myforeachmy$\OT1/cmr/m/n/10 p (split (/ /, $\OML/cmm/m/it/10 tail\OT1/cmr/m/n/10 ))[]$q,
+\hbox(7.5+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 @
+.\OT1/cmr/m/n/10 c
+.\OT1/cmr/m/n/10 m
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 m
+.\kern-0.27779
+.\OT1/cmr/m/n/10 y
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\mathon
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 d
+.\OML/cmm/m/it/10 ;
+.\mathoff
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 =
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 /
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\mathon
+.\OML/cmm/m/it/10 c
+.\OML/cmm/m/it/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OT1/cmr/m/n/10 2
+.\OT1/cmr/m/n/10 )
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 m
+.\OML/cmm/m/it/10 y
+.\kern0.35878
+.\OML/cmm/m/it/10 f
+.\kern1.0764
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 c
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 m
+.\OML/cmm/m/it/10 y
+.\kern0.35878
+.\mathoff
+.\OT1/cmr/m/n/10 p
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 /
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\mathon
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 l
+.\kern0.19678
+.\OT1/cmr/m/n/10 )
+.\OT1/cmr/m/n/10 )
+.\hbox(7.5+2.5)x17.93063
+..\OML/cmm/m/it/10 m
+..\OML/cmm/m/it/10 y
+..\kern0.35878
+..\OT1/cmr/m/n/10 (
+.\mathoff
+.\OT1/cmr/m/n/10 q
+.\OT1/cmr/m/n/10 ,
+.\glue(\rightskip) 0.0
+Overfull \hbox (14.48354pt too wide) in paragraph at lines 92--6
+\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 )[]$v, $\OML/cmm/m/it/10 right;$\OT1/cmr/m/n/10 down) = split(/,/, $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 ); \OML/cmm/m/it/10 print[]; belowright \OT1/cmr/m/n/10 =[]; \OML/cmm/m/it/10 print$\OT1/cmr/m/n/10 down;
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+1.94444)x16.58798
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 x
+..\OML/cmm/m/it/10 y
+..\kern0.35878
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\hbox(7.5+2.5)x17.93063
+..\OML/cmm/m/it/10 m
+..\OML/cmm/m/it/10 y
+..\kern0.35878
+..\OT1/cmr/m/n/10 (
+.\mathoff
+.\OT1/cmr/m/n/10 v
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\mathon
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 g
+.\kern0.35878
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 ;
+.\mathoff
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 w
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 =
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 ,
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+1.94444)x16.58798
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 x
+..\OML/cmm/m/it/10 y
+..\kern0.35878
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OML/cmm/m/it/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 b
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 l
+.\kern0.19678
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 w
+.\kern0.26909
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 g
+.\kern0.35878
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 t
+.\glue(\thickmuskip) 2.77771 plus 2.77771
+.\OT1/cmr/m/n/10 =
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\penalty 500
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\mathoff
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 w
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 ;
+.\glue(\rightskip) 0.0
+Overfull \hbox (106.59154pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 print 'cm and '; print $\OML/cmm/m/it/10 right\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 print[]cmof[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 print$\OT1/cmr/m/n/10 v;  if (ex-ists $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 )[]$opts'data'
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 c
+.\OT1/cmr/m/n/10 m
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 d
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 g
+.\kern0.35878
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 t
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OML/cmm/m/it/10 c
+.\OML/cmm/m/it/10 m
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 f
+.\kern1.0764
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\mathoff
+.\OT1/cmr/m/n/10 v
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 x
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x24.99887
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 d
+..\OML/cmm/m/it/10 a
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 a
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\hbox(7.51782+2.5)x110.99399
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 t
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 h
+..\OML/cmm/m/it/10 i
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OMS/cmsy/m/n/10 ^^@
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OML/cmm/m/it/10 d
+..\OML/cmm/m/it/10 a
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 a
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OT1/cmr/m/n/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 f
+..\kern1.0764
+..\OT1/cmr/m/n/10 (
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 t
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 '
+.\glue(\rightskip) 0.0
+Overfull \hbox (43.53027pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 eq '')  $\OML/cmm/m/it/10 opts[] \OT1/cmr/m/n/10 =$opts'data';   el-sif (ex-ists $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 )[]$opts'atom'
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 q
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 " (ligature '')
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x20.46527
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 b
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 x
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\glue(\thickmuskip) 2.77771 plus 2.77771
+.\OT1/cmr/m/n/10 =
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 l
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 x
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x28.13548
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 a
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 m
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\hbox(7.51782+2.5)x114.1306
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 t
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 h
+..\OML/cmm/m/it/10 i
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OMS/cmsy/m/n/10 ^^@
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OML/cmm/m/it/10 a
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 m
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OT1/cmr/m/n/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 f
+..\kern1.0764
+..\OT1/cmr/m/n/10 (
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 t
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 m
+.\OT1/cmr/m/n/10 '
+.\glue(\rightskip) 0.0
+Overfull \hbox (40.72382pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 '$[]; \OML/cmm/m/it/10 if\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 exists$\OT1/cmr/m/n/10 opts'box')  print ' node[phi-box] at ('; print $\OML/cmm/m/it/10 head;[] :southeast\OT1/cmr/m/n/10 )[]$opts'box',
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 '
+.\mathon
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 f
+.\kern1.0764
+.\OT1/cmr/m/n/10 (
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 x
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 s
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 b
+.\kern0.27779
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 x
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 o
+.\kern0.27779
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 [
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 h
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 -
+.\discretionary
+.\OT1/cmr/m/n/10 b
+.\kern0.27779
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 x
+.\OT1/cmr/m/n/10 ]
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 d
+.\OML/cmm/m/it/10 ;
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 :
+.\OML/cmm/m/it/10 s
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 u
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 s
+.\OML/cmm/m/it/10 t
+.\OT1/cmr/m/n/10 )
+.\hbox(7.51782+1.94444)x30.12918
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OT1/cmr/m/n/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 t
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 b
+.\kern0.27779
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 x
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ,
+.\glue(\rightskip) 0.0
+Overfull \hbox (21.32036pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 '';   else  print '['; if (ex-ists $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 )[]$opts'a')  $\OML/cmm/m/it/10 opts[] \OT1/cmr/m/n/10 =[]$$\OML/cmm/m/it/10 ^^Y$\OT1/cmr/m/n/10 ';
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 e
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 [
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 x
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+1.94444)x14.0875
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 i
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\hbox(7.51782+2.5)x126.88539
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 t
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 h
+..\OML/cmm/m/it/10 i
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OMS/cmsy/m/n/10 ^^@
+..\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 i
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OT1/cmr/m/n/10 ;
+..\glue(\thinmuskip) 1.66663
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 f
+..\kern1.0764
+..\OT1/cmr/m/n/10 (
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 o
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 e
+..\OML/cmm/m/it/10 x
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 s
+..\OML/cmm/m/it/10 t
+..\OML/cmm/m/it/10 s
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x10.897
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 a
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\glue(\thickmuskip) 2.77771 plus 2.77771
+.\OT1/cmr/m/n/10 =
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\mathoff
+.\mathon
+.\OML/cmm/m/it/10 ^^Y
+.\kern0.35878
+.\mathoff
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue(\rightskip) 0.0
+Overfull \hbox (160.99951pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 print ']'; my ($\OML/cmm/m/it/10 from;$\OT1/cmr/m/n/10 to) = split (/->/, $\OML/cmm/m/it/10 head\OT1/cmr/m/n/10 ); \OML/cmm/m/it/10 print[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ;$\OT1/cmr/m/n/10 from, ') '; if (ex-ists $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 )[]$opts'bend',
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ]
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 m
+.\kern-0.27779
+.\OT1/cmr/m/n/10 y
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\mathon
+.\OML/cmm/m/it/10 f
+.\kern1.0764
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 m
+.\OML/cmm/m/it/10 ;
+.\mathoff
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 =
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 -
+.\discretionary
+.\OT1/cmr/m/n/10 >
+.\OT1/cmr/m/n/10 /
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\mathon
+.\OML/cmm/m/it/10 h
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 a
+.\OML/cmm/m/it/10 d
+.\OT1/cmr/m/n/10 )
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 (
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OML/cmm/m/it/10 ;
+.\mathoff
+.\OT1/cmr/m/n/10 f
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 m
+.\OT1/cmr/m/n/10 ,
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 )
+.\glue 3.33333 plus 2.08331 minus 0.88889
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 (
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 x
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x25.76625
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 b
+..\OML/cmm/m/it/10 e
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 d
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 )
+.\hbox(7.51782+2.5)x107.13806
+..\OML/cmm/m/it/10 p
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 t
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 e
+..\OML/cmm/m/it/10 d
+..\OML/cmm/m/it/10 g
+..\kern0.35878
+..\OML/cmm/m/it/10 e
+..\OT1/cmr/m/n/10 [
+..\OML/cmm/m/it/10 b
+..\OML/cmm/m/it/10 e
+..\OML/cmm/m/it/10 n
+..\OML/cmm/m/it/10 d
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 i
+..\OML/cmm/m/it/10 g
+..\kern0.35878
+..\OML/cmm/m/it/10 h
+..\OML/cmm/m/it/10 t
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\OT1/cmr/m/n/10 =
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 ;
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 b
+.\kern0.27779
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 d
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ,
+.\glue(\rightskip) 0.0
+Overfull \hbox (30.47372pt too wide) in paragraph at lines 92--6
+\OT1/cmr/m/n/10 rho]parallel ar-row='; print '-' if not ex-ists $\OML/cmm/m/it/10 opts[]\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 print[]\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 15[]; \OML/cmm/m/it/10 if\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 exists$\OT1/cmr/m/n/10 opts'a')
+\hbox(7.51782+2.5)x345.0, glue set - 1.0
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 h
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 ]
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 l
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 l
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 r
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 o
+.\kern-0.27779
+.\OT1/cmr/m/n/10 w
+.\OT1/cmr/m/n/10 =
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 ;
+.\glue 3.33333 plus 2.49998 minus 0.74074
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 r
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 n
+.\kern-0.27779
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 -
+.\discretionary
+.\OT1/cmr/m/n/10 '
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 f
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 n
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 t
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 x
+.\discretionary
+..\OT1/cmr/m/n/10 -
+.\OT1/cmr/m/n/10 i
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\glue 3.33333 plus 1.66666 minus 1.11111
+.\mathon
+.\OML/cmm/m/it/10 o
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\hbox(7.51782+0.0)x25.79866
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 r
+..\kern0.27779
+..\OML/cmm/m/it/10 h
+..\OML/cmm/m/it/10 o
+..\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+...\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 p
+.\OML/cmm/m/it/10 r
+.\kern0.27779
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 n
+.\OML/cmm/m/it/10 t
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 0
+.\OML/cmm/m/it/10 :
+.\OT1/cmr/m/n/10 3
+.\OML/cmm/m/it/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OMS/cmsy/m/n/10 ^^@
+.\OT1/cmr/m/n/10 0
+.\OML/cmm/m/it/10 :
+.\OT1/cmr/m/n/10 1
+.\OT1/cmr/m/n/10 5
+.\hbox(3.8889+0.0)x2.80556, shifted -3.62892
+..\OMS/cmsy/m/n/7 0
+.\OT1/cmr/m/n/10 ;
+.\glue(\thinmuskip) 1.66663
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 f
+.\kern1.0764
+.\OT1/cmr/m/n/10 (
+.\OML/cmm/m/it/10 e
+.\OML/cmm/m/it/10 x
+.\OML/cmm/m/it/10 i
+.\OML/cmm/m/it/10 s
+.\OML/cmm/m/it/10 t
+.\OML/cmm/m/it/10 s
+.\mathoff
+.\OT1/cmr/m/n/10 o
+.\OT1/cmr/m/n/10 p
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 s
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 a
+.\OT1/cmr/m/n/10 '
+.\OT1/cmr/m/n/10 )
+.\glue(\rightskip) 0.0
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp)...executed.
+iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp]
+(iexec.tmp) 
 iexec: The content of 'iexec.tmp' was included into the document
 iexec: Due to 'trace' option, the file 'iexec.tmp' was not deleted
-runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi)...executed.
-iexec: [ perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi]
-iexec: Due to 'quiet' we didn't read the content of 'simple.tex.phi'
-iexec: Due to 'trace' option, the file 'simple.tex.phi' was not deleted
-(simple.tex.phi)
+! LaTeX Error: Environment phigure undefined.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...\begin{phigure}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+! Undefined control sequence.
+<recently read> \ff 
+l. ...v1->v2 a:$\ff
+                  {hi}$ bend:-15
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+! LaTeX Error: \begin{document} ended by \end{phigure}.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...\end{phigure}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
