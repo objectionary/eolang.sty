@@ -58,8 +58,8 @@
 \addbibresource{main.bib}
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
-\usepackage{phi}
 \usepackage{graphicx}
+\usepackage{phi}
 \usepackage{href-ul}
 % \usepackage[libertine]{newtxmath}
 \PageIndex
@@ -416,25 +416,25 @@ print '\end{phig}', "\n", '\endinput';
     pics/parallel arrow/.style={
       code={\draw[-latex,phi-rho] (##1) -- (-##1);}}]}%
   {\end{tikzpicture}}
-  \tikzstyle{transforms} = [fill=white!80!black, single arrow,
-    minimum height=0.5cm, minimum width=0.5cm,
-    single arrow head extend=2mm]
-  \tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
-    draw,font={\small}]
-  \tikzstyle{phi-object} = [phi-thing,circle]
-  \tikzstyle{phi-data} = [phi-thing,regular polygon,
-    regular polygon sides=8]
-  \tikzstyle{phi-empty} = [phi-object]
-  \tikzstyle{phi-rho} = [draw,decorate,decoration={
-    snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
-  \tikzstyle{phi-pi} = [draw,dotted]
-  \tikzstyle{phi-atom} = [phi-object,double]
-  \tikzstyle{phi-box} = [xshift=-5pt,yshift=3pt,draw,fill=white,
-    rectangle,thin,minimum width=1.2em,anchor=north west,
-    font={\scriptsize}]
-  \tikzstyle{phi-attr} = [midway,sloped,inner sep=0pt,
-    above=2pt,sloped/.append style={transform shape},
-    font={\scriptsize},color=black]
+\tikzstyle{transforms} = [fill=white!80!black, single arrow,
+  minimum height=0.5cm, minimum width=0.5cm,
+  single arrow head extend=2mm]
+\tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
+  draw,font={\small}]
+\tikzstyle{phi-object} = [phi-thing,circle]
+\tikzstyle{phi-data} = [phi-thing,regular polygon,
+  regular polygon sides=8]
+\tikzstyle{phi-empty} = [phi-object]
+\tikzstyle{phi-rho} = [draw,decorate,decoration={
+  snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
+\tikzstyle{phi-pi} = [draw,dotted]
+\tikzstyle{phi-atom} = [phi-object,double]
+\tikzstyle{phi-box} = [xshift=-5pt,yshift=3pt,draw,fill=white,
+  rectangle,thin,minimum width=1.2em,anchor=north west,
+  font={\scriptsize}]
+\tikzstyle{phi-attr} = [midway,sloped,inner sep=0pt,
+  above=2pt,sloped/.append style={transform shape},
+  font={\scriptsize},color=black]
 %    \end{macrocode}
 % \end{macro}
 
