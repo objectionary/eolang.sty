@@ -41,7 +41,7 @@
 %   Right brace   \}     Tilde         \~}
 
 % \GetFileInfo{phi.dtx}
-% \DoNotIndex{\endgroup,\begingroup,\let,\else,\fi,\newcommand,\newenvironment}
+% \DoNotIndex{\endgroup,\begingroup,\let,\else,\s,\n,\r,\\,\1,\fi}
 
 % \iffalse
 %<*driver>
@@ -85,7 +85,9 @@
 %
 % This package helps you print formulas of $\varphi$-calculus,
 % which is a formal foundation of \href{https://www.eolang.org}{EO}
-% programming language~\citep{bugayenko2021eolang}:
+% programming language. The calculus was introduced by \citet{bugayenko2021eolang}
+% and later formalized by \citet{kudasov2021}. Here is how you render
+% a simple expression:
 % \begin{multicols}{2}
 % \raggedcolumns
 %\iffalse
@@ -304,7 +306,7 @@ v2->v0 pi bend:10
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{.phi.pl}
+% \begin{macro}{Perl}
 % Then, create a Perl script:
 %    \begin{macrocode}
 \begin{VerbatimOut}{\jobname.pl.phi}
