@@ -3,3 +3,5 @@ hard amsmath
 hard amsfonts
 hard iexec
 hard ffcode
+hard pgf
+hard fancyvrb
