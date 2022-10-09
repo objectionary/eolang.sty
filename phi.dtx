@@ -61,7 +61,6 @@
 \usepackage{graphicx}
 \usepackage{phi}
 \usepackage{href-ul}
-% \usepackage[libertine]{newtxmath}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
@@ -387,7 +386,8 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\iexec[trace,stdout=/dev/null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
+\iexec[trace,stdout=/dev/null]{
+  perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
 %    \end{macrocode}
 % \end{macro}
 

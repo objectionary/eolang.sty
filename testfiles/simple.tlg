@@ -1,12 +1,17 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp)...executed.
-iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp]
-(iexec.tmp
+runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M' > simple.tex.phi)...executed.
+iexec: [ perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M' > simple.tex.phi]
+iexec: Due to 'quiet' we didn't read the content of 'simple.tex.phi'
+iexec: Due to 'trace' option, the file 'simple.tex.phi' was not deleted
+(simple.tex.phi
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp)...executed.
+iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [^^M  b -> [ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]^^M^^Mx -> [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\[/\\llbracket/g' | perl -pe 's/\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp]
+(iexec.tmp) 
 iexec: The content of 'iexec.tmp' was included into the document
 iexec: Due to 'trace' option, the file 'iexec.tmp' was not deleted
 runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi)...executed.
