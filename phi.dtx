@@ -87,7 +87,6 @@
 % which is a formal foundation of \href{https://www.eolang.org}{EO}
 % programming language~\citep{bugayenko2021eolang}:
 % \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
 % \raggedcolumns
 %\iffalse
 %<*verb>
@@ -142,7 +141,6 @@ x -> [ \lambda ~> M_1 ].
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
 % using the same simple plain-text notation:
 % \begin{multicols}{2}
-% \setlength{\parskip}{0pt}
 % \raggedcolumns
 %\iffalse
 %<*verb>
@@ -172,6 +170,61 @@ the data object
 % \end{multicols}
 % \end{macro}
 
+% \begin{macro}{phigure}
+% The environment |phigure| allows you to draw a \href{https://github.com/objectionary/sot}{SOT} graph:
+% \begin{multicols}{2}
+% \raggedcolumns
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\documentclass{article}
+\usepackage{phi}
+\begin{document}
+\begin{phigure}
+v0
+v1 xy:v0,-2,+1
+v0->v1 a:$x$ rho
+v2 xy:v0,+1,+1 atom:$\xi.x+1$
+v1->v2 a:$\ff{hi}$ bend:+15
+\end{phigure}
+\end{document}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+%
+% \columnbreak
+% \begin{phigure}
+% v0
+% v1 xy:v0,-2,+1
+% v0->v1 a:$x$ rho
+% v2 xy:v0,+1,+1 atom:$\xi.x+1$
+% v1->v2 a:$\ff{hi}$ bend:+15
+% \end{phigure}
+% \end{multicols}
+% \end{macro}
+% The content of the environment is parsed line by line. Markers in each line are
+% separated by a single space. The first marker is either a unique name of a
+% vertex, like |v1| in the example above, or an edge, like |v0->v1|. All other markers are either
+% unary like |rho| or binary like |atom:$\xi.x+1$|. Binary markers have two
+% parts, separated by colon. The following markers are supported for a vertex:
+% \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached |<box>|,
+%   \item ``|atom:[<box>]|'' makes it an atom with an optional attached |<box>|,
+%   \item ``|box:<txt>|'' attaches a |<box>| to it,
+%   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex |<v>|,
+%     shifting it right by |<r>| % and down by |<d>| centimetres.
+% \end{itemize}
+% The following markers are supported for an edge:
+% \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|rho|'' places a backward snake arrow to the edge,
+%   \item ``|rrho|'' places a reverse |rho|,
+%   \item ``|bend:<angle>|'' bend it right by the amount of |<angle>|,
+%   \item ``|a:<txt>|'' attaches label |<txt>| to it,
+%   \item ``|pi|'' makes it dotted, with $\pi$ label.
+% \end{itemize}
+
 % \StopEventually{}
 
 % \section{Implementation}
@@ -183,7 +236,7 @@ the data object
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
-\RequirePackage{iexec}
+\RequirePackage{/code/ctan/iexec/iexec}
 \RequirePackage{ffcode}
 %    \end{macrocode}
 
@@ -246,6 +299,153 @@ the data object
     /bin/echo -n '$\\endinput'
   )}%
 }
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{.phi.pl}
+% Then, create a Perl script:
+%    \begin{macrocode}
+\begin{VerbatimOut}{\jobname.phi.pl}
+$tex = $ARGV[0];
+$tex =~ s/^\s+|\s+$//g;
+$tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
+$tex =~ s/\r\s+/\r/g;
+my @cmds = split (/\r/g, $tex);
+print '\begin{phig}', "\n";
+foreach my $c (@cmds) {
+  my ($head, $tail) = split (/ /, $c, 2);
+  my %opts = {};
+  foreach my $p (split (/ /, $tail)) {
+    my ($q, $t) = split (/:/, $p);
+    $opts{$q} = $t;
+  }
+  if (index($head, '->') == -1) {
+    print '\node[';
+    if (exists $opts{'xy'}) {
+      my ($v, $right, $down) = split(/,/, $opts{'xy'});
+      print ',below right=';
+      print $down;
+      print 'cm and ';
+      print $right;
+      print 'cm of ';
+      print $v;
+    }
+    if (exists $opts{'data'}) {
+      print ',phi-data';
+      if (not $opts{'data'} eq '') {
+        $opts{'box'} = $opts{'data'};
+      }
+    } elsif (exists $opts{'atom'}) {
+      print ',phi-atom';
+      if (not $opts{'atom'} eq '') {
+        $opts{'box'} = $opts{'atom'};
+      }
+    } else {
+      print ',phi-object';
+    }
+    print ']';
+    print ' (', $head, ')';
+    print ' {$';
+    if ($head eq 'v0') {
+      print '\Phi';
+    } else {
+      print 'v_', substr($head, 1);
+    }
+    print '$}';
+    if (exists $opts{'box'}) {
+      print ' node[phi-box] at (';
+      print $head, '.south east) {';
+      print $opts{'box'}, '}';
+    }
+  } else {
+    print '\draw[';
+    if (exists $opts{'pi'}) {
+      print ',phi-pi';
+      if (not exists $opts{'a'}) {
+        $opts{'a'} = '$\pi$';
+      }
+    }
+    print ']';
+    my ($from, $to) = split (/->/, $head);
+    print ' (', $from, ') ';
+    if (exists $opts{'bend'}) {
+      print 'edge [bend right=', $opts{'bend'}, ']';
+    } else {
+      print '--';
+    }
+    if (exists $opts{'rho'} or exists $opts{'rrho'}) {
+      print ' pic[sloped,phi-rho]{parallel arrow={';
+      print '-' if not exists $opts{'rrho'};
+      print '0.3,-0.15}}';
+    }
+    if (exists $opts{'a'}) {
+      print ' node [phi-attr] {', $opts{'a'}, '}';
+    }
+    print ' (', $to, ')';
+  }
+  print ";\n";
+}
+print '\end{phig}', "\n", '\endinput';
+\end{VerbatimOut}
+\iexec[null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.phi.pl}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{phigure}
+% Then, we include |tikz| package and its libraries:
+%    \begin{macrocode}
+\RequirePackage{tikz}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{decorations}
+  \usetikzlibrary{decorations.pathmorphing}
+  \usetikzlibrary{intersections}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{backgrounds}
+  \usetikzlibrary{calc}
+  \usetikzlibrary{shapes.arrows}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{phig}
+% Then, we define internal environment |phig|:
+%    \begin{macrocode}
+\newenvironment{phig}%
+  {\noindent\begin{tikzpicture}[
+    om,pics/parallel arrow/.style={
+      code={\draw[-latex,phi-rho] (##1) -- (-##1);}}]}%
+  {\end{tikzpicture}}
+  \tikzstyle{om} = [->,>=stealth',node distance=2.5cm,thick]
+  \tikzstyle{transforms} = [fill=white!80!black, single arrow,
+    minimum height=0.5cm, minimum width=0.5cm,
+    single arrow head extend=2mm]
+  \tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
+    draw,font={\small}]
+  \tikzstyle{phi-object} = [phi-thing,circle]
+  \tikzstyle{phi-data} = [phi-thing,regular polygon,
+    regular polygon sides=8]
+  \tikzstyle{phi-empty} = [phi-object]
+  \tikzstyle{phi-rho} = [draw,decorate,decoration={
+    snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
+  \tikzstyle{phi-pi} = [draw,dotted]
+  \tikzstyle{phi-atom} = [phi-object,double]
+  \tikzstyle{phi-box} = [xshift=-5pt,yshift=3pt,draw,fill=white,
+    rectangle,thin,minimum width=1.2em,anchor=north west,
+    font={\scriptsize}]
+  \tikzstyle{phi-attr} = [midway,sloped,inner sep=0pt,
+    above=2pt,sloped/.append style={transform shape},
+    font={\scriptsize},color=black]
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{phigure}
+% Then, create a new environment |figure|:
+%    \begin{macrocode}
+\NewDocumentEnvironment{phigure}{b}{%
+  \iexec[log,trace,quiet,stdout=\jobname.phi.tex]{
+    perl \jobname.phi.pl '\detokenize{#1}'}}{}
+\AddToHook{env/phigure/begin}{\obeylines\obeyspaces}
+\AddToHook{env/phigure/after}{\input{\jobname.phi.tex}}
 %    \end{macrocode}
 % \end{macro}
 
