@@ -386,6 +386,7 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
+\message{^^Jphi: file with Perl script (\jobname.pl.phi) saved^^J}%
 \iexec[trace,stdout=/dev/null]{
   perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
 %    \end{macrocode}
