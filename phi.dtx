@@ -59,6 +59,7 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
 \usepackage{graphicx}
+\usepackage{/code/ctan/docshots/docshots}
 \usepackage{phi}
 \usepackage{href-ul}
 \PageIndex
@@ -79,6 +80,10 @@
 %
 % \maketitle
 %
+% \textbf{NB!}
+% You must run \TeX{} processor with |--shell-escape| option
+% and you must have \href{https://www.perl.org}{Perl} installed.
+
 % \section{Introduction}
 %
 % This package helps you print formulas of $\varphi$-calculus,
@@ -86,44 +91,21 @@
 % programming language. The calculus was introduced by \citet{bugayenko2021eolang}
 % and later formalized by \citet{kudasov2021}. Here is how you render
 % a simple expression:
-% \begin{multicols}{2}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{phi}
-\begin{document}
-\begin{phiquation*}
-a -> [
-  b -> [ c -> |x|(56),
-    \rho -> |hello|(\xi),
-    \Delta ~> |01-FE-C3| ]],
-
-x -> [ \lambda ~> M_1 ].
-\end{phiquation*}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{phi}
+% \begin{document}
+% \pagestyle{empty}
 % \begin{phiquation*}
 % a -> [
 %   b -> [ c -> |x|(56),
 %     \rho -> |hello|(\xi),
 %     \Delta ~> |01-FE-C3| ]],
-%
+
 % x -> [ \lambda ~> M_1 ].
 % \end{phiquation*}
-% \end{multicols}
-
-% \textbf{NB!}
-% You must run \TeX{} processor with |--shell-escape| option
-% and you must have \href{https://www.perl.org}{Perl} installed.
+% \end{document}
+% \end{docshot}
 
 % \begin{macro}{phiquation}
 % The environment |phiquation| lets you write a $\varphi$-calculus expressions
@@ -132,69 +114,35 @@ x -> [ \lambda ~> M_1 ].
 %   \item ``|->|'' maps to ``$\mapsto$'' (|\mapsto|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$'' (|\mapstochar\dashrightarrow|),
 %   \item ``|[|'' maps to ``$\llbracket$'' (|\llbracket|),
-%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|).
+%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
+%   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}'' (|\texttt{abc}|).
 % \end{itemize}
 % \end{macro}
 
 % \begin{macro}{\phiq}
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
 % using the same simple plain-text notation:
-% \begin{multicols}{2}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{phi}
-\begin{document}
-A simple object
-\phiq{x -> [\varphi -> y]}
-is a decorator of
-the data object
-\phiq{y -> [\Delta ~> 42]}.
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
-%
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{phi}
+% \begin{document}
+% \pagestyle{empty}
 % A simple object
 % \phiq{x -> [\varphi -> y]}
 % is a decorator of
 % the data object
 % \phiq{y -> [\Delta ~> 42]}.
-% \end{multicols}
+% \end{document}
+% \end{docshot}
 % \end{macro}
 
 % \begin{macro}{phigure}
 % The environment |phigure| allows you to draw a \href{https://github.com/objectionary/sot}{SOT} graph:
-% \begin{multicols}{2}
-% \raggedcolumns
-%\iffalse
-%<*verb>
-%\fi
-\begin{verbatim}
-\documentclass{article}
-\usepackage{phi}
-\begin{document}
-\begin{phigure}
-v0
-v1 xy:v0,-2,+1 data:|42|
-v0->v1 a:$x$ rho
-v2 xy:v0,+1,+1 atom:$\xi.x+1$
-v1->v2 a:|hi| bend:-15
-v2->v0 pi bend:10
-\end{phigure}
-\end{document}
-\end{verbatim}
-%\iffalse
-%</verb>
-%\fi
-%
-% \columnbreak
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{phi}
+% \begin{document}
+% \pagestyle{empty}
 % \begin{phigure}
 % v0
 % v1 xy:v0,-2,+1 data:|42|
@@ -203,7 +151,8 @@ v2->v0 pi bend:10
 % v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10
 % \end{phigure}
-% \end{multicols}
+% \end{document}
+% \end{docshot}
 % \end{macro}
 % The content of the environment is parsed line by line. Markers in each line are
 % separated by a single space. The first marker is either a unique name of a
@@ -254,6 +203,7 @@ v2->v0 pi bend:10
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
+      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}/g'
       | perl -pe 's/\\[/\\\\llbracket/g'
       | perl -pe 's/\\]/\\\\rrbracket/g'
       | perl -pe 's/\\r\\r/\\\\\\\\ \&/g'
@@ -309,6 +259,7 @@ $tex = $ARGV[0];
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
 $tex =~ s/\r\s+/\r/g;
+$tex =~ s/\|([^\|]+)\|/\\texttt{\1}/g;
 my @cmds = split (/\r/g, $tex);
 print '\begin{phig}', "\n";
 foreach my $c (@cmds) {
