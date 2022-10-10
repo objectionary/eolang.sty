@@ -439,13 +439,17 @@ print '\end{phig}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{phigure}
-% Then, create a new environment |figure|:
+% Then, create a new environment |figure|, as suggested
+% \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
 \NewDocumentEnvironment{phigure}{b}{%
-  \iexec[trace,quiet,stdout=\jobname.tex.phi]{
-    perl \jobname.pl.phi '\detokenize{#1}'}}{}
-\AddToHook{env/phigure/begin}{\obeylines\obeyspaces}
-\AddToHook{env/phigure/after}{\input{\jobname.tex.phi}}
+  \catcode`\ =10 %
+  \catcode`\^^M=5 %
+  \iexec[trace,stdout=\jobname.tex.phi]{
+    perl \jobname.pl.phi '\detokenize{#1}'}%
+}{}
+\AddToHook{env/phigure/before}{\bgroup\obeylines\obeyspaces}
+\AddToHook{env/phigure/after}{\egroup}
 %    \end{macrocode}
 % \end{macro}
 
