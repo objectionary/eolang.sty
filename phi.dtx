@@ -107,7 +107,7 @@
 % \end{document}
 % \end{docshot}
 
-% \begin{macro}{phiquation}
+% \DescribeEnv{phiquation}
 % The environment |phiquation| lets you write a $\varphi$-calculus expressions
 % using simple plain-text notation, where:
 % \begin{itemize}\setlength\itemsep{0em}
@@ -117,9 +117,8 @@
 %   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
 %   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}'' (|\texttt{abc}|).
 % \end{itemize}
-% \end{macro}
 
-% \begin{macro}{\phiq}
+% \DescribeMacro{\phiq}
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
 % using the same simple plain-text notation:
 % \begin{docshot}
@@ -134,9 +133,8 @@
 % \phiq{y -> [\Delta ~> 42]}.
 % \end{document}
 % \end{docshot}
-% \end{macro}
 
-% \begin{macro}{phigure}
+% \DescribeEnv{phigure}
 % The environment |phigure| allows you to draw a \href{https://github.com/objectionary/sot}{SOT} graph:
 % \begin{docshot}
 % \documentclass{article}
@@ -153,7 +151,6 @@
 % \end{phigure}
 % \end{document}
 % \end{docshot}
-% \end{macro}
 % The content of the environment is parsed line by line. Markers in each line are
 % separated by a single space. The first marker is either a unique name of a
 % vertex, like |v1| in the example above, or an edge, like |v0->v1|. All other markers are either
