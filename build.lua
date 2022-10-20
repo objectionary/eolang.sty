@@ -5,7 +5,7 @@ checkopts = "--interaction=batchmode --shell-escape"
 checkengines = {"pdftex"}
 tagfiles = {"build.lua", "phi.dtx"}
 docfiles = {"cactus.pdf", "main.bib"}
-cleanfiles = {"*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "phi.pdf"}
+cleanfiles = {"build", "_docshots", "*.pl.phi", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "phi.pdf"}
 typesetruns = 2
 
 uploadconfig = {
