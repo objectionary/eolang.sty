@@ -13,5 +13,5 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex ffcode libertine microtype hypdoc l3build href-ul newtx biblatex biber docshots
+          packages: scheme-basic xetex ffcode libertine microtype hypdoc l3build href-ul newtx biblatex biber docshots pdfcrop
       - run: l3build ctan --show-log-on-error --halt-on-error
