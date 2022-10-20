@@ -10,7 +10,7 @@ typesetruns = 2
 
 uploadconfig = {
   pkg = "phi",
-  version = "0.0.0",
+  version = "0.0.1",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
@@ -19,7 +19,7 @@ uploadconfig = {
   ctanPath = "/macros/latex/contrib/phi",
   bugtracker = "https://github.com/yegor256/phi/issues",
   home = "",
-  description = "This package helps you format expressions of 𝜑-calculus and draw SOT graphs for EO programming language",
+  description = "This package helps you format expressions of 𝜑-calculus and draw SODG graphs for EO programming language",
   development = "",
   license = "mit",
   summary = "Formulas and graphs of 𝜑-calculus",
