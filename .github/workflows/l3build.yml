@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: teatimeguest/setup-texlive-action@v2.4.1
         with:
+          update-all-packages: true
           package-file: DEPENDS.txt
           packages: scheme-basic xetex ffcode libertine microtype hypdoc l3build href-ul newtx biblatex biber
       - run: l3build ctan --show-log-on-error --halt-on-error
