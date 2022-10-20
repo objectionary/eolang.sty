@@ -136,21 +136,21 @@
 % \end{document}
 % \end{docshot}
 
-% \DescribeEnv{phigure}
-% The environment |phigure| allows you to draw a \href{https://github.com/objectionary/sodg}{SODG} graph:
+% \DescribeEnv{sodg}
+% The environment |sodg| allows you to draw a \href{https://github.com/objectionary/sodg}{SODG} graph:
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
 % \begin{document}
-% \begin{phigure}
+% \begin{sodg}
 % v0
 % v1 xy:v0,-2,+1 data:|42|
 % v0->v1 a:$x$ rho
 % v2 xy:v0,+1,+1 atom:$\xi.x+1$
 % v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10
-% \end{phigure}
+% \end{sodg}
 % \end{document}
 % \end{docshot}
 % The content of the environment is parsed line by line. Markers in each line are
@@ -342,7 +342,7 @@ print '\end{phig}', "\n", '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{phigure}
+% \begin{macro}{tikz}
 % Then, we include |tikz| package and its libraries:
 %    \begin{macrocode}
 \RequirePackage{tikz}
@@ -389,18 +389,18 @@ print '\end{phig}', "\n", '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{phigure}
+% \begin{macro}{sodg}
 % Then, create a new environment |figure|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
-\NewDocumentEnvironment{phigure}{b}{%
+\NewDocumentEnvironment{sodg}{b}{%
   \catcode`\ =10 %
   \catcode`\^^M=5 %
   \iexec[trace,stdout=\jobname.tex.eolang]{
     perl \jobname.pl.eolang '\detokenize{#1}'}%
 }{}
-\AddToHook{env/phigure/before}{\bgroup\obeylines\obeyspaces}
-\AddToHook{env/phigure/after}{\egroup}
+\AddToHook{env/sodg/before}{\bgroup\obeylines\obeyspaces}
+\AddToHook{env/sodg/after}{\egroup}
 %    \end{macrocode}
 % \end{macro}
 
