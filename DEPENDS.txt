@@ -4,3 +4,4 @@ hard amsfonts
 hard iexec
 hard pgf
 hard fancyvrb
+hard pgfopts
