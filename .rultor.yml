@@ -14,7 +14,7 @@ release:
   script: |-
     l3build tag ${tag}
     l3build ctan || echo "fail"
-    cat build/doc/phi.log
+    cat build/doc/eolang.log
     exit -1
     texsc
     texqc

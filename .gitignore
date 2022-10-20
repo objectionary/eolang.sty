@@ -2,11 +2,11 @@
 build/
 _docshots/
 _minted-*/
-phi.tex
-*.phi
+eolang.tex
+*.eolang
 *.zip
 *.toc
-phi.pdf
+eolang.pdf
 *.bbl
 *.bcf
 *.blg

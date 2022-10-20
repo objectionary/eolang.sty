@@ -1,18 +1,18 @@
-[![l3build](https://github.com/yegor256/phi/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/phi/actions/workflows/l3build.yml)
-[![CTAN](https://img.shields.io/ctan/v/phi)](https://ctan.org/pkg/phi)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/phi/blob/master/LICENSE.txt)
+[![l3build](https://github.com/yegor256/eolang.sty/actions/workflows/l3build.yml/badge.svg)](https://github.com/yegor256/eolang.sty/actions/workflows/l3build.yml)
+[![CTAN](https://img.shields.io/ctan/v/eolang.sty)](https://ctan.org/pkg/eolang.sty)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/yegor256/eolang.sty/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write 𝜑-calculus formulas and
 [SODG](https://github.com/objectionary/sodg) graphs
 for [EO](https://www.eolang.org) programming language.
 
 First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)
-from [CTAN](https://ctan.org/pkg/phi)
+from [CTAN](https://ctan.org/pkg/eolang)
 and then use in the preamble:
 
 ```tex
 \documentclass{article}
-\usepackage{phi}
+\usepackage{eolang}
 \begin{document}
 \begin{phiquation}
 x -> [

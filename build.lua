@@ -1,29 +1,29 @@
-module = "phi"
+module = "eolang"
 ctanupload = true
 typesetopts = "--interaction=batchmode --shell-escape"
 checkopts = "--interaction=batchmode --shell-escape"
 checkengines = {"pdftex"}
-tagfiles = {"build.lua", "phi.dtx"}
+tagfiles = {"build.lua", "eolang.dtx"}
 docfiles = {"cactus.pdf", "main.bib"}
-cleanfiles = {"build", "_docshots", "*.pl.phi", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "phi.pdf"}
+cleanfiles = {"build", "_docshots", "*.pl.eolang", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "eolang.pdf"}
 typesetruns = 2
 
 uploadconfig = {
-  pkg = "phi",
+  pkg = "eolang",
   version = "0.0.1",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
   note = "Bug fixes",
   announcement = "",
-  ctanPath = "/macros/latex/contrib/phi",
-  bugtracker = "https://github.com/yegor256/phi/issues",
+  ctanPath = "/macros/latex/contrib/eolang",
+  bugtracker = "https://github.com/yegor256/eolang.sty/issues",
   home = "",
   description = "This package helps you format expressions of 𝜑-calculus and draw SODG graphs for EO programming language",
   development = "",
   license = "mit",
   summary = "Formulas and graphs of 𝜑-calculus",
-  repository = "https://github.com/yegor256/phi",
+  repository = "https://github.com/yegor256/eolang.sty",
   support = "",
   topic = {"graph"}
 }

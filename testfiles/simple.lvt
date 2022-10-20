@@ -1,6 +1,6 @@
 \input{regression-test.tex}
 \documentclass{article}
-\usepackage{phi}
+\usepackage{eolang}
 \begin{document}
 \START
 

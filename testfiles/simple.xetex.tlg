@@ -59,8 +59,8 @@ Type  H <return>  for immediate help.
 l. ...\end
          {phigure}
 (That was another \errmessage.)
-runsystem( perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi)...executed.
-iexec: [ perl simple.pl.phi '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.phi]
-iexec: Due to 'quiet' we didn't read the content of 'simple.tex.phi'
-iexec: Due to 'trace' option, the file 'simple.tex.phi' was not deleted
-(simple.tex.phi)
+runsystem( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.eolang)...executed.
+iexec: [ perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:$\ff {hi}$ bend:-15^^Mv2->v0 pi bend:10^^M' > simple.tex.eolang]
+iexec: Due to 'quiet' we didn't read the content of 'simple.tex.eolang'
+iexec: Due to 'trace' option, the file 'simple.tex.eolang' was not deleted
+(simple.tex.eolang)

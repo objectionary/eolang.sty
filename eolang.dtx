@@ -40,17 +40,17 @@
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 
-% \GetFileInfo{phi.dtx}
+% \GetFileInfo{eolang.dtx}
 % \DoNotIndex{\endgroup,\begingroup,\let,\else,\s,\n,\r,\\,\1,\fi}
 
 % \iffalse
 %<*driver>
-\ProvidesFile{phi.dtx}
+\ProvidesFile{eolang.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{phi}
+%<package>\ProvidesPackage{eolang}
 %<*package>
-[0000-00-00 0.0.0 Formulas and Graphs of phi-calculus]
+[0000-00-00 0.0.0 Formulas and Graphs for EO Programming Language]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -60,22 +60,22 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage[runs=1,dtx]{docshots}
-\docshotPrerequisite{phi.sty}
-\usepackage{phi}
+\docshotPrerequisite{eolang.sty}
+\usepackage{eolang}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
 \begin{document}
-	\DocInput{phi.dtx}
+	\DocInput{eolang.dtx}
 	\PrintChanges
 	\PrintIndex
 \end{document}
 %</driver>
 % \fi
 
-% \title{\includegraphics[height=1in]{cactus.pdf} \\ |phi|: \LaTeX{} Package \\ for Formulas and Graphs of $\varphi$-calculus\thanks{The sources are in GitHub at \href{https://github.com/yegor256/phi}{yegor256/phi}}}
+% \title{\includegraphics[height=1in]{cactus.pdf} \\ |eolang|: \LaTeX{} Package \\ for Formulas and Graphs \\ of EO Programming Language \\ and $\varphi$-calculus\thanks{The sources are in GitHub at \href{https://github.com/yegor256/eolang.sty}{yegor256/eolang.sty}}}
 % \author{Yegor Bugayenko \\ \texttt{yegor256@gmail.com}}
 % \date{\filedate, \fileversion}
 %
@@ -95,7 +95,7 @@
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
-% \usepackage{phi}
+% \usepackage{eolang}
 % \begin{document}
 % \begin{phiquation*}
 % a -> [
@@ -126,7 +126,7 @@
 % \documentclass{article}
 % \usepackage[paperwidth=2in]{geometry}
 % \pagestyle{empty}
-% \usepackage{phi}
+% \usepackage{eolang}
 % \begin{document}
 % A simple object
 % \phiq{x -> [\varphi -> y]}
@@ -141,7 +141,7 @@
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
-% \usepackage{phi}
+% \usepackage{eolang}
 % \begin{document}
 % \begin{phigure}
 % v0
@@ -189,12 +189,12 @@
 \RequirePackage{fancyvrb}
 %    \end{macrocode}
 
-% \begin{macro}{\phi@env}
-% Then, we define |\phi@env| supplementary command.
+% \begin{macro}{\eolang@env}
+% Then, we define |\eolang@env| supplementary command.
 % It is implemented with the help of |\iexec| from
 % \href{https://github.com/yegor256/iexec}{iexec} package:
 %    \begin{macrocode}
-\makeatletter\newcommand\phi@env[2]{
+\makeatletter\newcommand\eolang@env[2]{
   \iexec[trace]{
     /bin/echo -n '\\begin{#1}\\begin{split} &';
     /bin/echo -n '\detokenize{#2}'
@@ -221,10 +221,10 @@
 %    \begin{macrocode}
 \makeatletter
 \NewDocumentEnvironment{phiquation*}{b}{%
-  \phi@env{equation*}{#1}
+  \eolang@env{equation*}{#1}
 }{}
 \NewDocumentEnvironment{phiquation}{b}{%
-  \phi@env{equation}{#1}
+  \eolang@env{equation}{#1}
 }{}
 \makeatother
 \AddToHook{env/phiquation*/begin}{\obeylines\obeyspaces}
@@ -253,7 +253,7 @@
 % \begin{macro}{Perl}
 % Then, create a Perl script:
 %    \begin{macrocode}
-\begin{VerbatimOut}{\jobname.pl.phi}
+\begin{VerbatimOut}{\jobname.pl.eolang}
 $tex = $ARGV[0];
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
@@ -336,9 +336,9 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jphi: file with Perl script (\jobname.pl.phi) saved^^J}%
+\message{^^Jeolang: file with Perl script (\jobname.pl.eolang) saved^^J}%
 \iexec[trace,stdout=/dev/null]{
-  perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.phi}
+  perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.eolang}
 %    \end{macrocode}
 % \end{macro}
 
@@ -396,8 +396,8 @@ print '\end{phig}', "\n", '\endinput';
 \NewDocumentEnvironment{phigure}{b}{%
   \catcode`\ =10 %
   \catcode`\^^M=5 %
-  \iexec[trace,stdout=\jobname.tex.phi]{
-    perl \jobname.pl.phi '\detokenize{#1}'}%
+  \iexec[trace,stdout=\jobname.tex.eolang]{
+    perl \jobname.pl.eolang '\detokenize{#1}'}%
 }{}
 \AddToHook{env/phigure/before}{\bgroup\obeylines\obeyspaces}
 \AddToHook{env/phigure/after}{\egroup}
