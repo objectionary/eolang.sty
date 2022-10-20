@@ -1,5 +1,6 @@
 .DS_Store
 build/
+_docshots/
 _minted-*/
 phi.tex
 *.phi

@@ -59,7 +59,8 @@
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
 \usepackage{graphicx}
-\usepackage{/code/ctan/docshots/docshots}
+\usepackage[log=log,runs=1,dtx]{docshots}
+\docshotPrerequisite{phi.sty}
 \usepackage{phi}
 \usepackage{href-ul}
 \PageIndex
@@ -93,9 +94,9 @@
 % a simple expression:
 % \begin{docshot}
 % \documentclass{article}
+% \pagestyle{empty}
 % \usepackage{phi}
 % \begin{document}
-% \pagestyle{empty}
 % \begin{phiquation*}
 % a -> [
 %   b -> [ c -> |x|(56),
@@ -123,9 +124,10 @@
 % using the same simple plain-text notation:
 % \begin{docshot}
 % \documentclass{article}
+% \usepackage[paperwidth=2in]{geometry}
+% \pagestyle{empty}
 % \usepackage{phi}
 % \begin{document}
-% \pagestyle{empty}
 % A simple object
 % \phiq{x -> [\varphi -> y]}
 % is a decorator of
@@ -138,9 +140,9 @@
 % The environment |phigure| allows you to draw a \href{https://github.com/objectionary/sot}{SOT} graph:
 % \begin{docshot}
 % \documentclass{article}
+% \pagestyle{empty}
 % \usepackage{phi}
 % \begin{document}
-% \pagestyle{empty}
 % \begin{phigure}
 % v0
 % v1 xy:v0,-2,+1 data:|42|
@@ -193,7 +195,7 @@
 % \href{https://github.com/yegor256/iexec}{iexec} package:
 %    \begin{macrocode}
 \makeatletter\newcommand\phi@env[2]{
-  \iexec[trace]{(
+  \iexec[trace]{
     /bin/echo -n '\\begin{#1}\\begin{split} &';
     /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
@@ -209,7 +211,7 @@
       | perl -pe 's/ {2}/\\\\quad{}/g'
       ;
     /bin/echo -n '\\end{split}\\end{#1}\\endinput'
-  )}%
+  }%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -234,7 +236,7 @@
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \newcommand\phiq[1]{
-  \iexec[trace]{(
+  \iexec[trace]{
     /bin/echo -n '$';
     /bin/echo -n '\detokenize{#1}'
       | perl -pe 's/->/\\\\mapsto/g'
@@ -243,7 +245,7 @@
       | perl -pe 's/\\]/\\\\rrbracket/g'
       ;
     /bin/echo -n '$\\endinput'
-  )}%
+  }%
 }
 %    \end{macrocode}
 % \end{macro}
