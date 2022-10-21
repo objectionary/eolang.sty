@@ -103,6 +103,8 @@
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ~> |01-FE-C3| ]]]],
+
+% x -> [[ \alpha_0 -> ? ]]
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -119,6 +121,8 @@
 %     (|\xi|),
 %   \item ``|&|'' maps to ``$\sigma$''
 %     (|\sigma|),
+%   \item ``|?|'' maps to ``$\varnothing$''
+%     (|\varnothing|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|!->|'' maps to ``$\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto$''
@@ -220,6 +224,7 @@
     /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
+      | perl -pe 's/\\?/\\\\varnothing/g'
       | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/&/\\\\sigma/g'
       | perl -pe 's/\\^/\\\\rho/g'
@@ -270,6 +275,7 @@
       | perl -pe 's/\\^/\\\\rho/g'
       | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/&/\\\\sigma/g'
+      | perl -pe 's/\\?/\\\\varnothing/g'
       | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto/g'
       | perl -pe 's/->/\\\\mapsto/g'
