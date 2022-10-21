@@ -100,7 +100,7 @@
 % \begin{phiquation*}
 % a -> [[
 %   ^ -> $.b,
-%   b -> [[ c -> |x|(56),
+%   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ~> |01-FE-C3| ]]]],
 
@@ -200,8 +200,8 @@
 %    \begin{macrocode}
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{amsfonts}
-\RequirePackage{mathtools}
 \RequirePackage{iexec}
 \RequirePackage{fancyvrb}
 %    \end{macrocode}
@@ -370,7 +370,7 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: file with Perl script (\jobname.pl.eolang) saved^^J}%
+\message{^^Jeolang: File with Perl script (\jobname.pl.eolang) saved^^J}%
 \iexec[trace,stdout=/dev/null]{
   perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.eolang}
 %    \end{macrocode}
