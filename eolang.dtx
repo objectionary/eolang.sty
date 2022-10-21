@@ -178,8 +178,6 @@
 
 % \section{Implementation}
 
-% \changes{v0.0.1}{2022/10/05}{Initial version}
-
 % First, we include a few packages:
 %    \begin{macrocode}
 \RequirePackage{stmaryrd}
@@ -390,6 +388,7 @@ print '\end{phig}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{sodg}
+% \changes{v0.0.2}{2022/10/20}{The environment "phigure" renamed to "sodg" for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name "sodg" is better.}
 % Then, create a new environment |figure|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
@@ -407,8 +406,8 @@ print '\end{phig}', "\n", '\endinput';
 % \Finale
 
 % \clearpage
-
 % \printbibliography
+% \clearpage
 
 % \PrintChanges
 % \clearpage
