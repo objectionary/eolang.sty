@@ -116,6 +116,7 @@
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$'' (|\mapstochar\dashrightarrow|),
 %   \item ``|[|'' maps to ``$\llbracket$'' (|\llbracket|),
 %   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
+%   \item ``|:=|'' maps to ``$\vDash$'' (|\vDash|),
 %   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}'' (|\texttt{abc}|).
 % \end{itemize}
 
@@ -183,6 +184,7 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
+\RequirePackage{mathtools}
 \RequirePackage{iexec}
 \RequirePackage{fancyvrb}
 %    \end{macrocode}
@@ -191,6 +193,7 @@
 % Then, we define |\eolang@env| supplementary command.
 % It is implemented with the help of |\iexec| from
 % \href{https://github.com/yegor256/iexec}{iexec} package:
+% \changes{0.0.2}{2022/10/21}{Symbol ":=" added for basket assignments in phiPU}
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@env[2]{
   \iexec[trace]{
@@ -199,6 +202,7 @@
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/->/\\\\mapsto/g'
+      | perl -pe 's/:=/\\\\vDash/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
       | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}/g'
       | perl -pe 's/\\[/\\\\llbracket/g'

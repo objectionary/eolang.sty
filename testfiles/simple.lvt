@@ -16,7 +16,7 @@ a -> [
     \rho -> |hello|(\xi),
     \Delta ~> |01-FE-C3| ]]
 
-x -> [ \lambda ~> M_1 ]
+x := [ \lambda ~> M_1 ]
 \end{phiquation*}
 
 \begin{sodg}
