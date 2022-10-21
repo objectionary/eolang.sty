@@ -16,7 +16,7 @@ release:
   script: |-
     l3build tag ${tag}
     l3build ctan || echo 1
-    cat build/doc/eolang.log
+    cat build/test/simple.pdftex.diff
     exit -1
     texsc
     texqc
