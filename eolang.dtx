@@ -99,7 +99,7 @@
 % \begin{document}
 % \begin{phiquation*}
 % a -> [[
-%   ^ -> $.b,
+%   ^ !-> $.b,
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ~> |01-FE-C3| ]]]],
@@ -123,6 +123,8 @@
 %     (|\sigma|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
+%   \item ``|!->|'' maps to ``$\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto$''
+%     (|\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto|),
 %   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
 %     (|\xrightarrow{\text{\sffamily\scshape abc}}|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$''
@@ -225,6 +227,7 @@
       | perl -pe 's/\\^/\\\\rho/g'
       | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
+      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/:=/\\\\vDash/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
@@ -270,6 +273,7 @@
       | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/&/\\\\sigma/g'
       | perl -pe 's/@/\\\\varphi/g'
+      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'

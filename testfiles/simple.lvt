@@ -13,7 +13,7 @@ v0->v1 a:$x$ rho
 \begin{phiquation*}
 a -> [[
   @ -> &.z,
-  ^ -> $.b,
+  ^ !-> $.b,
   b -> [[ c -> |x|(56),
     \rho -> |hello|($),
     \Delta ~> |01-FE-C3| ]]]]
