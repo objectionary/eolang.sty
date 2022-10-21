@@ -25,7 +25,7 @@ uploadconfig = {
   summary = "Formulas and graphs for EO programming language",
   repository = "https://github.com/yegor256/eolang.sty",
   support = "",
-  topic = {"graph"}
+  topic = {"program-doc", "diagram"}
 }
 
 function update_tag(file, content, tagname, tagdate)
