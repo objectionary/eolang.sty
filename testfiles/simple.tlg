@@ -9,30 +9,50 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: Due to 'trace' option, the file 'simple.tex.eolang' was not deleted
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^Mx := [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1)...executed.
-iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^Mx := [ \lambda  ~> M_1 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1]
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> ^^e2^^88^^85 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1)...executed.
+iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|(\xi ),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> ^^e2^^88^^85 ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1]
 iexec: We include the content of 'iexec.tmp' (1386 bytes)...
 (iexec.tmp
 ! Undefined control sequence.
-<argument> ... \rrbracket \rrbracket \\ &x \vDash 
-                                                   [ \lambda  \mapstochar \d...
-l. ......r\dashrightarrow M_1 ]\\[-4pt] &\end{split}
+<argument> ...ket \rrbracket \\ &\beta  _1 \vDash 
+                                                   [ \varphi  \xrightarrow {...
+l. ...... wait}} ^^e2^^88^^85 ]\\[-4pt] &\end{split}
                                                   \end{equation*}\endinput
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
+! LaTeX Error: Unicode character ^^e2^^88^^85 (U+2205)
+               not set up for use with LaTeX.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...... wait}} ^^e2^^88^^85 ]\\[-4pt] &\end{split}
+                                                  \end{equation*}\endinput
+You may provide a definition with
+\DeclareUnicodeCharacter 
 ! Undefined control sequence.
-<argument> ... \rrbracket \rrbracket \\ &x \vDash 
-                                                   [ \lambda  \mapstochar \d...
-l. ......r\dashrightarrow M_1 ]\\[-4pt] &\end{split}
+<argument> ...ket \rrbracket \\ &\beta  _1 \vDash 
+                                                   [ \varphi  \xrightarrow {...
+l. ...... wait}} ^^e2^^88^^85 ]\\[-4pt] &\end{split}
                                                   \end{equation*}\endinput
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+! LaTeX Error: Unicode character ^^e2^^88^^85 (U+2205)
+               not set up for use with LaTeX.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+l. ...... wait}} ^^e2^^88^^85 ]\\[-4pt] &\end{split}
+                                                  \end{equation*}\endinput
+You may provide a definition with
+\DeclareUnicodeCharacter 
 ) iexec: The content of 'iexec.tmp' was included into the document
 iexec: Due to 'trace' option, the file 'iexec.tmp' was not deleted
 runsystem(( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M') > simple.tex.eolang 2>&1)...executed.

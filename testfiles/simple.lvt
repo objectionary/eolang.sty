@@ -12,11 +12,12 @@ v0->v1 a:$x$ rho
 
 \begin{phiquation*}
 a -> [[
+  @ -> c,
   b -> [[ c -> |x|(56),
     \rho -> |hello|(\xi),
     \Delta ~> |01-FE-C3| ]]]]
 
-x := [ \lambda ~> M_1 ]
+\beta_1 := [ \varphi -wait> \varnothing ]
 \end{phiquation*}
 
 \begin{sodg}
