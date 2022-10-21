@@ -100,7 +100,7 @@
 % \begin{phiquation*}
 % a -> [[
 %   b -> [[ c -> |x|(56),
-%     \rho -> |hello|(\xi),
+%     @ -> |hello|(\xi),
 %     \Delta ~> |01-FE-C3| ]]]],
 
 % x -> [ \lambda ~> M_1 ].
@@ -112,6 +112,8 @@
 % The environment |phiquation| lets you write a $\varphi$-calculus expressions
 % using simple plain-text notation, where:
 % \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|@|'' maps to ``$\varphi$''
+%     (|\varphi|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
@@ -198,11 +200,13 @@
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@env}
-% Then, we define |\eolang@env| supplementary command.
-% It is implemented with the help of |\iexec| from
 % \href{https://github.com/yegor256/iexec}{iexec} package:
 % \changes{0.0.2}{2022/10/21}{Symbol ":=" added for basket assignments in phiPU}
 % \changes{0.0.2}{2022/10/21}{The symbols "[" and "]" replaced with "[[" and "]]" for abstract object brackets, becuase they conflicted with normal square brackets}
+% \changes{0.0.2}{2022/10/21}{New symbol "-abc>" added for basket slots}
+% \changes{0.0.2}{2022/10/21}{Parsing of symbol "@" enabled as varphi}
+% Then, we define |\eolang@env| supplementary command.
+% It is implemented with the help of |\iexec| from
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@env[2]{
   \iexec[trace]{
@@ -210,6 +214,7 @@
     /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
+      | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/:=/\\\\vDash/g'
@@ -245,14 +250,18 @@
 % \end{macro}
 
 % \begin{macro}{\phiq}
+% \changes{0.0.2}{2022/10/21}{Parsing of symbols ":=", "-abc>", "@", "[[", and "]]" enabled}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \newcommand\phiq[1]{
   \iexec[trace]{
     /bin/echo -n '$';
     /bin/echo -n '\detokenize{#1}'
+      | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/->/\\\\mapsto/g'
+      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
+      | perl -pe 's/:=/\\\\vDash/g'
       | perl -pe 's/\\[\\[/\\\\llbracket/g'
       | perl -pe 's/\\]\\]/\\\\rrbracket/g'
       ;
@@ -403,7 +412,7 @@ print '\end{phig}', "\n", '\endinput';
 
 % \begin{macro}{sodg}
 % \changes{v0.0.2}{2022/10/20}{The environment "phigure" renamed to "sodg" for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name "sodg" is better.}
-% Then, create a new environment |figure|, as suggested
+% Then, create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
 \NewDocumentEnvironment{sodg}{b}{%
