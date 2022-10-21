@@ -98,10 +98,10 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{phiquation*}
-% a -> [
-%   b -> [ c -> |x|(56),
+% a -> [[
+%   b -> [[ c -> |x|(56),
 %     \rho -> |hello|(\xi),
-%     \Delta ~> |01-FE-C3| ]],
+%     \Delta ~> |01-FE-C3| ]]]],
 
 % x -> [ \lambda ~> M_1 ].
 % \end{phiquation*}
@@ -114,8 +114,9 @@
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|->|'' maps to ``$\mapsto$'' (|\mapsto|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$'' (|\mapstochar\dashrightarrow|),
-%   \item ``|[|'' maps to ``$\llbracket$'' (|\llbracket|),
-%   \item ``|]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
+%   \item ``|[[|'' maps to ``$\llbracket$'' (|\llbracket|),
+%   \item ``|]]|'' maps to ``$\rrbracket$'' (|\rrbracket|),
+%   \item ``|:=|'' maps to ``$\vDash$'' (|\vDash|),
 %   \item ``|:=|'' maps to ``$\vDash$'' (|\vDash|),
 %   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}'' (|\texttt{abc}|).
 % \end{itemize}
@@ -130,10 +131,10 @@
 % \usepackage{eolang}
 % \begin{document}
 % A simple object
-% \phiq{x -> [\varphi -> y]}
+% \phiq{x -> [[\varphi -> y]]}
 % is a decorator of
 % the data object
-% \phiq{y -> [\Delta ~> 42]}.
+% \phiq{y -> [[\Delta ~> 42]]}.
 % \end{document}
 % \end{docshot}
 
@@ -194,6 +195,7 @@
 % It is implemented with the help of |\iexec| from
 % \href{https://github.com/yegor256/iexec}{iexec} package:
 % \changes{0.0.2}{2022/10/21}{Symbol ":=" added for basket assignments in phiPU}
+% \changes{0.0.2}{2022/10/21}{The symbols "[" and "]" replaced with "[[" and "]]" for abstract object brackets, becuase they conflicted with normal square brackets}
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@env[2]{
   \iexec[trace]{
@@ -205,8 +207,8 @@
       | perl -pe 's/:=/\\\\vDash/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
       | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}/g'
-      | perl -pe 's/\\[/\\\\llbracket/g'
-      | perl -pe 's/\\]/\\\\rrbracket/g'
+      | perl -pe 's/\\[\\[/\\\\llbracket/g'
+      | perl -pe 's/\\]\\]/\\\\rrbracket/g'
       | perl -pe 's/\\r\\r/\\\\\\\\ \&/g'
       | perl -pe 's/\\r/\\\\\\\\[-4pt] \&/g'
       | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
@@ -243,8 +245,8 @@
     /bin/echo -n '\detokenize{#1}'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
-      | perl -pe 's/\\[/\\\\llbracket/g'
-      | perl -pe 's/\\]/\\\\rrbracket/g'
+      | perl -pe 's/\\[\\[/\\\\llbracket/g'
+      | perl -pe 's/\\]\\]/\\\\rrbracket/g'
       ;
     /bin/echo -n '$\\endinput'
   }%

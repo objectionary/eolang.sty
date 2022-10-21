@@ -11,10 +11,10 @@ v0->v1 a:$x$ rho
 \end{sodg}
 
 \begin{phiquation*}
-a -> [
-  b -> [ c -> |x|(56),
+a -> [[
+  b -> [[ c -> |x|(56),
     \rho -> |hello|(\xi),
-    \Delta ~> |01-FE-C3| ]]
+    \Delta ~> |01-FE-C3| ]]]]
 
 x := [ \lambda ~> M_1 ]
 \end{phiquation*}
