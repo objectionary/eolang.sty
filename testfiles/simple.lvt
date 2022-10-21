@@ -12,7 +12,7 @@ v0->v1 a:$x$ rho
 
 \begin{phiquation*}
 a -> [[
-  @ -> c,
+  @ -> &.z,
   ^ -> $.b,
   b -> [[ c -> |x|(56),
     \rho -> |hello|($),

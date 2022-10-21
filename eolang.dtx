@@ -119,6 +119,8 @@
 %     (|\rho|),
 %   \item ``|$|'' maps to ``$\xi$''
 %     (|\xi|),
+%   \item ``|&|'' maps to ``$\sigma$''
+%     (|\sigma|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
@@ -209,7 +211,7 @@
 % \changes{0.0.2}{2022/10/21}{Symbol ":=" added for basket assignments in phiPU}
 % \changes{0.0.2}{2022/10/21}{The symbols "[" and "]" replaced with "[[" and "]]" for abstract object brackets, becuase they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol "-abc>" added for basket slots}
-% \changes{0.0.2}{2022/10/21}{Parsing of symbol "@" enabled as varphi}
+% \changes{0.0.2}{2022/10/21}{Parsing of symbols "@", "^", and "&" enabled (varphi, rho, and sigma)}
 % Then, we define |\eolang@env| supplementary command.
 % It is implemented with the help of |\iexec| from
 %    \begin{macrocode}
@@ -220,6 +222,7 @@
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/@/\\\\varphi/g'
+      | perl -pe 's/&/\\\\sigma/g'
       | perl -pe 's/\\^/\\\\rho/g'
       | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
@@ -266,6 +269,7 @@
     /bin/echo -n '\detokenize{#1}'
       | perl -pe 's/\\^/\\\\rho/g'
       | perl -pe 's/\\$/\\\\xi/g'
+      | perl -pe 's/&/\\\\sigma/g'
       | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
