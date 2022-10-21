@@ -208,10 +208,9 @@
 
 % \begin{macro}{\eolang@env}
 % \href{https://github.com/yegor256/iexec}{iexec} package:
-% \changes{0.0.2}{2022/10/21}{Symbol ":=" added for basket assignments in phiPU}
-% \changes{0.0.2}{2022/10/21}{The symbols "[" and "]" replaced with "[[" and "]]" for abstract object brackets, becuase they conflicted with normal square brackets}
-% \changes{0.0.2}{2022/10/21}{New symbol "-abc>" added for basket slots}
-% \changes{0.0.2}{2022/10/21}{Parsing of symbols "@", "^", and "&" enabled (varphi, rho, and sigma)}
+% \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
+% \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
+% \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
 % Then, we define |\eolang@env| supplementary command.
 % It is implemented with the help of |\iexec| from
 %    \begin{macrocode}
@@ -260,7 +259,7 @@
 % \end{macro}
 
 % \begin{macro}{\phiq}
-% \changes{0.0.2}{2022/10/21}{Parsing of symbols ":=", "-abc>", "@", "[[", and "]]" enabled}
+% \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \newcommand\phiq[1]{
@@ -424,7 +423,7 @@ print '\end{phig}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{sodg}
-% \changes{v0.0.2}{2022/10/20}{The environment "phigure" renamed to "sodg" for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name "sodg" is better.}
+% \changes{0.0.2}{2022/10/20}{The environment ``phigure'' renamed to ``sodg'' for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name ``sodg'' is better.}
 % Then, create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
