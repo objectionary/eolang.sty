@@ -99,8 +99,9 @@
 % \begin{document}
 % \begin{phiquation*}
 % a -> [[
+%   ^ -> $.b,
 %   b -> [[ c -> |x|(56),
-%     @ -> |hello|(\xi),
+%     @ -> |hello|($),
 %     \Delta ~> |01-FE-C3| ]]]],
 
 % x -> [ \lambda ~> M_1 ].
@@ -114,6 +115,10 @@
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|@|'' maps to ``$\varphi$''
 %     (|\varphi|),
+%   \item ``|^|'' maps to ``$\rho$''
+%     (|\rho|),
+%   \item ``|$|'' maps to ``$\xi$''
+%     (|\xi|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
@@ -215,6 +220,8 @@
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/@/\\\\varphi/g'
+      | perl -pe 's/\\^/\\\\rho/g'
+      | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/:=/\\\\vDash/g'
@@ -257,6 +264,8 @@
   \iexec[trace]{
     /bin/echo -n '$';
     /bin/echo -n '\detokenize{#1}'
+      | perl -pe 's/\\^/\\\\rho/g'
+      | perl -pe 's/\\$/\\\\xi/g'
       | perl -pe 's/@/\\\\varphi/g'
       | perl -pe 's/->/\\\\mapsto/g'
       | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
