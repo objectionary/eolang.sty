@@ -17,13 +17,13 @@ uploadconfig = {
   note = "Bug fixes",
   announcement = "",
   ctanPath = "/macros/latex/contrib/eolang",
-  bugtracker = "https://github.com/yegor256/eolang.sty/issues",
+  bugtracker = "https://github.com/objectionary/eolang.sty/issues",
   home = "",
   description = "This package helps you format expressions of 𝜑-calculus and draw SODG graphs for EO programming language",
   development = "",
   license = "mit",
   summary = "Formulas and graphs for EO programming language",
-  repository = "https://github.com/yegor256/eolang.sty",
+  repository = "https://github.com/objectionary/eolang.sty",
   support = "",
   topic = {"program-doc", "diagram"}
 }
