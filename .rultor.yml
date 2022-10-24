@@ -9,6 +9,7 @@ install: |-
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
   sudo tlmgr --verify-repo=none install l3build
+  sudo tlmgr --verify-repo=none update iexec
 merge:
   script: |-
     l3build check
