@@ -2,13 +2,8 @@
 \documentclass{article}
 \usepackage{eolang}
 \begin{document}
-\START
 
-\begin{sodg}
-v0
-v1 xy:v0,-2,+1 data:|42|
-v0->v1 a:$x$ rho
-\end{sodg}
+\START
 
 \begin{phiquation*}
 a -> [[
@@ -21,6 +16,14 @@ a -> [[
 
 \beta_1 := [ \varphi -wait> \varnothing ]
 \end{phiquation*}
+
+\phiq{x := [ \alpha_0 -rqst> ? ]}
+
+\begin{sodg}
+v0
+v1 xy:v0,-2,+1 data:|42|
+v0->v1 a:$x$ rho
+\end{sodg}
 
 \begin{sodg}
 v0

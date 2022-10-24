@@ -1,24 +1,17 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M') > simple.tex.eolang 2>&1)...executed.
-iexec: [( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M') > simple.tex.eolang 2>&1]
-iexec: We include the content of 'simple.tex.eolang' (1386 bytes)...
-(simple.tex.eolang
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &' && /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' && /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(iexec.tmp
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-iexec: Due to 'trace' option, the file 'simple.tex.eolang' was not deleted
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1)...executed.
-iexec: [( /bin/echo -n '\begin{equation*}\begin{split} &'; /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' ; /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1]
-iexec: We include the content of 'iexec.tmp' (1386 bytes)...
-(iexec.tmp
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
 ) iexec: The content of 'iexec.tmp' was included into the document
-iexec: Due to 'trace' option, the file 'iexec.tmp' was not deleted
-runsystem(( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M') > simple.tex.eolang 2>&1)...executed.
-iexec: [( perl simple.pl.eolang '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M') > simple.tex.eolang 2>&1]
-iexec: We include the content of 'simple.tex.eolang' (1386 bytes)...
+runsystem(( /bin/echo -n '$' && /bin/echo -n 'x := [ \alpha _0 -rqst> ? ]' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' && /bin/echo -n '$\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(iexec.tmp) iexec: The content of 'iexec.tmp' was included into the document
+runsystem(( perl eolang.pl '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M') > simple.tex.eolang 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (simple.tex.eolang) iexec: The content of 'simple.tex.eolang' was included into the document
-iexec: Due to 'trace' option, the file 'simple.tex.eolang' was not deleted
+runsystem(( perl eolang.pl '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M') > simple.tex.eolang 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(simple.tex.eolang) iexec: The content of 'simple.tex.eolang' was included into the document

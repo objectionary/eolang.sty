@@ -1,7 +1,7 @@
 module = "eolang"
 ctanupload = true
-typesetopts = "--interaction=batchmode --shell-escape"
-checkopts = "--interaction=batchmode --shell-escape"
+typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
+checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkengines = {"pdftex"}
 tagfiles = {"build.lua", "eolang.dtx"}
 docfiles = {"cactus.pdf", "main.bib"}

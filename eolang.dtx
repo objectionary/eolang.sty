@@ -60,7 +60,6 @@
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage[runs=1,dtx]{docshots}
-\docshotPrerequisite{eolang.sty}
 \usepackage{eolang}
 \usepackage{href-ul}
 \PageIndex
@@ -127,18 +126,21 @@
 %     (|\mapsto|),
 %   \item ``|!->|'' maps to ``$\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto$''
 %     (|\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto|),
-%   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
-%     (|\xrightarrow{\text{\sffamily\scshape abc}}|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$''
 %     (|\mapstochar\dashrightarrow|),
 %   \item ``|[[|'' maps to ``$\llbracket$''
 %     (|\llbracket|),
 %   \item ``|]]|'' maps to ``$\rrbracket$''
 %     (|\rrbracket|),
-%   \item ``|:=|'' maps to ``$\vDash$''
-%     (|\vDash|),
 %   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
+% \end{itemize}
+% Also, a few symbols are supported for $\varphi$PU architecture:
+% \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
+%     (|\xrightarrow{\text{\sffamily\scshape abc}}|),
+%   \item ``|:=|'' maps to ``$\vDash$''
+%     (|\vDash|).
 % \end{itemize}
 
 % \DescribeMacro{\phiq}
@@ -151,7 +153,7 @@
 % \usepackage{eolang}
 % \begin{document}
 % A simple object
-% \phiq{x -> [[\varphi -> y]]}
+% \phiq{x -> [[@ -> y]]}
 % is a decorator of
 % the data object
 % \phiq{y -> [[\Delta ~> 42]]}.
@@ -211,16 +213,17 @@
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@env}
-% \href{https://github.com/yegor256/iexec}{iexec} package:
 % \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
 % Then, we define |\eolang@env| supplementary command.
 % It is implemented with the help of |\iexec| from
+% \href{https://github.com/yegor256/iexec}{iexec} package:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@env[2]{
   \iexec[trace]{
-    /bin/echo -n '\\begin{#1}\\begin{split} &';
+    /bin/echo -n '\\begin{#1}\\begin{split} &'
+    &&
     /bin/echo -n '\detokenize{#2}'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
@@ -241,7 +244,7 @@
       | perl -pe 's/\\r/\\\\\\\\[-4pt] \&/g'
       | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
       | perl -pe 's/ {2}/\\\\quad{}/g'
-      ;
+      &&
     /bin/echo -n '\\end{split}\\end{#1}\\endinput'
   }%
 }\makeatother
@@ -270,7 +273,8 @@
 %    \begin{macrocode}
 \newcommand\phiq[1]{
   \iexec[trace]{
-    /bin/echo -n '$';
+    /bin/echo -n '$'
+    &&
     /bin/echo -n '\detokenize{#1}'
       | perl -pe 's/\\^/\\\\rho/g'
       | perl -pe 's/\\$/\\\\xi/g'
@@ -284,7 +288,7 @@
       | perl -pe 's/:=/\\\\vDash/g'
       | perl -pe 's/\\[\\[/\\\\llbracket/g'
       | perl -pe 's/\\]\\]/\\\\rrbracket/g'
-      ;
+    &&
     /bin/echo -n '$\\endinput'
   }%
 }
@@ -292,9 +296,10 @@
 % \end{macro}
 
 % \begin{macro}{Perl}
+% \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % Then, create a Perl script:
 %    \begin{macrocode}
-\begin{VerbatimOut}{\jobname.pl.eolang}
+\begin{VerbatimOut}{eolang.pl}
 $tex = $ARGV[0];
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
@@ -377,9 +382,8 @@ foreach my $c (@cmds) {
 }
 print '\end{phig}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (\jobname.pl.eolang) saved^^J}%
-\iexec[trace,stdout=/dev/null]{
-  perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' \jobname.pl.eolang}
+\message{^^Jeolang: File with Perl script (eolang.pl) saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang.pl}
 %    \end{macrocode}
 % \end{macro}
 
@@ -393,7 +397,6 @@ print '\end{phig}', "\n", '\endinput';
   \usetikzlibrary{decorations.pathmorphing}
   \usetikzlibrary{intersections}
   \usetikzlibrary{positioning}
-  \usetikzlibrary{backgrounds}
   \usetikzlibrary{calc}
   \usetikzlibrary{shapes.arrows}
 %    \end{macrocode}
@@ -439,7 +442,7 @@ print '\end{phig}', "\n", '\endinput';
   \catcode`\ =10 %
   \catcode`\^^M=5 %
   \iexec[trace,stdout=\jobname.tex.eolang]{
-    perl \jobname.pl.eolang '\detokenize{#1}'}%
+    perl eolang.pl '\detokenize{#1}'}%
 }{}
 \AddToHook{env/sodg/before}{\bgroup\obeylines\obeyspaces}
 \AddToHook{env/sodg/after}{\egroup}
