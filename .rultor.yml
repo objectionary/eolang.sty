@@ -9,7 +9,7 @@ install: |-
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
   sudo tlmgr --verify-repo=none install l3build
-  sudo tlmgr --verify-repo=none update iexec docshots acmart booktabs totpages setspace
+  sudo tlmgr --verify-repo=none update iexec docshots acmart booktabs totpages setspace textcase
 merge:
   script: |-
     l3build check
