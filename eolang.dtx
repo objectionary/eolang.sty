@@ -257,6 +257,7 @@
     /bin/echo -n '\\begin{#1}\\begin{split} &'
     &&
     /bin/echo -n '\detokenize{#2}'
+      | perl -e 'if (index(<STDIN>, "\\\\t") > 0) { print "TABS"; } else { print <STDIN>; }'
       | perl -pe 's/^\\r\\+//g'
       | perl -pe 's/\\r\\+$//g'
       | perl -pe 's/\\?/\\\\varnothing/g'
