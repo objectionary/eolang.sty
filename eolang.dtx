@@ -198,6 +198,21 @@
 %   \item ``|pi|'' makes it dotted, with $\pi$ label.
 % \end{itemize}
 
+% \DescribeMacro{\eolang}
+% There is also a no-argument command |\eolang| to help you print the name of
+% the language. It understands |anonymous| mode of |acmart| and prints itself
+% differently, to double-blind your paper.
+% \begin{docshot}
+% \documentclass[anonymous]{acmart}
+% \thispagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}
+% In our research we use \eolang{},\\
+% an experimental object-oriented\\
+% dataflow language.
+% \end{document}
+% \end{docshot}
+
 % \StopEventually{}
 
 % \section{Implementation}
@@ -206,7 +221,7 @@
 %    \begin{macrocode}
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
-\RequirePackage{amssymb}
+\let\Bbbk\relax\RequirePackage{amssymb}
 \RequirePackage{amsfonts}
 \RequirePackage{iexec}
 \RequirePackage{fancyvrb}
@@ -446,6 +461,20 @@ print '\end{phig}', "\n", '\endinput';
 }{}
 \AddToHook{env/sodg/before}{\bgroup\obeylines\obeyspaces}
 \AddToHook{env/sodg/after}{\egroup}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\eolang}
+% \changes{0.0.3}{2022/10/25}{New command "eolang" added to print the name of the language in both
+% normal and anonymous mode of "acmart"}
+%    \begin{macrocode}
+\makeatletter\newcommand\eolang{%
+  \ifdefined\anon%
+    \anon[XYZ]{\sffamily EO}%
+  \else%
+    {\sffamily EO}%
+  \fi%
+}\makeatother
 %    \end{macrocode}
 % \end{macro}
 
