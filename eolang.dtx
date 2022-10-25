@@ -216,6 +216,23 @@
 % \end{document}
 % \end{docshot}
 
+% \section{Examples}
+
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{amsmath}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% \dfrac \
+%  {x->[[@->y]]  y->[[z->|42|]]} \
+%  {x.z -> |42|} \
+%  {R1}
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % \StopEventually{}
 
 % \section{Implementation}
@@ -253,26 +270,27 @@
 % \href{https://github.com/yegor256/iexec}{iexec} package:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@env[2]{
-  \iexec[trace]{
+  \iexec[trace,stdout=eolang.stdout]{
     /bin/echo -n '\\begin{#1}\\begin{split} &'
     &&
     /bin/echo -n '\detokenize{#2}'
-      | perl -e 'if (index(<STDIN>, "\\\\t") > 0) { print "TABS"; } else { print <STDIN>; }'
-      | perl -pe 's/^\\r\\+//g'
-      | perl -pe 's/\\r\\+$//g'
-      | perl -pe 's/\\?/\\\\varnothing/g'
-      | perl -pe 's/@/\\\\varphi/g'
-      | perl -pe 's/&/\\\\sigma/g'
-      | perl -pe 's/\\^/\\\\rho/g'
-      | perl -pe 's/\\$/\\\\xi/g'
-      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
-      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto/g'
-      | perl -pe 's/->/\\\\mapsto/g'
-      | perl -pe 's/:=/\\\\vDash/g'
-      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
-      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}/g'
-      | perl -pe 's/\\[\\[/\\\\llbracket/g'
-      | perl -pe 's/\\]\\]/\\\\rrbracket/g'
+      | perl -e '$i = <STDIN>; if (index($i, "\\\\t") > 0) { print "TABS"; } else { print $i; }'
+      | perl -pe 's/^\\r+//g'
+      | perl -pe 's/\\r+$//g'
+      | perl -pe 's/ *\\\\\\r */ /g'
+      | perl -pe 's/\\?/\\\\varnothing{}/g'
+      | perl -pe 's/@/\\\\varphi{}/g'
+      | perl -pe 's/&/\\\\sigma{}/g'
+      | perl -pe 's/\\^/\\\\rho{}/g'
+      | perl -pe 's/\\$/\\\\xi{}/g'
+      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}{}/g'
+      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto{}/g'
+      | perl -pe 's/->/\\\\mapsto{}/g'
+      | perl -pe 's/:=/\\\\vDash{}/g'
+      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow{}/g'
+      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}{}/g'
+      | perl -pe 's/\\[\\[/\\\\llbracket{}/g'
+      | perl -pe 's/\\]\\]/\\\\rrbracket{}/g'
       | perl -pe 's/\\r\\r/\\\\\\\\ \&/g'
       | perl -pe 's/\\r/\\\\\\\\[-4pt] \&/g'
       | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
@@ -309,18 +327,19 @@
     /bin/echo -n '$'
     &&
     /bin/echo -n '\detokenize{#1}'
-      | perl -pe 's/\\^/\\\\rho/g'
-      | perl -pe 's/\\$/\\\\xi/g'
-      | perl -pe 's/&/\\\\sigma/g'
-      | perl -pe 's/\\?/\\\\varnothing/g'
-      | perl -pe 's/@/\\\\varphi/g'
-      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto/g'
-      | perl -pe 's/->/\\\\mapsto/g'
-      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}/g'
-      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow/g'
-      | perl -pe 's/:=/\\\\vDash/g'
-      | perl -pe 's/\\[\\[/\\\\llbracket/g'
-      | perl -pe 's/\\]\\]/\\\\rrbracket/g'
+      | perl -pe 's/\\^/\\\\rho{}/g'
+      | perl -pe 's/\\$/\\\\xi{}/g'
+      | perl -pe 's/&/\\\\sigma{}/g'
+      | perl -pe 's/\\?/\\\\varnothing{}/g'
+      | perl -pe 's/@/\\\\varphi{}/g'
+      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto{}/g'
+      | perl -pe 's/->/\\\\mapsto{}/g'
+      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}{}/g'
+      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow{}/g'
+      | perl -pe 's/:=/\\\\vDash{}/g'
+      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}{}/g'
+      | perl -pe 's/\\[\\[/\\\\llbracket{}/g'
+      | perl -pe 's/\\]\\]/\\\\rrbracket{}/g'
     &&
     /bin/echo -n '$\\endinput'
   }%

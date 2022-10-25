@@ -3,6 +3,10 @@ build/
 _docshots/
 _minted-*/
 eolang.tex
+eolang.pl
+eolang.ret
+eolang.stdout
+eolang.stderr
 *.eolang
 *.zip
 *.toc
