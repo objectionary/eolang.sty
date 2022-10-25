@@ -16,7 +16,7 @@ and then use in the preamble:
 \begin{document}
 \begin{phiquation}
 x -> [
-  \varphi -> |foo|(5),
+  @ -> |foo|(5),
   y -> [ \lambda -> M_1 ]].
 \end{phiquation}
 \end{document}
