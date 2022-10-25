@@ -220,14 +220,28 @@
 
 % \section{Implementation}
 
-% First, we include a few packages:
+% First, we include a few packages.
+
+% We need \href{https://ctan.org/pkg/stmaryrd}{stmaryrd} for |\llbracket| and |\rrbracket| commands.
 %    \begin{macrocode}
 \RequirePackage{stmaryrd}
+%    \end{macrocode}
+% We need \href{https://ctan.org/pkg/amsmath}{amsmath} for |equation*| environment.
+%    \begin{macrocode}
 \RequirePackage{amsmath}
+%    \end{macrocode}
+% We need \href{https://ctan.org/pkg/amssymb}{amssymb} for |\varnothing| command. We disable |\Bbbk|
+% because it may conflict with some packages from \href{https://ctan.org/pkg/acmart}{acmart}.
+%    \begin{macrocode}
 \let\Bbbk\relax\RequirePackage{amssymb}
-\RequirePackage{amsfonts}
-\RequirePackage{iexec}
+%    \end{macrocode}
+% We need \href{https://ctan.org/pkg/fancyvrb}{fancyvrb} for |\VerbatimEnvironment| command.
+%    \begin{macrocode}
 \RequirePackage{fancyvrb}
+%    \end{macrocode}
+% We need \href{https://ctan.org/pkg/iexec}{iexec} for executing Perl scripts.
+%    \begin{macrocode}
+\RequirePackage{iexec}
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@env}
