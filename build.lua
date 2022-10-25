@@ -4,7 +4,7 @@ typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkengines = {"pdftex"}
 tagfiles = {"build.lua", "eolang.dtx"}
-docfiles = {"cactus.pdf", "main.bib"}
+docfiles = {"cactus.pdf", "eolang.bib"}
 cleanfiles = {"build", "_docshots", "*.pl.eolang", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "eolang.pdf"}
 typesetruns = 2
 

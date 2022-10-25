@@ -1,5 +1,5 @@
 [![l3build](https://github.com/objectionary/eolang.sty/actions/workflows/l3build.yml/badge.svg)](https://github.com/objectionary/eolang.sty/actions/workflows/l3build.yml)
-[![CTAN](https://img.shields.io/ctan/v/eolang.sty)](https://ctan.org/pkg/eolang.sty)
+[![CTAN](https://img.shields.io/ctan/v/eolang)](https://ctan.org/pkg/eolang)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/objectionary/eolang.sty/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write 𝜑-calculus formulas and
