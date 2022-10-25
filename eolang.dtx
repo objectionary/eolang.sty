@@ -199,17 +199,20 @@
 % \end{itemize}
 
 % \DescribeMacro{\eolang}
+% \DescribeMacro{\phic}
 % There is also a no-argument command |\eolang| to help you print the name of
-% the language. It understands |anonymous| mode of |acmart| and prints itself
-% differently, to double-blind your paper.
+% \eolang{} language. It understands |anonymous| mode of |acmart| and prints itself
+% differently, to double-blind your paper. There is also |\phic| command to print
+% the name of \phic{}.
 % \begin{docshot}
 % \documentclass[anonymous]{acmart}
 % \thispagestyle{empty}
 % \usepackage{eolang}
 % \begin{document}
-% In our research we use \eolang{},\\
-% an experimental object-oriented\\
-% dataflow language.
+% In our research we use \eolang{}, \\
+% an experimental object-oriented \\
+% dataflow language, and \phic{}, \\
+% its formal foundation.
 % \end{document}
 % \end{docshot}
 
@@ -473,6 +476,20 @@ print '\end{phig}', "\n", '\endinput';
     \anon[XYZ]{\sffamily EO}%
   \else%
     {\sffamily EO}%
+  \fi%
+}\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\eolang}
+% \changes{0.0.3}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
+% normal and anonymous mode of "acmart"}
+%    \begin{macrocode}
+\makeatletter\newcommand\phic{%
+  \ifdefined\anon%
+    \anon[ABC-calculus]{$\varphi$-calculus}%
+  \else%
+    $\varphi$-calculus%
   \fi%
 }\makeatother
 %    \end{macrocode}

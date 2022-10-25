@@ -1,11 +1,11 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &' && /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' && /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(iexec.tmp
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &' && /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' && /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(iexec.tmp
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
 ) iexec: The content of 'iexec.tmp' was included into the document
