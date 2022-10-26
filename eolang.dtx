@@ -58,6 +58,7 @@
 \addbibresource{eolang.bib}
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
+\AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[runs=1,dtx]{docshots}
@@ -124,10 +125,10 @@
 %     (|\sigma|),
 %   \item ``|?|'' maps to ``$\varnothing$''
 %     (|\varnothing|),
-%   \item ``|->|'' maps to ``$\mapsto$''
-%     (|\mapsto|),
-%   \item ``|!->|'' maps to ``$\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto$''
-%     (|\mapstochar\relbar\mathrel{\mkern-12mu}\mapsto|),
+%   \item ``|->|'' maps to ``$\phiTo$''
+%     (|\phiTo|),
+%   \item ``|!->|'' maps to ``$\phiConst$''
+%     (|\phiConst|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$''
 %     (|\mapstochar\dashrightarrow|),
 %   \item ``|[[|'' maps to ``$\llbracket$''
@@ -217,6 +218,19 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\phiTo}
+% \DescribeMacro{\phiConst}
+% A few useful commands are defined to help you render arrows:
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}
+% \phiq{[[ x \phiTo |42| ]]} \\
+% \phiq{[[ y \phiConst ]]}
+% \end{document}
+% \end{docshot}
+
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
@@ -248,6 +262,22 @@
 %  {x->[[@->y]] \quad y->[[z->|42|]]} \
 %  {x.z -> |42|} \
 %  \text{\sffamily R1}
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
+% The |phiquation| environment may be used together with \href{https://ctan.org/pkg/acmart}{acmart}:
+% \begin{docshot}
+% \documentclass{acmart}
+% \usepackage{eolang}
+% \thispagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% x -> [[
+%   y -> [[
+%     z !-> $, f ~> ? ]]]],
+
+% \beta_1 := [ \psi -wait> ? ].
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -349,8 +379,8 @@ $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
-$tex =~ s/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto{}/g;
-$tex =~ s/->/\\mapsto{}/g;
+$tex =~ s/!->/\\phiConst{}/g;
+$tex =~ s/->/\\phiTo{}/g;
 $tex =~ s/:=/\\vDash{}/g;
 $tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
@@ -623,6 +653,25 @@ print '\end{phicture}', "\n", '\endinput';
     $\varphi$-calculus%
   \fi%
 }\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiTo}
+% \changes{0.0.3}{2022/10/26}{New command "phiTo" added to denoted a link to an attribute.}
+% Then, we define a command to render an arrow for attributes in an object:
+%    \begin{macrocode}
+\newcommand\phiTo{\mathrel{\mapsto}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiConst}
+% \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denoted a link to a constant attribute.}
+% Then, we define a command to render an arrow for a constant attribute, using |\mathrlap| from
+% |mathtools|:
+%    \begin{macrocode}
+\RequirePackage{mathtools}
+\newcommand\phiConst{%
+  \mathrel{\mathrlap{\mapstochar\relbar}\hspace{-.1em}\mapsto}}
 %    \end{macrocode}
 % \end{macro}
 
