@@ -7,8 +7,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 runsystem((cp "_eolang/simple/phiquation.tex" "_eolang/simple/.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/simple/.tex") > _eolang/simple/-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/-post.tex
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )
 iexec: The content of '_eolang/simple/-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/simple/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.

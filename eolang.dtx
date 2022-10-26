@@ -247,7 +247,7 @@
 % \dfrac \
 %  {x->[[@->y]] \quad y->[[z->|42|]]} \
 %  {x.z -> |42|} \
-%  {R1}
+%  \text{\sffamily R1}
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -297,6 +297,15 @@
 %    \begin{macrocode}
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 %    \end{macrocode}
+
+% \begin{macro}{\eolang@mdfive}
+% \changes{0.0.3}{2022/10/26}{New supplementary command added to calculate MD5 sum of a file.}
+% Then, we define a command for MD5 hash calculating of a file:
+%    \begin{macrocode}
+\RequirePackage{pdftexcmds}
+\makeatletter\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{1}}\makeatother
+%    \end{macrocode}
+% \end{macro}
 
 % \begin{macro}{eolang-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
@@ -372,7 +381,7 @@ print '\endinput', "\n";
 % |\eolang@process| command:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@process[1]{
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiquation.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
@@ -400,7 +409,7 @@ print '\endinput', "\n";
 \makeatletter\newcommand\phiq[1]{
   \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\detokenize{#1}'}
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
@@ -576,7 +585,7 @@ print '\end{phicture}', "\n", '\endinput';
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/sodg.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%

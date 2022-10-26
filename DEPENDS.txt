@@ -5,3 +5,4 @@ hard iexec
 hard pgf
 hard fancyvrb
 hard pgfopts
+hard pdftexcmds
