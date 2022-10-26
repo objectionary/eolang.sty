@@ -1,0 +1,284 @@
+%%
+%% This is file `eolang.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% eolang.dtx  (with options: `package')
+%% (The MIT License)
+%% 
+%% Copyright (c) 2021-2022 Yegor Bugayenko
+%% 
+%% Permission is hereby granted, free of charge, to any person obtaining a copy
+%% of this software and associated documentation files (the 'Software'), to deal
+%% in the Software without restriction, including without limitation the rights
+%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom the Software is
+%% furnished to do so, subject to the following conditions:
+%% 
+%% The above copyright notice and this permission notice shall be included in all
+%% copies or substantial portions of the Software.
+%% 
+%% THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%% SOFTWARE.
+
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eolang}
+[0000-00-00 0.0.0 Formulas and Graphs for EO Programming Language]
+
+
+
+
+
+
+
+
+
+
+
+
+\RequirePackage{stmaryrd}
+\RequirePackage{amsmath}
+\let\Bbbk\relax\RequirePackage{amssymb}
+\RequirePackage{fancyvrb}
+\RequirePackage{iexec}
+
+\begin{VerbatimOut}{eolang-phi.pl}
+$env = $ARGV[0];
+open(my $fh, '<', $ARGV[1]);
+my $tex; { local $/; $tex = <$fh>; }
+if (index($tex, "\t") > 0) {
+  print "TABS are prohibited!";
+  exit 1;
+}
+my @lines = split (/\n/g, $tex);
+foreach my $t (@lines) {
+  print '% ', $t, "\n";
+}
+if ($env eq 'phiq') {
+  print '$';
+} else {
+  print '\begin{', $env, '}\begin{split} &';
+}
+$tex =~ s/^\s+|\s+$//g;
+if ($env ne 'phiq') {
+  $tex =~ s/\s*\\\n\s*//g;
+}
+$tex =~ s/\?/\\varnothing{}/g;
+$tex =~ s/@/\\varphi{}/g;
+$tex =~ s/&/\\sigma{}/g;
+$tex =~ s/\^/\\rho{}/g;
+$tex =~ s/\$/\\xi{}/g;
+$tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
+$tex =~ s/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto{}/g;
+$tex =~ s/->/\\mapsto{}/g;
+$tex =~ s/:=/\\vDash{}/g;
+$tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
+$tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
+$tex =~ s/\[\[/\\llbracket{}/g;
+$tex =~ s/\]\]/\\rrbracket{}/g;
+if ($env ne 'phiq') {
+  $tex =~ s/\n\n/\\\\&/g;
+  $tex =~ s/\n/\\\\[-4pt]&/g;
+  $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
+  $tex =~ s/\s{2}/\\quad{}/g;
+}
+print $tex;
+if ($env eq 'phiq') {
+  print '$';
+} else {
+  print '\end{split}\end{', $env, '}';
+}
+print '\endinput', "\n";
+\end{VerbatimOut}
+\message{^^Jeolang: File with Perl script (eolang-phi.pl) saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-phi.pl}
+
+\newenvironment{phiquation*}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.phiquation.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
+    perl eolang-phi.pl 'equation*' \jobname.phiquation.tex}%
+}
+\newenvironment{phiquation}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.phiquation.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
+    perl eolang-phi.pl 'equation' \jobname.phiquation.tex}%
+}
+
+\newcommand\phiq[1]{
+  \iexec[trace,stdout=\jobname.phiq.tex,quiet]{
+    /bin/echo '\detokenize{#1}'}
+  \iexec[trace,stdout=\jobname.phiq-post.tex]{
+    perl eolang-phi.pl 'phiq' \jobname.phiq.tex}%
+}
+
+\begin{VerbatimOut}{eolang-sodg.pl}
+open(my $fh, '<', $ARGV[0]);
+my $tex; { local $/; $tex = <$fh>; }
+if (index($tex, "\t") > 0) {
+  print "TABS are prohibited!";
+  exit 1;
+}
+$tex =~ s/^\s+|\s+$//g;
+$tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
+$tex =~ s/\n\s+/\n/g;
+$tex =~ s/\|([^\|]+)\|/\\texttt{\1}/g;
+my @cmds = split (/\n/g, $tex);
+foreach my $t (@cmds) {
+  print '% ', $t, "\n";
+}
+print '\begin{phicture}', "\n";
+foreach my $c (@cmds) {
+  my ($head, $tail) = split (/ /, $c, 2);
+  my %opts = {};
+  foreach my $p (split (/ /, $tail)) {
+    my ($q, $t) = split (/:/, $p);
+    $opts{$q} = $t;
+  }
+  if (index($head, '->') == -1) {
+    print '\node[';
+    if (exists $opts{'xy'}) {
+      my ($v, $right, $down) = split(/,/, $opts{'xy'});
+      print ',below right=';
+      print $down;
+      print 'cm and ';
+      print $right;
+      print 'cm of ';
+      print $v;
+    }
+    if (exists $opts{'data'}) {
+      print ',phi-data';
+      if (not $opts{'data'} eq '') {
+        $opts{'box'} = $opts{'data'};
+      }
+    } elsif (exists $opts{'atom'}) {
+      print ',phi-atom';
+      if (not $opts{'atom'} eq '') {
+        $opts{'box'} = $opts{'atom'};
+      }
+    } else {
+      print ',phi-object';
+    }
+    print ']';
+    print ' (', $head, ')';
+    print ' {$';
+    if ($head eq 'v0') {
+      print '\Phi';
+    } else {
+      print 'v_', substr($head, 1);
+    }
+    print '$}';
+    if (exists $opts{'box'}) {
+      print ' node[phi-box] at (';
+      print $head, '.south east) {';
+      print $opts{'box'}, '}';
+    }
+  } else {
+    print '\draw[';
+    if (exists $opts{'pi'}) {
+      print ',phi-pi';
+      if (not exists $opts{'a'}) {
+        $opts{'a'} = '$\pi$';
+      }
+    }
+    print ']';
+    my ($from, $to) = split (/->/, $head);
+    print ' (', $from, ') ';
+    if (exists $opts{'bend'}) {
+      print 'edge [bend right=', $opts{'bend'}, ']';
+    } else {
+      print '--';
+    }
+    if (exists $opts{'rho'} or exists $opts{'rrho'}) {
+      print ' pic[sloped,phi-rho]{parallel arrow={';
+      print '-' if not exists $opts{'rrho'};
+      print '0.3,-0.15}}';
+    }
+    if (exists $opts{'a'}) {
+      print ' node [phi-attr] {', $opts{'a'}, '}';
+    }
+    print ' (', $to, ')';
+  }
+  print ";\n";
+}
+print '\end{phicture}', "\n", '\endinput';
+\end{VerbatimOut}
+\message{^^Jeolang: File with Perl script (eolang-sodg.pl) saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-sodg.pl}
+
+\RequirePackage{tikz}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{decorations}
+  \usetikzlibrary{decorations.pathmorphing}
+  \usetikzlibrary{intersections}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{calc}
+  \usetikzlibrary{shapes.arrows}
+
+\newenvironment{phicture}%
+  {\noindent\begin{tikzpicture}[
+    ->,>=stealth',node distance=0,thick,
+    pics/parallel arrow/.style={
+      code={\draw[-latex,phi-rho] (##1) -- (-##1);}}]}%
+  {\end{tikzpicture}}
+\tikzstyle{transforms} = [fill=white!80!black, single arrow,
+  minimum height=0.5cm, minimum width=0.5cm,
+  single arrow head extend=2mm]
+\tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
+  draw,font={\small}]
+\tikzstyle{phi-object} = [phi-thing,circle]
+\tikzstyle{phi-data} = [phi-thing,regular polygon,
+  regular polygon sides=8]
+\tikzstyle{phi-empty} = [phi-object]
+\tikzstyle{phi-rho} = [draw,decorate,decoration={
+  snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
+\tikzstyle{phi-pi} = [draw,dotted]
+\tikzstyle{phi-atom} = [phi-object,double]
+\tikzstyle{phi-box} = [xshift=-5pt,yshift=3pt,draw,fill=white,
+  rectangle,thin,minimum width=1.2em,anchor=north west,
+  font={\scriptsize}]
+\tikzstyle{phi-attr} = [midway,sloped,inner sep=0pt,
+  above=2pt,sloped/.append style={transform shape},
+  font={\scriptsize},color=black]
+
+\newenvironment{sodg}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.sodg.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.sodg-post.tex]{
+    perl eolang-sodg.pl \jobname.sodg.tex}%
+}
+
+\makeatletter\newcommand\eolang{%
+  \ifdefined\anon%
+    \anon[XYZ]{{\sffamily EO}}%
+  \else%
+    {\sffamily EO}%
+  \fi%
+}\makeatother
+
+\makeatletter\newcommand\phic{%
+  \ifdefined\anon%
+    \anon[$\alpha$-calculus]{$\varphi$-calculus}%
+  \else%
+    $\varphi$-calculus%
+  \fi%
+}\makeatother
+
+
+
+\endinput
+%%
+%% End of file `eolang.sty'.
