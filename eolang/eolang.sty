@@ -63,6 +63,9 @@
 
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 
+\RequirePackage{pdftexcmds}
+\makeatletter\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{1}}\makeatother
+
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $env = $ARGV[0];
@@ -124,7 +127,7 @@ print '\endinput', "\n";
 \makeatother
 
 \makeatletter\newcommand\eolang@process[1]{
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiquation.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
@@ -146,7 +149,7 @@ print '\endinput', "\n";
 \makeatletter\newcommand\phiq[1]{
   \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\detokenize{#1}'}
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
@@ -298,7 +301,7 @@ print '\end{phicture}', "\n", '\endinput';
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \def\hash{\pdfmdfivesum file
+  \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/sodg.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
