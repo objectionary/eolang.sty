@@ -4,16 +4,19 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( perl eolang-phi.pl 'equation*' simple.phiquation.tex) > simple.phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.phiquation-post.tex
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/simple/phiquation.tex") > _eolang/simple/phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/phiquation-post.tex
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
 )
-iexec: The content of 'simple.phiquation-post.tex' was included into the document
-runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > simple.phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl eolang-phi.pl 'phiq' simple.phiq.tex) > simple.phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.phiq-post.tex) iexec: The content of 'simple.phiq-post.tex' was included into the document
-runsystem(( perl eolang-sodg.pl simple.sodg.tex) > simple.sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.sodg-post.tex) iexec: The content of 'simple.sodg-post.tex' was included into the document
-runsystem(( perl eolang-sodg.pl simple.sodg.tex) > simple.sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.sodg-post.tex) iexec: The content of 'simple.sodg-post.tex' was included into the document
+iexec: The content of '_eolang/simple/phiquation-post.tex' was included into the document
+runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/simple/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/simple/phiq.tex") > _eolang/simple/phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/phiq-post.tex)
+iexec: The content of '_eolang/simple/phiq-post.tex' was included into the document
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/sodg.tex") > _eolang/simple/sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/sodg-post.tex)
+iexec: The content of '_eolang/simple/sodg-post.tex' was included into the document
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/sodg.tex") > _eolang/simple/sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/sodg-post.tex)
+iexec: The content of '_eolang/simple/sodg-post.tex' was included into the document

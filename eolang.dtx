@@ -218,6 +218,20 @@
 % \end{document}
 % \end{docshot}
 
+% \section{Package Options}
+
+% \DescribeMacro{tmpdir}
+% The default location of temp files is |_eolang|. You can change this using |tmpdir| option:
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\usepackage[tmpdir=/tmp/foo]{eolang}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+
 % \section{More Examples}
 
 % The |phiquation| environment treats ends of line as signals to start
@@ -266,6 +280,24 @@
 \RequirePackage{iexec}
 %    \end{macrocode}
 
+% Then, we process package options:
+% \changes{0.0.3}{2022/10/26}{Parsing of package options introduced.}
+%    \begin{macrocode}
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /eolang/.cd,
+  tmpdir/.store in=\eolang@tmpdir,
+  tmpdir/.default=_eolang,
+  tmpdir
+}
+\ProcessPgfOptions{/eolang}
+%    \end{macrocode}
+
+% Then, we make a directory where all temporary files will be kept:
+%    \begin{macrocode}
+\iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
+%    \end{macrocode}
+
 % \begin{macro}{eolang-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
@@ -273,7 +305,7 @@
 % \changes{0.0.3}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
 % Then, we create a Perl script for |phiquation| processing:
 %    \begin{macrocode}
-\begin{VerbatimOut}{eolang-phi.pl}
+\begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $env = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
 my $tex; { local $/; $tex = <$fh>; }
@@ -321,8 +353,10 @@ if ($env eq 'phiq') {
 }
 print '\endinput', "\n";
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (eolang-phi.pl) saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-phi.pl}
+\message{^^Jeolang: File with Perl script
+  '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
+  "\eolang@tmpdir/eolang-phi.pl"}
 %    \end{macrocode}
 % \end{macro}
 
@@ -331,17 +365,19 @@ print '\endinput', "\n";
 %    \begin{macrocode}
 \newenvironment{phiquation*}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.phiquation.tex}}
+  {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
-    perl eolang-phi.pl 'equation*' \jobname.phiquation.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl" 'equation*'
+    "\eolang@tmpdir/\jobname/phiquation.tex"}%
 }
 \newenvironment{phiquation}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.phiquation.tex}}
+  {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
-    perl eolang-phi.pl 'equation' \jobname.phiquation.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl" 'equation'
+    "\eolang@tmpdir/\jobname/phiquation.tex"}%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -351,10 +387,11 @@ print '\endinput', "\n";
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \newcommand\phiq[1]{
-  \iexec[trace,stdout=\jobname.phiq.tex,quiet]{
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq.tex,quiet]{
     /bin/echo '\detokenize{#1}'}
-  \iexec[trace,stdout=\jobname.phiq-post.tex]{
-    perl eolang-phi.pl 'phiq' \jobname.phiq.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq-post.tex]{
+    perl \eolang@tmpdir/eolang-phi.pl 'phiq'
+    "\eolang@tmpdir/\jobname/phiq.tex"}%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -364,7 +401,7 @@ print '\endinput', "\n";
 % \changes{0.0.3}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
 % Then, we create a Perl script for |sodg| graphs processing:
 %    \begin{macrocode}
-\begin{VerbatimOut}{eolang-sodg.pl}
+\begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 if (index($tex, "\t") > 0) {
@@ -455,8 +492,10 @@ foreach my $c (@cmds) {
 }
 print '\end{phicture}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (eolang-sodg.pl) saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-sodg.pl}
+\message{^^Jeolang: File with Perl script
+  '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
+  "\eolang@tmpdir/eolang-sodg.pl"}
 %    \end{macrocode}
 % \end{macro}
 
@@ -513,10 +552,11 @@ print '\end{phicture}', "\n", '\endinput';
 %    \begin{macrocode}
 \newenvironment{sodg}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.sodg.tex}}
+  {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.sodg-post.tex]{
-    perl eolang-sodg.pl \jobname.sodg.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/sodg-post.tex]{
+    perl "\eolang@tmpdir/eolang-sodg.pl"
+    "\eolang@tmpdir/\jobname/sodg.tex"}%
 }
 %    \end{macrocode}
 % \end{macro}
