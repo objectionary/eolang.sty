@@ -44,13 +44,26 @@
 
 
 
+
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
 \RequirePackage{fancyvrb}
 \RequirePackage{iexec}
 
-\begin{VerbatimOut}{eolang-phi.pl}
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /eolang/.cd,
+  tmpdir/.store in=\eolang@tmpdir,
+  tmpdir/.default=_eolang,
+  tmpdir
+}
+\ProcessPgfOptions{/eolang}
+
+\iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
+
+\begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $env = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
 my $tex; { local $/; $tex = <$fh>; }
@@ -98,32 +111,37 @@ if ($env eq 'phiq') {
 }
 print '\endinput', "\n";
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (eolang-phi.pl) saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-phi.pl}
+\message{^^Jeolang: File with Perl script
+  '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
+  "\eolang@tmpdir/eolang-phi.pl"}
 
 \newenvironment{phiquation*}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.phiquation.tex}}
+  {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
-    perl eolang-phi.pl 'equation*' \jobname.phiquation.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl" 'equation*'
+    "\eolang@tmpdir/\jobname/phiquation.tex"}%
 }
 \newenvironment{phiquation}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.phiquation.tex}}
+  {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
-    perl eolang-phi.pl 'equation' \jobname.phiquation.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl" 'equation'
+    "\eolang@tmpdir/\jobname/phiquation.tex"}%
 }
 
 \newcommand\phiq[1]{
-  \iexec[trace,stdout=\jobname.phiq.tex,quiet]{
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq.tex,quiet]{
     /bin/echo '\detokenize{#1}'}
-  \iexec[trace,stdout=\jobname.phiq-post.tex]{
-    perl eolang-phi.pl 'phiq' \jobname.phiq.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq-post.tex]{
+    perl \eolang@tmpdir/eolang-phi.pl 'phiq'
+    "\eolang@tmpdir/\jobname/phiq.tex"}%
 }
 
-\begin{VerbatimOut}{eolang-sodg.pl}
+\begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 if (index($tex, "\t") > 0) {
@@ -214,8 +232,10 @@ foreach my $c (@cmds) {
 }
 print '\end{phicture}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (eolang-sodg.pl) saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-sodg.pl}
+\message{^^Jeolang: File with Perl script
+  '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
+  "\eolang@tmpdir/eolang-sodg.pl"}
 
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
@@ -255,10 +275,11 @@ print '\end{phicture}', "\n", '\endinput';
 
 \newenvironment{sodg}%
 {\VerbatimEnvironment\begin{VerbatimOut}
-  {\jobname.sodg.tex}}
+  {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\jobname.sodg-post.tex]{
-    perl eolang-sodg.pl \jobname.sodg.tex}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/sodg-post.tex]{
+    perl "\eolang@tmpdir/eolang-sodg.pl"
+    "\eolang@tmpdir/\jobname/sodg.tex"}%
 }
 
 \makeatletter\newcommand\eolang{%
