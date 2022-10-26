@@ -14,9 +14,11 @@ runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/simple/phiq.tex 2
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/simple/phiq.tex") > _eolang/simple/phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/phiq-post.tex)
 iexec: The content of '_eolang/simple/phiq-post.tex' was included into the document
-runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/sodg.tex") > _eolang/simple/sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/sodg-post.tex)
-iexec: The content of '_eolang/simple/sodg-post.tex' was included into the document
-runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/sodg.tex") > _eolang/simple/sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/sodg-post.tex)
-iexec: The content of '_eolang/simple/sodg-post.tex' was included into the document
+runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simpleB5B6C245E4F9115CF7567FBDF218497A.tex") > _eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
+iexec: The content of '_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex' was included into the document
+runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/92D898163DE7DF36D993253212039F1E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple92D898163DE7DF36D993253212039F1E.tex") > _eolang/simple/92D898163DE7DF36D993253212039F1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/92D898163DE7DF36D993253212039F1E-post.tex)
+iexec: The content of '_eolang/simple/92D898163DE7DF36D993253212039F1E-post.tex' was included into the document

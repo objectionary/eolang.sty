@@ -554,9 +554,13 @@ print '\end{phicture}', "\n", '\endinput';
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/sodg-post.tex]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/sodg.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
-    "\eolang@tmpdir/\jobname/sodg.tex"}%
+    "\eolang@tmpdir/\jobname\hash.tex"}%
 }
 %    \end{macrocode}
 % \end{macro}
