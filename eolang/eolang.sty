@@ -63,10 +63,15 @@
 
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 
+\makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $env = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
 my $tex; { local $/; $tex = <$fh>; }
+print '% This file is auto-generated', "\n";
+print '% There are ', length($tex),
+  ' chars in the input: ', $ARGV[1], "\n";
+print '% ---', "\n";
 if (index($tex, "\t") > 0) {
   print "TABS are prohibited!";
   exit 1;
@@ -75,6 +80,7 @@ my @lines = split (/\n/g, $tex);
 foreach my $t (@lines) {
   print '% ', $t, "\n";
 }
+print '% ---', "\n";
 if ($env eq 'phiq') {
   print '$';
 } else {
@@ -111,39 +117,52 @@ if ($env eq 'phiq') {
 }
 print '\endinput', "\n";
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script
+\message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
 \iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
   "\eolang@tmpdir/eolang-phi.pl"}
+\makeatother
 
+\makeatletter\newcommand\eolang@process[1]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/phiquation.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl"
+    '#1'
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+}
 \newenvironment{phiquation*}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
-{\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
-    perl "\eolang@tmpdir/eolang-phi.pl" 'equation*'
-    "\eolang@tmpdir/\jobname/phiquation.tex"}%
-}
+{\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
-{\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
-    perl "\eolang@tmpdir/eolang-phi.pl" 'equation'
-    "\eolang@tmpdir/\jobname/phiquation.tex"}%
-}
+{\end{VerbatimOut}\eolang@process{equation}}
+\makeatother
 
-\newcommand\phiq[1]{
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq.tex,quiet]{
+\makeatletter\newcommand\phiq[1]{
+  \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\detokenize{#1}'}
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq-post.tex]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/phiq.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-    "\eolang@tmpdir/\jobname/phiq.tex"}%
-}
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+}\makeatother
 
+\makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
+print '% This file is auto-generated', "\n";
+print '% There are ', length($tex),
+  ' chars in the input: ', $ARGV[0], "\n";
+print '% ---', "\n";
 if (index($tex, "\t") > 0) {
   print "TABS are prohibited!";
   exit 1;
@@ -156,6 +175,7 @@ my @cmds = split (/\n/g, $tex);
 foreach my $t (@cmds) {
   print '% ', $t, "\n";
 }
+print '% ---', "\n";
 print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
   my ($head, $tail) = split (/ /, $c, 2);
@@ -232,10 +252,11 @@ foreach my $c (@cmds) {
 }
 print '\end{phicture}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script
+\message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
 \iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
   "\eolang@tmpdir/eolang-sodg.pl"}
+\makeatother
 
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
@@ -273,14 +294,18 @@ print '\end{phicture}', "\n", '\endinput';
   above=2pt,sloped/.append style={transform shape},
   font={\scriptsize},color=black]
 
-\newenvironment{sodg}%
+\makeatletter\newenvironment{sodg}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/sodg-post.tex]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/sodg.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
-    "\eolang@tmpdir/\jobname/sodg.tex"}%
-}
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+}\makeatother
 
 \makeatletter\newcommand\eolang{%
   \ifdefined\anon%
