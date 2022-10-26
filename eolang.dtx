@@ -150,14 +150,13 @@
 % using the same simple plain-text notation:
 % \begin{docshot}
 % \documentclass{article}
-% \usepackage[paperwidth=2in]{geometry}
 % \pagestyle{empty}
 % \usepackage{eolang}
 % \begin{document}
-% A simple object
-% \phiq{x -> [[@ -> y]]}
-% is a decorator of
-% the data object
+% A simple object \\
+% \phiq{x -> [[@ -> y]]} \\
+% is a decorator of \\
+% the data object \\
 % \phiq{y -> [[\Delta ~> 42]]}.
 % \end{document}
 % \end{docshot}
@@ -236,7 +235,7 @@
 
 % The |phiquation| environment treats ends of line as signals to start
 % new lines in the formula. If you don't want this to happen and want to parse
-% the next line as the a continuation of the current line, you can use double
+% the next line as the a continuation of the current line, you can use a single
 % backslash as it's done here:
 % \begin{docshot}
 % \documentclass{article}
@@ -305,6 +304,7 @@
 % \changes{0.0.3}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
 % Then, we create a Perl script for |phiquation| processing:
 %    \begin{macrocode}
+\makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $env = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
@@ -357,28 +357,32 @@ print '\endinput', "\n";
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
 \iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
   "\eolang@tmpdir/eolang-phi.pl"}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{phiquation}
-% Then, we define |phiquation| and |phiquation*| environments:
+% Then, we define |phiquation| and |phiquation*| environments through a supplementary
+% |\eolang@process| command:
 %    \begin{macrocode}
+\makeatletter\newcommand\eolang@process[1]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/phiquation.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
+    perl "\eolang@tmpdir/eolang-phi.pl" '#1'
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+}
 \newenvironment{phiquation*}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
-{\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
-    perl "\eolang@tmpdir/eolang-phi.pl" 'equation*'
-    "\eolang@tmpdir/\jobname/phiquation.tex"}%
-}
+{\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
-{\end{VerbatimOut}%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiquation-post.tex]{
-    perl "\eolang@tmpdir/eolang-phi.pl" 'equation'
-    "\eolang@tmpdir/\jobname/phiquation.tex"}%
-}
+{\end{VerbatimOut}\eolang@process{equation}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -386,13 +390,17 @@ print '\endinput', "\n";
 % \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
-\newcommand\phiq[1]{
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq.tex,quiet]{
+\makeatletter\newcommand\phiq[1]{
+  \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\detokenize{#1}'}
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/phiq-post.tex]{
+  \def\hash{\pdfmdfivesum file
+    {\eolang@tmpdir/\jobname/phiq.tex}}%
+  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-    "\eolang@tmpdir/\jobname/phiq.tex"}%
-}
+    "\eolang@tmpdir/\jobname/\hash.tex"}%
+}\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -401,6 +409,7 @@ print '\endinput', "\n";
 % \changes{0.0.3}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
 % Then, we create a Perl script for |sodg| graphs processing:
 %    \begin{macrocode}
+\makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
@@ -496,6 +505,7 @@ print '\end{phicture}', "\n", '\endinput';
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
 \iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
   "\eolang@tmpdir/eolang-sodg.pl"}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -550,7 +560,7 @@ print '\end{phicture}', "\n", '\endinput';
 % Then, create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
-\newenvironment{sodg}%
+\makeatletter\newenvironment{sodg}%
 {\VerbatimEnvironment\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
@@ -561,7 +571,7 @@ print '\end{phicture}', "\n", '\endinput';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname\hash.tex"}%
-}
+}\makeatother
 %    \end{macrocode}
 % \end{macro}
 

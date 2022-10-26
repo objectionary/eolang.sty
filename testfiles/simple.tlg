@@ -4,16 +4,18 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/simple/phiquation.tex") > _eolang/simple/phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/phiquation-post.tex
+runsystem((cp "_eolang/simple/phiquation.tex" "_eolang/simple/C2FDAAD06961C1DB3A949E4AF123885C.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/simple/C2FDAAD06961C1DB3A949E4AF123885C.tex") > _eolang/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
 )
-iexec: The content of '_eolang/simple/phiquation-post.tex' was included into the document
+iexec: The content of '_eolang/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/simple/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/simple/phiq.tex") > _eolang/simple/phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/phiq-post.tex)
-iexec: The content of '_eolang/simple/phiq-post.tex' was included into the document
+runsystem((cp "_eolang/simple/phiq.tex" "_eolang/simple/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/simple/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > _eolang/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex)
+iexec: The content of '_eolang/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex' was included into the document
 runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simpleB5B6C245E4F9115CF7567FBDF218497A.tex") > _eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
