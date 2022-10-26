@@ -303,7 +303,7 @@
 % Then, we define a command for MD5 hash calculating of a file:
 %    \begin{macrocode}
 \RequirePackage{pdftexcmds}
-\makeatletter\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{1}}\makeatother
+\makeatletter\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{#1}}\makeatother
 %    \end{macrocode}
 % \end{macro}
 
