@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get -y install ghostscript
+        if: matrix.config.os == 'ubuntu-20.04'
       - uses: teatimeguest/setup-texlive-action@v2.5.0
         with:
           update-all-packages: true
