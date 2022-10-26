@@ -103,7 +103,7 @@
 %     @ -> |hello|($),
 %     \Delta ~> |01-FE-C3| ]]]],
 
-% x -> [[ \alpha_0 -> ? ]]
+% x -> [[ \alpha_0 -> ? ]].
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -216,8 +216,12 @@
 % \end{document}
 % \end{docshot}
 
-% \section{Examples}
+% \section{More Examples}
 
+% The |phiquation| environment treats ends of line as signals to start
+% new lines in the formula. If you don't want this to happen and want to parse
+% the next line as the a continuation of the current line, you can use double
+% backslash as it's done here:
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage{amsmath}
@@ -226,7 +230,7 @@
 % \begin{document}
 % \begin{phiquation*}
 % \dfrac \
-%  {x->[[@->y]]  y->[[z->|42|]]} \
+%  {x->[[@->y]] \quad y->[[z->|42|]]} \
 %  {x.z -> |42|} \
 %  {R1}
 % \end{phiquation*}
@@ -238,83 +242,105 @@
 % \section{Implementation}
 
 % First, we include a few packages.
-
-% We need \href{https://ctan.org/pkg/stmaryrd}{stmaryrd} for |\llbracket| and |\rrbracket| commands.
+% We need \href{https://ctan.org/pkg/stmaryrd}{stmaryrd} for |\llbracket| and |\rrbracket| commands:
 %    \begin{macrocode}
 \RequirePackage{stmaryrd}
 %    \end{macrocode}
-% We need \href{https://ctan.org/pkg/amsmath}{amsmath} for |equation*| environment.
+% We need \href{https://ctan.org/pkg/amsmath}{amsmath} for |equation*| environment:
 %    \begin{macrocode}
 \RequirePackage{amsmath}
 %    \end{macrocode}
 % We need \href{https://ctan.org/pkg/amssymb}{amssymb} for |\varnothing| command. We disable |\Bbbk|
-% because it may conflict with some packages from \href{https://ctan.org/pkg/acmart}{acmart}.
+% because it may conflict with some packages from \href{https://ctan.org/pkg/acmart}{acmart}:
 %    \begin{macrocode}
 \let\Bbbk\relax\RequirePackage{amssymb}
 %    \end{macrocode}
-% We need \href{https://ctan.org/pkg/fancyvrb}{fancyvrb} for |\VerbatimEnvironment| command.
+% We need \href{https://ctan.org/pkg/fancyvrb}{fancyvrb} for |\VerbatimEnvironment| command:
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
 %    \end{macrocode}
-% We need \href{https://ctan.org/pkg/iexec}{iexec} for executing Perl scripts.
+% We need \href{https://ctan.org/pkg/iexec}{iexec} for executing Perl scripts:
 %    \begin{macrocode}
 \RequirePackage{iexec}
 %    \end{macrocode}
 
-% \begin{macro}{\eolang@env}
+% \begin{macro}{eolang-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
-% Then, we define |\eolang@env| supplementary command.
-% It is implemented with the help of |\iexec| from
-% \href{https://github.com/yegor256/iexec}{iexec} package:
+% \changes{0.0.3}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
+% Then, we create a Perl script for |phiquation| processing:
 %    \begin{macrocode}
-\makeatletter\newcommand\eolang@env[2]{
-  \iexec[trace,stdout=eolang.stdout]{
-    /bin/echo -n '\\begin{#1}\\begin{split} &'
-    &&
-    /bin/echo -n '\detokenize{#2}'
-      | perl -e '$i = <STDIN>; if (index($i, "\\\\t") > 0) { print "TABS"; } else { print $i; }'
-      | perl -pe 's/^\\r+//g'
-      | perl -pe 's/\\r+$//g'
-      | perl -pe 's/ *\\\\\\r */ /g'
-      | perl -pe 's/\\?/\\\\varnothing{}/g'
-      | perl -pe 's/@/\\\\varphi{}/g'
-      | perl -pe 's/&/\\\\sigma{}/g'
-      | perl -pe 's/\\^/\\\\rho{}/g'
-      | perl -pe 's/\\$/\\\\xi{}/g'
-      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}{}/g'
-      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto{}/g'
-      | perl -pe 's/->/\\\\mapsto{}/g'
-      | perl -pe 's/:=/\\\\vDash{}/g'
-      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow{}/g'
-      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}{}/g'
-      | perl -pe 's/\\[\\[/\\\\llbracket{}/g'
-      | perl -pe 's/\\]\\]/\\\\rrbracket{}/g'
-      | perl -pe 's/\\r\\r/\\\\\\\\ \&/g'
-      | perl -pe 's/\\r/\\\\\\\\[-4pt] \&/g'
-      | perl -pe 's/([^& ]) {2}([^ ])/\\1 \\2/g'
-      | perl -pe 's/ {2}/\\\\quad{}/g'
-      &&
-    /bin/echo -n '\\end{split}\\end{#1}\\endinput'
-  }%
-}\makeatother
+\begin{VerbatimOut}{eolang-phi.pl}
+$env = $ARGV[0];
+open(my $fh, '<', $ARGV[1]);
+my $tex; { local $/; $tex = <$fh>; }
+if (index($tex, "\t") > 0) {
+  print "TABS are prohibited!";
+  exit 1;
+}
+my @lines = split (/\n/g, $tex);
+foreach my $t (@lines) {
+  print '% ', $t, "\n";
+}
+if ($env eq 'phiq') {
+  print '$';
+} else {
+  print '\begin{', $env, '}\begin{split} &';
+}
+$tex =~ s/^\s+|\s+$//g;
+if ($env ne 'phiq') {
+  $tex =~ s/\s*\\\n\s*//g;
+}
+$tex =~ s/\?/\\varnothing{}/g;
+$tex =~ s/@/\\varphi{}/g;
+$tex =~ s/&/\\sigma{}/g;
+$tex =~ s/\^/\\rho{}/g;
+$tex =~ s/\$/\\xi{}/g;
+$tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
+$tex =~ s/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto{}/g;
+$tex =~ s/->/\\mapsto{}/g;
+$tex =~ s/:=/\\vDash{}/g;
+$tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
+$tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
+$tex =~ s/\[\[/\\llbracket{}/g;
+$tex =~ s/\]\]/\\rrbracket{}/g;
+if ($env ne 'phiq') {
+  $tex =~ s/\n\n/\\\\&/g;
+  $tex =~ s/\n/\\\\[-4pt]&/g;
+  $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
+  $tex =~ s/\s{2}/\\quad{}/g;
+}
+print $tex;
+if ($env eq 'phiq') {
+  print '$';
+} else {
+  print '\end{split}\end{', $env, '}';
+}
+print '\endinput', "\n";
+\end{VerbatimOut}
+\message{^^Jeolang: File with Perl script (eolang-phi.pl) saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-phi.pl}
 %    \end{macrocode}
 % \end{macro}
 
 % \begin{macro}{phiquation}
 % Then, we define |phiquation| and |phiquation*| environments:
 %    \begin{macrocode}
-\makeatletter
-\NewDocumentEnvironment{phiquation*}{b}{%
-  \eolang@env{equation*}{#1}
-}{}
-\NewDocumentEnvironment{phiquation}{b}{%
-  \eolang@env{equation}{#1}
-}{}
-\makeatother
-\AddToHook{env/phiquation*/begin}{\obeylines\obeyspaces}
-\AddToHook{env/phiquation/begin}{\obeylines\obeyspaces}
+\newenvironment{phiquation*}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.phiquation.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
+    perl eolang-phi.pl 'equation*' \jobname.phiquation.tex}%
+}
+\newenvironment{phiquation}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.phiquation.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.phiquation-post.tex]{
+    perl eolang-phi.pl 'equation' \jobname.phiquation.tex}%
+}
 %    \end{macrocode}
 % \end{macro}
 
@@ -323,42 +349,35 @@
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \newcommand\phiq[1]{
-  \iexec[trace]{
-    /bin/echo -n '$'
-    &&
-    /bin/echo -n '\detokenize{#1}'
-      | perl -pe 's/\\^/\\\\rho{}/g'
-      | perl -pe 's/\\$/\\\\xi{}/g'
-      | perl -pe 's/&/\\\\sigma{}/g'
-      | perl -pe 's/\\?/\\\\varnothing{}/g'
-      | perl -pe 's/@/\\\\varphi{}/g'
-      | perl -pe 's/!->/\\\\mapstochar\\\\relbar\\\\mathrel{\\\\mkern-12mu}\\\\mapsto{}/g'
-      | perl -pe 's/->/\\\\mapsto{}/g'
-      | perl -pe 's/-([a-z]+)>/\\\\xrightarrow{\\\\text{\\\\sffamily\\\\scshape \\1}}{}/g'
-      | perl -pe 's/\unexpanded{~}>/\\\\mapstochar\\\\dashrightarrow{}/g'
-      | perl -pe 's/:=/\\\\vDash{}/g'
-      | perl -pe 's/\\|([^\\|]+)\\|/\\\\texttt{\\1}{}/g'
-      | perl -pe 's/\\[\\[/\\\\llbracket{}/g'
-      | perl -pe 's/\\]\\]/\\\\rrbracket{}/g'
-    &&
-    /bin/echo -n '$\\endinput'
-  }%
+  \iexec[trace,stdout=\jobname.phiq.tex,quiet]{
+    /bin/echo '\detokenize{#1}'}
+  \iexec[trace,stdout=\jobname.phiq-post.tex]{
+    perl eolang-phi.pl 'phiq' \jobname.phiq.tex}%
 }
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{Perl}
+% \begin{macro}{eolang-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
-% Then, we create a Perl script:
+% \changes{0.0.3}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
+% Then, we create a Perl script for |sodg| graphs processing:
 %    \begin{macrocode}
-\begin{VerbatimOut}{eolang.pl}
-$tex = $ARGV[0];
+\begin{VerbatimOut}{eolang-sodg.pl}
+open(my $fh, '<', $ARGV[0]);
+my $tex; { local $/; $tex = <$fh>; }
+if (index($tex, "\t") > 0) {
+  print "TABS are prohibited!";
+  exit 1;
+}
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
-$tex =~ s/\r\s+/\r/g;
+$tex =~ s/\n\s+/\n/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}/g;
-my @cmds = split (/\r/g, $tex);
-print '\begin{phig}', "\n";
+my @cmds = split (/\n/g, $tex);
+foreach my $t (@cmds) {
+  print '% ', $t, "\n";
+}
+print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
   my ($head, $tail) = split (/ /, $c, 2);
   my %opts = {};
@@ -432,10 +451,10 @@ foreach my $c (@cmds) {
   }
   print ";\n";
 }
-print '\end{phig}', "\n", '\endinput';
+print '\end{phicture}', "\n", '\endinput';
 \end{VerbatimOut}
-\message{^^Jeolang: File with Perl script (eolang.pl) saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang.pl}
+\message{^^Jeolang: File with Perl script (eolang-sodg.pl) saved^^J}%
+\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g' eolang-sodg.pl}
 %    \end{macrocode}
 % \end{macro}
 
@@ -454,10 +473,10 @@ print '\end{phig}', "\n", '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{phig}
-% Then, we define internal environment |phig|:
+% \begin{macro}{phicture}
+% Then, we define internal environment |phicture|:
 %    \begin{macrocode}
-\newenvironment{phig}%
+\newenvironment{phicture}%
   {\noindent\begin{tikzpicture}[
     ->,>=stealth',node distance=0,thick,
     pics/parallel arrow/.style={
@@ -490,14 +509,13 @@ print '\end{phig}', "\n", '\endinput';
 % Then, create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
-\NewDocumentEnvironment{sodg}{b}{%
-  \catcode`\ =10 %
-  \catcode`\^^M=5 %
-  \iexec[trace,stdout=\jobname.tex.eolang]{
-    perl eolang.pl '\detokenize{#1}'}%
-}{}
-\AddToHook{env/sodg/before}{\bgroup\obeylines\obeyspaces}
-\AddToHook{env/sodg/after}{\egroup}
+\newenvironment{sodg}%
+{\VerbatimEnvironment\begin{VerbatimOut}
+  {\jobname.sodg.tex}}
+{\end{VerbatimOut}%
+  \iexec[trace,stdout=\jobname.sodg-post.tex]{
+    perl eolang-sodg.pl \jobname.sodg.tex}%
+}
 %    \end{macrocode}
 % \end{macro}
 

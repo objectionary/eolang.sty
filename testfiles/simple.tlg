@@ -4,14 +4,16 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( /bin/echo -n '\begin{equation*}\begin{split} &' && /bin/echo -n '^^Ma -> [[^^M  @ -> &.z,^^M  ^ !-> $.b,^^M  u -> ?,^^M  b -> [[ c -> |x|(56),^^M    \rho  -> |hello|($),^^M    \Delta  ~> |01-FE-C3| ]]]]^^M^^M\beta _1 := [ \varphi  -wait> \varnothing  ]^^M' | perl -e 'if (index(<STDIN>, "\\t") > 0) { print "TABS"; } else { print <STDIN>; }' | perl -pe 's/^\r\+//g' | perl -pe 's/\r\+$//g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/\|([^\|]+)\|/\\texttt{\1}/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' | perl -pe 's/\r\r/\\\\ \&/g' | perl -pe 's/\r/\\\\[-4pt] \&/g' | perl -pe 's/([^& ]) {2}([^ ])/\1 \2/g' | perl -pe 's/ {2}/\\quad{}/g' && /bin/echo -n '\end{split}\end{equation*}\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(iexec.tmp) iexec: The content of 'iexec.tmp' was included into the document
-runsystem(( /bin/echo -n '$' && /bin/echo -n 'x := [ \alpha _0 -rqst> ? ]' | perl -pe 's/\^/\\rho/g' | perl -pe 's/\$/\\xi/g' | perl -pe 's/&/\\sigma/g' | perl -pe 's/\?/\\varnothing/g' | perl -pe 's/@/\\varphi/g' | perl -pe 's/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto/g' | perl -pe 's/->/\\mapsto/g' | perl -pe 's/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}/g' | perl -pe 's/~>/\\mapstochar\\dashrightarrow/g' | perl -pe 's/:=/\\vDash/g' | perl -pe 's/\[\[/\\llbracket/g' | perl -pe 's/\]\]/\\rrbracket/g' && /bin/echo -n '$\endinput' ) > iexec.tmp 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(iexec.tmp
+runsystem(( perl eolang-phi.pl 'equation*' simple.phiquation.tex) > simple.phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(simple.phiquation-post.tex
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
-) iexec: The content of 'iexec.tmp' was included into the document
-runsystem(( perl eolang.pl '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^M') > simple.tex.eolang 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.tex.eolang) iexec: The content of 'simple.tex.eolang' was included into the document
-runsystem(( perl eolang.pl '^^Mv0^^Mv1 xy:v0,-2,+1 data:|42|^^Mv0->v1 a:$x$ rho^^Mv2 xy:v0,+1,+1 atom:$\xi .x+1$^^Mv1->v2 a:|hi| bend:-15^^Mv2->v0 pi bend:10^^M') > simple.tex.eolang 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(simple.tex.eolang) iexec: The content of 'simple.tex.eolang' was included into the document
+)
+iexec: The content of 'simple.phiquation-post.tex' was included into the document
+runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > simple.phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl eolang-phi.pl 'phiq' simple.phiq.tex) > simple.phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(simple.phiq-post.tex) iexec: The content of 'simple.phiq-post.tex' was included into the document
+runsystem(( perl eolang-sodg.pl simple.sodg.tex) > simple.sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(simple.sodg-post.tex) iexec: The content of 'simple.sodg-post.tex' was included into the document
+runsystem(( perl eolang-sodg.pl simple.sodg.tex) > simple.sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(simple.sodg-post.tex) iexec: The content of 'simple.sodg-post.tex' was included into the document

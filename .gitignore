@@ -4,7 +4,10 @@ _docshots/
 _minted-*/
 eolang.tex
 eolang.pl
+eolang-phi.pl
+eolang-sodg.pl
 eolang.ret
+iexec.ret
 eolang.stdout
 eolang.stderr
 *.eolang
