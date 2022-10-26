@@ -284,10 +284,12 @@
 % \changes{0.0.3}{2022/10/26}{Parsing of package options introduced.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
+\RequirePackage{ifluatex}
+\RequirePackage{ifxetex}
 \pgfkeys{
   /eolang/.cd,
   tmpdir/.store in=\eolang@tmpdir,
-  tmpdir/.default=_eolang,
+  tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
   tmpdir
 }
 \ProcessPgfOptions{/eolang}

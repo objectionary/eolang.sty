@@ -6,3 +6,5 @@ hard pgf
 hard fancyvrb
 hard pgfopts
 hard pdftexcmds
+hard ifluatex
+hard ifxetex
