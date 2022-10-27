@@ -46,6 +46,9 @@
 
 
 
+
+
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -101,8 +104,8 @@ $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
-$tex =~ s/!->/\\mapstochar\\relbar\\mathrel{\\mkern-12mu}\\mapsto{}/g;
-$tex =~ s/->/\\mapsto{}/g;
+$tex =~ s/!->/\\phiConst{}/g;
+$tex =~ s/->/\\phiTo{}/g;
 $tex =~ s/:=/\\vDash{}/g;
 $tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
@@ -327,6 +330,11 @@ print '\end{phicture}', "\n", '\endinput';
     $\varphi$-calculus%
   \fi%
 }\makeatother
+
+\newcommand\phiTo{\mathrel{\mapsto}}
+
+\newcommand\phiConst{%
+  \mathrel{\rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}}
 
 
 
