@@ -325,7 +325,7 @@
 %    \end{macrocode}
 
 % Then, we process package options:
-% \changes{0.0.3}{2022/10/26}{Parsing of package options introduced.}
+% \changes{0.1.0}{2022/10/26}{Parsing of package options introduced.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \RequirePackage{ifluatex}
@@ -345,7 +345,7 @@
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@mdfive}
-% \changes{0.0.3}{2022/10/26}{New supplementary command added to calculate MD5 sum of a file.}
+% \changes{0.1.0}{2022/10/26}{New supplementary command added to calculate MD5 sum of a file.}
 % Then, we define a command for MD5 hash calculating of a file:
 %    \begin{macrocode}
 \RequirePackage{pdftexcmds}
@@ -357,7 +357,7 @@
 % \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
-% \changes{0.0.3}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
+% \changes{0.1.0}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
 % Then, we create a Perl script for |phiquation| processing:
 %    \begin{macrocode}
 \makeatletter
@@ -475,7 +475,7 @@ print '\endinput', "\n";
 
 % \begin{macro}{eolang-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
-% \changes{0.0.3}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
+% \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
 % Then, we create a Perl script for |sodg| graphs processing:
 %    \begin{macrocode}
 \makeatletter
@@ -650,7 +650,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\eolang}
-% \changes{0.0.3}{2022/10/25}{New command "eolang" added to print the name of the language in both
+% \changes{0.1.0}{2022/10/25}{New command "eolang" added to print the name of the language in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang{%
@@ -664,7 +664,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phic}
-% \changes{0.0.3}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
+% \changes{0.1.0}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
 \makeatletter\newcommand\phic{%
@@ -678,7 +678,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiConst}
-% \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denote a link to a constant attribute.}
+% \changes{0.1.0}{2022/10/26}{New command "phiConst" added to denote a link to a constant attribute.}
 % Then, we define a command to render an arrow for a constant attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
@@ -688,7 +688,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiDotted}
-% \changes{0.0.3}{2022/10/27}{New command "phiDotted" added to denote a link to a special attribute.}
+% \changes{0.1.0}{2022/10/27}{New command "phiDotted" added to denote a link to a special attribute.}
 % Then, we define a command to render an arrow for a special attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663176}{here}:
 %    \begin{macrocode}
