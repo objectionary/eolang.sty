@@ -128,8 +128,8 @@
 %     (|\mapsto|),
 %   \item ``|!->|'' maps to ``$\phiConst$''
 %     (|\phiConst|),
-%   \item ``|..>|'' maps to ``$\mapstochar\dashrightarrow$''
-%     (|\mapstochar\dashrightarrow|),
+%   \item ``|..>|'' maps to ``$\phiDotted$''
+%     (|\phiDotted|),
 %   \item ``|[[|'' maps to ``$\llbracket$''
 %     (|\llbracket|),
 %   \item ``|]]|'' maps to ``$\rrbracket$''
@@ -397,7 +397,7 @@ $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/..>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
+$tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
@@ -678,12 +678,40 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiConst}
-% \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denoted a link to a constant attribute.}
+% \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denote a link to a constant attribute.}
 % Then, we define a command to render an arrow for a constant attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
 \newcommand\phiConst{%
   \mathrel{\hspace{.15em}}\mapstochar\mathrel{\hspace{-.15em}}\mapsto}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiDotted}
+% \changes{0.0.3}{2022/10/27}{New command "phiDotted" added to denote a link to a special attribute.}
+% Then, we define a command to render an arrow for a special attribute,
+% as suggested \href{https://tex.stackexchange.com/questions/663176}{here}:
+%    \begin{macrocode}
+\RequirePackage{trimclip}
+\RequirePackage{amsfonts}
+\makeatletter
+\newcommand{\phiDotted}{\mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
+\newcommand{\phiDotted@}[2]{%
+  \begingroup
+  \settowidth{\dimen\z@}{$\m@th#1\rightarrow$}%
+  \settoheight{\dimen\tw@}{$\m@th#1\rightarrow$}%
+  \sbox\z@{%
+    \makebox[\dimen\z@][s]{%
+      \clipbox{0 0 {0.4\width} 0}%
+        {\resizebox{\dimen\z@}{\height}%
+          {$\m@th#1\dashrightarrow$}}%
+      \hss%
+      \clipbox{{0.69\width} {-0.1\height} 0 {-\height}}{$\m@th#1\rightarrow$}%
+    }%
+  }%
+  \ht\z@=\dimen\tw@ \dp\z@=\z@%
+  \box\z@%
+  \endgroup}\makeatother
 %    \end{macrocode}
 % \end{macro}
 
