@@ -8,5 +8,4 @@ hard pgfopts
 hard pdftexcmds
 hard ifluatex
 hard ifxetex
-hard trimclip
-hard amsfonts
+hard adjustbox
