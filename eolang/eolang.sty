@@ -103,14 +103,14 @@ $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
-$tex =~ s/!->/\\phiConst{}/g;
-$tex =~ s/->/\\phiTo{}/g;
-$tex =~ s/:=/\\vDash{}/g;
-$tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
+$tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
+$tex =~ s/!->/\\mathrel{\\phiConst}/g;
+$tex =~ s/->/\\mathrel{\\mapsto}/g;
+$tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/~>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
-$tex =~ s/\[\[/\\llbracket{}/g;
-$tex =~ s/\]\]/\\rrbracket{}/g;
+$tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
+$tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 if ($env ne 'phiq') {
   $tex =~ s/\n\n/\\\\&/g;
   $tex =~ s/\n/\\\\[-4pt]&/g;
@@ -331,10 +331,8 @@ print '\end{phicture}', "\n", '\endinput';
   \fi%
 }\makeatother
 
-\newcommand\phiTo{\mathrel{\mapsto}}
-
 \newcommand\phiConst{%
-  \mathrel{\rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}}
+  \rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}
 
 
 
