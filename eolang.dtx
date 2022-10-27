@@ -125,8 +125,8 @@
 %     (|\sigma|),
 %   \item ``|?|'' maps to ``$\varnothing$''
 %     (|\varnothing|),
-%   \item ``|->|'' maps to ``$\phiTo$''
-%     (|\phiTo|),
+%   \item ``|->|'' maps to ``$\mapsto$''
+%     (|\mapsto|),
 %   \item ``|!->|'' maps to ``$\phiConst$''
 %     (|\phiConst|),
 %   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$''
@@ -218,16 +218,16 @@
 % \end{document}
 % \end{docshot}
 
-% \DescribeMacro{\phiTo}
 % \DescribeMacro{\phiConst}
-% A few useful commands are defined to help you render arrows:
+% A simple commands is defined to help you render an arrow for a constant attribute.
+% It is recommende not to use it directly, but use |!->| instead. However, if you
+% want to use |\phiConst|, wrap it in |\mathrel| for better display:
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
 % \begin{document}
-% \phiq{[[ x \phiTo |42| ]]} \\
-% \phiq{[[ y \phiConst ]]}
+% \phiq{[[ x \mathrel{\phiConst} y ]]}
 % \end{document}
 % \end{docshot}
 
@@ -378,14 +378,14 @@ $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/-([a-z]+)>/\\xrightarrow{\\text{\\sffamily\\scshape \1}}{}/g;
-$tex =~ s/!->/\\phiConst{}/g;
-$tex =~ s/->/\\phiTo{}/g;
-$tex =~ s/:=/\\vDash{}/g;
-$tex =~ s/~>/\\mapstochar\\dashrightarrow{}/g;
+$tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
+$tex =~ s/!->/\\mathrel{\\phiConst}/g;
+$tex =~ s/->/\\mathrel{\\mapsto}/g;
+$tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/~>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
-$tex =~ s/\[\[/\\llbracket{}/g;
-$tex =~ s/\]\]/\\rrbracket{}/g;
+$tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
+$tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 if ($env ne 'phiq') {
   $tex =~ s/\n\n/\\\\&/g;
   $tex =~ s/\n/\\\\[-4pt]&/g;
@@ -656,21 +656,13 @@ print '\end{phicture}', "\n", '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{\phiTo}
-% \changes{0.0.3}{2022/10/26}{New command "phiTo" added to denoted a link to an attribute.}
-% Then, we define a command to render an arrow for attributes in an object:
-%    \begin{macrocode}
-\newcommand\phiTo{\mathrel{\mapsto}}
-%    \end{macrocode}
-% \end{macro}
-
 % \begin{macro}{\phiConst}
 % \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denoted a link to a constant attribute.}
 % Then, we define a command to render an arrow for a constant attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
 \newcommand\phiConst{%
-  \mathrel{\rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}}
+  \rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}
 %    \end{macrocode}
 % \end{macro}
 
