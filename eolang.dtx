@@ -104,7 +104,7 @@
 %   ^ !-> $.b,
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
-%     \Delta ~> |01-FE-C3| ]]]],
+%     \Delta ..> |01-FE-C3| ]]]],
 
 % x -> [[ \alpha_0 -> ? ]].
 % \end{phiquation*}
@@ -129,7 +129,7 @@
 %     (|\mapsto|),
 %   \item ``|!->|'' maps to ``$\phiConst$''
 %     (|\phiConst|),
-%   \item ``|~>|'' maps to ``$\mapstochar\dashrightarrow$''
+%   \item ``|..>|'' maps to ``$\mapstochar\dashrightarrow$''
 %     (|\mapstochar\dashrightarrow|),
 %   \item ``|[[|'' maps to ``$\llbracket$''
 %     (|\llbracket|),
@@ -158,7 +158,7 @@
 % \phiq{x -> [[@ -> y]]} \\
 % is a decorator of \\
 % the data object \\
-% \phiq{y -> [[\Delta ~> 42]]}.
+% \phiq{y -> [[\Delta ..> 42]]}.
 % \end{document}
 % \end{docshot}
 
@@ -275,7 +275,7 @@
 % \begin{phiquation*}
 % x -> [[
 %   y -> [[
-%     z !-> $, f ~> ? ]]]],
+%     z !-> $, f ..> ? ]]]],
 
 % \beta_1 := [ \psi -wait> ? ].
 % \end{phiquation*}
@@ -382,7 +382,7 @@ $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/~>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
+$tex =~ s/..>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
