@@ -666,12 +666,11 @@ print '\end{phicture}', "\n", '\endinput';
 
 % \begin{macro}{\phiConst}
 % \changes{0.0.3}{2022/10/26}{New command "phiConst" added to denoted a link to a constant attribute.}
-% Then, we define a command to render an arrow for a constant attribute, using |\mathrlap| from
-% |mathtools|, as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
+% Then, we define a command to render an arrow for a constant attribute,
+% as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
-\RequirePackage{mathtools}
 \newcommand\phiConst{%
-  \mathrel{\mathrlap{\mapstochar\relbar}\hspace{-.1em}\mapsto}}
+  \mathrel{\rlap{$\mapstochar\relbar$}\hspace{-.1em}\mapsto}}
 %    \end{macrocode}
 % \end{macro}
 
