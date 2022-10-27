@@ -371,7 +371,7 @@ if ($env eq 'phiq') {
 }
 $tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
-  $tex =~ s/\s*\\\n\s*//g;
+  $tex =~ s/\s+\\\n\s*//g;
 }
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
