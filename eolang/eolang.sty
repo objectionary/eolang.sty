@@ -47,6 +47,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -90,7 +91,7 @@ print '% ---', "\n";
 if ($env eq 'phiq') {
   print '$';
 } else {
-  print '\begin{', $env, '}\begin{split} &';
+  print '\begin{', $env, '}\begin{split}';
 }
 $tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
@@ -114,7 +115,13 @@ if ($env ne 'phiq') {
   $tex =~ s/\n\n/\\\\&/g;
   $tex =~ s/\n/\\\\[-4pt]&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
-  $tex =~ s/\s{2}/\\quad{}/g;
+  $tex =~ s/\s{2}/ \\quad{}/g;
+  my @leads = $tex =~ /&[^\s]+\s/g;
+  my @eols = $tex =~ /&/g;
+  $tex = '&' . $tex;
+  if (0+@leads == 0+@eols && 0+@eols > 0) {
+    $tex =~ s/&([^\s]+)\s/\1&/g;
+  }
 }
 print $tex;
 if ($env eq 'phiq') {
