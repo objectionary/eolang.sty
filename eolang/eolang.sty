@@ -107,7 +107,7 @@ $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/~>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
+$tex =~ s/..>/\\mathrel{\\mapstochar\\dashrightarrow}/g;
 $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
