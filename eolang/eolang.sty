@@ -48,7 +48,6 @@
 
 
 
-
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -97,6 +96,7 @@ if ($env eq 'phiq') {
 $tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
+  $tex =~ s/\\\\\n/\n\n/g;
 }
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
