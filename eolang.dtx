@@ -275,8 +275,7 @@
 % \begin{phiquation*}
 % x -> [[
 %   y -> [[
-%     z !-> $, f ..> ? ]]]],
-
+%     z !-> $, f ..> ? ]]]],\\
 % \beta_1 := [ \psi -wait> ? ].
 % \end{phiquation*}
 % \end{document}
@@ -372,6 +371,7 @@ if ($env eq 'phiq') {
 $tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
+  $tex =~ s/\\\\\n/\n\n/g;
 }
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
