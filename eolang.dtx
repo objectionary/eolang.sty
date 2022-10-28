@@ -201,10 +201,11 @@
 
 % \DescribeMacro{\eolang}
 % \DescribeMacro{\phic}
+% \DescribeMacro{\xmir}
 % There is also a no-argument command |\eolang| to help you print the name of
 % \eolang{} language. It understands |anonymous| mode of \href{https://ctan.org/pkg/acmart}{acmart} and prints itself
 % differently, to double-blind your paper. There is also |\phic| command to print
-% the name of \phic{}, also sensitive to |anonymous| mode.
+% the name of \phic{}, also sensitive to |anonymous| mode. The macro |\xmir| prints "XMIR".
 % \begin{docshot}
 % \documentclass[anonymous]{acmart}
 % \thispagestyle{empty}
@@ -212,8 +213,9 @@
 % \begin{document}
 % In our research we use \eolang{}, \\
 % an experimental object-oriented \\
-% dataflow language, and \phic{}, \\
-% its formal foundation.
+% dataflow language, \phic{}, \\
+% as its formal foundation, and \xmir{} \\
+% --- its XML-based presentation.
 % \end{document}
 % \end{docshot}
 
@@ -653,13 +655,13 @@ print '\end{phicture}', "\n", '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command "eolang" added to print the name of the language in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
-\makeatletter\newcommand\eolang{%
+\newcommand\eolang{%
   \ifdefined\anon%
     \anon[XYZ]{{\sffamily EO}}%
   \else%
     {\sffamily EO}%
   \fi%
-}\makeatother
+}
 %    \end{macrocode}
 % \end{macro}
 
@@ -667,13 +669,26 @@ print '\end{phicture}', "\n", '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
-\makeatletter\newcommand\phic{%
+\newcommand\phic{%
   \ifdefined\anon%
     \anon[$\alpha$-calculus]{$\varphi$-calculus}%
   \else%
     $\varphi$-calculus%
   \fi%
-}\makeatother
+}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\xmir}
+% \changes{0.2.0}{2022/10/28}{New command "xmir" prints XMIR in both normal and anonymous mode of "acmart"}
+%    \begin{macrocode}
+\newcommand\xmir{%
+  \ifdefined\anon%
+    \anon[XML']{XMIR}%
+  \else%
+    XMIR%
+  \fi%
+}
 %    \end{macrocode}
 % \end{macro}
 
