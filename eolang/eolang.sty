@@ -321,21 +321,29 @@ print '\end{phicture}', "\n", '\endinput';
     "\eolang@tmpdir/\jobname/\hash.tex"}%
 }\makeatother
 
-\makeatletter\newcommand\eolang{%
+\newcommand\eolang{%
   \ifdefined\anon%
     \anon[XYZ]{{\sffamily EO}}%
   \else%
     {\sffamily EO}%
   \fi%
-}\makeatother
+}
 
-\makeatletter\newcommand\phic{%
+\newcommand\phic{%
   \ifdefined\anon%
     \anon[$\alpha$-calculus]{$\varphi$-calculus}%
   \else%
     $\varphi$-calculus%
   \fi%
-}\makeatother
+}
+
+\newcommand\xmir{%
+  \ifdefined\anon%
+    \anon[XML']{XMIR}%
+  \else%
+    XMIR%
+  \fi%
+}
 
 \newcommand\phiConst{%
   \mathrel{\hspace{.15em}}\mapstochar\mathrel{\hspace{-.15em}}\mapsto}
