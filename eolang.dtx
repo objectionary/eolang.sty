@@ -104,7 +104,7 @@
 %   ^ !-> $.b,
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
-%     \Delta ..> |01-FE-C3| ]]]],\\
+%     \Delta ..> 01-FE-C3 ]]]],\\
 % x -> [[ \alpha_0 -> ? ]].
 % \end{phiquation*}
 % \end{document}
@@ -170,9 +170,9 @@
 % \begin{document}
 % \begin{sodg}
 % v0
-% v1 xy:v0,-2,+1 data:|42|
+% v1 xy:v0,-2,+1 data:42
 % v0->v1 a:$x$ rho
-% v2 xy:v0,+1,+1 atom:$\xi.x+1$
+% v2 xy:v0,+1,+1 atom:\xi.x+1
 % v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10
 % \end{sodg}
@@ -184,8 +184,8 @@
 % unary like |rho| or binary like |atom:$\xi.x+1$|. Binary markers have two
 % parts, separated by colon. The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached |<box>|,
-%   \item ``|atom:[<box>]|'' makes it an atom with an optional attached |<box>|,
+%   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached |<box>| (the content of the box may only be numeric data),
+%   \item ``|atom:[<box>]|'' makes it an atom with an optional attached |<box>| (the content of the box is a math formula),
 %   \item ``|box:<txt>|'' attaches a |<box>| to it,
 %   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex |<v>|,
 %     shifting it right by |<r>| % and down by |<d>| centimetres.
@@ -260,8 +260,8 @@
 % \begin{document}
 % \begin{phiquation*}
 % \dfrac \
-%  {x->[[@->y]] \quad y->[[z->|42|]]} \
-%  {x.z -> |42|} \
+%  {x->[[@->y]] \quad y->[[z->42]]} \
+%  {x.z -> 42} \
 %  \text{\sffamily R1}
 % \end{phiquation*}
 % \end{document}
@@ -360,6 +360,7 @@
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
 % \changes{0.1.0}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
+% \changes{0.2.0}{2022/10/29}{Numbers automatically render as "texttt". No need to use vertical bars around them anymore.}
 % Then, we create a Perl script for |phiquation| processing:
 %    \begin{macrocode}
 \makeatletter
@@ -390,6 +391,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
 }
+$tex =~ s/([\s,>\(])([0-9A-F][0-9A-F-]*)/\1|\2|/g;
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
@@ -478,6 +480,7 @@ print '\endinput', "\n";
 % \begin{macro}{eolang-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
+% \changes{0.2.0}{2022/10/28}{The content of "atom" and "data" boxes is parsed automatically as formulas and numbers, respectively.}
 % Then, we create a Perl script for |sodg| graphs processing:
 %    \begin{macrocode}
 \makeatletter
@@ -523,12 +526,20 @@ foreach my $c (@cmds) {
     if (exists $opts{'data'}) {
       print ',phi-data';
       if (not $opts{'data'} eq '') {
-        $opts{'box'} = $opts{'data'};
+        my $d = $opts{'data'};
+        if (index($d, '|') == -1) {
+          $d = '\texttt{' . $d . '}';
+        }
+        $opts{'box'} = $d;
       }
     } elsif (exists $opts{'atom'}) {
       print ',phi-atom';
       if (not $opts{'atom'} eq '') {
-        $opts{'box'} = $opts{'atom'};
+        my $a = $opts{'atom'};
+        if (index($a, '$') == -1) {
+          $a = '$' . $a . '$';
+        }
+        $opts{'box'} = $a;
       }
     } else {
       print ',phi-object';
@@ -652,6 +663,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\eolang}
+% Then, we define a simple supplementary command to help you print \eolang{}, the name of our language.
 % \changes{0.1.0}{2022/10/25}{New command "eolang" added to print the name of the language in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
@@ -666,6 +678,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phic}
+% Then, we define a simple supplementary command to help you print \phic{}, the name of our formal apparatus.
 % \changes{0.1.0}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
@@ -680,6 +693,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\xmir}
+% Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
 % \changes{0.2.0}{2022/10/28}{New command "xmir" prints XMIR in both normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
 \newcommand\xmir{%
