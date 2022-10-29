@@ -68,7 +68,9 @@
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 
 \RequirePackage{pdftexcmds}
-\makeatletter\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{#1}}\makeatother
+\makeatletter
+\newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{#1}}
+\makeatother
 
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
