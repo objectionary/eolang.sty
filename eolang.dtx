@@ -361,7 +361,8 @@
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
 % \changes{0.1.0}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
 % \changes{0.2.0}{2022/10/29}{Numbers automatically render as "texttt". No need to use vertical bars around them anymore.}
-% Then, we create a Perl script for |phiquation| processing:
+% Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
+% \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
@@ -481,7 +482,8 @@ print '\endinput', "\n";
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
 % \changes{0.2.0}{2022/10/28}{The content of "atom" and "data" boxes is parsed automatically as formulas and numbers, respectively.}
-% Then, we create a Perl script for |sodg| graphs processing:
+% Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
+% \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
@@ -593,6 +595,14 @@ print '\end{phicture}', "\n", '\endinput';
 \iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
   "\eolang@tmpdir/eolang-sodg.pl"}
 \makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{FancyVerbLine}
+% Then, we reset the counter for \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}, so that
+% it starts counting lines from zero when the document starts rendering:
+%    \begin{macrocode}
+\setcounter{FancyVerbLine}{0}
 %    \end{macrocode}
 % \end{macro}
 
