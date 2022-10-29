@@ -98,6 +98,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
 }
+$tex =~ s/([\s,>\(])([0-9A-F][0-9A-F-]*)/\1|\2|/g;
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
@@ -212,12 +213,20 @@ foreach my $c (@cmds) {
     if (exists $opts{'data'}) {
       print ',phi-data';
       if (not $opts{'data'} eq '') {
-        $opts{'box'} = $opts{'data'};
+        my $d = $opts{'data'};
+        if (index($d, '|') == -1) {
+          $d = '\texttt{' . $d . '}';
+        }
+        $opts{'box'} = $d;
       }
     } elsif (exists $opts{'atom'}) {
       print ',phi-atom';
       if (not $opts{'atom'} eq '') {
-        $opts{'box'} = $opts{'atom'};
+        my $a = $opts{'atom'};
+        if (index($a, '$') == -1) {
+          $a = '$' . $a . '$';
+        }
+        $opts{'box'} = $a;
       }
     } else {
       print ',phi-object';
