@@ -48,6 +48,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -115,6 +116,8 @@ $tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 if ($env ne 'phiq') {
+  $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
+  $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
   $tex =~ s/\n\n/\\\\&/g;
   $tex =~ s/\n/\\\\[-4pt]&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
