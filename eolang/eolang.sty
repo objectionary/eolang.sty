@@ -160,9 +160,9 @@ print '\endinput', "\n";
 {\end{VerbatimOut}\eolang@process{equation}}
 \makeatother
 
-\makeatletter\newcommand\phiq[1]{
+\makeatletter\newcommand\phiq[1]{%
   \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
-    /bin/echo '\detokenize{#1}'}
+    /bin/echo '\detokenize{#1}'}%
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
