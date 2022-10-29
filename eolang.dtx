@@ -153,9 +153,9 @@
 % \pagestyle{empty}
 % \usepackage{eolang}
 % \begin{document}
-% A simple object \\
+% A simple object
 % \phiq{x -> [[@ -> y]]} \\
-% is a decorator of \\
+% is a decorator of
 % the data object \\
 % \phiq{y -> [[\Delta ..> 42]]}.
 % \end{document}
@@ -466,9 +466,9 @@ print '\endinput', "\n";
 % \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
-\makeatletter\newcommand\phiq[1]{
+\makeatletter\newcommand\phiq[1]{%
   \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
-    /bin/echo '\detokenize{#1}'}
+    /bin/echo '\detokenize{#1}'}%
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
