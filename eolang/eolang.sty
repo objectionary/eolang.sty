@@ -345,11 +345,12 @@ print '\end{phicture}', "\n", '\endinput';
   \fi%
 }
 
+\RequirePackage{hyperref}
 \newcommand\phic{%
   \ifdefined\anon%
-    \anon[$\alpha$-calculus]{$\varphi$-calculus}%
+    \anon[\texorpdfstring{$\alpha$}{a}-calculus]{\texorpdfstring{$\varphi$}{phi}-calculus}%
   \else%
-    $\varphi$-calculus%
+    \texorpdfstring{$\varphi$}{phi}-calculus%
   \fi%
 }
 
