@@ -112,7 +112,7 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
-$tex =~ s/~>/\\mathrel{\\leadsto}/g;
+$tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
@@ -375,6 +375,9 @@ print '\end{phicture}', "\n", '\endinput';
 
 \newcommand\phiConst{%
   \mathrel{\hspace{.15em}}\mapstochar\mathrel{\hspace{-.15em}}\mapsto}
+
+\newcommand\phiWave{%
+  \mapstochar\mathrel{\mspace{0.45mu}}\leadsto}
 
 \RequirePackage{trimclip}
 \RequirePackage{amsfonts}
