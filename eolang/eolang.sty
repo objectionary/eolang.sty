@@ -68,6 +68,8 @@
 
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 
+\makeatletter\newcounter{eolang@lineno}\makeatother
+
 \RequirePackage{pdftexcmds}
 \makeatletter
 \newcommand\eolang@mdfive[1]{\pdf@filemdfivesum{#1}}
@@ -153,13 +155,18 @@ print '\endinput', "\n";
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }
 \newenvironment{phiquation*}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation}}
 \makeatother
@@ -326,7 +333,9 @@ print '\end{phicture}', "\n", '\endinput';
   font={\scriptsize},color=black]
 
 \makeatletter\newenvironment{sodg}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
   \def\hash{\eolang@mdfive
@@ -336,6 +345,7 @@ print '\end{phicture}', "\n", '\endinput';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 
 \newcommand\eolang{%
