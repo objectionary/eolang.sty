@@ -126,6 +126,8 @@
 %     (|\varnothing|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
+%   \item ``|~>|'' maps to ``$\leadsto$''
+%     (|\leadsto|),
 %   \item ``|!->|'' maps to ``$\phiConst$''
 %     (|\phiConst|),
 %   \item ``|..>|'' maps to ``$\phiDotted$''
@@ -280,7 +282,7 @@
 % x->[[@->y, z->42,
 %   \alpha_0->?, \alpha_1->42]]
 % \end{split}}{\begin{split}
-% x->[[@->y, z->?, f -> |pi|(
+% x->[[@->y, z->?, f ~> |pi|(
 %   \alpha_0->[[ \psi !-> |hello|(12) ]],
 %     \alpha_1->42)]]
 % \end{split}}\text{R2}.
@@ -384,6 +386,7 @@
 % \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
 % \changes{0.1.0}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
 % \changes{0.2.0}{2022/10/29}{Numbers automatically render as "texttt". No need to use vertical bars around them anymore.}
+% \changes{0.3.0}{2022/10/30}{New arrow added, that looks like "leadsto".}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -424,6 +427,7 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
+$tex =~ s/~>/\\mathrel{\\leadsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
@@ -486,7 +490,7 @@ print '\endinput', "\n";
 % \end{macro}
 
 % \begin{macro}{\phiq}
-% \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled}
+% \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled.}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
 \makeatletter\newcommand\phiq[1]{%
