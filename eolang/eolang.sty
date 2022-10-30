@@ -112,7 +112,7 @@ $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
-$tex =~ s/\|([^\|]+)\|/\\texttt{\1}{}/g;
+$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 if ($env ne 'phiq') {
@@ -190,7 +190,7 @@ if (index($tex, "\t") > 0) {
 $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
 $tex =~ s/\n\s+/\n/g;
-$tex =~ s/\|([^\|]+)\|/\\texttt{\1}/g;
+$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
 my @cmds = split (/\n/g, $tex);
 foreach my $t (@cmds) {
   print '% ', $t, "\n";
@@ -220,7 +220,7 @@ foreach my $c (@cmds) {
       if (not $opts{'data'} eq '') {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
-          $d = '\texttt{' . $d . '}';
+          $d = '\textnormal{\texttt{' . $d . '}}';
         }
         $opts{'box'} = $d;
       }
