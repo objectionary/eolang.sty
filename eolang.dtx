@@ -369,6 +369,14 @@
 \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
 %    \end{macrocode}
 
+% \begin{macro}{\eolang@lineno}
+% \changes{0.3.0}{2022/10/30}{New counter for protecting lineno.}
+% Then, we define an internal counter to protect line number from changing:
+%    \begin{macrocode}
+\makeatletter\newcounter{eolang@lineno}\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{\eolang@mdfive}
 % \changes{0.1.0}{2022/10/26}{New supplementary command added to calculate MD5 sum of a file.}
 % Then, we define a command for MD5 hash calculating of a file:
@@ -476,13 +484,18 @@ print '\endinput', "\n";
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }
 \newenvironment{phiquation*}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation}}
 \makeatother
@@ -687,7 +700,9 @@ print '\end{phicture}', "\n", '\endinput';
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
 \makeatletter\newenvironment{sodg}%
-{\VerbatimEnvironment\begin{VerbatimOut}
+{\VerbatimEnvironment%
+\setcounter{eolang@lineno}{\value{FancyVerbLine}}%
+\begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
   \def\hash{\eolang@mdfive
@@ -697,6 +712,7 @@ print '\end{phicture}', "\n", '\endinput';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
