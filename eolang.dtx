@@ -717,11 +717,12 @@ print '\end{phicture}', "\n", '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
 % normal and anonymous mode of "acmart"}
 %    \begin{macrocode}
+\RequirePackage{hyperref}
 \newcommand\phic{%
   \ifdefined\anon%
-    \anon[$\alpha$-calculus]{$\varphi$-calculus}%
+    \anon[\texorpdfstring{$\alpha$}{a}-calculus]{\texorpdfstring{$\varphi$}{phi}-calculus}%
   \else%
-    $\varphi$-calculus%
+    \texorpdfstring{$\varphi$}{phi}-calculus%
   \fi%
 }
 %    \end{macrocode}

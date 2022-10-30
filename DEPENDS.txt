@@ -9,3 +9,4 @@ hard pdftexcmds
 hard ifluatex
 hard ifxetex
 hard adjustbox
+hard hyperref
