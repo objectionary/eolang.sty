@@ -110,6 +110,7 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
+$tex =~ s/~>/\\mathrel{\\leadsto}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
