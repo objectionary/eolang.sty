@@ -216,12 +216,20 @@ foreach my $c (@cmds) {
     print '\node[';
     if (exists $opts{'xy'}) {
       my ($v, $right, $down) = split(/,/, $opts{'xy'});
-      print ',below right=';
-      print $down;
-      print 'cm and ';
-      print $right;
-      print 'cm of ';
-      print $v;
+      my $loc = '';
+      if ($down >= 0) {
+        $loc = 'below';
+      } else {
+        $loc = 'above';
+      }
+      $log = $loc . ' ';
+      if ($right >= 0) {
+        $loc = 'right';
+      } else {
+        $loc = 'left';
+      }
+      print ',' . $loc . '=';
+      print $down . 'cm and ' . $right . 'cm of ' . $v;
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
