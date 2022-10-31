@@ -532,6 +532,16 @@ print '\endinput', "\n";
 %    \begin{macrocode}
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
+sub round {
+  my ($i) = @_;
+  if (index($i, '-') == 0) {
+    $i = substr($i, 1);
+  }
+  if (index($i, '.') == 0) {
+    $i = '0' . $i;
+  }
+  return $i;
+}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 print '% This file is auto-generated', "\n";
@@ -575,7 +585,7 @@ foreach my $c (@cmds) {
         $loc = $loc . 'left';
       }
       print ',' . $loc . '=';
-      print abs($down) . 'cm and ' . abs($right) . 'cm of ' . $v;
+      print round($down) . 'cm and ' . round($right) . 'cm of ' . $v;
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
@@ -624,7 +634,7 @@ foreach my $c (@cmds) {
     my ($from, $to) = split (/->/, $head);
     print ' (', $from, ') ';
     if (exists $opts{'bend'}) {
-      print 'edge [bend right=', $opts{'bend'}, ']';
+      print 'edge [bend right=', round($opts{'bend'}), ']';
     } else {
       print '--';
     }
