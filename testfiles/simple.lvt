@@ -30,7 +30,7 @@ v0->v1 a:$x$ rho
 \end{sodg}
 
 \begin{sodg}
-v0
+v0 \\ v0!A
 v1 xy:v0,-.5,+1 data:|42|
 v0->v1 a:$x$ rho
 v2 xy:v0,1,+1 atom:$\xi.x+1$

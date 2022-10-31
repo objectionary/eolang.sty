@@ -171,7 +171,7 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{sodg}
-% v0 \\ v0=>
+% v0 \\ v0=> \\ v0!A
 % v1 xy:v0,-.8,2.8 data:42 \\ =>v1
 % v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
@@ -207,6 +207,10 @@
 % It is also possible to put transformation arrows to the graph, with the help of |v0=>v1| syntax. The arrow
 % will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
 % saying for example |v3=>|, of from the left to the vertes, by saying for example |=>v5|.
+
+% You can also put a marker at the left side of a vertex, using |v5!A| syntax, where |v5| is the vertex
+% and |A| is the text in the marker. They are useful when you put a few graphs on a picture
+% explaining how one graph is transformed to another one and so forth.
 
 % Be aware, unrecognized markers are simply ignored, without any error reporting.
 
@@ -613,6 +617,9 @@ foreach my $c (@cmds) {
       print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$)';
     }
     print '{}';
+  } elsif (index($head, '!') >= 0) {
+    my ($v, $marker) = split (/!/, $head);
+    print '\node [phi-marker, left=.6cm of ' . $v . ']{' . $marker . '}';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -717,6 +724,9 @@ print '\end{phicture}', "\n", '\endinput';
 \tikzstyle{phi-arrow} = [fill=white!80!black, single arrow,
   minimum height=0.5cm, minimum width=0.5cm,
   single arrow head extend=2mm]
+\tikzstyle{phi-marker} = [inner sep=0pt, minimum height=1.4em,
+  minimum width=1.4em, font={\small\color{white}\ttfamily},
+  fill=gray]
 \tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
   draw,font={\small}]
 \tikzstyle{phi-object} = [phi-thing,circle]
