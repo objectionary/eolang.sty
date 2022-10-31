@@ -541,7 +541,7 @@ print '\endinput', "\n";
 % \changes{0.2.0}{2022/10/28}{The content of \texttt{atom} and \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
 % \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with \texttt{\char`\\Delta} and \texttt{\char`\\lambda} commands.}
 % \changes{0.4.0}{2022/10/31}{Relative positioning of vertices fixed.}
-% \changes{0.4.0}{2022/10/31}{Transforming arrows added with \texttt{=>} syntax.}
+% \changes{0.4.0}{2022/10/31}{Transforming arrows added with \texttt{=>} syntax, also markers with exclamation mark syntax.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -794,7 +794,8 @@ print '\end{phicture}', "\n", '\endinput';
 \RequirePackage{hyperref}
 \newcommand\phic{%
   \ifdefined\anon%
-    \anon[\texorpdfstring{$\alpha$}{a}-calculus]{\texorpdfstring{$\varphi$}{phi}-calculus}%
+    \anon[\texorpdfstring{$\alpha$}{a}-calculus]
+      {\texorpdfstring{$\varphi$}{phi}-calculus}%
   \else%
     \texorpdfstring{$\varphi$}{phi}-calculus%
   \fi%
