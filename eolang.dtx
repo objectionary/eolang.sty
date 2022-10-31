@@ -173,7 +173,7 @@
 % \begin{sodg}
 % v0
 % v1 xy:v0,-2,+1 data:42
-% v0->v1 a:$x$ rho
+% v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
 % v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10
@@ -389,12 +389,12 @@
 % \end{macro}
 
 % \begin{macro}{eolang-phi.pl}
-% \changes{0.0.2}{2022/10/21}{The symbols ``['' and ``]'' replaced with ``[['' and ``]]'' for abstract object brackets, because they conflicted with normal square brackets}
+% \changes{0.0.2}{2022/10/21}{The symbols ``\texttt{[}'' and ``\texttt{]}'' replaced with ``\texttt{[[}'' and ``\texttt{]]}'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
-% \changes{0.0.2}{2022/10/21}{Parsing of symbols ``@,'' ``\^{},'' and ``\&'' enabled (varphi, rho, and sigma)}
-% \changes{0.1.0}{2022/10/26}{A new Perl script "eolang-phi.pl" added for parsing of phi expressions.}
-% \changes{0.2.0}{2022/10/29}{Numbers automatically render as "texttt". No need to use vertical bars around them anymore.}
-% \changes{0.3.0}{2022/10/30}{New arrow added, that looks like "leadsto".}
+% \changes{0.0.2}{2022/10/21}{Parsing of symbols ``\texttt{@},'' ``\texttt{\^{}},'' and ``\texttt{\&}'' enabled (\texttt{\char`\\varphi}, \texttt{\char`\\rho}, and \texttt{\char`\\sigma})}
+% \changes{0.1.0}{2022/10/26}{A new Perl script "\texttt{eolang-phi.pl}" added for parsing of phi expressions.}
+% \changes{0.2.0}{2022/10/29}{Numbers automatically render as \texttt{\char`\\texttt}. No need to use vertical bars around them anymore.}
+% \changes{0.3.0}{2022/10/30}{New arrow added, that looks like \texttt{\char`\\leadsto}.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -522,8 +522,9 @@ print '\endinput', "\n";
 
 % \begin{macro}{eolang-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
-% \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for phiquation, another one for sodg.}
-% \changes{0.2.0}{2022/10/28}{The content of "atom" and "data" boxes is parsed automatically as formulas and numbers, respectively.}
+% \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for \texttt{phiquation}, another one for \texttt{sodg}.}
+% \changes{0.2.0}{2022/10/28}{The content of \texttt{atom} and \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
+% \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with \texttt{\char`\\Delta} and \texttt{\char`\\lambda} commands.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -572,7 +573,7 @@ foreach my $c (@cmds) {
       if (not $opts{'data'} eq '') {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
-          $d = '\textnormal{\texttt{' . $d . '}}';
+          $d = '$\Delta\phiDotted\text{\textnormal{\texttt{' . $d . '}}}$';
         }
         $opts{'box'} = $d;
       }
@@ -581,7 +582,7 @@ foreach my $c (@cmds) {
       if (not $opts{'atom'} eq '') {
         my $a = $opts{'atom'};
         if (index($a, '$') == -1) {
-          $a = '$' . $a . '$';
+          $a = '$\lambda\phiDotted{}' . $a . '$';
         }
         $opts{'box'} = $a;
       }
@@ -624,7 +625,11 @@ foreach my $c (@cmds) {
       print '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
-      print ' node [phi-attr] {', $opts{'a'}, '}';
+      my $a = $opts{'a'};
+      if (index($a, '|') == -1 and index($a, '$') == -1) {
+        $a = '$' . $a . '$';
+      }
+      print ' node [phi-attr] {', $a, '}';
     }
     print ' (', $to, ')';
   }
@@ -695,7 +700,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{sodg}
-% \changes{0.0.2}{2022/10/20}{The environment ``phigure'' renamed to ``sodg'' for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name ``sodg'' is better.}
+% \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
 % Then, create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
@@ -719,8 +724,8 @@ print '\end{phicture}', "\n", '\endinput';
 
 % \begin{macro}{\eolang}
 % Then, we define a simple supplementary command to help you print \eolang{}, the name of our language.
-% \changes{0.1.0}{2022/10/25}{New command "eolang" added to print the name of the language in both
-% normal and anonymous mode of "acmart"}
+% \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\eolang} added to print the name of the language in both
+% normal and anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\eolang{%
   \ifdefined\anon%
@@ -734,8 +739,8 @@ print '\end{phicture}', "\n", '\endinput';
 
 % \begin{macro}{\phic}
 % Then, we define a simple supplementary command to help you print \phic{}, the name of our formal apparatus.
-% \changes{0.1.0}{2022/10/25}{New command "phic" prints the name of $\varphi$-calculus in both
-% normal and anonymous mode of "acmart"}
+% \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of $\varphi$-calculus in both
+% normal and anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \RequirePackage{hyperref}
 \newcommand\phic{%
@@ -750,7 +755,7 @@ print '\end{phicture}', "\n", '\endinput';
 
 % \begin{macro}{\xmir}
 % Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
-% \changes{0.2.0}{2022/10/28}{New command "xmir" prints XMIR in both normal and anonymous mode of "acmart"}
+% \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\xmir{%
   \ifdefined\anon%
@@ -763,7 +768,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiConst}
-% \changes{0.1.0}{2022/10/26}{New command "phiConst" added to denote a link to a constant attribute.}
+% \changes{0.1.0}{2022/10/26}{New command \texttt{\char`\\phiConst} added to denote a link to a constant attribute.}
 % Then, we define a command to render an arrow for a constant attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
@@ -773,7 +778,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiWave}
-% \changes{0.3.0}{2022/10/30}{New command "phiWave" added to denote a link to a multi-layer attribute.}
+% \changes{0.3.0}{2022/10/30}{New command \texttt{\char`\\phiWave} added to denote a link to a multi-layer attribute.}
 % Then, we define a command to render an arrow for a multi-layer attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/198755}{here}:
 %    \begin{macrocode}
@@ -783,7 +788,7 @@ print '\end{phicture}', "\n", '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiDotted}
-% \changes{0.1.0}{2022/10/27}{New command "phiDotted" added to denote a link to a special attribute.}
+% \changes{0.1.0}{2022/10/27}{New command \texttt{\char`\\phiDotted} added to denote a link to a special attribute.}
 % Then, we define a command to render an arrow for a special attribute,
 % as suggested \href{https://tex.stackexchange.com/questions/663176}{here}:
 %    \begin{macrocode}
