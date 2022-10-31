@@ -171,8 +171,8 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{sodg}
-% v0
-% v1 xy:v0,-1.5,1.8 data:42
+% v0 \\ =>v0 \\ v0=>
+% v1 xy:v0,-.8,2.8 data:42
 % v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
 % v1->v2 a:|hi| bend:-15
@@ -557,6 +557,7 @@ if (index($tex, "\t") > 0) {
   exit 1;
 }
 $tex =~ s/^\s+|\s+$//g;
+$tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
 $tex =~ s/\n\s+/\n/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
@@ -573,7 +574,7 @@ foreach my $c (@cmds) {
     my ($q, $t) = split (/:/, $p);
     $opts{$q} = $t;
   }
-  if (index($head, '->') > 0) {
+  if (index($head, '->') >= 0) {
     print '\draw[';
     if (exists $opts{'pi'}) {
       print ',phi-pi';
@@ -602,12 +603,12 @@ foreach my $c (@cmds) {
       print ' node [phi-attr] {', $a, '}';
     }
     print ' (', $to, ')';
-  } elsif (index($head, '=>') > 0) {
+  } elsif (index($head, '=>') >= 0) {
     my ($from, $to) = split (/=>/, $head);
     if ($from eq '') {
-      print '\node [phi-arrow, left=1cm of ' . $to . ']';
+      print '\node [phi-arrow, left=.6cm of ' . $to . ']';
     } elsif ($to eq '') {
-      print '\node [phi-arrow, right=1cm of ' . $from . ']';
+      print '\node [phi-arrow, right=.6cm of ' . $from . ']';
     } else {
       print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$)';
     }
