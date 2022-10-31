@@ -49,6 +49,10 @@
 
 
 
+
+
+
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -248,7 +252,14 @@ foreach my $c (@cmds) {
     print ' (', $to, ')';
   } elsif (index($head, '=>') > 0) {
     my ($from, $to) = split (/=>/, $head);
-    print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$) {}';
+    if ($from eq '') {
+      print '\node [phi-arrow, left=1cm of ' . $to . ']';
+    } elsif ($to eq '') {
+      print '\node [phi-arrow, right=1cm of ' . $from . ']';
+    } else {
+      print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$)';
+    }
+    print '{}';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
