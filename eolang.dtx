@@ -200,6 +200,7 @@
 %   \item ``|a:<txt>|'' attaches label |<txt>| to it,
 %   \item ``|pi|'' makes it dotted, with $\pi$ label.
 % \end{itemize}
+% Be aware, unrecognized markers are simply ignored, without any error reporting.
 
 % \DescribeMacro{\eolang}
 % \DescribeMacro{\phic}
@@ -525,6 +526,7 @@ print '\endinput', "\n";
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for \texttt{phiquation}, another one for \texttt{sodg}.}
 % \changes{0.2.0}{2022/10/28}{The content of \texttt{atom} and \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
 % \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with \texttt{\char`\\Delta} and \texttt{\char`\\lambda} commands.}
+% \changes{0.4.0}{2022/10/31}{Relative positioning of vertices fixed.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
