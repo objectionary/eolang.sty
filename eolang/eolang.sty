@@ -217,15 +217,14 @@ foreach my $c (@cmds) {
     if (exists $opts{'xy'}) {
       my ($v, $right, $down) = split(/,/, $opts{'xy'});
       my $loc = '';
-      if ($down >= 0) {
-        $loc = 'below';
-      } else {
-        $loc = 'above';
+      if ($down > 0) {
+        $loc = 'below ';
+      } elsif ($down < 0) {
+        $loc = 'above ';
       }
-      $loc = $loc . ' ';
-      if ($right >= 0) {
+      if ($right > 0) {
         $loc = $loc . 'right';
-      } else {
+      } elsif ($right < 0) {
         $loc = $loc . 'left';
       }
       print ',' . $loc . '=';
