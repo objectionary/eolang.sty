@@ -31,10 +31,10 @@ runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/B5B6C245E4F911
 ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
 iexec: The content of '_eolang-lua/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex' was included into the document
-runsystem((cp "_eolang-lua/simple/sodg.tex" "_eolang-lua/simple/044B543049BBF6EA
-EB6A35F990EE73A5.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/044B543049BBF6
-EAEB6A35F990EE73A5.tex") > _eolang-lua/simple/044B543049BBF6EAEB6A35F990EE73A5-p
+runsystem((cp "_eolang-lua/simple/sodg.tex" "_eolang-lua/simple/648B4584544A431A
+1C0B05644A0DBFEC.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/648B4584544A43
+1A1C0B05644A0DBFEC.tex") > _eolang-lua/simple/648B4584544A431A1C0B05644A0DBFEC-p
 ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/simple/044B543049BBF6EAEB6A35F990EE73A5-post.tex)
-iexec: The content of '_eolang-lua/simple/044B543049BBF6EAEB6A35F990EE73A5-post.tex' was included into the document
+(_eolang-lua/simple/648B4584544A431A1C0B05644A0DBFEC-post.tex)
+iexec: The content of '_eolang-lua/simple/648B4584544A431A1C0B05644A0DBFEC-post.tex' was included into the document

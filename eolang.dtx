@@ -564,7 +564,39 @@ foreach my $c (@cmds) {
     my ($q, $t) = split (/:/, $p);
     $opts{$q} = $t;
   }
-  if (index($head, '->') == -1) {
+  if (index($head, '->') > 0) {
+    print '\draw[';
+    if (exists $opts{'pi'}) {
+      print ',phi-pi';
+      if (not exists $opts{'a'}) {
+        $opts{'a'} = '$\pi$';
+      }
+    }
+    print ']';
+    my ($from, $to) = split (/->/, $head);
+    print ' (', $from, ') ';
+    if (exists $opts{'bend'}) {
+      print 'edge [bend right=', num($opts{'bend'}), ']';
+    } else {
+      print '--';
+    }
+    if (exists $opts{'rho'} or exists $opts{'rrho'}) {
+      print ' pic[sloped,phi-rho]{parallel arrow={';
+      print '-' if not exists $opts{'rrho'};
+      print '0.3,-0.15}}';
+    }
+    if (exists $opts{'a'}) {
+      my $a = $opts{'a'};
+      if (index($a, '|') == -1 and index($a, '$') == -1) {
+        $a = '$' . $a . '$';
+      }
+      print ' node [phi-attr] {', $a, '}';
+    }
+    print ' (', $to, ')';
+  } elsif (index($head, '=>') > 0) {
+    my ($from, $to) = split (/=>/, $head);
+    print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$) {}';
+  } else {
     print '\node[';
     if (exists $opts{'xy'}) {
       my ($v, $right, $down) = split(/,/, $opts{'xy'});
@@ -620,35 +652,6 @@ foreach my $c (@cmds) {
       print $head, '.south east) {';
       print $opts{'box'}, '}';
     }
-  } else {
-    print '\draw[';
-    if (exists $opts{'pi'}) {
-      print ',phi-pi';
-      if (not exists $opts{'a'}) {
-        $opts{'a'} = '$\pi$';
-      }
-    }
-    print ']';
-    my ($from, $to) = split (/->/, $head);
-    print ' (', $from, ') ';
-    if (exists $opts{'bend'}) {
-      print 'edge [bend right=', num($opts{'bend'}), ']';
-    } else {
-      print '--';
-    }
-    if (exists $opts{'rho'} or exists $opts{'rrho'}) {
-      print ' pic[sloped,phi-rho]{parallel arrow={';
-      print '-' if not exists $opts{'rrho'};
-      print '0.3,-0.15}}';
-    }
-    if (exists $opts{'a'}) {
-      my $a = $opts{'a'};
-      if (index($a, '|') == -1 and index($a, '$') == -1) {
-        $a = '$' . $a . '$';
-      }
-      print ' node [phi-attr] {', $a, '}';
-    }
-    print ' (', $to, ')';
   }
   print ";\n";
 }
@@ -694,7 +697,7 @@ print '\end{phicture}', "\n", '\endinput';
     pics/parallel arrow/.style={
       code={\draw[-latex,phi-rho] (##1) -- (-##1);}}]}%
   {\end{tikzpicture}}
-\tikzstyle{transforms} = [fill=white!80!black, single arrow,
+\tikzstyle{phi-arrow} = [fill=white!80!black, single arrow,
   minimum height=0.5cm, minimum width=0.5cm,
   single arrow head extend=2mm]
 \tikzstyle{phi-thing} = [thick,inner sep=0pt,minimum height=2.4em,
