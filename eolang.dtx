@@ -182,34 +182,36 @@
 % \end{docshot}
 % The content of the environment is parsed line by line. Markers in each line are
 % separated by a single space. The first marker is either a unique name of a
-% vertex, like |v1| in the example above, or an edge, like |v0->v1|. All other markers are either
-% unary like |rho| or binary like |atom:$\xi.x+1$|. Binary markers have two
+% vertex, like ``|v1|'' in the example above, or an edge, like ``|v0->v1|.'' All other markers are either
+% unary like ``|rho|'' or binary like ``|atom:$\xi.x+1$|.'' Binary markers have two
 % parts, separated by colon.
 
 % The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached |<box>| (the content of the box may only be numeric data),
-%   \item ``|atom:[<box>]|'' makes it an atom with an optional attached |<box>| (the content of the box is a math formula),
-%   \item ``|box:<txt>|'' attaches a |<box>| to it,
-%   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex |<v>|,
-%     shifting it right by |<r>| % and down by |<d>| centimetres.
+%   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached ``|<box>|''
+%     (the content of the box may only be numeric data),
+%   \item ``|atom:[<box>]|'' makes it an atom with an optional attached ``|<box>|''
+%     (the content of the box is a math formula),
+%   \item ``|box:<txt>|'' attaches a ``|<box>|'' to it,
+%   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex ``|<v>|,''
+%     shifting it right by ``|<r>|'' and down by ``|<d>|'' centimetres.
 % \end{itemize}
 
 % The following markers are supported for an edge:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|rho|'' places a backward snake arrow to the edge,
 %   \item ``|rrho|'' places a reverse |rho|,
-%   \item ``|bend:<angle>|'' bend it right by the amount of |<angle>|,
-%   \item ``|a:<txt>|'' attaches label |<txt>| to it,
+%   \item ``|bend:<angle>|'' bend it right by the amount of ``|<angle>|,''
+%   \item ``|a:<txt>|'' attaches label ``|<txt>|'' to it,
 %   \item ``|pi|'' makes it dotted, with $\pi$ label.
 % \end{itemize}
 
-% It is also possible to put transformation arrows to the graph, with the help of |v0=>v1| syntax. The arrow
+% It is also possible to put transformation arrows to the graph, with the help of ``|v0=>v1|'' syntax. The arrow
 % will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
-% saying for example |v3=>|, of from the left to the vertes, by saying for example |=>v5|.
+% saying for example ``|v3=>|'', of from the left to the vertes, by saying for example ``|=>v5|.''
 
-% You can also put a marker at the left side of a vertex, using |v5!A| syntax, where |v5| is the vertex
-% and |A| is the text in the marker. They are useful when you put a few graphs on a picture
+% You can also put a marker at the left side of a vertex, using ``|v5!A|'' syntax, where ``|v5|'' is the vertex
+% and ``|A|'' is the text in the marker. They are useful when you put a few graphs on a picture
 % explaining how one graph is transformed to another one and so forth.
 
 % Be aware, unrecognized markers are simply ignored, without any error reporting.
