@@ -185,14 +185,9 @@ print '\endinput', "\n";
 
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
-sub round {
+sub num {
   my ($i) = @_;
-  if (index($i, '-') == 0) {
-    $i = substr($i, 1);
-  }
-  if (index($i, '.') == 0) {
-    $i = '0' . $i;
-  }
+  $i =~ s/(\+|-)\./\10./g;
   return $i;
 }
 open(my $fh, '<', $ARGV[0]);
@@ -238,7 +233,7 @@ foreach my $c (@cmds) {
         $loc = $loc . 'left';
       }
       print ',' . $loc . '=';
-      print round($down) . 'cm and ' . round($right) . 'cm of ' . $v;
+      print abs(num($down)) . 'cm and ' . abs(num($right)) . 'cm of ' . $v;
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
@@ -290,7 +285,7 @@ foreach my $c (@cmds) {
     my ($from, $to) = split (/->/, $head);
     print ' (', $from, ') ';
     if (exists $opts{'bend'}) {
-      print 'edge [bend right=', round($opts{'bend'}), ']';
+      print 'edge [bend right=', num($opts{'bend'}), ']';
     } else {
       print '--';
     }
