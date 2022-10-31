@@ -20,7 +20,7 @@ runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/B5B6C245E4F9115CF7567FBD
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A.tex") > _eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
 iexec: The content of '_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex' was included into the document
-runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/648B4584544A431A1C0B05644A0DBFEC.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/648B4584544A431A1C0B05644A0DBFEC.tex") > _eolang/simple/648B4584544A431A1C0B05644A0DBFEC-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/648B4584544A431A1C0B05644A0DBFEC-post.tex)
-iexec: The content of '_eolang/simple/648B4584544A431A1C0B05644A0DBFEC-post.tex' was included into the document
+runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/602D2697FC5D920E49AEC6D2953E0CB2.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/602D2697FC5D920E49AEC6D2953E0CB2.tex") > _eolang/simple/602D2697FC5D920E49AEC6D2953E0CB2-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/602D2697FC5D920E49AEC6D2953E0CB2-post.tex)
+iexec: The content of '_eolang/simple/602D2697FC5D920E49AEC6D2953E0CB2-post.tex' was included into the document

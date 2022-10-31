@@ -184,7 +184,9 @@
 % separated by a single space. The first marker is either a unique name of a
 % vertex, like |v1| in the example above, or an edge, like |v0->v1|. All other markers are either
 % unary like |rho| or binary like |atom:$\xi.x+1$|. Binary markers have two
-% parts, separated by colon. The following markers are supported for a vertex:
+% parts, separated by colon.
+
+% The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached |<box>| (the content of the box may only be numeric data),
 %   \item ``|atom:[<box>]|'' makes it an atom with an optional attached |<box>| (the content of the box is a math formula),
@@ -192,6 +194,7 @@
 %   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex |<v>|,
 %     shifting it right by |<r>| % and down by |<d>| centimetres.
 % \end{itemize}
+
 % The following markers are supported for an edge:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|rho|'' places a backward snake arrow to the edge,
@@ -200,6 +203,11 @@
 %   \item ``|a:<txt>|'' attaches label |<txt>| to it,
 %   \item ``|pi|'' makes it dotted, with $\pi$ label.
 % \end{itemize}
+
+% It is also possible to put transformation arrows to the graph, with the help of |v0=>v1| syntax. The arrow
+% will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
+% saying for example |v3=>|, of from the left to the vertes, by saying for example |=>v5|.
+
 % Be aware, unrecognized markers are simply ignored, without any error reporting.
 
 % \DescribeMacro{\eolang}
@@ -527,6 +535,7 @@ print '\endinput', "\n";
 % \changes{0.2.0}{2022/10/28}{The content of \texttt{atom} and \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
 % \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with \texttt{\char`\\Delta} and \texttt{\char`\\lambda} commands.}
 % \changes{0.4.0}{2022/10/31}{Relative positioning of vertices fixed.}
+% \changes{0.4.0}{2022/10/31}{Transforming arrows added with \texttt{=>} syntax.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -595,7 +604,14 @@ foreach my $c (@cmds) {
     print ' (', $to, ')';
   } elsif (index($head, '=>') > 0) {
     my ($from, $to) = split (/=>/, $head);
-    print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$) {}';
+    if ($from eq '') {
+      print '\node [phi-arrow, left=1cm of ' . $to . ']';
+    } elsif ($to eq '') {
+      print '\node [phi-arrow, right=1cm of ' . $from . ']';
+    } else {
+      print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$)';
+    }
+    print '{}';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
