@@ -228,7 +228,7 @@ foreach my $c (@cmds) {
       if (not $opts{'data'} eq '') {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
-          $d = '\textnormal{\texttt{' . $d . '}}';
+          $d = '$\Delta\phiDotted\text{\textnormal{\texttt{' . $d . '}}}$';
         }
         $opts{'box'} = $d;
       }
@@ -237,7 +237,7 @@ foreach my $c (@cmds) {
       if (not $opts{'atom'} eq '') {
         my $a = $opts{'atom'};
         if (index($a, '$') == -1) {
-          $a = '$' . $a . '$';
+          $a = '$\lambda\phiDotted{}' . $a . '$';
         }
         $opts{'box'} = $a;
       }
@@ -280,7 +280,11 @@ foreach my $c (@cmds) {
       print '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
-      print ' node [phi-attr] {', $opts{'a'}, '}';
+      my $a = $opts{'a'};
+      if (index($a, '|') == -1 and index($a, '$') == -1) {
+        $a = '$' . $a . '$';
+      }
+      print ' node [phi-attr] {', $a, '}';
     }
     print ' (', $to, ')';
   }
