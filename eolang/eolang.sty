@@ -229,7 +229,7 @@ foreach my $c (@cmds) {
         $loc = 'left';
       }
       print ',' . $loc . '=';
-      print $down . 'cm and ' . $right . 'cm of ' . $v;
+      print abs($down) . 'cm and ' . abs($right) . 'cm of ' . $v;
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
