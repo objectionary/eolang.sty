@@ -569,9 +569,9 @@ foreach my $c (@cmds) {
       }
       $loc = $loc . ' ';
       if ($right >= 0) {
-        $loc = 'right';
+        $loc = $loc . 'right';
       } else {
-        $loc = 'left';
+        $loc = $loc . 'left';
       }
       print ',' . $loc . '=';
       print abs($down) . 'cm and ' . abs($right) . 'cm of ' . $v;
