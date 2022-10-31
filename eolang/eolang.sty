@@ -264,10 +264,13 @@ foreach my $c (@cmds) {
     print ']';
     print ' (', $head, ')';
     print ' {$';
-    if ($head eq 'v0') {
+    if (index($head, 'v0') == 0) {
       print '\Phi';
     } else {
-      print 'v_', substr($head, 1);
+      $name = $head;
+      $name =~ s/^v/v_/g;
+      $name =~ s/[^0-9]$//g;
+      print $name;
     }
     print '$}';
     if (exists $opts{'box'}) {
