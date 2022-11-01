@@ -612,16 +612,20 @@ foreach my $c (@cmds) {
   } elsif (index($head, '=>') >= 0) {
     my ($from, $to) = split (/=>/, $head);
     if ($from eq '') {
-      print '\node [phi-arrow, left=.6cm of ' . $to . ']';
+      print '\node [phi-arrow, left=.6cm of ' .
+        $to . ']';
     } elsif ($to eq '') {
-      print '\node [phi-arrow, right=.6cm of ' . $from . ']';
+      print '\node [phi-arrow, right=.6cm of ' .
+        $from . ']';
     } else {
-      print '\node [phi-arrow] at ($(' . $from . ')!0.5!(' . $to . ')$)';
+      print '\node [phi-arrow] at ($(' .
+        $from . ')!0.5!(' . $to . ')$)';
     }
     print '{}';
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!/, $head);
-    print '\node [phi-marker, left=.6cm of ' . $v . ']{' . $marker . '}';
+    print '\node [phi-marker, left=.6cm of ' .
+      $v . ']{' . $marker . '}';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -638,14 +642,16 @@ foreach my $c (@cmds) {
         $loc = $loc . 'left';
       }
       print ',' . $loc . '=';
-      print abs(num($down)) . 'cm and ' . abs(num($right)) . 'cm of ' . $v;
+      print abs(num($down)) . 'cm and ' .
+        abs(num($right)) . 'cm of ' . $v;
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
       if (not $opts{'data'} eq '') {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
-          $d = '$\Delta\phiDotted\text{\textnormal{\texttt{' . $d . '}}}$';
+          $d = '$\Delta\phiDotted\text{' .
+            '\textnormal{\texttt{' . $d . '}}}$';
         }
         $opts{'box'} = $d;
       }
@@ -823,7 +829,8 @@ print '\end{phicture}', "\n", '\endinput';
 % as suggested \href{https://tex.stackexchange.com/questions/663121}{here}:
 %    \begin{macrocode}
 \newcommand\phiConst{%
-  \mathrel{\hspace{.15em}}\mapstochar\mathrel{\hspace{-.15em}}\mapsto}
+  \mathrel{\hspace{.15em}}%
+  \mapstochar\mathrel{\hspace{-.15em}}\mapsto}
 %    \end{macrocode}
 % \end{macro}
 
@@ -845,7 +852,8 @@ print '\end{phicture}', "\n", '\endinput';
 \RequirePackage{trimclip}
 \RequirePackage{amsfonts}
 \makeatletter
-\newcommand{\phiDotted}{\mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
+\newcommand{\phiDotted}{%
+  \mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
 \newcommand{\phiDotted@}[2]{%
   \begingroup
   \settowidth{\dimen\z@}{$\m@th#1\rightarrow$}%
@@ -856,7 +864,8 @@ print '\end{phicture}', "\n", '\endinput';
         {\resizebox{\dimen\z@}{\height}%
           {$\m@th#1\dashrightarrow$}}%
       \hss%
-      \clipbox{{0.69\width} {-0.1\height} 0 {-\height}}{$\m@th#1\rightarrow$}%
+      \clipbox{{0.69\width} {-0.1\height} 0
+        {-\height}}{$\m@th#1\rightarrow$}%
     }%
   }%
   \ht\z@=\dimen\tw@ \dp\z@=\z@%
