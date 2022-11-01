@@ -22,6 +22,7 @@ a -> [[
 \end{phiquation*}
 
 \phiq{x := [ \alpha_0 -rqst> ? ]}
+\phiq{& -> ^.$.|alpha|(42)}
 
 \begin{sodg}
 v0

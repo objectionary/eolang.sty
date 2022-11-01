@@ -24,6 +24,15 @@ runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/simple/9D7FCBD26A
 96-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex)
 iexec: The content of '_eolang-lua/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex' was included into the document
+runsystem(( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang-lua/simple/phiq.tex 2>&1
+; /bin/echo -n $?% >iexec.ret)...executed
+runsystem((cp "_eolang-lua/simple/phiq.tex" "_eolang-lua/simple/C7ADAC4E7EC7A974
+B8789672D058DDFB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/simple/C7ADAC4E7E
+C7A974B8789672D058DDFB.tex") > _eolang-lua/simple/C7ADAC4E7EC7A974B8789672D058DD
+FB-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/simple/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex)
+iexec: The content of '_eolang-lua/simple/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex' was included into the document
 runsystem((cp "_eolang-lua/simple/sodg.tex" "_eolang-lua/simple/B5B6C245E4F9115C
 F7567FBDF218497A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/B5B6C245E4F911
