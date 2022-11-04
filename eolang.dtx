@@ -576,16 +576,16 @@ if (index($tex, "\t") > 0) {
   print "TABS are prohibited!";
   exit 1;
 }
-$tex =~ s/^\s+|\s+$//g;
-$tex =~ s/\\\\/\n/g;
-$tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
-$tex =~ s/\n\s+/\n/g;
-$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
-my @cmds = split (/\n/g, $tex);
-foreach my $t (@cmds) {
+foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
 print '% ---', "\n";
+$tex =~ s/^\s+|\s+$//g;
+$tex =~ s/\\\\/\n/g;
+$tex =~ s/(\\[a-zA-Z]+) +/\1/g;
+$tex =~ s/\n\s+/\n/g;
+$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
+my @cmds = split (/\n/g, $tex);
 print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
   my ($head, $tail) = split (/ /, $c, 2);
