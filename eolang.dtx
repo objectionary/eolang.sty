@@ -566,6 +566,11 @@ sub num {
   $i =~ s/(\+|-)\./\10./g;
   return $i;
 }
+sub fmt {
+  my ($tex) = @_;
+  $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
+  return $tex;
+}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 print '% This file is auto-generated', "\n";
@@ -584,7 +589,6 @@ $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n\s+/\n/g;
-$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
 my @cmds = split (/\n/g, $tex);
 print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
@@ -599,7 +603,7 @@ foreach my $c (@cmds) {
     if (exists $opts{'pi'}) {
       print ',phi-pi';
       if (not exists $opts{'a'}) {
-        $opts{'a'} = '$\pi$';
+        $opts{'a'} = '\pi';
       }
     }
     print ']';
@@ -617,8 +621,10 @@ foreach my $c (@cmds) {
     }
     if (exists $opts{'a'}) {
       my $a = $opts{'a'};
-      if (index($a, '|') == -1 and index($a, '$') == -1) {
-        $a = '$' . $a . '$';
+      if (index($a, '$') == -1) {
+        $a = '$' . fmt($a) . '$';
+      } else {
+        $a = fmt($a);
       }
       print ' node [phi-attr] {', $a, '}';
     }
@@ -639,7 +645,7 @@ foreach my $c (@cmds) {
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!/, $head);
     print '\node [phi-marker, left=.6cm of ' .
-      $v . ']{' . $marker . '}';
+      $v . ']{' . fmt($marker) . '}';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -665,7 +671,9 @@ foreach my $c (@cmds) {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
           $d = '$\Delta\phiDotted\text{' .
-            '\textnormal{\texttt{' . $d . '}}}$';
+            '\textnormal{\texttt{' . fmt($d) . '}}}$';
+        } else {
+          $d = fmt($d);
         }
         $opts{'box'} = $d;
       }
@@ -674,7 +682,9 @@ foreach my $c (@cmds) {
       if (not $opts{'atom'} eq '') {
         my $a = $opts{'atom'};
         if (index($a, '$') == -1) {
-          $a = '$\lambda\phiDotted{}' . $a . '$';
+          $a = '$\lambda\phiDotted{}' . fmt($a) . '$';
+        } else {
+          $a = fmt($a);
         }
         $opts{'box'} = $a;
       }
