@@ -61,7 +61,7 @@
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[runs=1,dtx]{docshots}
+\usepackage[runs=2,dtx]{docshots}
 \usepackage{eolang}
 \usepackage{href-ul}
 \PageIndex
@@ -333,6 +333,20 @@
 %   @ -> |hello|($) ]], \\
 % \Delta = |43-09|.
 % \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
+% Inside |phiquation| environment you can use labels too (just put |\label| after the formula):
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{eolang}
+% \usepackage[paperwidth=2in]{geometry}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{phiquation}
+% x -> [[\Delta -> 42]]. \label{eq:A}
+% \end{phiquation}
+% Eq.~\ref{eq:A} is easy to read.
 % \end{document}
 % \end{docshot}
 
