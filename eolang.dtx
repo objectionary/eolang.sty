@@ -237,15 +237,19 @@
 % \end{docshot}
 
 % \DescribeMacro{\phiConst}
-% A simple commands is defined to help you render an arrow for a constant attribute.
-% It is recommende not to use it directly, but use |!->| instead. However, if you
+% \DescribeMacro{\phiWave}
+% \DescribeMacro{\phiDotted}
+% A few simple commands are defined to help you render arrows.
+% It is recommende not to use them directly, but use |!->| instead. However, if you
 % want to use |\phiConst|, wrap it in |\mathrel| for better display:
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
-% \begin{document}
-% \phiq{[[ x \mathrel{\phiConst} y ]]}
+% \begin{document}\noindent
+% $x \mathrel{\phiConst} y$ \\
+% $x \mathrel{\phiWave} y$ \\
+% $x \mathrel{\phiDotted} y$ \\
 % \end{document}
 % \end{docshot}
 
