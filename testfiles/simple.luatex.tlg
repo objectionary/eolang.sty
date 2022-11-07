@@ -4,17 +4,17 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem((cp "_eolang-lua/simple/phiquation.tex" "_eolang-lua/simple/C2FDAAD069
-61C1DB3A949E4AF123885C.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...ex
+runsystem((cp "_eolang-lua/simple/phiquation.tex" "_eolang-lua/simple/637F197E8A
+ABA59E3CF2E5B316A63FA5.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...ex
 ecuted
-runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/simple/C2F
-DAAD06961C1DB3A949E4AF123885C.tex") > _eolang-lua/simple/C2FDAAD06961C1DB3A949E4
-AF123885C-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex
+runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/simple/637
+F197E8AABA59E3CF2E5B316A63FA5.tex") > _eolang-lua/simple/637F197E8AABA59E3CF2E5B
+316A63FA5-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/simple/637F197E8AABA59E3CF2E5B316A63FA5-post.tex
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )
-iexec: The content of '_eolang-lua/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex' was included into the document
+iexec: The content of '_eolang-lua/simple/637F197E8AABA59E3CF2E5B316A63FA5-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/simple/phiq.t
 ex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem((cp "_eolang-lua/simple/phiq.tex" "_eolang-lua/simple/9D7FCBD26A9D15A9

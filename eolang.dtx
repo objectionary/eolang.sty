@@ -100,7 +100,7 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{phiquation*}
-% a -> [[
+% a -> [[ % it's abstract!
 %   ^ !-> $.b,
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
@@ -455,6 +455,7 @@ if ($env eq 'phiq') {
   print '\begin{', $env, '}\begin{split}';
 }
 $tex =~ s/^\s+|\s+$//g;
+$tex =~ s/%.*\n/\n/g;
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;

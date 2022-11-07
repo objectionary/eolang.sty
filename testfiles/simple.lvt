@@ -11,7 +11,7 @@ This is for \eolang{} and \phic{}.
 a -> [[
   @ -> &.z,
   ^ !-> $.b,
-  u -> ?,
+  u -> ?, % comment
   b -> [[ c -> \
     |x|(56) \
     .|bye|(55),

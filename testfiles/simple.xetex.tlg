@@ -4,13 +4,13 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem((cp "_eolang-xe/simple/phiquation.tex" "_eolang-xe/simple/C2FDAAD06961C1DB3A949E4AF123885C.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/simple/C2FDAAD06961C1DB3A949E4AF123885C.tex") > _eolang-xe/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex
+runsystem((cp "_eolang-xe/simple/phiquation.tex" "_eolang-xe/simple/637F197E8AABA59E3CF2E5B316A63FA5.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/simple/637F197E8AABA59E3CF2E5B316A63FA5.tex") > _eolang-xe/simple/637F197E8AABA59E3CF2E5B316A63FA5-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/simple/637F197E8AABA59E3CF2E5B316A63FA5-post.tex
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )
-iexec: The content of '_eolang-xe/simple/C2FDAAD06961C1DB3A949E4AF123885C-post.tex' was included into the document
+iexec: The content of '_eolang-xe/simple/637F197E8AABA59E3CF2E5B316A63FA5-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-xe/simple/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem((cp "_eolang-xe/simple/phiq.tex" "_eolang-xe/simple/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/simple/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > _eolang-xe/simple/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
