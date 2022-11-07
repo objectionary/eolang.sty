@@ -219,6 +219,7 @@ $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n\s+/\n/g;
+$tex =~ s/%.*\n/\n/g;
 my @cmds = split (/\n/g, $tex);
 print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
