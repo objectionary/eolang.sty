@@ -454,8 +454,8 @@ if ($env eq 'phiq') {
 } else {
   print '\begin{', $env, '}\begin{split}';
 }
-$tex =~ s/^\s+|\s+$//g;
 $tex =~ s/%.*\n/\n/g;
+$tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
@@ -590,7 +590,6 @@ foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
 print '% ---', "\n";
-$tex =~ s/^\s+|\s+$//g;
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n\s+/\n/g;

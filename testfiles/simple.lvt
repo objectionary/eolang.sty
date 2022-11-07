@@ -19,6 +19,7 @@ a -> [[
     \Delta ~> |01-FE-C3| ]]]]
 
 \beta_1 := [ \varphi -wait> \varnothing ]
+% tail comment
 \end{phiquation*}
 
 \phiq{x := [ \alpha_0 -rqst> ? ]}
@@ -43,6 +44,7 @@ v1=>
 v3 xy:v0,.5,+.2
 v0=>v3
 v2->v3 a:\varphi
+% end comment
 \end{sodg}
 
 \END
