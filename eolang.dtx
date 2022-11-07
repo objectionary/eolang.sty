@@ -176,7 +176,7 @@
 % v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
 % v1->v2 a:|hi| bend:-15
-% v2->v0 pi bend:10
+% v2->v0 pi bend:10 % a comment
 % \end{sodg}
 % \end{document}
 % \end{docshot}
@@ -593,6 +593,7 @@ $tex =~ s/^\s+|\s+$//g;
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n\s+/\n/g;
+$tex =~ s/%.*\n/\n/g;
 my @cmds = split (/\n/g, $tex);
 print '\begin{phicture}', "\n";
 foreach my $c (@cmds) {
