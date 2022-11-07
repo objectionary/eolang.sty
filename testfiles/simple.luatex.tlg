@@ -4,17 +4,17 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem((cp "_eolang-lua/simple/phiquation.tex" "_eolang-lua/simple/1C6BFDD53F
-E0A45DAB29439C0DB1CE76.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...ex
+runsystem((cp "_eolang-lua/simple/phiquation.tex" "_eolang-lua/simple/6B5DD7ABCF
+B1FEADBB6616BF0DB2AC0E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...ex
 ecuted
-runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/simple/1C6
-BFDD53FE0A45DAB29439C0DB1CE76.tex") > _eolang-lua/simple/1C6BFDD53FE0A45DAB29439
-C0DB1CE76-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/simple/1C6BFDD53FE0A45DAB29439C0DB1CE76-post.tex
+runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/simple/6B5
+DD7ABCFB1FEADBB6616BF0DB2AC0E.tex") > _eolang-lua/simple/6B5DD7ABCFB1FEADBB6616B
+F0DB2AC0E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/simple/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E-post.tex
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )
-iexec: The content of '_eolang-lua/simple/1C6BFDD53FE0A45DAB29439C0DB1CE76-post.tex' was included into the document
+iexec: The content of '_eolang-lua/simple/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/simple/phiq.t
 ex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem((cp "_eolang-lua/simple/phiq.tex" "_eolang-lua/simple/9D7FCBD26A9D15A9
@@ -40,10 +40,10 @@ runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/B5B6C245E4F911
 ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
 iexec: The content of '_eolang-lua/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex' was included into the document
-runsystem((cp "_eolang-lua/simple/sodg.tex" "_eolang-lua/simple/7A0839236F4CA36C
-0BAEEA556DE75AB7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/7A0839236F4CA3
-6C0BAEEA556DE75AB7.tex") > _eolang-lua/simple/7A0839236F4CA36C0BAEEA556DE75AB7-p
+runsystem((cp "_eolang-lua/simple/sodg.tex" "_eolang-lua/simple/43D0F34ECF2A8ABB
+AF2EE5A398B12D24.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/43D0F34ECF2A8A
+BBAF2EE5A398B12D24.tex") > _eolang-lua/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-p
 ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/simple/7A0839236F4CA36C0BAEEA556DE75AB7-post.tex)
-iexec: The content of '_eolang-lua/simple/7A0839236F4CA36C0BAEEA556DE75AB7-post.tex' was included into the document
+(_eolang-lua/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-post.tex)
+iexec: The content of '_eolang-lua/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-post.tex' was included into the document
