@@ -618,6 +618,12 @@ sub vertex {
     return $v;
   }
 }
+sub tailor {
+  my ($t, $m) = @_;
+  $t =~ s/<([A-Z]?${m}[A-Z]?):([^>]+)>/\2/g;
+  $t =~ s/<[A-Z]+:[^>]+>//g;
+  return $t;
+}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 if (index($tex, "\t") > 0) {
@@ -653,33 +659,25 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     $opts{$q} = $t;
   }
   if (index($head, '->') >= 0) {
-    print '\draw[';
-    my $edge = '';
-    my $draw = '';
-    my $label = '';
+    my $draw = '\draw[';
     if (exists $opts{'pi'}) {
-      $draw = $draw . ',phi-pi';
+      $draw = $draw . '<MB:,phi-pi>';
       if (not exists $opts{'a'}) {
         $opts{'a'} = '\pi';
       }
     }
-    if (exists $opts{'break'}) {
-      print 'draw=none';
-    } else {
-      print $draw;
-    }
-    print ']';
+    $draw = $draw . ']';
     my ($from, $to) = split (/->/, $head);
-    $edge = $edge . ' (' . $from . ') ';
+    $draw = $draw . ' (' . $from . ') ';
     if (exists $opts{'bend'}) {
-      $edge = $edge . 'edge [bend right=' . num($opts{'bend'}) . ']';
+      $draw = $draw . 'edge [<F:draw=none,><MF:bend right=' . num($opts{'bend'}) . '>]';
     } else {
-      $edge = $edge . '--';
+      $draw = $draw . '--';
     }
     if (exists $opts{'rho'} or exists $opts{'rrho'}) {
-      $edge = $edge . ' pic[sloped,phi-rho]{parallel arrow={';
-      $edge = $edge . '-' if not exists $opts{'rrho'};
-      $edge = $edge . '0.3,-0.15}}';
+      $draw = $draw . ' pic[sloped,phi-rho]{parallel arrow={';
+      $draw = $draw . '-' if not exists $opts{'rrho'};
+      $draw = $draw . '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
       my $a = $opts{'a'};
@@ -688,18 +686,18 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       } else {
         $a = fmt($a);
       }
-      $label = $label . ' node [phi-attr] {' . $a . '}';
+      $draw = $draw . '<MB: node [phi-attr] {' . $a . '}>';
     }
-    my $end = ' (' . $to . ')';
     if (exists $opts{'break'}) {
-      my $mid = 'break';
-      print $edge;
-      print ' coordinate [pos=' . ($opts{'break'} / 100) . '] (' . $mid . ')';
-      print $end . ";\n";
-      print '  \node[] at (' . $mid . ') (' . $mid . '-v) {$' . vertex($to) . '$};' . "\n";
-      print '  \draw[' . $draw . '] (' . $from . ') -- ' . $label . ' (' . $mid . '-v)';
+      $draw = $draw . '<F: coordinate [pos=' . ($opts{'break'} / 100) . '] (break)>';
+    }
+    $draw = $draw . ' (<MF:' . $to . '><B:break-v>)';
+    if (exists $opts{'break'}) {
+      print tailor($draw, 'F') . ";\n";
+      print '  \node[] at (break) (break-v) {$' . vertex($to) . '$};' . "\n";
+      print '  ' . tailor($draw, 'B');
     } else {
-      print $edge . $label . $end;
+      print tailor($draw, 'M');
     }
   } elsif (index($head, '=>') >= 0) {
     my ($from, $to) = split (/=>/, $head);
