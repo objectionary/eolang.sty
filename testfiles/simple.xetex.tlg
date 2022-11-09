@@ -967,10 +967,10 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\special{pdf:code 20.82983 -11.49966 m }
-....\special{pdf:code 22.38371 -12.35762 l }
+....\special{pdf:code 21.4995 -11.8695 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 22.3837 -12.35762 cm }
+....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 21.49948 -11.8695 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -997,7 +997,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 22.33795 -8.05222}
+......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 21.89583 -7.80815}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(3.01389+1.3611)x3.91634
 ........\special{pdf:code 0 G }
@@ -1077,11 +1077,11 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\glue 0.0
-....\special{pdf:code 37.16971 -28.51949 m }
-....\special{pdf:code 35.59912 -25.37895 l }
+....\special{pdf:code 37.16933 -28.51949 m }
+....\special{pdf:code 36.04108 -26.2632 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code -0.44725 0.89435 -0.89435 -0.44725 35.59912 -25.37895 cm }
+....\special{pdf:code -0.4472 0.89436 -0.89436 -0.4472 36.04108 -26.2632 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -1108,7 +1108,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.44725 -0.89435 0.89435 0.44725 37.52902 -23.8925}
+......\special{pdf:btrans matrix 0.4472 -0.89436 0.89436 0.4472 37.74994 -24.3347}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(4.30556+0.0)x3.02084
 ........\special{pdf:code 0 G }
@@ -1792,10 +1792,10 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\special{pdf:code 151.68802 -85.6642 m }
-....\special{pdf:code 153.24191 -86.52216 l }
+....\special{pdf:code 152.35768 -86.03404 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 153.2419 -86.52216 cm }
+....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 152.35767 -86.03404 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -1822,7 +1822,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 153.19614 -82.2167\ETC.}
+......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 152.75401 -81.9726\ETC.}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(3.01389+1.3611)x3.91634
 ........\special{pdf:code 0 G }
@@ -1902,11 +1902,11 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\glue 0.0
-....\special{pdf:code 168.0279 -102.68402 m }
-....\special{pdf:code 166.4573 -99.54349 l }
+....\special{pdf:code 168.02753 -102.68402 m }
+....\special{pdf:code 166.89926 -100.42775 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code -0.44725 0.89435 -0.89435 -0.44725 166.4573 -99.54349 cm }
+....\special{pdf:code -0.4472 0.89436 -0.89436 -0.4472 166.89926 -100.42775 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -1933,7 +1933,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.44725 -0.89435 0.89435 0.44725 168.3872 -98.05704}
+......\special{pdf:btrans matrix 0.4472 -0.89436 0.89436 0.4472 168.60812 -98.49924}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(4.30556+0.0)x3.02084
 ........\special{pdf:code 0 G }
@@ -2878,10 +2878,10 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\special{pdf:code 310.89304 -273.21603 m }
-....\special{pdf:code 312.44693 -274.07399 l }
+....\special{pdf:code 311.5627 -273.58586 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 312.44691 -274.07399 cm }
+....\special{pdf:code 0.87541 -0.48332 0.48332 0.87541 311.56268 -273.58586 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -2908,7 +2908,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 312.40115 -269.768\ETC.}
+......\special{pdf:btrans matrix 0.87541 -0.48332 0.48332 0.87541 311.95903 -269.524\ETC.}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(3.01389+1.3611)x3.91634
 ........\special{pdf:code 0 G }
@@ -2988,11 +2988,11 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ....\glue 0.0
 ....\glue 0.0
 ....\glue 0.0
-....\special{pdf:code 327.23291 -290.23584 m }
-....\special{pdf:code 325.66232 -287.0953 l }
+....\special{pdf:code 327.23253 -290.23584 m }
+....\special{pdf:code 326.10428 -287.97957 l }
 ....\special{pdf:code S }
 ....\special{pdf:code q }
-....\special{pdf:code -0.44725 0.89435 -0.89435 -0.44725 325.66232 -287.0953 cm }
+....\special{pdf:code -0.4472 0.89436 -0.89436 -0.4472 326.10428 -287.97957 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
 ....\hbox(0.0+0.0)x0.0
@@ -3019,7 +3019,7 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 61--65
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 0.44725 -0.89435 0.89435 0.44725 327.59222 -285.608\ETC.}
+......\special{pdf:btrans matrix 0.4472 -0.89436 0.89436 0.4472 327.81314 -286.05106}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(4.30556+0.0)x3.02084
 ........\special{pdf:code 0 G }
