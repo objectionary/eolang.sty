@@ -283,7 +283,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     print '{}';
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!+/, $head);
-    my $size = ($head =~ s/!/!/g);
+    my $size = () = $head =~ /!/g;
     print '\node [phi-marker, left=.' . ($size * 4) . 'cm of ' .
       $v . ']{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
