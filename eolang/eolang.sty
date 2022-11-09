@@ -264,9 +264,10 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     }
     $draw = $draw . ']';
     my ($from, $to) = split (/->/, $head);
-    $draw = $draw . ' (' . $from . ') ';
+    $draw = $draw . " (${from}) ";
     if (exists $opts{'bend'}) {
-      $draw = $draw . 'edge [<F:draw=none,><MF:bend right=' . num($opts{'bend'}) . '>]';
+      $draw = $draw . 'edge [<F:draw=none,><MF:bend right=' .
+        num($opts{'bend'}) . '>]';
     } else {
       $draw = $draw . '--';
     }
@@ -285,12 +286,15 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       $draw = $draw . '<MB: node [phi-attr] {' . $a . '}>';
     }
     if (exists $opts{'break'}) {
-      $draw = $draw . '<F: coordinate [pos=' . ($opts{'break'} / 100) . '] (break)>';
+      $draw = $draw . '<F: coordinate [pos=' .
+        ($opts{'break'} / 100) . '] (break)>';
     }
-    $draw = $draw . ' (<MF:' . $to . '><B:break-v>)';
+    $draw = $draw . " (<MF:${to}><B:break-v>)";
     if (exists $opts{'break'}) {
       print tailor($draw, 'F') . ";\n";
-      print '  \node[] at (break) (break-v) {$' . vertex($to) . '$};' . "\n";
+      print '  \node[outer sep=.1cm,inner sep=0cm] ' .
+        'at (break) (break-v) {$' . vertex($to) .
+        '$};' . "\n";
       print '  ' . tailor($draw, 'B');
     } else {
       print tailor($draw, 'M');
@@ -311,7 +315,8 @@ for (my $c = 0; $c <= $#cmds; $c++) {
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!+/, $head);
     my $size = () = $head =~ /!/g;
-    print '\node [phi-marker, left=' . ($size * 0.4) . 'cm of ' .
+    print '\node [phi-marker, left=' .
+      ($size * 0.4) . 'cm of ' .
       $v . ']{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
     my ($v, $suffix) = split (/\+/, $head);
