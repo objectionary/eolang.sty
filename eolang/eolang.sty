@@ -257,7 +257,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
   if (index($head, '->') >= 0) {
     my $draw = '\draw[';
     if (exists $opts{'pi'}) {
-      $draw = $draw . '<MB:,phi-pi>';
+      $draw = $draw . '<MB:phi-pi><F:draw=none>';
       if (not exists $opts{'a'}) {
         $opts{'a'} = '\pi';
       }
