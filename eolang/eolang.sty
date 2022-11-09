@@ -208,21 +208,25 @@ if (index($tex, "\t") > 0) {
   print "TABS are prohibited!";
   exit 1;
 }
-print '% This file is auto-generated', "\n";
-print '% There are ', length($tex),
-  ' chars in the input: ', $ARGV[0], "\n";
-print '% ---' . "\n";
+print '% This file is auto-generated', "\n%\n";
+print '% --- there are ', length($tex),
+  ' chars in the input (', $ARGV[0], "):\n";
 foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
-print '% ---';
+print "% ---\n";
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n{2,}/\n/g;
 my @cmds = split(/\n/g, $tex);
-print ' (' . $#cmds . " lines)\n";
+print '% --- before processing:' . "\n";
+foreach my $t (split (/\n/g, $tex)) {
+  print '% ', $t, "\n";
+}
+print '% ---';
+print ' (' . ($#cmds + 1) . " lines)\n";
 print '\begin{phicture}', "\n";
-for (my $c = 0; $c < $#cmds; $c++) {
+for (my $c = 0; $c <= $#cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
   $cmd =~ s/%.*//g;
@@ -328,11 +332,11 @@ for (my $c = 0; $c < $#cmds; $c++) {
     splice(@extra, -1, 1);
     splice(@extra, 0, 0, '% clone of ' . $v . ' (' . $head .
       '), friends: [' . join(', ', @friends) . '] in ' .
-      $#cmds . ' lines');
+      ($#cmds + 1) . ' lines');
     splice(@cmds, $c, 1, @extra);
     print '% cloned ' . $v . ' at line no.' . $c .
-      ' (+' . $#extra . ' lines -> ' .
-      $#cmds . ' lines total)';
+      ' (+' . ($#extra + 1) . ' lines -> ' .
+      ($#cmds + 1) . ' lines total)';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -399,11 +403,11 @@ for (my $c = 0; $c < $#cmds; $c++) {
   print ";\n";
 }
 print '\end{phicture}%', "\n";
-print "% after processing:\n% ---\n";
+print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
-print '% --- (' . $#cmds . " lines)\n";
+print '% --- (' . ($#cmds + 1) . " lines)\n";
 print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
