@@ -366,7 +366,11 @@
 % \end{document}
 % \end{docshot}
 
-% You can have ``broken'' edges, for example:
+% You can have ``broken'' edges, using ``|break|'' attribute of an edge.
+% The attribute must have a value, which is the percentange of the path
+% between vertices that the arrow should take (can't be more than 80 and less than 20).
+% This may be convenient when you can't fit all edges into the graph,
+% for example:
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
