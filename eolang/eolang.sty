@@ -55,6 +55,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -281,8 +282,9 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     }
     print '{}';
   } elsif (index($head, '!') >= 0) {
-    my ($v, $marker) = split (/!/, $head);
-    print '\node [phi-marker, left=.4cm of ' .
+    my ($v, $marker) = split (/!+/, $head);
+    my $size = ($head =~ s/!/!/g);
+    print '\node [phi-marker, left=.' . ($size * 4) . 'cm of ' .
       $v . ']{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
     my ($v, $suffix) = split (/\+/, $head);
@@ -302,7 +304,9 @@ for (my $c = 0; $c <= $#cmds; $c++) {
         if (index($e, 'xy:' . $f . ',') >= 0) {
           $add = $h;
         }
-        if (index($add, '+') == -1 and $add ne '' and not(grep(/^${add}$/, @friends))) {
+        if (index($add, '+') == -1
+          and $add ne ''
+          and not(grep(/^${add}$/, @friends))) {
           push(@friends, $add);
         }
       }
