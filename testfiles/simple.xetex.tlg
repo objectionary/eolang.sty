@@ -29,7 +29,7 @@ runsystem((cp "_eolang-xe/simple/sodg.tex" "_eolang-xe/simple/09C73237326A497B46
 runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > _eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
 iexec: The content of '_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
-Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
+Overfull \hbox (88.70584pt too wide) in paragraph at lines 57--63
 [] 
 \hbox(518.08316+0.0)x345.0
 .\hbox(518.08316+0.0)x433.70584
@@ -273,9 +273,6 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
 ....\glue 0.0
 ....\glue 0.0
 ....\glue 0.0
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\special{pdf:code -4.3122 -11.576 m }
 ....\special{pdf:code -12.06502 -32.38725 l }
 ....\special{pdf:code S }
@@ -287,10 +284,6 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
 .....\hbox(0.0+0.0)x0.0
 ......\special{pdf:code q }
 ......\special{pdf:code q }
-......\glue 0.0
-......\glue 0.0
-......\glue 0.0
-......\glue 0.0
 ......\glue 0.0
 ......\glue 0.0
 ......\glue 0.0
@@ -2747,6 +2740,51 @@ Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
 .........\kern0.25116
 .........\mathoff
 .........\special{color pop}
+........\glue 0.0
+......\special{pdf:etrans}
+......\special{pdf:ecolor}
+......\special{pdf:ecolor}
+......\special{pdf: bcontent}
+......\special{pdf:code Q Q Q}
+......\special{pdf:code Q }
+......\glue 0.0
+......\glue 0.0
+......\special{pdf:code Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{pdf:code 0.79701 w }
+......\special{pdf:code q }
+......\special{pdf:code 0.79701 w }
+......\special{pdf:code 11.95529 0.0 m }
+......\special{pdf:code 11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
+......\special{pdf:code -6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
+......\special{pdf:code -11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
+......\special{pdf:code 6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
+......\special{pdf:code h }
+......\special{pdf:code 0.0 0.0 m }
+......\special{pdf:code S }
+......\glue 0.0
+......\special{pdf:code Q }
+......\special{pdf:code q }
+......\special{pdf:code q -1 0 0 -1 0 0 cm q}
+......\special{pdf: econtent}
+......\special{pdf: bcontent}
+......\special{pdf:code -1 0 0 -1 0 0 cm}
+......\special{pdf:code q}
+......\special{pdf: econtent}
+......\special{pdf:code 0 J [] 0 d}
+......\special{pdf:bcolor [1]}
+......\special{pdf:bcolor [0]}
+......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 0.0 0.0}
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\special{pdf:code 0 G }
+........\special{pdf:code 0 g }
+........\hbox(0.0+0.0)x0.0
+.........\mathon
+.........\mathoff
 ........\glue 0.0
 ......\special{pdf:etrans}
 ......\special{pdf:ecolor}

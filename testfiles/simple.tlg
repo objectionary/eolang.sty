@@ -29,7 +29,7 @@ runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/09C73237326A497B46D29EE9
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > _eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
 iexec: The content of '_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
-Overfull \hbox (88.706pt too wide) in paragraph at lines 31--63
+Overfull \hbox (88.706pt too wide) in paragraph at lines 57--63
 [] 
 \hbox(518.08334+0.0)x345.0
 .\hbox(518.08334+0.0)x433.706
@@ -238,9 +238,6 @@ Overfull \hbox (88.706pt too wide) in paragraph at lines 31--63
 ....\glue 0.0
 ....\glue 0.0
 ....\glue 0.0
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\pdfliteral{-4.3122 -11.57602 m }
 ....\pdfliteral{-12.06505 -32.38727 l }
 ....\pdfliteral{S }
@@ -252,10 +249,6 @@ Overfull \hbox (88.706pt too wide) in paragraph at lines 31--63
 .....\hbox(0.0+0.0)x0.0
 ......\pdfliteral{q }
 ......\pdfliteral{q }
-......\glue 0.0
-......\glue 0.0
-......\glue 0.0
-......\glue 0.0
 ......\glue 0.0
 ......\glue 0.0
 ......\glue 0.0
@@ -2418,6 +2411,44 @@ Overfull \hbox (88.706pt too wide) in paragraph at lines 31--63
 ...........\kern0.25116
 ...........\mathoff
 ...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+...........\mathon
+...........\mathoff
 ..........\glue 0.0
 ........\pdfliteral{Q }
 ........\glue 0.0
