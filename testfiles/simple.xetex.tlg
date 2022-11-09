@@ -29,11 +29,11 @@ runsystem((cp "_eolang-xe/simple/sodg.tex" "_eolang-xe/simple/09C73237326A497B46
 runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > _eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
 iexec: The content of '_eolang-xe/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
-Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
-[]\TU/lmr/m/n/10 After
-\hbox(518.08316+0.10999)x345.0
-.\hbox(518.08316+0.0)x439.39674
-..\glue 43.87172
+Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
+[] 
+\hbox(518.08316+0.0)x345.0
+.\hbox(518.08316+0.0)x433.70584
+..\glue 38.18082
 ..\hbox(0.0+0.0)x0.0, shifted -505.6832
 ...\special{pdf:bcontent}
 ...\special{pdf:code q }
@@ -143,7 +143,7 @@ Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\special{pdf:code q }
 ......\special{pdf:code 0.5 g }
-......\special{pdf:code -43.70837 -6.9739 13.94781 13.94781 re }
+......\special{pdf:code -38.03865 -6.9739 13.94781 13.94781 re }
 ......\special{pdf:code f }
 ......\glue 0.0
 ......\special{pdf:code Q }
@@ -157,7 +157,7 @@ Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 -39.08817 -2.80202}
+......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 -33.41846 -2.80202}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(5.625+0.0)x4.725
 ........\special{pdf:code 0 G }
@@ -1524,51 +1524,6 @@ Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\special{pdf:code Q }
 ....\glue 0.0
-....\hbox(0.0+0.0)x0.0
-.....\hbox(0.0+0.0)x0.0
-......\special{pdf:code q }
-......\special{pdf:code 0.79701 w }
-......\special{pdf:code q }
-......\special{pdf:code 0.79701 w }
-......\special{pdf:code 11.95529 0.0 m }
-......\special{pdf:code 11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
-......\special{pdf:code -6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
-......\special{pdf:code -11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
-......\special{pdf:code 6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
-......\special{pdf:code h }
-......\special{pdf:code 0.0 0.0 m }
-......\special{pdf:code S }
-......\glue 0.0
-......\special{pdf:code Q }
-......\special{pdf:code q }
-......\special{pdf:code q -1 0 0 -1 0 0 cm q}
-......\special{pdf: econtent}
-......\special{pdf: bcontent}
-......\special{pdf:code -1 0 0 -1 0 0 cm}
-......\special{pdf:code q}
-......\special{pdf: econtent}
-......\special{pdf:code 0 J [] 0 d}
-......\special{pdf:bcolor [1]}
-......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 0.0 0.0}
-......\hbox(0.0+0.0)x0.0
-.......\hbox(0.0+0.0)x0.0
-........\special{pdf:code 0 G }
-........\special{pdf:code 0 g }
-........\hbox(0.0+0.0)x0.0
-.........\mathon
-.........\mathoff
-........\glue 0.0
-......\special{pdf:etrans}
-......\special{pdf:ecolor}
-......\special{pdf:ecolor}
-......\special{pdf: bcontent}
-......\special{pdf:code Q Q Q}
-......\special{pdf:code Q }
-......\glue 0.0
-......\glue 0.0
-......\special{pdf:code Q }
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2697,51 +2652,6 @@ Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\special{pdf:code Q }
 ....\glue 0.0
-....\hbox(0.0+0.0)x0.0
-.....\hbox(0.0+0.0)x0.0
-......\special{pdf:code q }
-......\special{pdf:code 0.79701 w }
-......\special{pdf:code q }
-......\special{pdf:code 0.79701 w }
-......\special{pdf:code 11.95529 0.0 m }
-......\special{pdf:code 11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
-......\special{pdf:code -6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
-......\special{pdf:code -11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
-......\special{pdf:code 6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
-......\special{pdf:code h }
-......\special{pdf:code 0.0 0.0 m }
-......\special{pdf:code S }
-......\glue 0.0
-......\special{pdf:code Q }
-......\special{pdf:code q }
-......\special{pdf:code q -1 0 0 -1 0 0 cm q}
-......\special{pdf: econtent}
-......\special{pdf: bcontent}
-......\special{pdf:code -1 0 0 -1 0 0 cm}
-......\special{pdf:code q}
-......\special{pdf: econtent}
-......\special{pdf:code 0 J [] 0 d}
-......\special{pdf:bcolor [1]}
-......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 0.0 0.0}
-......\hbox(0.0+0.0)x0.0
-.......\hbox(0.0+0.0)x0.0
-........\special{pdf:code 0 G }
-........\special{pdf:code 0 g }
-........\hbox(0.0+0.0)x0.0
-.........\mathon
-.........\mathoff
-........\glue 0.0
-......\special{pdf:etrans}
-......\special{pdf:ecolor}
-......\special{pdf:ecolor}
-......\special{pdf: bcontent}
-......\special{pdf:code Q Q Q}
-......\special{pdf:code Q }
-......\glue 0.0
-......\glue 0.0
-......\special{pdf:code Q }
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2855,7 +2765,6 @@ Overfull \hbox (117.20674pt too wide) in paragraph at lines 31--63
 ...\special{pdf:code Q }
 ...\special{pdf:econtent}
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\TU/lmr/m/n/10 After
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-[1
-]

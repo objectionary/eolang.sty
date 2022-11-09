@@ -29,11 +29,11 @@ runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/09C73237326A497B46D29EE9
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > _eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
 iexec: The content of '_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
-Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
-[]\OT1/cmr/m/n/10 After
+Overfull \hbox (88.706pt too wide) in paragraph at lines 31--63
+[] 
 \hbox(518.08334+0.0)x345.0
-.\hbox(518.08334+0.0)x439.3969
-..\glue 43.87173
+.\hbox(518.08334+0.0)x433.706
+..\glue 38.18083
 ..\hbox(0.0+0.0)x0.0, shifted -505.68336
 ...\pdfliteral{q }
 ...\pdfliteral{0 G }
@@ -128,13 +128,13 @@ Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\pdfliteral{q }
 ......\pdfliteral{0.5 g }
-......\pdfliteral{-43.70839 -6.9739 13.94781 13.94781 re }
+......\pdfliteral{-38.03867 -6.9739 13.94781 13.94781 re }
 ......\pdfliteral{f }
 ......\glue 0.0
 ......\pdfliteral{Q }
 ......\pdfliteral{q }
 ......\hbox(0.0+0.0)x0.0
-.......\glue -39.23424
+.......\glue -33.54333
 .......\hbox(0.0+0.0)x0.0, shifted 2.74998
 ........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral{q }
@@ -1345,44 +1345,6 @@ Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\pdfliteral{Q }
 ....\glue 0.0
-....\hbox(0.0+0.0)x0.0
-.....\hbox(0.0+0.0)x0.0
-......\pdfliteral{q }
-......\pdfliteral{0.79701 w }
-......\pdfliteral{q }
-......\pdfliteral{0.79701 w }
-......\pdfliteral{11.9553 0.0 m }
-......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
-......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
-......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
-......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
-......\pdfliteral{h }
-......\pdfliteral{0.0 0.0 m }
-......\pdfliteral{S }
-......\glue 0.0
-......\pdfliteral{Q }
-......\pdfliteral{q }
-......\hbox(0.0+0.0)x0.0
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0
-........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-........\pdfliteral{q }
-........\hbox(0.0+0.0)x0.0
-.........\hbox(0.0+0.0)x0.0
-..........\pdfliteral{0 G }
-..........\pdfliteral{0 g }
-..........\hbox(0.0+0.0)x0.0
-...........\mathon
-...........\mathoff
-..........\glue 0.0
-........\pdfliteral{Q }
-........\glue 0.0
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-......\pdfliteral{Q }
-......\glue 0.0
-......\glue 0.0
-......\pdfliteral{Q }
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2373,44 +2335,6 @@ Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
 ......\glue 0.0
 ......\pdfliteral{Q }
 ....\glue 0.0
-....\hbox(0.0+0.0)x0.0
-.....\hbox(0.0+0.0)x0.0
-......\pdfliteral{q }
-......\pdfliteral{0.79701 w }
-......\pdfliteral{q }
-......\pdfliteral{0.79701 w }
-......\pdfliteral{11.9553 0.0 m }
-......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
-......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
-......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
-......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
-......\pdfliteral{h }
-......\pdfliteral{0.0 0.0 m }
-......\pdfliteral{S }
-......\glue 0.0
-......\pdfliteral{Q }
-......\pdfliteral{q }
-......\hbox(0.0+0.0)x0.0
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0
-........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-........\pdfliteral{q }
-........\hbox(0.0+0.0)x0.0
-.........\hbox(0.0+0.0)x0.0
-..........\pdfliteral{0 G }
-..........\pdfliteral{0 g }
-..........\hbox(0.0+0.0)x0.0
-...........\mathon
-...........\mathoff
-..........\glue 0.0
-........\pdfliteral{Q }
-........\glue 0.0
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-......\pdfliteral{Q }
-......\glue 0.0
-......\glue 0.0
-......\pdfliteral{Q }
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2509,11 +2433,6 @@ Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
 ...\pdfliteral{n }
 ...\pdfliteral{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\OT1/cmr/m/n/10 A
-.\OT1/cmr/m/n/10 f
-.\OT1/cmr/m/n/10 t
-.\OT1/cmr/m/n/10 e
-.\OT1/cmr/m/n/10 r
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-[1
-]

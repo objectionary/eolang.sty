@@ -47,16 +47,16 @@ runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/simple/09C73237326A49
 ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
 iexec: The content of '_eolang-lua/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
-Overfull \hbox (108.28674pt too wide) in paragraph at lines 31--63
-[]\TU/lmr/m/n/10 Af-
+Overfull \hbox (88.70584pt too wide) in paragraph at lines 31--63
+[] 
 \hbox(518.08316+0.0)x345.0, direction TLT
 .\localpar
 ..\localinterlinepenalty=0
 ..\localbrokenpenalty=0
 ..\localleftbox=null
 ..\localrightbox=null
-.\hbox(518.08316+0.0)x439.39674, direction TLT
-..\glue 43.87172
+.\hbox(518.08316+0.0)x433.70584, direction TLT
+..\glue 38.18082
 ..\hbox(0.0+0.0)x0.0, shifted -505.6832, direction TLT
 ...\pdfliteral origin{q }
 ...\pdfliteral origin{0 G }
@@ -149,13 +149,13 @@ Overfull \hbox (108.28674pt too wide) in paragraph at lines 31--63
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{q }
 ......\pdfliteral origin{0.5 g }
-......\pdfliteral origin{-43.70837 -6.9739 13.94781 13.94781 re }
+......\pdfliteral origin{-38.03865 -6.9739 13.94781 13.94781 re }
 ......\pdfliteral origin{f }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
 ......\pdfliteral origin{q }
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\glue -39.23425
+.......\glue -33.54335
 .......\hbox(0.0+0.0)x0.0, shifted 2.8125, direction TLT
 ........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral origin{q }
@@ -1342,43 +1342,6 @@ Overfull \hbox (108.28674pt too wide) in paragraph at lines 31--63
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
 ....\glue(\spaceskip) 0.0
-....\hbox(0.0+0.0)x0.0, direction TLT
-.....\hbox(0.0+0.0)x0.0, direction TLT
-......\pdfliteral origin{q }
-......\pdfliteral origin{0.79701 w }
-......\pdfliteral origin{q }
-......\pdfliteral origin{0.79701 w }
-......\pdfliteral origin{11.95529 0.0 m }
-......\pdfliteral origin{11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
-......\pdfliteral origin{-6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
-......\pdfliteral origin{-11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
-......\pdfliteral origin{6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
-......\pdfliteral origin{h }
-......\pdfliteral origin{0.0 0.0 m }
-......\pdfliteral origin{S }
-......\glue(\spaceskip) 0.0
-......\pdfliteral origin{Q }
-......\pdfliteral origin{q }
-......\hbox(0.0+0.0)x0.0, direction TLT
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0, direction TLT
-........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-........\pdfliteral origin{q }
-........\hbox(0.0+0.0)x0.0, direction TLT
-.........\hbox(0.0+0.0)x0.0, direction TLT
-..........\pdfliteral origin{0 G }
-..........\pdfliteral origin{0 g }
-..........\hbox(0.0+0.0)x0.0, direction TLT
-...........\mathon
-...........\mathoff
-..........\glue(\spaceskip) 0.0
-........\pdfliteral origin{Q }
-........\glue(\spaceskip) 0.0
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-......\pdfliteral origin{Q }
-......\glue(\spaceskip) 0.0
-......\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2349,43 +2312,6 @@ Overfull \hbox (108.28674pt too wide) in paragraph at lines 31--63
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
 ....\glue(\spaceskip) 0.0
-....\hbox(0.0+0.0)x0.0, direction TLT
-.....\hbox(0.0+0.0)x0.0, direction TLT
-......\pdfliteral origin{q }
-......\pdfliteral origin{0.79701 w }
-......\pdfliteral origin{q }
-......\pdfliteral origin{0.79701 w }
-......\pdfliteral origin{11.95529 0.0 m }
-......\pdfliteral origin{11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
-......\pdfliteral origin{-6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
-......\pdfliteral origin{-11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
-......\pdfliteral origin{6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
-......\pdfliteral origin{h }
-......\pdfliteral origin{0.0 0.0 m }
-......\pdfliteral origin{S }
-......\glue(\spaceskip) 0.0
-......\pdfliteral origin{Q }
-......\pdfliteral origin{q }
-......\hbox(0.0+0.0)x0.0, direction TLT
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0, direction TLT
-........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-........\pdfliteral origin{q }
-........\hbox(0.0+0.0)x0.0, direction TLT
-.........\hbox(0.0+0.0)x0.0, direction TLT
-..........\pdfliteral origin{0 G }
-..........\pdfliteral origin{0 g }
-..........\hbox(0.0+0.0)x0.0, direction TLT
-...........\mathon
-...........\mathoff
-..........\glue(\spaceskip) 0.0
-........\pdfliteral origin{Q }
-........\glue(\spaceskip) 0.0
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-......\pdfliteral origin{Q }
-......\glue(\spaceskip) 0.0
-......\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2482,10 +2408,6 @@ Overfull \hbox (108.28674pt too wide) in paragraph at lines 31--63
 ...\pdfliteral origin{n }
 ...\pdfliteral origin{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\TU/lmr/m/n/10 A
-.\TU/lmr/m/n/10 f
-.\TU/lmr/m/n/10 -
-.\discretionary (penalty 50)
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-[1
-]
