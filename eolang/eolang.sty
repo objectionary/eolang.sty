@@ -56,6 +56,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -203,6 +204,22 @@ sub fmt {
   $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
   return $tex;
 }
+sub vertex {
+  my ($v) = @_;
+  if (index($v, 'v0') == 0) {
+    return '\Phi';
+  } else {
+    $v =~ s/^v/v_/g;
+    $v =~ s/[^0-9]$//g;
+    return $v;
+  }
+}
+sub tailor {
+  my ($t, $m) = @_;
+  $t =~ s/<([A-Z]?${m}[A-Z]?):([^>]+)>/\2/g;
+  $t =~ s/<[A-Z]+:[^>]+>//g;
+  return $t;
+}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 if (index($tex, "\t") > 0) {
@@ -238,25 +255,25 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     $opts{$q} = $t;
   }
   if (index($head, '->') >= 0) {
-    print '\draw[';
+    my $draw = '\draw[';
     if (exists $opts{'pi'}) {
-      print ',phi-pi';
+      $draw = $draw . '<MB:,phi-pi>';
       if (not exists $opts{'a'}) {
         $opts{'a'} = '\pi';
       }
     }
-    print ']';
+    $draw = $draw . ']';
     my ($from, $to) = split (/->/, $head);
-    print ' (', $from, ') ';
+    $draw = $draw . ' (' . $from . ') ';
     if (exists $opts{'bend'}) {
-      print 'edge [bend right=', num($opts{'bend'}), ']';
+      $draw = $draw . 'edge [<F:draw=none,><MF:bend right=' . num($opts{'bend'}) . '>]';
     } else {
-      print '--';
+      $draw = $draw . '--';
     }
     if (exists $opts{'rho'} or exists $opts{'rrho'}) {
-      print ' pic[sloped,phi-rho]{parallel arrow={';
-      print '-' if not exists $opts{'rrho'};
-      print '0.3,-0.15}}';
+      $draw = $draw . ' pic[sloped,phi-rho]{parallel arrow={';
+      $draw = $draw . '-' if not exists $opts{'rrho'};
+      $draw = $draw . '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
       my $a = $opts{'a'};
@@ -265,9 +282,19 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       } else {
         $a = fmt($a);
       }
-      print ' node [phi-attr] {', $a, '}';
+      $draw = $draw . '<MB: node [phi-attr] {' . $a . '}>';
     }
-    print ' (', $to, ')';
+    if (exists $opts{'break'}) {
+      $draw = $draw . '<F: coordinate [pos=' . ($opts{'break'} / 100) . '] (break)>';
+    }
+    $draw = $draw . ' (<MF:' . $to . '><B:break-v>)';
+    if (exists $opts{'break'}) {
+      print tailor($draw, 'F') . ";\n";
+      print '  \node[] at (break) (break-v) {$' . vertex($to) . '$};' . "\n";
+      print '  ' . tailor($draw, 'B');
+    } else {
+      print tailor($draw, 'M');
+    }
   } elsif (index($head, '=>') >= 0) {
     my ($from, $to) = split (/=>/, $head);
     if ($from eq '') {
@@ -388,16 +415,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     }
     print ']';
     print ' (', $head, ')';
-    print ' {$';
-    if (index($head, 'v0') == 0) {
-      print '\Phi';
-    } else {
-      $name = $head;
-      $name =~ s/^v/v_/g;
-      $name =~ s/[^0-9]$//g;
-      print $name;
-    }
-    print '$}';
+    print ' {$' . vertex($head) . '$}';
     if (exists $opts{'box'}) {
       print ' node[phi-box] at (';
       print $head, '.south east) {';
