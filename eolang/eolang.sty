@@ -278,7 +278,7 @@ for (my $c = 0; $c < $#cmds; $c++) {
     print '{}';
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!/, $head);
-    print '\node [phi-marker, left=.6cm of ' .
+    print '\node [phi-marker, left=.4cm of ' .
       $v . ']{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
     my ($v, $suffix) = split (/\+/, $head);
@@ -306,6 +306,9 @@ for (my $c = 0; $c < $#cmds; $c++) {
     my @extra = ();
     foreach my $e (@cmds) {
       $m = $e;
+      if ($m =~ /^\s?${v}\s/) {
+        next;
+      }
       foreach my $f (@friends) {
         my $h = $f;
         $h =~ s/[a-z]$//g;
@@ -321,12 +324,11 @@ for (my $c = 0; $c < $#cmds; $c++) {
         push(@extra, ' ' . $m);
       }
     }
-    splice(@extra, 0, 1, @extra[-1]);
+    splice(@extra, 0, 0, @extra[-1]);
     splice(@extra, -1, 1);
-    splice(@extra, 0, 0, '% start of ' . $v . '-clone (' . $head .
+    splice(@extra, 0, 0, '% clone of ' . $v . ' (' . $head .
       '), friends: [' . join(', ', @friends) . '] in ' .
       $#cmds . ' lines');
-    push(@extra, '% end of ' . $v . '-clone');
     splice(@cmds, $c, 1, @extra);
     print '% cloned ' . $v . ' at line no.' . $c .
       ' (+' . $#extra . ' lines -> ' .
@@ -397,11 +399,11 @@ for (my $c = 0; $c < $#cmds; $c++) {
   print ";\n";
 }
 print '\end{phicture}%', "\n";
-print "After processing:\n---\n";
+print "% after processing:\n% ---\n";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
-print '--- (' . $#cmds . " lines)\n";
+print '% --- (' . $#cmds . " lines)\n";
 print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
