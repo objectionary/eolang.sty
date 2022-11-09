@@ -171,7 +171,7 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{sodg}
-% v0 \\ v0=> \\ v0!A
+% v0 \\ v0=> \\ v0!!A
 % v1 xy:v0,-.8,2.8 data:42 \\ =>v1
 % v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
@@ -669,7 +669,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     print '{}';
   } elsif (index($head, '!') >= 0) {
     my ($v, $marker) = split (/!+/, $head);
-    my $size = ($head =~ s/!/!/g);
+    my $size = () = $head =~ /!/g;
     print '\node [phi-marker, left=.' . ($size * 4) . 'cm of ' .
       $v . ']{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
