@@ -46,6 +46,8 @@ v1=>
 v3 xy:v0,.5,+.2
 v0=>v3
 v2->v3 a:\varphi
+v3->v0 break:45 a:q
+v3->v2 break:35 a:t
 
 v0+a xy:v0,4,2
 

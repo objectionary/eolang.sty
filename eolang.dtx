@@ -366,6 +366,25 @@
 % \end{document}
 % \end{docshot}
 
+% You can have ``broken'' edges, for example:
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}
+% \begin{sodg}
+% v0
+% v1 xy:v0,-1,1
+% v0->v1 a:x
+% v2 xy:v0,0,1
+% v0->v2 a:y
+% v3 xy:v0,1,1
+% v0->v3 a:z
+% v3->v1 a:f bend:-75 break:30
+% \end{sodg}
+% \end{document}
+% \end{docshot}
+
 % \StopEventually{}
 
 % \section{Implementation}
@@ -589,6 +608,16 @@ sub fmt {
   $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
   return $tex;
 }
+sub vertex {
+  my ($v) = @_;
+  if (index($v, 'v0') == 0) {
+    return '\Phi';
+  } else {
+    $v =~ s/^v/v_/g;
+    $v =~ s/[^0-9]$//g;
+    return $v;
+  }
+}
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
 if (index($tex, "\t") > 0) {
@@ -625,24 +654,32 @@ for (my $c = 0; $c <= $#cmds; $c++) {
   }
   if (index($head, '->') >= 0) {
     print '\draw[';
+    my $edge = '';
+    my $draw = '';
+    my $label = '';
     if (exists $opts{'pi'}) {
-      print ',phi-pi';
+      $draw = $draw . ',phi-pi';
       if (not exists $opts{'a'}) {
         $opts{'a'} = '\pi';
       }
     }
+    if (exists $opts{'break'}) {
+      print 'draw=none';
+    } else {
+      print $draw;
+    }
     print ']';
     my ($from, $to) = split (/->/, $head);
-    print ' (', $from, ') ';
+    $edge = $edge . ' (' . $from . ') ';
     if (exists $opts{'bend'}) {
-      print 'edge [bend right=', num($opts{'bend'}), ']';
+      $edge = $edge . 'edge [bend right=' . num($opts{'bend'}) . ']';
     } else {
-      print '--';
+      $edge = $edge . '--';
     }
     if (exists $opts{'rho'} or exists $opts{'rrho'}) {
-      print ' pic[sloped,phi-rho]{parallel arrow={';
-      print '-' if not exists $opts{'rrho'};
-      print '0.3,-0.15}}';
+      $edge = $edge . ' pic[sloped,phi-rho]{parallel arrow={';
+      $edge = $edge . '-' if not exists $opts{'rrho'};
+      $edge = $edge . '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
       my $a = $opts{'a'};
@@ -651,9 +688,19 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       } else {
         $a = fmt($a);
       }
-      print ' node [phi-attr] {', $a, '}';
+      $label = $label . ' node [phi-attr] {' . $a . '}';
     }
-    print ' (', $to, ')';
+    my $end = ' (' . $to . ')';
+    if (exists $opts{'break'}) {
+      my $mid = 'break';
+      print $edge;
+      print ' coordinate [pos=' . ($opts{'break'} / 100) . '] (' . $mid . ')';
+      print $end . ";\n";
+      print '  \node[] at (' . $mid . ') (' . $mid . '-v) {$' . vertex($to) . '$};' . "\n";
+      print '  \draw[' . $draw . '] (' . $from . ') -- ' . $label . ' (' . $mid . '-v)';
+    } else {
+      print $edge . $label . $end;
+    }
   } elsif (index($head, '=>') >= 0) {
     my ($from, $to) = split (/=>/, $head);
     if ($from eq '') {
@@ -774,16 +821,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     }
     print ']';
     print ' (', $head, ')';
-    print ' {$';
-    if (index($head, 'v0') == 0) {
-      print '\Phi';
-    } else {
-      $name = $head;
-      $name =~ s/^v/v_/g;
-      $name =~ s/[^0-9]$//g;
-      print $name;
-    }
-    print '$}';
+    print ' {$' . vertex($head) . '$}';
     if (exists $opts{'box'}) {
       print ' node[phi-box] at (';
       print $head, '.south east) {';
