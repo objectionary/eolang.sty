@@ -195,6 +195,7 @@
 %   \item ``|box:<txt>|'' attaches a ``|<box>|'' to it,
 %   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex ``|<v>|,''
 %     shifting it right by ``|<r>|'' and down by ``|<d>|'' centimetres.
+%   \item ``|+:<v>|'' makes a copy of an existing vertex and all its kids.
 % \end{itemize}
 
 % The following markers are supported for an edge:
@@ -340,17 +341,22 @@
 % \end{document}
 % \end{docshot}
 
-% Inside |phiquation| environment you can use labels too (just put |\label| after the formula):
+% You can make a copy of a vertex together with its kids:
 % \begin{docshot}
 % \documentclass{article}
-% \usepackage{eolang}
-% \usepackage[paperwidth=2in]{geometry}
 % \pagestyle{empty}
+% \usepackage{eolang}
 % \begin{document}
-% \begin{phiquation}
-% x -> [[\Delta -> 42]]. \label{eq:A}
-% \end{phiquation}
-% Eq.~\ref{eq:A} is easy to read.
+% \begin{sodg}
+% v0
+% v1 xy:v0,1,1
+% v0->v1 a:x
+% v2 xy:v1,-.7,-.1
+% v1->v2 a:|foo|
+% v0a +v0 xy:v0,1,2
+% v3a xy:v0a,.5,.1
+% v0a->v3a a:z
+% \end{sodg}
 % \end{document}
 % \end{docshot}
 
@@ -495,7 +501,7 @@ if ($env eq 'phiq') {
 } else {
   print '\end{split}\end{', $env, '}';
 }
-print '\endinput', "\n";
+print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
@@ -578,29 +584,32 @@ sub fmt {
 }
 open(my $fh, '<', $ARGV[0]);
 my $tex; { local $/; $tex = <$fh>; }
-print '% This file is auto-generated', "\n";
-print '% There are ', length($tex),
-  ' chars in the input: ', $ARGV[0], "\n";
-print '% ---', "\n";
 if (index($tex, "\t") > 0) {
   print "TABS are prohibited!";
   exit 1;
 }
+print '% This file is auto-generated', "\n";
+print '% There are ', length($tex),
+  ' chars in the input: ', $ARGV[0], "\n";
+print '% ---' . "\n";
 foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
-print '% ---', "\n";
+print '% ---';
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
-$tex =~ s/\n\s+/\n/g;
-$tex =~ s/%.*\n/\n/g;
-my @cmds = split (/\n/g, $tex);
+$tex =~ s/\n{2,}/\n/g;
+my @cmds = split(/\n/g, $tex);
+print ' (' . $#cmds . " lines)\n";
 print '\begin{phicture}', "\n";
-foreach my $c (@cmds) {
-  my ($head, $tail) = split (/ /, $c, 2);
+for (my $c = 0; $c < $#cmds; $c++) {
+  my $cmd = $cmds[$c];
+  $cmd =~ s/^\s+//g;
+  $cmd =~ s/%.*//g;
+  my ($head, $tail) = split(/ /, $cmd, 2);
   my %opts = {};
-  foreach my $p (split (/ /, $tail)) {
-    my ($q, $t) = split (/:/, $p);
+  foreach my $p (split(/ /, $tail)) {
+    my ($q, $t) = split(/:/, $p);
     $opts{$q} = $t;
   }
   if (index($head, '->') >= 0) {
@@ -651,6 +660,57 @@ foreach my $c (@cmds) {
     my ($v, $marker) = split (/!/, $head);
     print '\node [phi-marker, left=.6cm of ' .
       $v . ']{' . fmt($marker) . '}';
+  } elsif (index($head, '+') >= 0) {
+    my ($v, $suffix) = split (/\+/, $head);
+    my @friends = ($v);
+    foreach my $c (@cmds) {
+      $e = $c;
+      $e =~ s/^\s+//g;
+      my $h = substr($e, 0, index($e, ' '));
+      foreach my $f (@friends) {
+        my $add = '';
+        if (index($h, $f . '->') >= 0) {
+          $add = substr($h, index($h, '->') + 2);
+        }
+        if (index($e, '->' . $f . ' ') >= 0) {
+          $add = substr($h, 0, index($h, '->'));
+        }
+        if (index($e, 'xy:' . $f . ',') >= 0) {
+          $add = $h;
+        }
+        if (index($add, '+') == -1 and $add ne '' and not(grep(/^${add}$/, @friends))) {
+          push(@friends, $add);
+        }
+      }
+    }
+    my @extra = ();
+    foreach my $e (@cmds) {
+      $m = $e;
+      foreach my $f (@friends) {
+        my $h = $f;
+        $h =~ s/[a-z]$//g;
+        if ($m =~ s/^(\s*)${f}\+${suffix}\s?/\1${h}${suffix} /g) {
+          last;
+        }
+        $m =~ s/^(\s*)${f}\s/\1${h}${suffix} /g;
+        $m =~ s/^(\s*)${f}->/\1${h}${suffix}->/g;
+        $m =~ s/\sxy:${f},/ xy:${h}${suffix},/g;
+        $m =~ s/->${f}\s/->${h}${suffix} /g;
+      }
+      if ($m ne $e) {
+        push(@extra, ' ' . $m);
+      }
+    }
+    splice(@extra, 0, 1, @extra[-1]);
+    splice(@extra, -1, 1);
+    splice(@extra, 0, 0, '% start of ' . $v . '-clone (' . $head .
+      '), friends: [' . join(', ', @friends) . '] in ' .
+      $#cmds . ' lines');
+    push(@extra, '% end of ' . $v . '-clone');
+    splice(@cmds, $c, 1, @extra);
+    print '% cloned ' . $v . ' at line no.' . $c .
+      ' (+' . $#extra . ' lines -> ' .
+      $#cmds . ' lines total)';
   } else {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -716,7 +776,13 @@ foreach my $c (@cmds) {
   }
   print ";\n";
 }
-print '\end{phicture}', "\n", '\endinput';
+print '\end{phicture}%', "\n";
+print "After processing:\n---\n";
+foreach my $c (@cmds) {
+  print '% ', $c, "\n";
+}
+print '--- (' . $#cmds . " lines)\n";
+print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%

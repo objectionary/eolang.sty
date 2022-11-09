@@ -25,7 +25,2495 @@ runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/B5B6C245E4F9115CF7567FBD
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A.tex") > _eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex)
 iexec: The content of '_eolang/simple/B5B6C245E4F9115CF7567FBDF218497A-post.tex' was included into the document
-runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24.tex") > _eolang/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-post.tex)
-iexec: The content of '_eolang/simple/43D0F34ECF2A8ABBAF2EE5A398B12D24-post.tex' was included into the document
+runsystem((cp "_eolang/simple/sodg.tex" "_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1.tex") > _eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex)
+iexec: The content of '_eolang/simple/09C73237326A497B46D29EE9EAF6D9A1-post.tex' was included into the document
+Overfull \hbox (117.2025pt too wide) in paragraph at lines 31--63
+[]\OT1/cmr/m/n/10 After
+\hbox(518.08334+0.0)x345.0
+.\hbox(518.08334+0.0)x439.3969
+..\glue 43.87173
+..\hbox(0.0+0.0)x0.0, shifted -505.68336
+...\pdfliteral{q }
+...\pdfliteral{0 G }
+...\pdfliteral{0 g }
+...\pdfliteral{0.3985 w }
+...\hbox(0.0+0.0)x0.0
+....\pdfliteral{q }
+....\pdfliteral{0.79701 w }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+...........\mathon
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue -3.34026
+.......\hbox(0.0+0.0)x0.0, shifted 3.07498
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(6.14998+0.0)x6.68051
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(6.14998+0.0)x6.68051
+...........\mathon
+...........\OT1/cmr/m/n/9 ^^H
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.5 g }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.5 g }
+......\pdfliteral{-43.70839 -6.9739 13.94781 13.94781 re }
+......\pdfliteral{f }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue -39.23424
+.......\hbox(0.0+0.0)x0.0, shifted 2.74998
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(5.49998+0.0)x4.72495
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(5.49998+0.0)x4.72495
+...........\pdfcolorstack 0 push {1 g 1 G}
+...........\OT1/cmtt/m/n/9 A
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{-12.25375 -34.13023 m }
+......\pdfliteral{-21.40338 -34.13023 l }
+......\pdfliteral{-27.8734 -40.60025 l }
+......\pdfliteral{-27.8734 -49.74986 l }
+......\pdfliteral{-21.40338 -56.2199 l }
+......\pdfliteral{-12.25375 -56.2199 l }
+......\pdfliteral{-5.78374 -49.74986 l }
+......\pdfliteral{-5.78374 -40.60025 l }
+......\pdfliteral{h }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue -21.22128
+.......\hbox(0.0+0.0)x0.0, shifted 46.78139
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{-13.51761 -61.38087 14.05103 10.90297 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue -10.23515
+.......\hbox(0.0+0.0)x0.0, shifted 58.27728
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.27777+0.0)x7.43759
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.27777+0.0)x7.43759
+...........\OT1/cmtt/m/n/7 4
+...........\OT1/cmtt/m/n/7 2
+...........\kern 0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{-4.3122 -11.57602 m }
+....\pdfliteral{-12.06505 -32.38727 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.34906 -0.93704 0.93704 -0.34906 -12.06503 -32.38725 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{-7.42328 -32.10663 m }
+......\pdfliteral{-7.42328 -32.10663 l }
+......\pdfliteral{-7.17593 -31.4426 -8.11473 -30.71481 -7.86737 -30.05077 c }
+......\pdfliteral{-7.6883 -29.56999 -7.01546 -29.34879 -6.3102 -29.11842 c }
+......\pdfliteral{-5.60498 -28.88808 -4.93213 -28.66687 -4.75302 -28.18608 c }
+......\pdfliteral{-4.57394 -27.70532 -4.93808 -27.09785 -5.32079 -26.46225 c }
+......\pdfliteral{-5.70349 -25.82668 -6.06764 -25.21918 -5.88855 -24.7384 c }
+......\pdfliteral{-5.70947 -24.25764 -5.03665 -24.03642 -4.33139 -23.80606 c }
+......\pdfliteral{-3.62616 -23.57573 -2.95331 -23.3545 -2.77422 -22.87372 c }
+......\pdfliteral{-2.52681 -22.20961 -3.4656 -21.48183 -3.21823 -20.81778 c }
+......\pdfliteral{-3.21823 -20.81778 l }
+......\pdfliteral{-3.114 -20.53815 l }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.34908 0.93703 -0.93703 0.34908 -3.114 -20.53815 cm }
+......\pdfliteral{q 4.66248 0.0 m 3.28098 0.25902 1.0361 1.0361 -0.51805 1.94269 c -0.5\ETC.}
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue -11.51086
+.......\hbox(0.0+0.0)x0.0, shifted 24.02531
+........\pdfliteral{0.34906 0.93704 -0.93704 0.34906 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+0.0)x4.53473
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+0.0)x4.53473
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 x
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{2.19182 w }
+......\pdfliteral{57.77304 -45.81773 m }
+......\pdfliteral{57.77304 -39.21492 52.42055 -33.86243 45.81773 -33.86243 c }
+......\pdfliteral{39.21492 -33.86243 33.86243 -39.21492 33.86243 -45.81773 c }
+......\pdfliteral{33.86243 -52.42055 39.21492 -57.77304 45.81773 -57.77304 c }
+......\pdfliteral{52.42055 -57.77304 57.77304 -52.42055 57.77304 -45.81773 c }
+......\pdfliteral{h }
+......\pdfliteral{45.81773 -45.81773 m }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.59776 w }
+......\pdfliteral{1 G }
+......\pdfliteral{57.77304 -45.81773 m }
+......\pdfliteral{57.77304 -39.21492 52.42055 -33.86243 45.81773 -33.86243 c }
+......\pdfliteral{39.21492 -33.86243 33.86243 -39.21492 33.86243 -45.81773 c }
+......\pdfliteral{33.86243 -52.42055 39.21492 -57.77304 45.81773 -57.77304 c }
+......\pdfliteral{52.42055 -57.77304 57.77304 -52.42055 57.77304 -45.81773 c }
+......\pdfliteral{h }
+......\pdfliteral{45.81773 -45.81773 m }
+......\pdfliteral{S }
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 41.65915
+.......\hbox(0.0+0.0)x0.0, shifted 47.42647
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 2
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{49.77107 -64.60379 31.10406 12.84016 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 53.29005
+.......\hbox(0.0+0.0)x0.0, shifted 60.15115
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.8611+1.3611)x24.55435
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.8611+1.3611)x24.55435
+...........\mathon
+...........\OML/cmm/m/it/7 ^^X
+...........\kern0.23871
+...........\OML/cmm/m/it/7 :
+...........\OML/cmm/m/it/7 x
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 +
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{-5.38478 -42.23451 m }
+......\pdfliteral{9.5038 -38.35184 19.08372 -38.41658 32.53584 -42.11784 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.96413 -0.26524 0.26524 0.96413 32.53583 -42.11784 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 10.63797
+.........\hbox(0.0+0.0)x0.0, shifted 37.10217
+..........\pdfliteral{0.99994 -0.0067 0.0067 0.99994 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(4.27777+0.0)x7.43759
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(4.27777+0.0)x7.43759
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\hbox(4.27777+0.0)x7.43759
+..............\hbox(4.27777+0.0)x7.43759
+...............\OT1/cmtt/m/n/7 h
+...............\OT1/cmtt/m/n/7 i
+...............\kern 0.0
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+...........\mathon
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{15.8912 -45.81773 m }
+......\pdfliteral{6.50235 -36.42932 l }
+......\pdfliteral{6.50235 -42.09866 l }
+......\pdfliteral{1.7178 -42.09866 l }
+......\pdfliteral{1.7178 -49.5368 l }
+......\pdfliteral{6.50235 -49.5368 l }
+......\pdfliteral{6.50235 -55.20616 l }
+......\pdfliteral{h }
+......\pdfliteral{f }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 6.97084
+.......\hbox(0.0+0.0)x0.0, shifted 45.98897
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{q }
+....\pdfliteral{[ 0.79701 1.99255 ] 0.0 d }
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{38.73207 -35.69827 m }
+......\pdfliteral{29.64459 -22.72015 23.09758 -16.17314 11.2946 -7.90851 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{-0.81914 0.57356 -0.57356 -0.81914 11.2946 -7.90851 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 25.93642
+.........\hbox(0.0+0.0)x0.0, shifted 16.56828
+..........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(3.01389+0.0)x4.92747
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(3.01389+0.0)x4.92747
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\OML/cmm/m/it/7 ^^Y
+.............\kern0.25116
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{26.19897 -45.17479 m }
+......\pdfliteral{16.81012 -35.78636 l }
+......\pdfliteral{16.81012 -41.45572 l }
+......\pdfliteral{12.02557 -41.45572 l }
+......\pdfliteral{12.02557 -48.89386 l }
+......\pdfliteral{16.81012 -48.89386 l }
+......\pdfliteral{16.81012 -54.5632 l }
+......\pdfliteral{h }
+......\pdfliteral{f }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 17.31714
+.......\hbox(0.0+0.0)x0.0, shifted 45.34361
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{43.59962 -17.47093 m }
+......\pdfliteral{43.59962 -10.86812 38.24713 -5.51563 31.64432 -5.51563 c }
+......\pdfliteral{25.04152 -5.51563 19.68901 -10.86812 19.68901 -17.47093 c }
+......\pdfliteral{19.68901 -24.07375 25.04152 -29.42624 31.64432 -29.42624 c }
+......\pdfliteral{38.24713 -29.42624 43.59962 -24.07375 43.59962 -17.47093 c }
+......\pdfliteral{h }
+......\pdfliteral{31.64432 -17.47093 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 27.43277
+.......\hbox(0.0+0.0)x0.0, shifted 18.97372
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 3
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{24.76846 -8.73546 m }
+......\pdfliteral{15.37962 0.65295 l }
+......\pdfliteral{15.37962 -5.01639 l }
+......\pdfliteral{10.59508 -5.01639 l }
+......\pdfliteral{10.59508 -12.45453 l }
+......\pdfliteral{15.37962 -12.45453 l }
+......\pdfliteral{15.37962 -18.12389 l }
+......\pdfliteral{h }
+......\pdfliteral{f }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 15.88129
+.......\hbox(0.0+0.0)x0.0, shifted 8.76811
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{40.29344 -34.76895 m }
+....\pdfliteral{37.81017 -29.80278 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.4472 0.89438 -0.89438 -0.4472 37.81017 -29.80278 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 41.0635
+.......\hbox(0.0+0.0)x0.0, shifted 27.72855
+........\pdfliteral{0.4472 -0.89438 0.89438 0.4472 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+1.3611)x5.25975
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+1.3611)x5.25975
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 '
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{142.81352 -74.16457 m }
+......\pdfliteral{142.81352 -67.56175 137.46103 -62.20926 130.85822 -62.20926 c }
+......\pdfliteral{124.2554 -62.20926 118.90291 -67.56175 118.90291 -74.16457 c }
+......\pdfliteral{118.90291 -80.76738 124.2554 -86.11987 130.85822 -86.11987 c }
+......\pdfliteral{137.46103 -86.11987 142.81352 -80.76738 142.81352 -74.16457 c }
+......\pdfliteral{h }
+......\pdfliteral{130.85822 -74.16457 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 128.00699
+.......\hbox(0.0+0.0)x0.0, shifted 77.51671
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(6.14998+0.0)x6.68051
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(6.14998+0.0)x6.68051
+...........\mathon
+...........\OT1/cmr/m/n/9 ^^H
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{118.60445 -108.2948 m }
+......\pdfliteral{109.45483 -108.2948 l }
+......\pdfliteral{102.9848 -114.76482 l }
+......\pdfliteral{102.9848 -123.91443 l }
+......\pdfliteral{109.45483 -130.38446 l }
+......\pdfliteral{118.60445 -130.38446 l }
+......\pdfliteral{125.07446 -123.91443 l }
+......\pdfliteral{125.07446 -114.76482 l }
+......\pdfliteral{h }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 110.12596
+.......\hbox(0.0+0.0)x0.0, shifted 121.22311
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{117.34059 -135.54544 14.05103 10.90297 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 121.11209
+.......\hbox(0.0+0.0)x0.0, shifted 132.71901
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.27777+0.0)x7.43759
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.27777+0.0)x7.43759
+...........\OT1/cmtt/m/n/7 4
+...........\OT1/cmtt/m/n/7 2
+...........\kern 0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{126.546 -85.7406 m }
+....\pdfliteral{118.79317 -106.55185 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.34906 -0.93704 0.93704 -0.34906 118.79318 -106.55183 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{123.43492 -106.2712 m }
+......\pdfliteral{123.43492 -106.2712 l }
+......\pdfliteral{123.68227 -105.60716 122.74347 -104.87938 122.99084 -104.21533 c }
+......\pdfliteral{123.16992 -103.73457 123.84274 -103.51335 124.548 -103.28299 c }
+......\pdfliteral{125.25322 -103.05266 125.92609 -102.83144 126.10518 -102.35066 c }
+......\pdfliteral{126.28426 -101.86989 125.92012 -101.26242 125.53741 -100.62682 c }
+......\pdfliteral{125.15472 -99.99124 124.79056 -99.38374 124.96965 -98.90297 c }
+......\pdfliteral{125.14873 -98.42221 125.82155 -98.20099 126.52682 -97.97063 c }
+......\pdfliteral{127.23204 -97.7403 127.90489 -97.51907 128.08398 -97.0383 c }
+......\pdfliteral{128.3314 -96.37418 127.39261 -95.64641 127.63997 -94.98235 c }
+......\pdfliteral{127.63997 -94.98235 l }
+......\pdfliteral{127.7442 -94.70271 l }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.34908 0.93703 -0.93703 0.34908 127.7442 -94.70271 cm }
+......\pdfliteral{q 4.66248 0.0 m 3.28098 0.25902 1.0361 1.0361 -0.51805 1.94269 c -0.5\ETC.}
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 119.83638
+.......\hbox(0.0+0.0)x0.0, shifted 98.46704
+........\pdfliteral{0.34906 0.93704 -0.93704 0.34906 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+0.0)x4.53473
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+0.0)x4.53473
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 x
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{2.19182 w }
+......\pdfliteral{188.63126 -119.9823 m }
+......\pdfliteral{188.63126 -113.3795 183.27876 -108.027 176.67595 -108.027 c }
+......\pdfliteral{170.07315 -108.027 164.72064 -113.3795 164.72064 -119.9823 c }
+......\pdfliteral{164.72064 -126.58511 170.07315 -131.9376 176.67595 -131.9376 c }
+......\pdfliteral{183.27876 -131.9376 188.63126 -126.58511 188.63126 -119.9823 c }
+......\pdfliteral{h }
+......\pdfliteral{176.67595 -119.9823 m }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.59776 w }
+......\pdfliteral{1 G }
+......\pdfliteral{188.63126 -119.9823 m }
+......\pdfliteral{188.63126 -113.3795 183.27876 -108.027 176.67595 -108.027 c }
+......\pdfliteral{170.07315 -108.027 164.72064 -113.3795 164.72064 -119.9823 c }
+......\pdfliteral{164.72064 -126.58511 170.07315 -131.9376 176.67595 -131.9376 c }
+......\pdfliteral{183.27876 -131.9376 188.63126 -126.58511 188.63126 -119.9823 c }
+......\pdfliteral{h }
+......\pdfliteral{176.67595 -119.9823 m }
+......\pdfliteral{S }
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 173.0064
+.......\hbox(0.0+0.0)x0.0, shifted 121.8682
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 2
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{180.62929 -138.76836 31.10406 12.84016 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 184.6373
+.......\hbox(0.0+0.0)x0.0, shifted 134.59288
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.8611+1.3611)x24.55435
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.8611+1.3611)x24.55435
+...........\mathon
+...........\OML/cmm/m/it/7 ^^X
+...........\kern0.23871
+...........\OML/cmm/m/it/7 :
+...........\OML/cmm/m/it/7 x
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 +
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{125.47343 -116.39908 m }
+......\pdfliteral{140.36201 -112.5164 149.94194 -112.58115 163.39406 -116.28242 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.96413 -0.26524 0.26524 0.96413 163.39404 -116.28242 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 141.98521
+.........\hbox(0.0+0.0)x0.0, shifted 111.54388
+..........\pdfliteral{0.99994 -0.0067 0.0067 0.99994 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(4.27777+0.0)x7.43759
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(4.27777+0.0)x7.43759
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\hbox(4.27777+0.0)x7.43759
+..............\hbox(4.27777+0.0)x7.43759
+...............\OT1/cmtt/m/n/7 h
+...............\OT1/cmtt/m/n/7 i
+...............\kern 0.0
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{q }
+....\pdfliteral{[ 0.79701 1.99255 ] 0.0 d }
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{169.59029 -109.86284 m }
+......\pdfliteral{160.5028 -96.88472 153.9558 -90.3377 142.15283 -82.07307 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{-0.81914 0.57356 -0.57356 -0.81914 142.15283 -82.07307 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 157.28365
+.........\hbox(0.0+0.0)x0.0, shifted 91.01001
+..........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(3.01389+0.0)x4.92747
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(3.01389+0.0)x4.92747
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\OML/cmm/m/it/7 ^^Y
+.............\kern0.25116
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{174.45786 -91.6355 m }
+......\pdfliteral{174.45786 -85.03268 169.10536 -79.68019 162.50255 -79.68019 c }
+......\pdfliteral{155.89973 -79.68019 150.54724 -85.03268 150.54724 -91.6355 c }
+......\pdfliteral{150.54724 -98.23831 155.89973 -103.5908 162.50255 -103.5908 c }
+......\pdfliteral{169.10536 -103.5908 174.45786 -98.23831 174.45786 -91.6355 c }
+......\pdfliteral{h }
+......\pdfliteral{162.50255 -91.6355 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 158.78001
+.......\hbox(0.0+0.0)x0.0, shifted 93.41545
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 3
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{171.15166 -108.93352 m }
+....\pdfliteral{168.6684 -103.96736 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.4472 0.89438 -0.89438 -0.4472 168.6684 -103.96736 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 172.41075
+.......\hbox(0.0+0.0)x0.0, shifted 102.17027
+........\pdfliteral{0.4472 -0.89438 0.89438 0.4472 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+1.3611)x5.25975
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+1.3611)x5.25975
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 '
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+...........\mathon
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{188.63126 -119.9823 m }
+......\pdfliteral{188.63126 -113.3795 183.27876 -108.027 176.67595 -108.027 c }
+......\pdfliteral{170.07315 -108.027 164.72064 -113.3795 164.72064 -119.9823 c }
+......\pdfliteral{164.72064 -126.58511 170.07315 -131.9376 176.67595 -131.9376 c }
+......\pdfliteral{183.27876 -131.9376 188.63126 -126.58511 188.63126 -119.9823 c }
+......\pdfliteral{h }
+......\pdfliteral{176.67595 -119.9823 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 173.0064
+.......\hbox(0.0+0.0)x0.0, shifted 121.8682
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 3
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{188.63126 -258.07721 m }
+......\pdfliteral{188.63126 -251.4744 183.27876 -246.1219 176.67595 -246.1219 c }
+......\pdfliteral{170.07315 -246.1219 164.72064 -251.4744 164.72064 -258.07721 c }
+......\pdfliteral{164.72064 -264.68002 170.07315 -270.03252 176.67595 -270.03252 c }
+......\pdfliteral{183.27876 -270.03252 188.63126 -264.68002 188.63126 -258.07721 c }
+......\pdfliteral{h }
+......\pdfliteral{176.67595 -258.07721 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 173.0064
+.......\hbox(0.0+0.0)x0.0, shifted 260.47917
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 5
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{173.68987 -246.08986 m }
+....\pdfliteral{134.19107 -87.54396 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.24171 0.97034 -0.97034 -0.24171 134.19107 -87.54396 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 155.79558
+.......\hbox(0.0+0.0)x0.0, shifted 162.64917
+........\pdfliteral{0.24171 -0.97034 0.97034 0.24171 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(5.79558+0.0)x7.23961
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(5.79558+0.0)x7.23961
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 x
+...........\hbox(2.77779+0.0)x2.70488, shifted -3.01779
+............\OMS/cmsy/m/n/5 0
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{234.449 -303.89496 m }
+......\pdfliteral{234.449 -297.29214 229.09651 -291.93965 222.4937 -291.93965 c }
+......\pdfliteral{215.89088 -291.93965 210.53839 -297.29214 210.53839 -303.89496 c }
+......\pdfliteral{210.53839 -310.49777 215.89088 -315.85027 222.4937 -315.85027 c }
+......\pdfliteral{229.09651 -315.85027 234.449 -310.49777 234.449 -303.89496 c }
+......\pdfliteral{h }
+......\pdfliteral{222.4937 -303.89496 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 218.99536
+.......\hbox(0.0+0.0)x0.0, shifted 306.46814
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 6
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{213.75824 -295.15948 m }
+....\pdfliteral{186.42584 -267.82709 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.7071 0.7071 -0.7071 -0.7071 186.42586 -267.8271 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 201.0305
+.......\hbox(0.0+0.0)x0.0, shifted 277.41699
+........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.8611+1.3611)x5.54286
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.8611+1.3611)x5.54286
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7  
+...........\kern0.25116
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{302.01857 -261.71642 m }
+......\pdfliteral{302.01857 -255.1136 296.66606 -249.76111 290.06326 -249.76111 c }
+......\pdfliteral{283.46045 -249.76111 278.10796 -255.1136 278.10796 -261.71642 c }
+......\pdfliteral{278.10796 -268.31923 283.46045 -273.67172 290.06326 -273.67172 c }
+......\pdfliteral{296.66606 -273.67172 302.01857 -268.31923 302.01857 -261.71642 c }
+......\pdfliteral{h }
+......\pdfliteral{290.06326 -261.71642 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 287.80699
+.......\hbox(0.0+0.0)x0.0, shifted 265.76945
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(6.14998+0.0)x6.68051
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(6.14998+0.0)x6.68051
+...........\mathon
+...........\OT1/cmr/m/n/9 ^^H
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{277.8095 -295.84665 m }
+......\pdfliteral{268.65988 -295.84665 l }
+......\pdfliteral{262.18985 -302.31668 l }
+......\pdfliteral{262.18985 -311.4663 l }
+......\pdfliteral{268.65988 -317.93631 l }
+......\pdfliteral{277.8095 -317.93631 l }
+......\pdfliteral{284.27951 -311.4663 l }
+......\pdfliteral{284.27951 -302.31668 l }
+......\pdfliteral{h }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 269.92596
+.......\hbox(0.0+0.0)x0.0, shifted 309.47586
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{276.54564 -323.09729 14.05103 10.90297 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 280.9121
+.......\hbox(0.0+0.0)x0.0, shifted 320.97176
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.27777+0.0)x7.43759
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.27777+0.0)x7.43759
+...........\OT1/cmtt/m/n/7 4
+...........\OT1/cmtt/m/n/7 2
+...........\kern 0.0
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{285.75105 -273.29245 m }
+....\pdfliteral{277.9982 -294.1037 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.34906 -0.93704 0.93704 -0.34906 277.99821 -294.10368 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{282.63997 -293.82306 m }
+......\pdfliteral{282.63997 -293.82306 l }
+......\pdfliteral{282.88731 -293.15901 281.94852 -292.43124 282.19588 -291.76718 c }
+......\pdfliteral{282.37497 -291.28642 283.04779 -291.0652 283.75305 -290.83485 c }
+......\pdfliteral{284.45827 -290.6045 285.13113 -290.38329 285.31023 -289.90251 c }
+......\pdfliteral{285.4893 -289.42175 285.12517 -288.81427 284.74246 -288.17867 c }
+......\pdfliteral{284.35976 -287.5431 283.9956 -286.93561 284.1747 -286.45482 c }
+......\pdfliteral{284.35378 -285.97406 285.0266 -285.75284 285.73186 -285.52249 c }
+......\pdfliteral{286.43709 -285.29214 287.10994 -285.07092 287.28903 -284.59015 c }
+......\pdfliteral{287.53644 -283.92604 286.59764 -283.19826 286.84502 -282.53421 c }
+......\pdfliteral{286.84502 -282.53421 l }
+......\pdfliteral{286.94925 -282.25456 l }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.34908 0.93703 -0.93703 0.34908 286.94925 -282.25456 cm }
+......\pdfliteral{q 4.66248 0.0 m 3.28098 0.25902 1.0361 1.0361 -0.51805 1.94269 c -0.5\ETC.}
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 279.63638
+.......\hbox(0.0+0.0)x0.0, shifted 286.71979
+........\pdfliteral{0.34906 0.93704 -0.93704 0.34906 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+0.0)x4.53473
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+0.0)x4.53473
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 x
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{2.19182 w }
+......\pdfliteral{347.8363 -307.53416 m }
+......\pdfliteral{347.8363 -300.93135 342.48381 -295.57886 335.881 -295.57886 c }
+......\pdfliteral{329.27818 -295.57886 323.92569 -300.93135 323.92569 -307.53416 c }
+......\pdfliteral{323.92569 -314.13698 329.27818 -319.48947 335.881 -319.48947 c }
+......\pdfliteral{342.48381 -319.48947 347.8363 -314.13698 347.8363 -307.53416 c }
+......\pdfliteral{h }
+......\pdfliteral{335.881 -307.53416 m }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.59776 w }
+......\pdfliteral{1 G }
+......\pdfliteral{347.8363 -307.53416 m }
+......\pdfliteral{347.8363 -300.93135 342.48381 -295.57886 335.881 -295.57886 c }
+......\pdfliteral{329.27818 -295.57886 323.92569 -300.93135 323.92569 -307.53416 c }
+......\pdfliteral{323.92569 -314.13698 329.27818 -319.48947 335.881 -319.48947 c }
+......\pdfliteral{342.48381 -319.48947 347.8363 -314.13698 347.8363 -307.53416 c }
+......\pdfliteral{h }
+......\pdfliteral{335.881 -307.53416 m }
+......\pdfliteral{S }
+......\pdfliteral{Q }
+......\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 332.8064
+.......\hbox(0.0+0.0)x0.0, shifted 310.12094
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 2
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{1 g }
+......\pdfliteral{0.3985 w }
+......\pdfliteral{339.83434 -326.32022 31.10406 12.84016 re }
+......\pdfliteral{B }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 344.4373
+.......\hbox(0.0+0.0)x0.0, shifted 322.84563
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.8611+1.3611)x24.55435
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.8611+1.3611)x24.55435
+...........\mathon
+...........\OML/cmm/m/it/7 ^^X
+...........\kern0.23871
+...........\OML/cmm/m/it/7 :
+...........\OML/cmm/m/it/7 x
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 +
+...........\glue(\medmuskip) 1.82098 plus 0.91049 minus 1.82098
+...........\OT1/cmr/m/n/7 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{284.67847 -303.95093 m }
+......\pdfliteral{299.56706 -300.06825 309.14699 -300.133 322.5991 -303.83427 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{0.96413 -0.26524 0.26524 0.96413 322.59909 -303.83427 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 301.78522
+.........\hbox(0.0+0.0)x0.0, shifted 299.79663
+..........\pdfliteral{0.99994 -0.0067 0.0067 0.99994 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(4.27777+0.0)x7.43759
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(4.27777+0.0)x7.43759
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\hbox(4.27777+0.0)x7.43759
+..............\hbox(4.27777+0.0)x7.43759
+...............\OT1/cmtt/m/n/7 h
+...............\OT1/cmtt/m/n/7 i
+...............\kern 0.0
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{q }
+....\pdfliteral{[ 0.79701 1.99255 ] 0.0 d }
+....\pdfliteral{S }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{328.79533 -297.41469 m }
+......\pdfliteral{319.70786 -284.43658 313.16084 -277.88956 301.35786 -269.62492 c }
+......\pdfliteral{S }
+......\pdfliteral{q }
+......\pdfliteral{-0.81914 0.57356 -0.57356 -0.81914 301.35786 -269.62492 cm }
+......\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+......\pdfliteral{Q }
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{q }
+........\pdfliteral{0 G }
+........\pdfliteral{0 g }
+........\glue 0.0
+........\pdfliteral{Q }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\glue 317.08366
+.........\hbox(0.0+0.0)x0.0, shifted 279.26276
+..........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+..........\pdfliteral{q }
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(3.01389+0.0)x4.92747
+............\pdfliteral{0 G }
+............\pdfliteral{0 g }
+............\hbox(3.01389+0.0)x4.92747
+.............\pdfcolorstack 0 push {0 g 0 G}
+.............\mathon
+.............\OML/cmm/m/it/7 ^^Y
+.............\kern0.25116
+.............\mathoff
+.............\pdfcolorstack 0 pop
+............\glue 0.0
+..........\pdfliteral{Q }
+..........\glue 0.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfliteral{Q }
+........\glue 0.0
+........\glue 0.0
+........\pdfliteral{Q }
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{333.6629 -279.18735 m }
+......\pdfliteral{333.6629 -272.58453 328.3104 -267.23204 321.7076 -267.23204 c }
+......\pdfliteral{315.10478 -267.23204 309.75227 -272.58453 309.75227 -279.18735 c }
+......\pdfliteral{309.75227 -285.79016 315.10478 -291.14265 321.7076 -291.14265 c }
+......\pdfliteral{328.3104 -291.14265 333.6629 -285.79016 333.6629 -279.18735 c }
+......\pdfliteral{h }
+......\pdfliteral{321.7076 -279.18735 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 318.58002
+.......\hbox(0.0+0.0)x0.0, shifted 281.6682
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 3
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{330.3567 -296.48538 m }
+....\pdfliteral{327.87343 -291.51921 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.4472 0.89438 -0.89438 -0.4472 327.87343 -291.51921 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 332.21075
+.......\hbox(0.0+0.0)x0.0, shifted 290.42302
+........\pdfliteral{0.4472 -0.89438 0.89438 0.4472 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+1.3611)x5.25975
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+1.3611)x5.25975
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 '
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{347.8363 -307.53416 m }
+......\pdfliteral{347.8363 -300.93135 342.48381 -295.57886 335.881 -295.57886 c }
+......\pdfliteral{329.27818 -295.57886 323.92569 -300.93135 323.92569 -307.53416 c }
+......\pdfliteral{323.92569 -314.13698 329.27818 -319.48947 335.881 -319.48947 c }
+......\pdfliteral{342.48381 -319.48947 347.8363 -314.13698 347.8363 -307.53416 c }
+......\pdfliteral{h }
+......\pdfliteral{335.881 -307.53416 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 332.8064
+.......\hbox(0.0+0.0)x0.0, shifted 310.12094
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 3
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{347.8363 -445.62907 m }
+......\pdfliteral{347.8363 -439.02626 342.48381 -433.67377 335.881 -433.67377 c }
+......\pdfliteral{329.27818 -433.67377 323.92569 -439.02626 323.92569 -445.62907 c }
+......\pdfliteral{323.92569 -452.23189 329.27818 -457.58438 335.881 -457.58438 c }
+......\pdfliteral{342.48381 -457.58438 347.8363 -452.23189 347.8363 -445.62907 c }
+......\pdfliteral{h }
+......\pdfliteral{335.881 -445.62907 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 332.8064
+.......\hbox(0.0+0.0)x0.0, shifted 448.73192
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 5
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{332.89491 -433.64172 m }
+....\pdfliteral{293.3961 -275.09581 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.24171 0.97034 -0.97034 -0.24171 293.3961 -275.09581 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 315.59558
+.......\hbox(0.0+0.0)x0.0, shifted 350.90192
+........\pdfliteral{0.24171 -0.97034 0.97034 0.24171 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(5.79558+0.0)x7.23961
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(5.79558+0.0)x7.23961
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 x
+...........\hbox(2.77779+0.0)x2.70488, shifted -3.01779
+............\OMS/cmsy/m/n/5 0
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{393.65405 -491.44681 m }
+......\pdfliteral{393.65405 -484.844 388.30156 -479.4915 381.69875 -479.4915 c }
+......\pdfliteral{375.09593 -479.4915 369.74344 -484.844 369.74344 -491.44681 c }
+......\pdfliteral{369.74344 -498.04962 375.09593 -503.40211 381.69875 -503.40211 c }
+......\pdfliteral{388.30156 -503.40211 393.65405 -498.04962 393.65405 -491.44681 c }
+......\pdfliteral{h }
+......\pdfliteral{381.69875 -491.44681 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 378.79536
+.......\hbox(0.0+0.0)x0.0, shifted 494.72089
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 6
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{372.96327 -482.71135 m }
+....\pdfliteral{345.63087 -455.37895 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{-0.7071 0.7071 -0.7071 -0.7071 345.63089 -455.37897 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 360.8305
+.......\hbox(0.0+0.0)x0.0, shifted 465.66974
+........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(4.8611+1.3611)x5.54286
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(4.8611+1.3611)x5.54286
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7  
+...........\kern0.25116
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{11.9553 0.0 m }
+......\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
+......\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
+......\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
+......\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
+......\pdfliteral{h }
+......\pdfliteral{0.0 0.0 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 0.0
+.......\hbox(0.0+0.0)x0.0
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
+...........\mathon
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0.79701 w }
+......\pdfliteral{347.8363 -307.53416 m }
+......\pdfliteral{347.8363 -300.93135 342.48381 -295.57886 335.881 -295.57886 c }
+......\pdfliteral{329.27818 -295.57886 323.92569 -300.93135 323.92569 -307.53416 c }
+......\pdfliteral{323.92569 -314.13698 329.27818 -319.48947 335.881 -319.48947 c }
+......\pdfliteral{342.48381 -319.48947 347.8363 -314.13698 347.8363 -307.53416 c }
+......\pdfliteral{h }
+......\pdfliteral{335.881 -307.53416 m }
+......\pdfliteral{S }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 332.8064
+.......\hbox(0.0+0.0)x0.0, shifted 310.12094
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.87498+0.99998)x8.65964
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.87498+0.99998)x8.65964
+...........\mathon
+...........\OML/cmm/m/it/9 v
+...........\hbox(3.86665+0.0)x4.16661, shifted 0.99998
+............\OT1/cmr/m/n/6 1
+...........\mathoff
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{298.79872 -270.45189 m }
+....\pdfliteral{326.13112 -297.78429 l }
+....\pdfliteral{S }
+....\pdfliteral{q }
+....\pdfliteral{0.7071 -0.7071 0.7071 0.7071 326.1311 -297.78427 cm }
+....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
+....\pdfliteral{Q }
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{q }
+......\pdfliteral{0 G }
+......\pdfliteral{0 g }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 314.11163
+.......\hbox(0.0+0.0)x0.0, shifted 282.26476
+........\pdfliteral{0.7071 -0.7071 0.7071 0.7071 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(3.01389+0.0)x4.8851
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(3.01389+0.0)x4.8851
+...........\pdfcolorstack 0 push {0 g 0 G}
+...........\mathon
+...........\OML/cmm/m/it/7 ^^[
+...........\kern0.25116
+...........\mathoff
+...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\glue 0.0
+....\pdfliteral{Q }
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\pdfliteral{n }
+...\pdfliteral{Q }
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\OT1/cmr/m/n/10 A
+.\OT1/cmr/m/n/10 f
+.\OT1/cmr/m/n/10 t
+.\OT1/cmr/m/n/10 e
+.\OT1/cmr/m/n/10 r
+.\glue(\rightskip) 0.0
+[1
+]
