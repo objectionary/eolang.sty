@@ -366,6 +366,26 @@
 % \end{document}
 % \end{docshot}
 
+% You can make a copy from a copy:
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}
+% \begin{sodg}
+% v0
+% v1 xy:v0,.7,1
+% v0->v1 a:x bend:-10
+% v0+a xy:v0,3,0 \\ v0=>v0a
+% v2a xy:v1a,-.8,.9
+% v1a->v2a a:e
+% v0a+b xy:v0a,3,0 \\ v0a=>v0b
+% v3b xy:v2b,.8,.7
+% v2b->v3b a:\psi
+% \end{sodg}
+% \end{document}
+% \end{docshot}
+
 % You can have ``broken'' edges, using ``|break|'' attribute of an edge.
 % The attribute must have a value, which is the percentange of the path
 % between vertices that the arrow should take (can't be more than 80 and less than 20).

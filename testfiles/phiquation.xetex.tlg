@@ -1,0 +1,13 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+runsystem((cp "_eolang-xe/phiquation/phiquation.tex" "_eolang-xe/phiquation/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/phiquation/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E.tex") > _eolang-xe/phiquation/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/phiquation/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E-post.tex
+LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
+(../Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+msa on input line ....
+LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
+)
+iexec: The content of '_eolang-xe/phiquation/6B5DD7ABCFB1FEADBB6616BF0DB2AC0E-post.tex' was included into the document

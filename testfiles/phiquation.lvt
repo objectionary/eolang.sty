@@ -1,0 +1,24 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{eolang}
+\begin{document}
+
+\START
+
+\begin{phiquation*}
+% leading comment
+a -> [[
+  @ -> &.z,
+  ^ !-> $.b,
+  u -> ?, % comment
+  b -> [[ c -> \
+    |x|(56) \
+    .|bye|(55),
+    \rho -> |hello|($),
+    \Delta ~> |01-FE-C3| ]]]]
+
+\beta_1 := [ \varphi -wait> \varnothing ]
+% tail comment
+\end{phiquation*}
+
+\END

@@ -1,0 +1,11 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{eolang}
+\begin{document}
+
+\START
+
+\phiq{x := [ \alpha_0 -rqst> ? ]}
+\phiq{& -> ^.$.|alpha|(42)}
+
+\END

@@ -5,33 +5,6 @@
 
 \START
 
-This is for \eolang{} and \phic{}.
-
-\begin{phiquation*}
-% leading comment
-a -> [[
-  @ -> &.z,
-  ^ !-> $.b,
-  u -> ?, % comment
-  b -> [[ c -> \
-    |x|(56) \
-    .|bye|(55),
-    \rho -> |hello|($),
-    \Delta ~> |01-FE-C3| ]]]]
-
-\beta_1 := [ \varphi -wait> \varnothing ]
-% tail comment
-\end{phiquation*}
-
-\phiq{x := [ \alpha_0 -rqst> ? ]}
-\phiq{& -> ^.$.|alpha|(42)}
-
-\begin{sodg}
-v0
-v1 xy:v0,-2,+1 data:|42|
-v0->v1 a:$x$ rho
-\end{sodg}
-
 \begin{sodg}
 % start comment
 v0 \\ v0!A
@@ -57,7 +30,7 @@ v5a->v0a a:x'
 v6a xy:v5a,1,1
 v6a->v5a a:\psi
 
-v0a+b xy:v0a,5,6
+v0a+b xy:v0a,10,6
 v1b xy:v0b,1,1
 v0b->v1b a:\sigma
 % end comment
