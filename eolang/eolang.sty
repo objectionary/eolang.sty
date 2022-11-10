@@ -119,7 +119,7 @@ $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
+$tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
@@ -534,6 +534,9 @@ print '\endinput%';
 
 \newcommand\phiWave{%
   \mapstochar\mathrel{\mspace{0.45mu}}\leadsto}
+
+\newcommand\phiSlot[1]{%
+  \xrightarrow{\text{\sffamily\scshape #1}}}
 
 \RequirePackage{trimclip}
 \RequirePackage{amsfonts}
