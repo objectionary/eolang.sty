@@ -1,14 +1,14 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/A31F8F39A33A8F203FC269B76B766B65.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/sodg/A31F8F39A33A8F203FC269B76B766B65.tex") > _eolang/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex
+runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > _eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-iexec: The content of '_eolang/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex' was included into the document
-Overfull \hbox (230.96977pt too wide) in paragraph at lines 61--38
+iexec: The content of '_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
+Overfull \hbox (230.96977pt too wide) in paragraph at lines 63--39
 [] 
 \hbox(518.08334+0.0)x345.0
 .\hbox(518.08334+0.0)x575.96977
@@ -528,20 +528,20 @@ Overfull \hbox (230.96977pt too wide) in paragraph at lines 61--38
 ......\pdfliteral{0.8 g }
 ......\pdfliteral{q }
 ......\pdfliteral{0.8 g }
-......\pdfliteral{15.8912 -45.81773 m }
-......\pdfliteral{6.50235 -36.42932 l }
-......\pdfliteral{6.50235 -42.09866 l }
-......\pdfliteral{1.7178 -42.09866 l }
-......\pdfliteral{1.7178 -49.5368 l }
-......\pdfliteral{6.50235 -49.5368 l }
-......\pdfliteral{6.50235 -55.20616 l }
+......\pdfliteral{-1.11662 -45.81773 m }
+......\pdfliteral{-10.50548 -36.42932 l }
+......\pdfliteral{-10.50548 -42.09866 l }
+......\pdfliteral{-15.29002 -42.09866 l }
+......\pdfliteral{-15.29002 -49.5368 l }
+......\pdfliteral{-10.50548 -49.5368 l }
+......\pdfliteral{-10.50548 -55.20616 l }
 ......\pdfliteral{h }
 ......\pdfliteral{f }
 ......\glue 0.0
 ......\pdfliteral{Q }
 ......\pdfliteral{q }
 ......\hbox(0.0+0.0)x0.0
-.......\glue 6.97084
+.......\glue -10.10056
 .......\hbox(0.0+0.0)x0.0, shifted 45.98897
 ........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral{q }
@@ -627,20 +627,20 @@ Overfull \hbox (230.96977pt too wide) in paragraph at lines 61--38
 ......\pdfliteral{0.8 g }
 ......\pdfliteral{q }
 ......\pdfliteral{0.8 g }
-......\pdfliteral{26.19897 -45.17479 m }
-......\pdfliteral{16.81012 -35.78636 l }
-......\pdfliteral{16.81012 -41.45572 l }
-......\pdfliteral{12.02557 -41.45572 l }
-......\pdfliteral{12.02557 -48.89386 l }
-......\pdfliteral{16.81012 -48.89386 l }
-......\pdfliteral{16.81012 -54.5632 l }
+......\pdfliteral{20.52927 -45.17479 m }
+......\pdfliteral{11.14041 -35.78636 l }
+......\pdfliteral{11.14041 -41.45572 l }
+......\pdfliteral{6.35587 -41.45572 l }
+......\pdfliteral{6.35587 -48.89386 l }
+......\pdfliteral{11.14041 -48.89386 l }
+......\pdfliteral{11.14041 -54.5632 l }
 ......\pdfliteral{h }
 ......\pdfliteral{f }
 ......\glue 0.0
 ......\pdfliteral{Q }
 ......\pdfliteral{q }
 ......\hbox(0.0+0.0)x0.0
-.......\glue 17.31714
+.......\glue 11.62624
 .......\hbox(0.0+0.0)x0.0, shifted 45.34361
 ........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral{q }
@@ -2878,6 +2878,43 @@ Overfull \hbox (230.96977pt too wide) in paragraph at lines 61--38
 ...........\kern0.25116
 ...........\mathoff
 ...........\pdfcolorstack 0 pop
+..........\glue 0.0
+........\pdfliteral{Q }
+........\glue 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral{Q }
+......\glue 0.0
+......\glue 0.0
+......\pdfliteral{Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{q }
+......\pdfliteral{0.8 g }
+......\pdfliteral{470.06268 -261.71642 m }
+......\pdfliteral{460.67383 -252.32799 l }
+......\pdfliteral{460.67383 -257.99734 l }
+......\pdfliteral{455.88928 -257.99734 l }
+......\pdfliteral{455.88928 -265.43549 l }
+......\pdfliteral{460.67383 -265.43549 l }
+......\pdfliteral{460.67383 -271.10484 l }
+......\pdfliteral{h }
+......\pdfliteral{f }
+......\glue 0.0
+......\pdfliteral{Q }
+......\pdfliteral{q }
+......\hbox(0.0+0.0)x0.0
+.......\glue 462.83958
+.......\hbox(0.0+0.0)x0.0, shifted 262.69447
+........\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral{q }
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\pdfliteral{0 G }
+..........\pdfliteral{0 g }
+..........\hbox(0.0+0.0)x0.0
 ..........\glue 0.0
 ........\pdfliteral{Q }
 ........\glue 0.0

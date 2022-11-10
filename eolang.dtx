@@ -171,7 +171,7 @@
 % \usepackage{eolang}
 % \begin{document}
 % \begin{sodg}
-% v0 \\ v0=> \\ v0!!A
+% v0 \\ v0===> \\ v0!!A
 % v1 xy:v0,-.8,2.8 data:42 \\ =>v1
 % v0->v1 a:x rho
 % v2 xy:v0,+1,+1 atom:\xi.x+1
@@ -209,7 +209,8 @@
 
 % It is also possible to put transformation arrows to the graph, with the help of ``|v0=>v1|'' syntax. The arrow
 % will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
-% saying for example ``|v3=>|'', of from the left to the vertes, by saying for example ``|=>v5|.''
+% saying for example ``|v3=>|'', of from the left to the vertes, by saying for example ``|=>v5|.'' If you
+% want the arrow to stay further away from the vertex than usually, use a few ``|=|'' symbols, for example ``|===>v0|.''
 
 % You can also put a marker at the left side of a vertex, using ``|v5!A|'' syntax, where ``|v5|'' is the vertex
 % and ``|A|'' is the text in the marker. They are useful when you put a few graphs on a picture
@@ -618,6 +619,7 @@ print '\endinput%';
 % \changes{0.4.0}{2022/10/31}{Transforming arrows added with \texttt{=>} syntax, also markers with exclamation mark syntax.}
 % \changes{0.5.0}{2022/11/09}{New syntax introduced that allows to make clones of vertices and all their dependants.}
 % \changes{0.5.0}{2022/11/09}{Now edges may have \texttt{break} attribute, to make them shorter.}
+% \changes{0.5.0}{2022/11/10}{It is possible to use multiple ``equaltion sign'' symbols for transition arrows \texttt{=>}.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -729,12 +731,13 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       print tailor($draw, 'M');
     }
   } elsif (index($head, '=>') >= 0) {
-    my ($from, $to) = split (/=>/, $head);
+    my ($from, $to) = split (/=+>/, $head);
+    my $size = () = $head =~ /=/g;
     if ($from eq '') {
-      print '\node [phi-arrow, left=.6cm of ' .
+      print '\node [phi-arrow, left=' . ($size * 0.4) . 'cm of ' .
         $to . ']';
     } elsif ($to eq '') {
-      print '\node [phi-arrow, right=.6cm of ' .
+      print '\node [phi-arrow, right=' . ($size * 0.4) . 'cm of ' .
         $from . ']';
     } else {
       print '\node [phi-arrow] at ($(' .

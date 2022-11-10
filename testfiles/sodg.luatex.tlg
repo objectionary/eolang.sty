@@ -1,17 +1,17 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/A31F8F39A33A8F203FC2
-69B76B766B65.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/A31F8F39A33A8F20
-3FC269B76B766B65.tex") > _eolang-lua/sodg/A31F8F39A33A8F203FC269B76B766B65-post.
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/3EA20B681B9F0A223D75
+73CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/3EA20B681B9F0A22
+3D7573CF2F5CE5EF.tex") > _eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.
 tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex
+(_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-iexec: The content of '_eolang-lua/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex' was included into the document
-Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
+iexec: The content of '_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
+Overfull \hbox (230.96962pt too wide) in paragraph at lines 63--39
 [] 
 \hbox(518.08316+0.0)x345.0, direction TLT
 .\localpar
@@ -526,20 +526,20 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\pdfliteral origin{0.8 g }
 ......\pdfliteral origin{q }
 ......\pdfliteral origin{0.8 g }
-......\pdfliteral origin{15.89119 -45.8177 m }
-......\pdfliteral origin{6.50233 -36.42929 l }
-......\pdfliteral origin{6.50233 -42.09863 l }
-......\pdfliteral origin{1.71779 -42.09863 l }
-......\pdfliteral origin{1.71779 -49.53677 l }
-......\pdfliteral origin{6.50233 -49.53677 l }
-......\pdfliteral origin{6.50233 -55.20613 l }
+......\pdfliteral origin{-1.11664 -45.8177 m }
+......\pdfliteral origin{-10.5055 -36.42929 l }
+......\pdfliteral origin{-10.5055 -42.09863 l }
+......\pdfliteral origin{-15.29004 -42.09863 l }
+......\pdfliteral origin{-15.29004 -49.53677 l }
+......\pdfliteral origin{-10.5055 -49.53677 l }
+......\pdfliteral origin{-10.5055 -55.20613 l }
 ......\pdfliteral origin{h }
 ......\pdfliteral origin{f }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
 ......\pdfliteral origin{q }
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\glue 6.97083
+.......\glue -10.10057
 .......\hbox(0.0+0.0)x0.0, shifted 45.98894, direction TLT
 ........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral origin{q }
@@ -623,20 +623,20 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\pdfliteral origin{0.8 g }
 ......\pdfliteral origin{q }
 ......\pdfliteral origin{0.8 g }
-......\pdfliteral origin{26.19899 -45.17476 m }
-......\pdfliteral origin{16.81013 -35.78633 l }
-......\pdfliteral origin{16.81013 -41.45569 l }
-......\pdfliteral origin{12.02559 -41.45569 l }
-......\pdfliteral origin{12.02559 -48.89383 l }
-......\pdfliteral origin{16.81013 -48.89383 l }
-......\pdfliteral origin{16.81013 -54.56317 l }
+......\pdfliteral origin{20.52928 -45.17476 m }
+......\pdfliteral origin{11.14043 -35.78633 l }
+......\pdfliteral origin{11.14043 -41.45569 l }
+......\pdfliteral origin{6.35588 -41.45569 l }
+......\pdfliteral origin{6.35588 -48.89383 l }
+......\pdfliteral origin{11.14043 -48.89383 l }
+......\pdfliteral origin{11.14043 -54.56317 l }
 ......\pdfliteral origin{h }
 ......\pdfliteral origin{f }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
 ......\pdfliteral origin{q }
 ......\hbox(0.0+0.0)x0.0, direction TLT
-.......\glue 17.31715
+.......\glue 11.62625
 .......\hbox(0.0+0.0)x0.0, shifted 45.34358, direction TLT
 ........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ........\pdfliteral origin{q }
@@ -2829,6 +2829,42 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ...........\kern0.25116 (italic)
 ...........\mathoff
 ...........\pdfcolorstack 0 pop
+..........\glue(\spaceskip) 0.0
+........\pdfliteral origin{Q }
+........\glue(\spaceskip) 0.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfliteral origin{Q }
+......\glue(\spaceskip) 0.0
+......\pdfliteral origin{Q }
+....\glue(\spaceskip) 0.0
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfliteral origin{q }
+......\pdfliteral origin{0.8 g }
+......\pdfliteral origin{q }
+......\pdfliteral origin{0.8 g }
+......\pdfliteral origin{470.0626 -261.71635 m }
+......\pdfliteral origin{460.67375 -252.32793 l }
+......\pdfliteral origin{460.67375 -257.99728 l }
+......\pdfliteral origin{455.8892 -257.99728 l }
+......\pdfliteral origin{455.8892 -265.43542 l }
+......\pdfliteral origin{460.67375 -265.43542 l }
+......\pdfliteral origin{460.67375 -271.10478 l }
+......\pdfliteral origin{h }
+......\pdfliteral origin{f }
+......\glue(\spaceskip) 0.0
+......\pdfliteral origin{Q }
+......\pdfliteral origin{q }
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue 462.83951
+.......\hbox(0.0+0.0)x0.0, shifted 262.69441, direction TLT
+........\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
+........\pdfliteral origin{q }
+........\hbox(0.0+0.0)x0.0, direction TLT
+.........\hbox(0.0+0.0)x0.0, direction TLT
+..........\pdfliteral origin{0 G }
+..........\pdfliteral origin{0 g }
+..........\hbox(0.0+0.0)x0.0, direction TLT
 ..........\glue(\spaceskip) 0.0
 ........\pdfliteral origin{Q }
 ........\glue(\spaceskip) 0.0

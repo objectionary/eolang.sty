@@ -1,14 +1,14 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/A31F8F39A33A8F203FC269B76B766B65.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/A31F8F39A33A8F203FC269B76B766B65.tex") > _eolang-xe/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex
+runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > _eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-iexec: The content of '_eolang-xe/sodg/A31F8F39A33A8F203FC269B76B766B65-post.tex' was included into the document
-Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
+iexec: The content of '_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
+Overfull \hbox (230.96962pt too wide) in paragraph at lines 63--39
 [] 
 \hbox(518.08316+0.0)x345.0
 .\hbox(518.08316+0.0)x575.96962
@@ -597,13 +597,13 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\special{pdf:code 0.8 g }
 ......\special{pdf:code q }
 ......\special{pdf:code 0.8 g }
-......\special{pdf:code 15.89119 -45.8177 m }
-......\special{pdf:code 6.50233 -36.42929 l }
-......\special{pdf:code 6.50233 -42.09863 l }
-......\special{pdf:code 1.71779 -42.09863 l }
-......\special{pdf:code 1.71779 -49.53677 l }
-......\special{pdf:code 6.50233 -49.53677 l }
-......\special{pdf:code 6.50233 -55.20613 l }
+......\special{pdf:code -1.11664 -45.8177 m }
+......\special{pdf:code -10.5055 -36.42929 l }
+......\special{pdf:code -10.5055 -42.09863 l }
+......\special{pdf:code -15.29004 -42.09863 l }
+......\special{pdf:code -15.29004 -49.53677 l }
+......\special{pdf:code -10.5055 -49.53677 l }
+......\special{pdf:code -10.5055 -55.20613 l }
 ......\special{pdf:code h }
 ......\special{pdf:code f }
 ......\glue 0.0
@@ -618,7 +618,7 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 6.94487 -45.8177}
+......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 -10.06296 -45.8177}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(0.0+0.0)x0.0
 ........\special{pdf:code 0 G }
@@ -710,13 +710,13 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\special{pdf:code 0.8 g }
 ......\special{pdf:code q }
 ......\special{pdf:code 0.8 g }
-......\special{pdf:code 26.19899 -45.17476 m }
-......\special{pdf:code 16.81013 -35.78633 l }
-......\special{pdf:code 16.81013 -41.45569 l }
-......\special{pdf:code 12.02559 -41.45569 l }
-......\special{pdf:code 12.02559 -48.89383 l }
-......\special{pdf:code 16.81013 -48.89383 l }
-......\special{pdf:code 16.81013 -54.56317 l }
+......\special{pdf:code 20.52928 -45.17476 m }
+......\special{pdf:code 11.14043 -35.78633 l }
+......\special{pdf:code 11.14043 -41.45569 l }
+......\special{pdf:code 6.35588 -41.45569 l }
+......\special{pdf:code 6.35588 -48.89383 l }
+......\special{pdf:code 11.14043 -48.89383 l }
+......\special{pdf:code 11.14043 -54.56317 l }
 ......\special{pdf:code h }
 ......\special{pdf:code f }
 ......\glue 0.0
@@ -731,7 +731,7 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 ......\special{pdf:code 0 J [] 0 d}
 ......\special{pdf:bcolor [1]}
 ......\special{pdf:bcolor [0]}
-......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 17.25267 -45.17476}
+......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 11.58296 -45.17476}
 ......\hbox(0.0+0.0)x0.0
 .......\hbox(0.0+0.0)x0.0
 ........\special{pdf:code 0 G }
@@ -3277,6 +3277,50 @@ Overfull \hbox (230.96962pt too wide) in paragraph at lines 61--38
 .........\kern0.25116
 .........\mathoff
 .........\special{color pop}
+........\glue 0.0
+......\special{pdf:etrans}
+......\special{pdf:ecolor}
+......\special{pdf:ecolor}
+......\special{pdf: bcontent}
+......\special{pdf:code Q Q Q}
+......\special{pdf:code Q }
+......\glue 0.0
+......\glue 0.0
+......\special{pdf:code Q }
+....\glue 0.0
+....\hbox(0.0+0.0)x0.0
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{pdf:code 0.8 g }
+......\special{pdf:code q }
+......\special{pdf:code 0.8 g }
+......\special{pdf:code 470.0626 -261.71635 m }
+......\special{pdf:code 460.67375 -252.32793 l }
+......\special{pdf:code 460.67375 -257.99728 l }
+......\special{pdf:code 455.8892 -257.99728 l }
+......\special{pdf:code 455.8892 -265.43542 l }
+......\special{pdf:code 460.67375 -265.43542 l }
+......\special{pdf:code 460.67375 -271.10478 l }
+......\special{pdf:code h }
+......\special{pdf:code f }
+......\glue 0.0
+......\special{pdf:code Q }
+......\special{pdf:code q }
+......\special{pdf:code q -1 0 0 -1 0 0 cm q}
+......\special{pdf: econtent}
+......\special{pdf: bcontent}
+......\special{pdf:code -1 0 0 -1 0 0 cm}
+......\special{pdf:code q}
+......\special{pdf: econtent}
+......\special{pdf:code 0 J [] 0 d}
+......\special{pdf:bcolor [1]}
+......\special{pdf:bcolor [0]}
+......\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 461.11629 -261.71635}
+......\hbox(0.0+0.0)x0.0
+.......\hbox(0.0+0.0)x0.0
+........\special{pdf:code 0 G }
+........\special{pdf:code 0 g }
+........\hbox(0.0+0.0)x0.0
 ........\glue 0.0
 ......\special{pdf:etrans}
 ......\special{pdf:ecolor}
