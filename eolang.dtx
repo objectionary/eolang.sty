@@ -61,7 +61,7 @@
 \AddToHook{env/verbatim/begin}{\microtypesetup{protrusion=false}}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage[runs=2,dtx]{docshots}
+\usepackage[runs=2,dtx]{/code/ctan/docshots/docshots}
 \usepackage{eolang}
 \usepackage{href-ul}
 \PageIndex
@@ -263,6 +263,24 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\phiMany}
+% Sometimes you may need to simplify the way you describe an object:
+% \docshotOptions{firstline=5,lastline=11}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}\noindent
+% The object expression \\
+% \phiq{[[ \alpha_1 -> x_1,
+%   \alpha_2 -> x_2, \dots,
+%   \alpha_n -> x_n ]]} \\
+% may be written shorter:\\
+% \phiq{[[ \alpha_i
+%   \phiMany{->}{i=1}{n} x_i ]]}
+% \end{document}
+% \end{docshot}
+
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
@@ -364,11 +382,11 @@
 % v0 \\ v0!!A
 % v1 xy:v0,.7,1
 % v0->v1 a:x bend:-10
-% v2 xy:v1,-1.3,.4
+% v2 xy:v1,-1.3,.8
 % v1->v2 a:|foo| bend:-20
 % v0+a xy:v0,3,0
-% v3a xy:v0a,-1.2,.6
-% v0a->v3a a:e
+% v3a xy:v0a,-.7,1
+% v0a->v3a a:e bend:-15
 % v0=>v0a \\ v0a!B
 % \end{sodg}
 % \end{document}
@@ -904,12 +922,11 @@ print '\endinput%';
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
   \usetikzlibrary{shapes}
+  \usetikzlibrary{snakes}
   \usetikzlibrary{decorations}
   \usetikzlibrary{decorations.pathmorphing}
-  \usetikzlibrary{intersections}
   \usetikzlibrary{positioning}
   \usetikzlibrary{calc}
-  \usetikzlibrary{shapes.arrows}
 %    \end{macrocode}
 % \end{macro}
 
@@ -1043,6 +1060,20 @@ print '\endinput%';
 %    \begin{macrocode}
 \newcommand\phiSlot[1]{%
   \xrightarrow{\text{\sffamily\scshape #1}}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiMany}
+% \changes{0.5.0}{2022/11/10}{New command \texttt{\char`\\phiMany} enables iterating over an arrow.}
+% Then, we define a command to an arrow with iterating indecies. First, we include |mathtools|
+% for |\mathclap| macro:
+%    \begin{macrocode}
+\RequirePackage{mathtools}
+%    \end{macrocode}
+% Then, we define the macro:
+%    \begin{macrocode}
+\newcommand\phiMany[3]{%
+  \underset{\scriptscriptstyle #2}{\stackrel{\mathclap{\scriptscriptstyle #3}}{#1}}}
 %    \end{macrocode}
 % \end{macro}
 
