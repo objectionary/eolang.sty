@@ -326,16 +326,17 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     foreach my $c (@cmds) {
       $e = $c;
       $e =~ s/^\s+//g;
-      my $h = substr($e, 0, index($e, ' '));
+      my $h = $e;
+      $h = substr($e, 0, index($e, ' ')) if index($e, ' ') >= 0;
       foreach my $f (@friends) {
         my $add = '';
         if (index($h, $f . '->') >= 0) {
           $add = substr($h, index($h, '->') + 2);
         }
-        if (index($e, '->' . $f . ' ') >= 0) {
+        if (index($h, '->' . $f) >= 0) {
           $add = substr($h, 0, index($h, '->'));
         }
-        if (index($e, 'xy:' . $f . ',') >= 0) {
+        if (index($e, ' xy:' . $f . ',') >= 0) {
           $add = $h;
         }
         if (index($add, '+') == -1
@@ -348,7 +349,10 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     my @extra = ();
     foreach my $e (@cmds) {
       $m = $e;
-      if ($m =~ /^\s?${v}\s/) {
+      if ($m =~ /^\s*${v}\s/) {
+        next;
+      }
+      if ($m =~ /^\s*[^\s]+\+/ and not($m =~ /^\s*\Q${head}\E\s/)) {
         next;
       }
       foreach my $f (@friends) {
