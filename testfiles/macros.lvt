@@ -5,8 +5,12 @@
 
 \START
 
-\phiSlot{abc}
-\phiWave{}
-\phi
+\eolang{}
+\phic{}
+\xmir{}
+
+$\phiSlot{abc}$
+$\phiWave{}$
+$\phiConst{}$
 
 \END
