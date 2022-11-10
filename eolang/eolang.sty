@@ -301,12 +301,13 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       print tailor($draw, 'M');
     }
   } elsif (index($head, '=>') >= 0) {
-    my ($from, $to) = split (/=>/, $head);
+    my ($from, $to) = split (/=+>/, $head);
+    my $size = () = $head =~ /=/g;
     if ($from eq '') {
-      print '\node [phi-arrow, left=.6cm of ' .
+      print '\node [phi-arrow, left=' . ($size * 0.4) . 'cm of ' .
         $to . ']';
     } elsif ($to eq '') {
-      print '\node [phi-arrow, right=.6cm of ' .
+      print '\node [phi-arrow, right=' . ($size * 0.4) . 'cm of ' .
         $from . ']';
     } else {
       print '\node [phi-arrow] at ($(' .
