@@ -763,7 +763,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
         if (index($h, $f . '->') >= 0) {
           $add = substr($h, index($h, '->') + 2);
         }
-        if (index($h, '->' . $f) >= 0) {
+        if ($h =~ /->\Q${f}\E$/) {
           $add = substr($h, 0, index($h, '->'));
         }
         if (index($e, ' xy:' . $f . ',') >= 0) {
@@ -771,7 +771,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
         }
         if (index($add, '+') == -1
           and $add ne ''
-          and not(grep(/^${add}$/, @friends))) {
+          and not(grep(/^\Q${add}\E$/, @friends))) {
           push(@friends, $add);
         }
       }
@@ -779,7 +779,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     my @extra = ();
     foreach my $e (@cmds) {
       $m = $e;
-      if ($m =~ /^\s*${v}\s/) {
+      if ($m =~ /^\s*\Q${v}\E\s/) {
         next;
       }
       if ($m =~ /^\s*[^\s]+\+/ and not($m =~ /^\s*\Q${head}\E\s/)) {
@@ -788,13 +788,13 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       foreach my $f (@friends) {
         my $h = $f;
         $h =~ s/[a-z]$//g;
-        if ($m =~ s/^(\s*)${f}\+${suffix}\s?/\1${h}${suffix} /g) {
+        if ($m =~ s/^(\s*)\Q${f}\E\+\Q${suffix}\E\s?/\1${h}${suffix} /g) {
           last;
         }
-        $m =~ s/^(\s*)${f}\s/\1${h}${suffix} /g;
-        $m =~ s/^(\s*)${f}->/\1${h}${suffix}->/g;
-        $m =~ s/\sxy:${f},/ xy:${h}${suffix},/g;
-        $m =~ s/->${f}\s/->${h}${suffix} /g;
+        $m =~ s/^(\s*)\Q${f}\E\s/\1${h}${suffix} /g;
+        $m =~ s/^(\s*)\Q${f}\E->/\1${h}${suffix}->/g;
+        $m =~ s/\sxy:\Q${f}\E,/ xy:${h}${suffix},/g;
+        $m =~ s/->\Q${f}\E\s/->${h}${suffix} /g;
       }
       if ($m ne $e) {
         push(@extra, ' ' . $m);
