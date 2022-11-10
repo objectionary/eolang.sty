@@ -150,6 +150,7 @@
 % \DescribeMacro{\phiq}
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
 % using the same simple plain-text notation:
+% \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -230,6 +231,7 @@
 % \eolang{} language. It understands |anonymous| mode of \href{https://ctan.org/pkg/acmart}{acmart} and prints itself
 % differently, to double-blind your paper. There is also |\phic| command to print
 % the name of \phic{}, also sensitive to |anonymous| mode. The macro |\xmir| prints "XMIR".
+% \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass[anonymous]{acmart}
 % \thispagestyle{empty}
@@ -249,6 +251,7 @@
 % A few simple commands are defined to help you render arrows.
 % It is recommende not to use them directly, but use |!->| instead. However, if you
 % want to use |\phiConst|, wrap it in |\mathrel| for better display:
+% \docshotOptions{firstline=4,lastline=8}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -280,6 +283,7 @@
 % new lines in the formula. If you don't want this to happen and want to parse
 % the next line as the a continuation of the current line, you can use a single
 % backslash as it's done here:
+% \docshotOptions{firstline=6,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage{amsmath}
@@ -297,6 +301,7 @@
 
 % This is how you can use |\dfrac| from |amsmath| for large inference rules,
 % with the help of |\begin{split}| and |\end{split}|:
+% \docshotOptions{firstline=6,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
 % \usepackage{amsmath}
@@ -333,6 +338,7 @@
 
 % The |phiquation| environment will automatically align formulas by the first
 % arrow, if there are only left-aligned formulas:
+% \docshotOptions{firstline=5,lastline=10}
 % \begin{docshot}
 % \documentclass{acmart}
 % \usepackage{eolang}
@@ -348,6 +354,7 @@
 % \end{docshot}
 
 % You can make a copy of a vertex together with its kids:
+% \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -360,7 +367,7 @@
 % v2 xy:v1,-1.3,.4
 % v1->v2 a:|foo| bend:-20
 % v0+a xy:v0,3,0
-% v3a xy:v0a,-.8,.9
+% v3a xy:v0a,-1.2,.6
 % v0a->v3a a:e
 % v0=>v0a \\ v0a!B
 % \end{sodg}
@@ -368,6 +375,7 @@
 % \end{docshot}
 
 % You can make a copy from a copy:
+% \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -378,10 +386,10 @@
 % v1 xy:v0,.7,1
 % v0->v1 a:x bend:-10
 % v0+a xy:v0,3,0 \\ v0=>v0a
-% v2a xy:v1a,-.8,.9
+% v2a xy:v1a,-.8,1.3
 % v1a->v2a a:e
 % v0a+b xy:v0a,3,0 \\ v0a=>v0b
-% v3b xy:v2b,.8,.7
+% v3b xy:v2b,-1,-1
 % v2b->v3b a:\psi
 % \end{sodg}
 % \end{document}
@@ -392,6 +400,7 @@
 % between vertices that the arrow should take (can't be more than 80 and less than 20).
 % This may be convenient when you can't fit all edges into the graph,
 % for example:
+% \docshotOptions{firstline=5,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -734,11 +743,11 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     my ($from, $to) = split (/=+>/, $head);
     my $size = () = $head =~ /=/g;
     if ($from eq '') {
-      print '\node [phi-arrow, left=' . ($size * 0.4) . 'cm of ' .
-        $to . ']';
+      print '\node [phi-arrow, left=' . ($size * 0.6) . 'cm of ' .
+        $to . '.center]';
     } elsif ($to eq '') {
-      print '\node [phi-arrow, right=' . ($size * 0.4) . 'cm of ' .
-        $from . ']';
+      print '\node [phi-arrow, right=' . ($size * 0.6) . 'cm of ' .
+        $from . '.center]';
     } else {
       print '\node [phi-arrow] at ($(' .
         $from . ')!0.5!(' . $to . ')$)';
@@ -748,8 +757,8 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     my ($v, $marker) = split (/!+/, $head);
     my $size = () = $head =~ /!/g;
     print '\node [phi-marker, left=' .
-      ($size * 0.4) . 'cm of ' .
-      $v . ']{' . fmt($marker) . '}';
+      ($size * 0.6) . 'cm of ' .
+      $v . '.center]{' . fmt($marker) . '}';
   } elsif (index($head, '+') >= 0) {
     my ($v, $suffix) = split (/\+/, $head);
     my @friends = ($v);
@@ -826,7 +835,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       }
       print ',' . $loc . '=';
       print abs(num($down)) . 'cm and ' .
-        abs(num($right)) . 'cm of ' . $v;
+        abs(num($right)) . 'cm of ' . $v . '.center';
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
