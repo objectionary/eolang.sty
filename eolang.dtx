@@ -141,8 +141,8 @@
 % \end{itemize}
 % Also, a few symbols are supported for $\varphi$PU architecture:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|-abc>|'' maps to ``$\xrightarrow{\text{\sffamily\scshape abc}}$''
-%     (|\xrightarrow{\text{\sffamily\scshape abc}}|),
+%   \item ``|-abc>|'' maps to ``$\phiSlot{abc}$''
+%     (|\phiSlot{abc}|),
 %   \item ``|:=|'' maps to ``$\vDash$''
 %     (|\vDash|).
 % \end{itemize}
@@ -522,7 +522,7 @@ $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/-([a-z]+)>/\\mathrel{\\xrightarrow{\\text{\\sffamily\\scshape \1}}}/g;
+$tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
@@ -1021,6 +1021,15 @@ print '\endinput%';
 %    \begin{macrocode}
 \newcommand\phiWave{%
   \mapstochar\mathrel{\mspace{0.45mu}}\leadsto}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiSlot}
+% \changes{0.5.0}{2022/11/10}{New command \texttt{\char`\\phiSlot} added to denote a link to a slot in a basket.}
+% Then, we define a command to render an arrow for a slot in a basket:
+%    \begin{macrocode}
+\newcommand\phiSlot[1]{%
+  \xrightarrow{\text{\sffamily\scshape #1}}}
 %    \end{macrocode}
 % \end{macro}
 
