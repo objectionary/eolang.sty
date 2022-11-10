@@ -6,6 +6,16 @@
 \START
 
 \begin{sodg}
+v0
+v1 xy:v0,1,1
+v0->v1
+v0+a xy:v0,2,2
+v2a xy:v1a,3,3
+v0a+b xy:v0,4,4
+v3b xy:v2b,5,5
+\end{sodg}
+
+\begin{sodg}
 % start comment
 v0 \\ v0!A
 v1 xy:v0,-.5,+1 data:|42|
