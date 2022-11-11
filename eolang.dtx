@@ -576,7 +576,7 @@ foreach my $t (@lines) {
 print '% ---', "\n";
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
-$indents = $tex =~ /\n\s+/g;
+my $gathered = (0 == $tex =~ /\n\s+/g);
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
@@ -594,6 +594,8 @@ if ($env ne 'phiq') {
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
+    print "% here!!\n";
+    $gathered = 0;
   }
 }
 $tex =~ s/\$/\\xi{}/g;
@@ -614,13 +616,13 @@ if ($env eq 'phiq') {
   print '$';
 } else {
   print '\begin{', $env, '}';
-  if ($indents > 0) {
-    print '\begin{split}';
-  } else {
+  if ($gathered) {
     print '\begin{gathered}';
+  } else {
+    print '\begin{split}';
   }
 }
-if ($indents == 0) {
+if ($gathered) {
   $tex =~ s/(\\\\(?:\[[^\]]+\])?)&/\1/g;
   $tex =~ s/^&//g;
 }
@@ -628,10 +630,10 @@ print $tex;
 if ($env eq 'phiq') {
   print '$';
 } else {
-  if ($indents > 0) {
-    print '\end{split}';
-  } else {
+  if ($gathered) {
     print '\end{gathered}';
+  } else {
+    print '\end{split}';
   }
   print '\end{', $env, '}';
 }

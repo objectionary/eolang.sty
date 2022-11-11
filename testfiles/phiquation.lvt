@@ -12,6 +12,11 @@
 \end{phiquation*}
 
 \begin{phiquation*}
+x -> [[ a -> ?]] \\
+y -> [[ \Delta ..> 4 ]].
+\end{phiquation*}
+
+\begin{phiquation*}
 % leading comment
 a -> [[
   @ -> &.z,
