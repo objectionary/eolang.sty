@@ -474,7 +474,7 @@
 % v2 xy:v0,0,1 \\ v0->v2
 % v3 xy:v0,1,1 \\ v0->v3
 % \node[draw=red,rounded corners,\
-%  fit=(v1) (v2)] {};
+%  dotted,fit=(v1) (v2)] {};
 % \end{sodg}
 % \end{document}
 % \end{docshot}
@@ -594,7 +594,6 @@ if ($env ne 'phiq') {
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
-    print "% here!!\n";
     $gathered = 0;
   }
 }
