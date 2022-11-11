@@ -270,20 +270,22 @@
 
 % \DescribeMacro{\phiMany}
 % Sometimes you may need to simplify the way you describe an object:
-% \docshotOptions{firstline=5,lastline=12}
+% \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
+% \usepackage[paperwidth=3in]{geometry}
 % \usepackage{eolang}
 % \begin{document}\noindent
-% The expression \\
+% The expression
 % \phiq{[[ \alpha_1 -> x_1,
 %   \alpha_2 -> x_2, \dots,
-%   \alpha_n -> x_n ]]} \\
-% and expression\\
+%   \alpha_n -> x_n ]]}
+% and expression
 % \phiq{[[ \alpha_i
-%   \phiMany{->}{i=1}{n} x_i ]]} \\
-% are equivalent.\\
+%   \phiMany{->}{i=1}{n} x_i ]]}
+% are syntactically different but
+% semantically equivalent.
 % \end{document}
 % \end{docshot}
 
