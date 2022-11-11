@@ -570,21 +570,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
 }
-$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|[0-9]+(?:\.[0-9]+)?)/\1|\2|/g;
-$tex =~ s/\?/\\varnothing{}/g;
-$tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/(?<!\{)\^/\\rho{}/g;
-$tex =~ s/\$/\\xi{}/g;
-$tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
-$tex =~ s/!->/\\mathrel{\\phiConst}/g;
-$tex =~ s/->/\\mathrel{\\mapsto}/g;
-$tex =~ s/~>/\\mathrel{\\phiWave}/g;
-$tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/..>/\\mathrel{\\phiDotted}/g;
-$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
-$tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
-$tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
@@ -599,6 +585,20 @@ if ($env ne 'phiq') {
     $tex =~ s/&([^\s]+)\s/\1&/g;
   }
 }
+$tex =~ s/\$/\\xi{}/g;
+$tex =~ s/(?<!\{)\^/\\rho{}/g;
+$tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
+$tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
+$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|[0-9]+(?:\.[0-9]+)?)/\1|\2|/g;
+$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
+$tex =~ s/\?/\\varnothing{}/g;
+$tex =~ s/@/\\varphi{}/g;
+$tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
+$tex =~ s/!->/\\mathrel{\\phiConst}/g;
+$tex =~ s/->/\\mathrel{\\mapsto}/g;
+$tex =~ s/~>/\\mathrel{\\phiWave}/g;
+$tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 print $tex;
 if ($env eq 'phiq') {
   print '$';
