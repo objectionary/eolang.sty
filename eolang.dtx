@@ -379,6 +379,21 @@
 % \end{document}
 % \end{docshot}
 
+% If not a single line is indented in |phiquation|, all formulas will be centered:
+% \docshotOptions{firstline=5,lastline=9}
+% \begin{docshot}
+% \documentclass{acmart}
+% \usepackage{eolang}
+% \thispagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% [[ b -> ? ]], \\
+% [[ @ -> |foo|, \Delta ..> 42 ]], \\
+% \Delta = |43-09|.
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % You can make a copy of a vertex together with its kids:
 % \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
@@ -561,6 +576,7 @@ foreach my $t (@lines) {
 print '% ---', "\n";
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
+$indents = $tex =~ /\n\s+/g;
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
@@ -569,7 +585,7 @@ $tex =~ s/&/\\sigma{}/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
-  $tex =~ s/\n\n/\\\\&/g;
+  $tex =~ s/\n\n/\\\\ &/g;
   $tex =~ s/\n/\\\\[-4pt]&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
@@ -577,7 +593,7 @@ if ($env ne 'phiq') {
   my @eols = $tex =~ /&/g;
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
-    $tex =~ s/&([^\s]+)\s/\1&/g;
+    $tex =~ s/&([^\s\}]+)\s/\1&/g;
   }
 }
 $tex =~ s/\$/\\xi{}/g;
@@ -597,13 +613,27 @@ $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
 if ($env eq 'phiq') {
   print '$';
 } else {
-  print '\begin{', $env, '}\begin{split}';
+  print '\begin{', $env, '}';
+  if ($indents > 0) {
+    print '\begin{split}';
+  } else {
+    print '\begin{gathered}';
+  }
+}
+if ($indents == 0) {
+  $tex =~ s/(\\\\\s)&/\1/g;
+  $tex =~ s/^&//g;
 }
 print $tex;
 if ($env eq 'phiq') {
   print '$';
 } else {
-  print '\end{split}\end{', $env, '}';
+  if ($indents > 0) {
+    print '\end{split}';
+  } else {
+    print '\end{gathered}';
+  }
+  print '\end{', $env, '}';
 }
 print '\endinput%';
 \end{VerbatimOut}
