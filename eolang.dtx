@@ -592,7 +592,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n/\\\\[-4pt]&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
-  my @leads = $tex =~ /&[^\s]+\s/g;
+  my @leads = $tex =~ /&[^\s]+\s(->|:=|=)/g;
   my @eols = $tex =~ /&/g;
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
@@ -728,7 +728,7 @@ foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
 print '% ---';
-print ' (' . 0+@cmds . " lines)\n";
+print ' (' . (0+@cmds) . " lines)\n";
 print '\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
@@ -859,11 +859,11 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     splice(@extra, -1, 1);
     splice(@extra, 0, 0, '% clone of ' . $v . ' (' . $head .
       '), friends: [' . join(', ', @friends) . '] in ' .
-      0+@cmds . ' lines');
+      (0+@cmds) . ' lines');
     splice(@cmds, $c, 1, @extra);
     print '% cloned ' . $v . ' at line no.' . $c .
-      ' (+' . 0+@extra . ' lines -> ' .
-      0+@cmds . ' lines total)';
+      ' (+' . (0+@extra) . ' lines -> ' .
+      (0+@cmds) . ' lines total)';
   } elsif ($head =~ /^v[0-9]+[a-z]?$/) {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -927,7 +927,7 @@ print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
-print '% --- (' . 0+@cmds . " lines)\n";
+print '% --- (' . (0+@cmds) . " lines)\n";
 print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
@@ -1095,15 +1095,10 @@ print '\endinput%';
 
 % \begin{macro}{\phiMany}
 % \changes{0.5.0}{2022/11/10}{New command \texttt{\char`\\phiMany} enables iterating over an arrow.}
-% Then, we define a command to an arrow with iterating indecies. First, we include |mathtools|
-% for |\mathclap| macro:
-%    \begin{macrocode}
-\RequirePackage{mathtools}
-%    \end{macrocode}
-% Then, we define the macro:
+% Then, we define a command to an arrow with iterating indecies:
 %    \begin{macrocode}
 \newcommand\phiMany[3]{%
-  \underset{\scriptscriptstyle #2}{\stackrel{\mathclap{\scriptscriptstyle #3}}{#1}}}
+  \overunderset{\scriptscriptstyle #3}{\scriptscriptstyle #2}{#1}}
 %    \end{macrocode}
 % \end{macro}
 

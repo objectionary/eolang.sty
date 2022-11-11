@@ -11,9 +11,9 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: The content of '_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-post.tex' was included into the document
-Overfull \hbox (94.75812pt too wide) in paragraph at lines 21--17
-[]\TU/lmr/m/n/10 15
-\hbox(429.75812+0.22)x345.0, direction TLT
+Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
+[] 
+\hbox(429.75812+0.0)x345.0, direction TLT
 .\localpar
 ..\localinterlinepenalty=0
 ..\localbrokenpenalty=0
@@ -121,23 +121,6 @@ Overfull \hbox (94.75812pt too wide) in paragraph at lines 21--17
 ....\pdfliteral origin{0.7071 -0.7071 0.7071 0.7071 27.33237 -27.33237 cm }
 ....\pdfliteral origin{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
 ....\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
-....\nullfont 1
-....\nullfont 4
-....\glue(\spaceskip) 0.0
-....\nullfont l
-....\nullfont i
-....\nullfont n
-....\nullfont e
-....\nullfont s
-....\glue(\spaceskip) 0.0
-....\nullfont t
-....\nullfont o
-....\nullfont t
-....\nullfont a
-....\nullfont l
-....\nullfont )
-....\nullfont ;
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -271,23 +254,6 @@ Overfull \hbox (94.75812pt too wide) in paragraph at lines 21--17
 ......\pdfliteral origin{Q }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
-....\nullfont 2
-....\nullfont 1
-....\glue(\spaceskip) 0.0
-....\nullfont l
-....\nullfont i
-....\nullfont n
-....\nullfont e
-....\nullfont s
-....\glue(\spaceskip) 0.0
-....\nullfont t
-....\nullfont o
-....\nullfont t
-....\nullfont a
-....\nullfont l
-....\nullfont )
-....\nullfont ;
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -512,8 +478,8 @@ Overfull \hbox (94.75812pt too wide) in paragraph at lines 21--17
 ...\pdfliteral origin{n }
 ...\pdfliteral origin{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\TU/lmr/m/n/10 1
-.\TU/lmr/m/n/10 5
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/FF8C7694F39FB978E189
 06DBEC7C2FA7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
@@ -528,39 +494,11 @@ runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/3EA20B681B9F0A22
 3D7573CF2F5CE5EF.tex") > _eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.
 tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex [1
-Missing character: There is no 1 (U+0031) in font nullfont!
-Missing character: There is no 4 (U+0034) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no o (U+006F) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no ) (U+0029) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no 2 (U+0032) in font nullfont!
-Missing character: There is no 1 (U+0031) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no o (U+006F) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no ) (U+0029) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
 ])
 iexec: The content of '_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
-Overfull \hbox (199.18817pt too wide) in paragraph at lines 63--61
-[]\TU/lmr/m/n/10 52
-\hbox(470.61081+0.22)x345.0, direction TLT
+Overfull \hbox (189.18817pt too wide) in paragraph at lines 63--61
+[] 
+\hbox(470.61081+0.0)x345.0, direction TLT
 .\localpar
 ..\localinterlinepenalty=0
 ..\localbrokenpenalty=0
@@ -1436,23 +1374,6 @@ Overfull \hbox (199.18817pt too wide) in paragraph at lines 63--61
 ......\pdfliteral origin{Q }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
-....\nullfont 4
-....\nullfont 8
-....\glue(\spaceskip) 0.0
-....\nullfont l
-....\nullfont i
-....\nullfont n
-....\nullfont e
-....\nullfont s
-....\glue(\spaceskip) 0.0
-....\nullfont t
-....\nullfont o
-....\nullfont t
-....\nullfont a
-....\nullfont l
-....\nullfont )
-....\nullfont ;
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -2384,23 +2305,6 @@ Overfull \hbox (199.18817pt too wide) in paragraph at lines 63--61
 ......\pdfliteral origin{Q }
 ......\glue(\spaceskip) 0.0
 ......\pdfliteral origin{Q }
-....\glue(\spaceskip) 0.0
-....\nullfont 6
-....\nullfont 8
-....\glue(\spaceskip) 0.0
-....\nullfont l
-....\nullfont i
-....\nullfont n
-....\nullfont e
-....\nullfont s
-....\glue(\spaceskip) 0.0
-....\nullfont t
-....\nullfont o
-....\nullfont t
-....\nullfont a
-....\nullfont l
-....\nullfont )
-....\nullfont ;
 ....\glue(\spaceskip) 0.0
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\hbox(0.0+0.0)x0.0, direction TLT
@@ -3466,36 +3370,6 @@ Overfull \hbox (199.18817pt too wide) in paragraph at lines 63--61
 ...\pdfliteral origin{n }
 ...\pdfliteral origin{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\TU/lmr/m/n/10 5
-.\TU/lmr/m/n/10 2
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-[2
-Missing character: There is no 1 (U+0031) in font nullfont!
-Missing character: There is no 6 (U+0036) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no o (U+006F) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no ) (U+0029) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no 2 (U+0032) in font nullfont!
-Missing character: There is no 5 (U+0035) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no o (U+006F) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no ) (U+0029) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-]

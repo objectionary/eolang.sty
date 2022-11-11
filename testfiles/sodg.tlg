@@ -7,38 +7,9 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
-)
 iexec: The content of '_eolang/sodg/248628695479BBC0FC68838C527338F3-post.tex' was included into the document
-Overfull \hbox (94.75824pt too wide) in paragraph at lines 21--17
-[]\OT1/cmr/m/n/10 15
+Overfull \hbox (84.75821pt too wide) in paragraph at lines 21--17
+[] 
 \hbox(429.75821+0.0)x345.0
 .\hbox(429.75821+0.0)x429.75821
 ..\glue 12.39998
@@ -144,9 +115,6 @@ Overfull \hbox (94.75824pt too wide) in paragraph at lines 21--17
 ....\pdfliteral{0.7071 -0.7071 0.7071 0.7071 27.33237 -27.33237 cm }
 ....\pdfliteral{q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.77707 -3.108\ETC.}
 ....\pdfliteral{Q }
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -283,9 +251,6 @@ Overfull \hbox (94.75824pt too wide) in paragraph at lines 21--17
 ......\glue 0.0
 ......\glue 0.0
 ......\pdfliteral{Q }
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -515,41 +480,12 @@ Overfull \hbox (94.75824pt too wide) in paragraph at lines 21--17
 ...\pdfliteral{n }
 ...\pdfliteral{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\OT1/cmr/m/n/10 1
-.\OT1/cmr/m/n/10 5
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > _eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
-)
+(_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex)
 iexec: The content of '_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex' was included into the document
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > _eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -557,39 +493,11 @@ runsystem(( perl "_eolang/eolang-sodg.pl" "_eolang/sodg/3EA20B681B9F0A223D7573CF
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 )
 iexec: The content of '_eolang/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
-Overfull \hbox (199.18828pt too wide) in paragraph at lines 63--61
-[]\OT1/cmr/m/n/10 52
+Overfull \hbox (189.18825pt too wide) in paragraph at lines 63--61
+[] 
 \hbox(470.61092+0.0)x345.0
 .\hbox(470.61092+0.0)x534.18825
 ..\glue 31.47176
@@ -1477,9 +1385,6 @@ Overfull \hbox (199.18828pt too wide) in paragraph at lines 63--61
 ......\glue 0.0
 ......\glue 0.0
 ......\pdfliteral{Q }
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2430,9 +2335,6 @@ Overfull \hbox (199.18828pt too wide) in paragraph at lines 63--61
 ......\glue 0.0
 ......\glue 0.0
 ......\pdfliteral{Q }
-....\glue 0.0
-....\glue 0.0
-....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -3519,7 +3421,6 @@ Overfull \hbox (199.18828pt too wide) in paragraph at lines 63--61
 ...\pdfliteral{n }
 ...\pdfliteral{Q }
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\OT1/cmr/m/n/10 5
-.\OT1/cmr/m/n/10 2
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-[2]
