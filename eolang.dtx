@@ -101,7 +101,7 @@
 % \begin{document}
 % \begin{phiquation*}
 % a -> [[ % it's abstract!
-%   ^ !-> $.b,
+%   ^ !-> $.b.^{^2},
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ..> 01-FE-C3 ]]]],\\
@@ -570,11 +570,11 @@ if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
 }
-$tex =~ s/([\s,>\(])([0-9A-F][0-9A-F-]*)/\1|\2|/g;
+$tex =~ s/([\s,>\(])([0-9]+(?:\.[0-9]+)?|[0-9A-F]{2}(?:-[0-9A-F]{2})+)/\1|\2|/g;
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/\^/\\rho{}/g;
+$tex =~ s/(?<!\{)\^/\\rho{}/g;
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
 $tex =~ s/!->/\\mathrel{\\phiConst}/g;
