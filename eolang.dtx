@@ -609,7 +609,7 @@ $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/..>/\\mathrel{\\phiDotted}/g;
+$tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 if ($env eq 'phiq') {
   print '$';
 } else {
