@@ -6,6 +6,12 @@
 \START
 
 \begin{phiquation*}
+[[ a -> x]]
+[[ b -> ?]], \\
+\Delta = 43.6
+\end{phiquation*}
+
+\begin{phiquation*}
 % leading comment
 a -> [[
   @ -> &.z,
