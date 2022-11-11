@@ -559,11 +559,6 @@ foreach my $t (@lines) {
   print '% ', $t, "\n";
 }
 print '% ---', "\n";
-if ($env eq 'phiq') {
-  print '$';
-} else {
-  print '\begin{', $env, '}\begin{split}';
-}
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 if ($env ne 'phiq') {
@@ -599,6 +594,11 @@ $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/..>/\\mathrel{\\phiDotted}/g;
+if ($env eq 'phiq') {
+  print '$';
+} else {
+  print '\begin{', $env, '}\begin{split}';
+}
 print $tex;
 if ($env eq 'phiq') {
   print '$';
