@@ -377,7 +377,7 @@
 % \begin{phiquation*}
 % x(\pi) -> [[\lambda ..> f_1]], \\
 % x(a,b,c) -> [[ \alpha_0 -> ?, \
-%   @ -> |hello|($) ]], \\
+%   @ -> |hello|($), x -> |FALSE| ]], \\
 % \Delta = |43-09|.
 % \end{phiquation*}
 % \end{document}
@@ -617,6 +617,7 @@ $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
+$tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
   print '$';
