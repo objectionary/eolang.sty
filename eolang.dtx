@@ -841,7 +841,7 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     print '% cloned ' . $v . ' at line no.' . $c .
       ' (+' . ($#extra + 1) . ' lines -> ' .
       ($#cmds + 1) . ' lines total)';
-  } else if ($head =~ /^v[0-9]+[a-z]?$/) {
+  } elsif ($head =~ /^v[0-9]+[a-z]?$/) {
     print '\node[';
     if (exists $opts{'xy'}) {
       my ($v, $right, $down) = split(/,/, $opts{'xy'});
@@ -893,9 +893,9 @@ for (my $c = 0; $c <= $#cmds; $c++) {
       print ' node[phi-box] at (';
       print $head, '.south east) {';
       print $opts{'box'}, '}';
-    } else {
-      print $cmd;
     }
+  } else {
+    print $cmd;
   }
   print ";\n";
 }
