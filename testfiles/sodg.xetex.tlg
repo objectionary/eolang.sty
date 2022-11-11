@@ -7,10 +7,39 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+)
 iexec: The content of '_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-post.tex' was included into the document
-Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
-[] 
-\hbox(429.75812+0.0)x345.0
+Overfull \hbox (94.75812pt too wide) in paragraph at lines 21--17
+[]\TU/lmr/m/n/10 15
+\hbox(429.75812+0.21999)x345.0
 .\hbox(429.75812+0.0)x429.75812
 ..\glue 12.39996
 ..\hbox(0.0+0.0)x0.0, shifted -417.35815
@@ -130,6 +159,9 @@ Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
 ....\special{pdf:code 0.7071 -0.7071 0.7071 0.7071 27.33237 -27.33237 cm }
 ....\special{pdf:code q [ ] 0.0 d 1 j 1.0361 0.0 m -0.25902 0.25902 -1.55415 0.777\ETC.}
 ....\special{pdf:code Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -287,6 +319,9 @@ Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
 ......\glue 0.0
 ......\glue 0.0
 ......\special{pdf:code Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -552,12 +587,40 @@ Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
 ...\special{pdf:code Q }
 ...\special{pdf:econtent}
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\penalty 10000
-.\glue(\parfillskip) 0.0 plus 1.0fil
+.\TU/lmr/m/n/10 15
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > _eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex)
+(_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+)
 iexec: The content of '_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex' was included into the document
 runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > _eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -565,12 +628,40 @@ runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/3EA20B681B9F0A223D
 ]
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 8 ("38) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 )
 iexec: The content of '_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
-Overfull \hbox (189.18817pt too wide) in paragraph at lines 63--61
-[] 
-\hbox(470.61081+0.0)x345.0
+Overfull \hbox (199.18817pt too wide) in paragraph at lines 63--61
+[]\TU/lmr/m/n/10 52
+\hbox(470.61081+0.21999)x345.0
 .\hbox(470.61081+0.0)x534.18817
 ..\glue 31.47176
 ..\hbox(0.0+0.0)x0.0, shifted -458.21085
@@ -1582,6 +1673,9 @@ Overfull \hbox (189.18817pt too wide) in paragraph at lines 63--61
 ......\glue 0.0
 ......\glue 0.0
 ......\special{pdf:code Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -2663,6 +2757,9 @@ Overfull \hbox (189.18817pt too wide) in paragraph at lines 63--61
 ......\glue 0.0
 ......\glue 0.0
 ......\special{pdf:code Q }
+....\glue 0.0
+....\glue 0.0
+....\glue 0.0
 ....\glue 0.0
 ....\hbox(0.0+0.0)x0.0
 .....\hbox(0.0+0.0)x0.0
@@ -3902,6 +3999,6 @@ Overfull \hbox (189.18817pt too wide) in paragraph at lines 63--61
 ...\special{pdf:code Q }
 ...\special{pdf:econtent}
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\penalty 10000
-.\glue(\parfillskip) 0.0 plus 1.0fil
+.\TU/lmr/m/n/10 52
 .\glue(\rightskip) 0.0
+[2]

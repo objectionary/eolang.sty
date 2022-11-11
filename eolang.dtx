@@ -728,9 +728,9 @@ foreach my $t (split (/\n/g, $tex)) {
   print '% ', $t, "\n";
 }
 print '% ---';
-print ' (' . ($#cmds + 1) . " lines)\n";
+print ' (' . 0+@cmds . " lines)\n";
 print '\begin{phicture}', "\n";
-for (my $c = 0; $c <= $#cmds; $c++) {
+for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
   $cmd =~ s/%.*//g;
@@ -859,11 +859,11 @@ for (my $c = 0; $c <= $#cmds; $c++) {
     splice(@extra, -1, 1);
     splice(@extra, 0, 0, '% clone of ' . $v . ' (' . $head .
       '), friends: [' . join(', ', @friends) . '] in ' .
-      ($#cmds + 1) . ' lines');
+      0+@cmds . ' lines');
     splice(@cmds, $c, 1, @extra);
     print '% cloned ' . $v . ' at line no.' . $c .
-      ' (+' . ($#extra + 1) . ' lines -> ' .
-      ($#cmds + 1) . ' lines total)';
+      ' (+' . 0+@extra . ' lines -> ' .
+      0+@cmds . ' lines total)';
   } elsif ($head =~ /^v[0-9]+[a-z]?$/) {
     print '\node[';
     if (exists $opts{'xy'}) {
@@ -927,7 +927,7 @@ print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
-print '% --- (' . ($#cmds + 1) . " lines)\n";
+print '% --- (' . 0+@cmds . " lines)\n";
 print '\endinput%';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
