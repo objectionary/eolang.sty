@@ -270,7 +270,7 @@
 
 % \DescribeMacro{\phiMany}
 % Sometimes you may need to simplify the way you describe an object:
-% \docshotOptions{firstline=6,lastline=13}
+% \docshotOptions{firstline=6,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
 % \pagestyle{empty}
@@ -441,6 +441,25 @@
 % v3 xy:v0,1,1
 % v0->v3 a:z
 % v3->v1 a:f bend:-75 break:30
+% \end{sodg}
+% \end{document}
+% \end{docshot}
+
+% You can add tikz commands to sodg graph:
+% \docshotOptions{firstline=6,lastline=13}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \usetikzlibrary{fit}
+% \begin{document}
+% \begin{sodg}
+% v0
+% v1 xy:v0,-1,1 \\ v0->v1
+% v2 xy:v0,0,1 \\ v0->v2
+% v3 xy:v0,1,1 \\ v0->v3
+% \node[draw=red,rounded corners,\
+%  fit=(v1) (v2)] {};
 % \end{sodg}
 % \end{document}
 % \end{docshot}
@@ -700,6 +719,7 @@ foreach my $t (split (/\n/g, $tex)) {
 }
 print "% ---\n";
 $tex =~ s/\\\\/\n/g;
+$tex =~ s/\\\n//g;
 $tex =~ s/(\\[a-zA-Z]+) +/\1/g;
 $tex =~ s/\n{2,}/\n/g;
 my @cmds = split(/\n/g, $tex);
