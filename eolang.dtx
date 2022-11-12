@@ -620,7 +620,7 @@ $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
-  print '$';
+  print '$' if ($tex ne '');
 } else {
   print '\begin{', $env, '}';
   if ($gathered) {
@@ -635,7 +635,7 @@ if ($gathered) {
 }
 print $tex;
 if ($env eq 'phiq') {
-  print '$';
+  print '$' if ($tex ne '');
 } else {
   if ($gathered) {
     print '\end{gathered}';

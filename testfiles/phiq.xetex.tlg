@@ -1,5 +1,10 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+runsystem(( /bin/echo '') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex") > _eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex)
+iexec: The content of '_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > _eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
