@@ -366,6 +366,25 @@
 % \end{document}
 % \end{docshot}
 
+% It's possible to use |\label| inside |phiquation| environment:
+% \docshotOptions{firstline=6,lastline=13}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}\noindent
+% Discriminant can be calculated using
+% the following simple formula:
+% \begin{phiquation}
+% D = b{^2} - 4ac.
+% \label{d}
+% \end{phiquation}
+% Eq.~\ref{d} is also widely used in
+% number theory and polynomial factoring.
+% \end{document}
+% \end{docshot}
+
 % The |phiquation| environment will automatically align formulas by the first
 % arrow, if there are only left-aligned formulas:
 % \docshotOptions{firstline=5,lastline=10}
@@ -585,6 +604,7 @@ my $gathered = (0 == $tex =~ /\n\s+/g);
 if ($env ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
+  $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
 if ($env ne 'phiq') {
