@@ -343,11 +343,11 @@
 % \begin{phiquation*}
 % \dfrac{\begin{split}
 % x->[[@->y, z->42,
-%   \alpha_0->?, \alpha_1->42]]
+%   0->?, 1->42]]
 % \end{split}}{\begin{split}
 % x->[[@->y, z->?, f ~> |pi|(
-%   \alpha_0->[[ \psi !-> |hello|(12) ]],
-%     \alpha_1->42)]]
+%   0->[[ \psi !-> |hello|(12) ]],
+%     1->42)]]
 % \end{split}}\text{R2}.
 % \end{phiquation*}
 % \end{document}
@@ -610,6 +610,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
+$tex =~ s/(?:\s|^)([0-9]+|[a-z])(->|\.\.>|~>|:=|!->)/\\alpha_{\1} \2/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
@@ -627,7 +628,6 @@ if ($env ne 'phiq') {
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
-$tex =~ s/(?:\s|^)([0-9]+|[a-z])(->|\.\.>|~>|:=|!->)/\\alpha_{\1} \2/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 $tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|[0-9]+(?:\.[0-9]+)?)/\1|\2|/g;
