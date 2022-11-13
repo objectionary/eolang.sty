@@ -101,7 +101,7 @@
 % \begin{document}
 % \begin{phiquation*}
 % a -> [[ % it's abstract!
-%   ^ !-> $.b.^{^2},
+%   ^ !-> $.b.^{^2}, 0-> TRUE,
 %   b -> [[ c -> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ..> 01-FE-C3 ]]]],\\
@@ -146,6 +146,8 @@
 %   \item ``|:=|'' maps to ``$\vDash$''
 %     (|\vDash|).
 % \end{itemize}
+
+% Before any arrow you can put a number, which will be rendered as |\alpha| with an index.
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
@@ -282,9 +284,9 @@
 % \usepackage{eolang}
 % \begin{document}\noindent
 % The expression
-% \phiq{[[ \alpha_1 -> x_1,
-%   \alpha_2 -> x_2, \dots,
-%   \alpha_n -> x_n ]]}
+% \phiq{[[ 1-> x_1,
+%   2-> x_2, \dots,
+%   n-> x_n ]]}
 % and expression
 % \phiq{[[ \alpha_i
 %   \phiMany{->}{i=1}{n} x_i ]]}
@@ -577,6 +579,7 @@
 % \changes{0.2.0}{2022/10/29}{Numbers automatically render as \texttt{\char`\\texttt}. No need to use vertical bars around them anymore.}
 % \changes{0.3.0}{2022/10/30}{New arrow added, that looks like \texttt{\char`\\leadsto}.}
 % \changes{0.5.0}{2022/11/11}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} added.}
+% \changes{0.5.0}{2022/11/13}{A new syntax introduced for \texttt{\char`\\alpha}-attributes: \texttt{0->}.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -624,6 +627,7 @@ if ($env ne 'phiq') {
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
+$tex =~ s/(?:\s|^)([0-9]+|[a-z])(->|\.\.>|~>|:=|!->)/\\alpha_{\1} \2/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
 $tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|[0-9]+(?:\.[0-9]+)?)/\1|\2|/g;

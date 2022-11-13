@@ -21,11 +21,13 @@ y -> [[ \Delta ..> 4 ]].
 a -> [[
   @ -> &.z,
   ^ !-> $.b,
+  0->?, 5!->?, 12:=?, 19~>?,
   u -> ?, % comment
   b -> [[ c -> \
     |x|(56) \
     .|bye|(55),
     \rho -> |hello|($),
+    \alpha_0->?,
     \Delta ~> |01-FE-C3| ]]]]
 
 \beta_1 := [ \varphi -wait> \varnothing ]
