@@ -1054,6 +1054,28 @@ print '\endinput%';
     postaction={%
       decoration={
         show path construction,
+        curveto code={
+          \tikzmath{
+            coordinate \I, \F, \v;
+            \I = (\tikzinputsegmentfirst);
+            \F = (\tikzinputsegmentlast);
+            \v = ($(\I) -(\F)$);
+            real \d, \a, \r, \t;
+            \d = 0.8;
+            \t = atan2(\vy, \vx);
+            if \vx<0 then { \a = 90; } else { \a = -90; };
+            {
+              \draw[arrows={-latex}, decorate,
+              decoration={%
+                snake, amplitude=.4mm,
+                segment length=2mm,
+                post length=1mm
+              }]
+              ($(\F)!.5!(\I) +(\t: -\d em) +(\t +\a: 1ex)$)
+              -- ++(\t: 2*\d em);
+            };
+          }
+        },
         lineto code={
           \tikzmath{
             coordinate \I, \F, \v;
