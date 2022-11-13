@@ -286,7 +286,7 @@
 % The expression
 % \phiq{[[ 1-> x_1,
 %   2-> x_2, \dots,
-%   n-> x_n ]]}
+%   \alpha_n -> x_n ]]}
 % and expression
 % \phiq{[[ \alpha_i
 %   \phiMany{->}{i=1}{n} x_i ]]}
@@ -610,7 +610,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/(?:\s|^)([0-9]+|[a-z])(->|\.\.>|~>|:=|!->)/\\alpha_{\1} \2/g;
+$tex =~ s/(\s|^)([0-9]+)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
