@@ -62,7 +62,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[runs=2,dtx]{docshots}
-\usepackage{eolang}
+\usepackage[nocomments]{eolang}
 \usepackage{href-ul}
 \PageIndex
 \EnableCrossrefs
@@ -147,7 +147,8 @@
 %     (|\vDash|).
 % \end{itemize}
 
-% Before any arrow you can put a number, which will be rendered as |\alpha| with an index.
+% Before any arrow you can put a number, which will be rendered as |\alpha| with an index, for example
+% |\phiq{0->x}| will render ``\phiq{0->x}''.
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
@@ -532,6 +533,7 @@
 
 % Then, we process package options:
 % \changes{0.1.0}{2022/10/26}{Parsing of package options introduced.}
+% \changes{0.6.0}{2022/11/14}{Package option \texttt{nocomments} added in order to enable comments suppression in temporary \texttt{.tex} files (may be pretty important for \texttt{.dtx} documents).}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \RequirePackage{ifluatex}
@@ -540,6 +542,7 @@
   /eolang/.cd,
   tmpdir/.store in=\eolang@tmpdir,
   tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
+  nocomments/.store in=\eolang@nocomments,
   tmpdir
 }
 \ProcessPgfOptions{/eolang}
@@ -608,7 +611,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/([^^_])([0-9]+|\*)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
+$tex =~ s/([^^_]|^)([0-9]+|\*)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
@@ -666,7 +669,7 @@ if ($env eq 'phiq') {
   }
   print '\end{', $env, '}';
 }
-print '\endinput%';
+print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
@@ -688,7 +691,8 @@ print '\endinput%';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }
 \newenvironment{phiquation*}%
@@ -720,7 +724,8 @@ print '\endinput%';
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -993,7 +998,7 @@ foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
 print '% --- (' . (0+@cmds) . " lines)\n";
-print '\endinput%';
+print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
@@ -1130,7 +1135,8 @@ print '\endinput%';
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 %    \end{macrocode}

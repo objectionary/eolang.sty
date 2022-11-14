@@ -1,7 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/248628695479BBC0FC68838C527338F3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/248628695479BBC0FC68838C527338F3.tex") > _eolang-xe/sodg/248628695479BBC0FC68838C527338F3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/248628695479BBC0FC68838C527338F3.tex" ) > _eolang-xe/sodg/248628695479BBC0FC68838C527338F3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -556,11 +556,11 @@ Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
 .\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex") > _eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7.tex" ) > _eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex)
 iexec: The content of '_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex' was included into the document
 runsystem((cp "_eolang-xe/sodg/sodg.tex" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex") > _eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-xe/eolang-sodg.pl" "_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF.tex" ) > _eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex [1
 ]
 Missing character: There is no ; ("3B) in font nullfont!
