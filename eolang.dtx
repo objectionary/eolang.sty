@@ -101,8 +101,8 @@
 % \begin{document}
 % \begin{phiquation*}
 % a -> [[ % it's abstract!
-%   ^ !-> $.b.^{^2}, 0-> TRUE,
-%   b -> [[ c -> |fn|(56),
+%   ^ !-> $.b.^{^2}, 0/t-> TRUE,
+%   b -> [[ *-> |fn|(56),
 %     @ -> |hello|($),
 %     \Delta ..> 01-FE-C3 ]]]],\\
 % x -> [[ \alpha_0 -> ? ]].
@@ -149,6 +149,11 @@
 
 % Before any arrow you can put a number, which will be rendered as |\alpha| with an index, for example
 % |\phiq{0->x}| will render ``\phiq{0->x}''.
+% Instead of a number you can use asterix too.
+
+% You can append a slash and a title to the number of an attribute, such as |0/g->x|.
+% this will render as \phiq{0/g->x}. You can use fixed-width words too, for example
+% \verb=\phiq{0/|foo|->x}= will render as ``\phiq{0/|foo|->x}''.
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
@@ -342,7 +347,7 @@
 % \begin{phiquation*}
 % \dfrac{\begin{split}
 % x->[[@->y, z->42,
-%   0->?, 1->42]]
+%   0/g->?, 1/|foo|->42]]
 % \end{split}}{\begin{split}
 % x->[[@->y, z->?, f ~> |pi|(
 %   0->[[ \psi !-> |hello|(12) ]],
@@ -581,6 +586,7 @@
 % \changes{0.3.0}{2022/10/30}{New arrow added, that looks like \texttt{\char`\\leadsto}.}
 % \changes{0.5.0}{2022/11/11}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} added.}
 % \changes{0.5.0}{2022/11/13}{A new syntax introduced for \texttt{\char`\\alpha}-attributes: \texttt{0->}.}
+% \changes{0.5.0}{2022/11/14}{It's possible to use double names for attributes, such as \texttt{0/g->}.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -611,6 +617,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
+$tex =~ s/([^^_]|^)([0-9]+)\/([a-z]+|\|[a-z]+\|)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3 \4/g;
 $tex =~ s/([^^_]|^)([0-9]+|\*)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;

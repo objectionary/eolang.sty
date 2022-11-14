@@ -22,3 +22,8 @@ runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/C7ADAC4E7EC7A974B8789672D058
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex)
 iexec: The content of '_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex' was included into the document
+runsystem(( /bin/echo '0/g->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex)
+iexec: The content of '_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex' was included into the document
