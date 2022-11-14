@@ -2,7 +2,7 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/56371098126692269B26CD95699CBC21.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/56371098126692269B26CD95699CBC21.tex") > _eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/56371098126692269B26CD95699CBC21.tex" ) > _eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -11,12 +11,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: The content of '_eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex' was included into the document
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex") > _eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex" ) > _eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex)
 iexec: The content of '_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF.tex") > _eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF.tex" ) > _eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/492D74173C4E5744BA33361BFECDF0BF-post.tex
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....

@@ -5,8 +5,9 @@ xec.ret)...executed
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/68B329DA9893E34099C7
 D8AD5CB9C940.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/68B329DA9893
-E34099C7D8AD5CB9C940.tex") > _eolang-lua/phiq/68B329DA9893E34099C7D8AD5CB9C940-p
-ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+E34099C7D8AD5CB9C940.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/68B329
+DA9893E34099C7D8AD5CB9C940-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
 (_eolang-lua/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex)
 iexec: The content of '_eolang-lua/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex
@@ -14,8 +15,9 @@ runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/9D7FCBD26A9D15A9B351
 FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/9D7FCBD26A9D
-15A9B351FB0F98E53596.tex") > _eolang-lua/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-p
-ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+15A9B351FB0F98E53596.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/9D7FCB
+D26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
 (_eolang-lua/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -30,7 +32,8 @@ runsystem(( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1;
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/C7ADAC4E7EC7A974B878
 9672D058DDFB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/C7ADAC4E7EC7
-A974B8789672D058DDFB.tex") > _eolang-lua/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-p
-ost.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+A974B8789672D058DDFB.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/C7ADAC
+4E7EC7A974B8789672D058DDFB-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
 (_eolang-lua/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex)
 iexec: The content of '_eolang-lua/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex' was included into the document

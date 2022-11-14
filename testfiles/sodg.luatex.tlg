@@ -3,8 +3,8 @@ Don't change this file in any respect.
 runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/248628695479BBC0FC68
 838C527338F3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/248628695479BBC0
-FC68838C527338F3.tex") > _eolang-lua/sodg/248628695479BBC0FC68838C527338F3-post.
-tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+FC68838C527338F3.tex" ) > _eolang-lua/sodg/248628695479BBC0FC68838C527338F3-post
+.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -484,15 +484,15 @@ Overfull \hbox (84.75812pt too wide) in paragraph at lines 21--17
 runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/FF8C7694F39FB978E189
 06DBEC7C2FA7.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/FF8C7694F39FB978
-E18906DBEC7C2FA7.tex") > _eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.
-tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+E18906DBEC7C2FA7.tex" ) > _eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post
+.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex)
 iexec: The content of '_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex' was included into the document
 runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/3EA20B681B9F0A223D75
 73CF2F5CE5EF.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/3EA20B681B9F0A22
-3D7573CF2F5CE5EF.tex") > _eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.
-tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+3D7573CF2F5CE5EF.tex" ) > _eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post
+.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex [1
 ])
 iexec: The content of '_eolang-lua/sodg/3EA20B681B9F0A223D7573CF2F5CE5EF-post.tex' was included into the document
