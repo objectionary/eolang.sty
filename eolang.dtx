@@ -153,7 +153,8 @@
 
 % You can append a slash and a title to the number of an attribute, such as |0/g->x|.
 % this will render as \phiq{0/g->x}. You can use fixed-width words too, for example
-% \verb=\phiq{0/|foo|->x}= will render as ``\phiq{0/|foo|->x}''.
+% \verb=\phiq{0/|foo|->x}= will render as ``\phiq{0/|foo|->x}''. It's also possible
+% to use an asterix instead of a number, such that |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
@@ -617,10 +618,10 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/([^^_]|^)([0-9]+)\/(\\?[a-z]+|\|[a-z]+\|)
-  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3 \4/xg;
+$tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\space{}\4/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)
-  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/xg;
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\space{}\3/xg;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
