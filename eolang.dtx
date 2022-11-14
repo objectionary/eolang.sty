@@ -608,7 +608,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/([\s\(\)\{\},]|^)([0-9]+)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
+$tex =~ s/([^^_])([0-9]+)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
