@@ -47,3 +47,13 @@ runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/A142672D3997
 d
 (_eolang-lua/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex)
 iexec: The content of '_eolang-lua/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex' was included into the document
+runsystem(( /bin/echo '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo 
+-n $?% >iexec.ret)...executed
+runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/08B23BB85B2B5ABD731D
+AC30B8A12998.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/08B23BB85B2B
+5ABD731DAC30B8A12998.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/08B23B
+B85B2B5ABD731DAC30B8A12998-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
+(_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex)
+iexec: The content of '_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex' was included into the document

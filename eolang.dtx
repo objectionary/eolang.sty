@@ -619,9 +619,9 @@ if ($env ne 'phiq') {
 }
 $tex =~ s/&/\\sigma{}/g;
 $tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
-  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\space{}\4/xg;
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)
-  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\space{}\3/xg;
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;

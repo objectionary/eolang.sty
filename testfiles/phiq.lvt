@@ -9,5 +9,6 @@
 \phiq{x := [ \alpha_0 -rqst> ? ]}
 \phiq{& -> ^.$.|alpha|(42)}
 \phiq{0/g->x}
+\phiq{0/|foo|->x}
 
 \END
