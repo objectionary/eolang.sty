@@ -707,13 +707,13 @@ print '\endinput';
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }
 \newenvironment{phiquation*}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
@@ -1135,7 +1135,7 @@ print '\endinput';
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
 \makeatletter\newenvironment{sodg}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
