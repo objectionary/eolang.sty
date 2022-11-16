@@ -65,6 +65,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -78,6 +79,7 @@
   /eolang/.cd,
   tmpdir/.store in=\eolang@tmpdir,
   tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
+  nocomments/.store in=\eolang@nocomments,
   tmpdir
 }
 \ProcessPgfOptions{/eolang}
@@ -118,7 +120,10 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
-$tex =~ s/([\s\(\)\{\}]|^)([0-9]+)(->|\.\.>|~>|:=|!->)/\1\\alpha_{\2} \3/g;
+$tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
+$tex =~ s/([^^_]|^)([0-9]+|\*)
+  (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
 if ($env ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
@@ -138,7 +143,8 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
-$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|[0-9]+(?:\.[0-9]+)?)/\1|\2|/g;
+$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
+  [0-9]+(?:\.[0-9]+)?)/\1|\2|/xg;
 $tex =~ s/TRUE/|TRUE|/g;
 $tex =~ s/FALSE/|FALSE|/g;
 $tex =~ s/\?/\\varnothing{}/g;
@@ -176,7 +182,7 @@ if ($env eq 'phiq') {
   }
   print '\end{', $env, '}';
 }
-print '\endinput%';
+print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
@@ -192,17 +198,18 @@ print '\endinput%';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }
 \newenvironment{phiquation*}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation*}}
 \newenvironment{phiquation}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
@@ -218,7 +225,8 @@ print '\endinput%';
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
 }\makeatother
 
 \makeatletter
@@ -292,19 +300,21 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
         $opts{'a'} = '\pi';
       }
     }
+    if (exists $opts{'rho'} and not(exists $opts{'bend'})) {
+      $draw = $draw . '<MB:,phi-rho>';
+    }
     $draw = $draw . ']';
     my ($from, $to) = split (/->/, $head);
     $draw = $draw . " (${from}) ";
     if (exists $opts{'bend'}) {
-      $draw = $draw . 'edge [<F:draw=none,><MF:bend right=' .
-        num($opts{'bend'}) . '>]';
+      $draw = $draw . 'edge [<F:draw=none><MF:,bend right=' .
+        num($opts{'bend'}) . '>';
+      if (exists $opts{'rho'}) {
+        $draw = $draw . '<MB:,phi-rho>';
+      }
+      $draw = $draw . ']';
     } else {
       $draw = $draw . '--';
-    }
-    if (exists $opts{'rho'} or exists $opts{'rrho'}) {
-      $draw = $draw . ' pic[sloped,phi-rho]{parallel arrow={';
-      $draw = $draw . '-' if not exists $opts{'rrho'};
-      $draw = $draw . '0.3,-0.15}}';
     }
     if (exists $opts{'a'}) {
       my $a = $opts{'a'};
@@ -472,7 +482,7 @@ foreach my $c (@cmds) {
   print '% ', $c, "\n";
 }
 print '% --- (' . (0+@cmds) . " lines)\n";
-print '\endinput%';
+print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
@@ -488,8 +498,11 @@ print '\endinput%';
   \usetikzlibrary{snakes}
   \usetikzlibrary{decorations}
   \usetikzlibrary{decorations.pathmorphing}
+  \usetikzlibrary{decorations.pathreplacing}
   \usetikzlibrary{positioning}
   \usetikzlibrary{calc}
+  \usetikzlibrary{math}
+  \usetikzlibrary{arrows.meta}
 
 \newenvironment{phicture}%
   {\noindent\begin{tikzpicture}[
@@ -509,8 +522,59 @@ print '\endinput%';
 \tikzstyle{phi-data} = [phi-thing,regular polygon,
   regular polygon sides=8]
 \tikzstyle{phi-empty} = [phi-object]
-\tikzstyle{phi-rho} = [draw,decorate,decoration={
-  snake,amplitude=.4mm,segment length=2mm,post length=1mm}]
+\tikzset{%
+  phi-rho/.style={
+    postaction={%
+      decoration={
+        show path construction,
+        curveto code={
+          \tikzmath{
+            coordinate \I, \F, \v;
+            \I = (\tikzinputsegmentfirst);
+            \F = (\tikzinputsegmentlast);
+            \v = ($(\I) -(\F)$);
+            real \d, \a, \r, \t;
+            \d = 0.8;
+            \t = atan2(\vy, \vx);
+            if \vx<0 then { \a = 90; } else { \a = -90; };
+            {
+              \draw[arrows={-latex}, decorate,
+              decoration={%
+                snake, amplitude=.4mm,
+                segment length=2mm,
+                post length=1mm
+              }]
+              ($(\F)!.5!(\I) +(\t: -\d em) +(\t +\a: 1ex)$)
+              -- ++(\t: 2*\d em);
+            };
+          }
+        },
+        lineto code={
+          \tikzmath{
+            coordinate \I, \F, \v;
+            \I = (\tikzinputsegmentfirst);
+            \F = (\tikzinputsegmentlast);
+            \v = ($(\I) -(\F)$);
+            real \d, \a, \r, \t;
+            \d = 0.8;
+            \t = atan2(\vy, \vx);
+            if \vx<0 then { \a = 90; } else { \a = -90; };
+            {
+              \draw[arrows={-latex}, decorate,
+              decoration={%
+                snake, amplitude=.4mm,
+                segment length=2mm,
+                post length=1mm}]
+              ($(\F)!.5!(\I) +(\t: -\d em) +(\t +\a: 1ex)$)
+              -- ++(\t: 2*\d em);
+            };
+          }
+        }
+      },
+      decorate
+    }
+  }
+}
 \tikzstyle{phi-pi} = [draw,dotted]
 \tikzstyle{phi-atom} = [phi-object,double]
 \tikzstyle{phi-box} = [xshift=-5pt,yshift=3pt,draw,fill=white,
@@ -521,7 +585,7 @@ print '\endinput%';
   font={\scriptsize},color=black]
 
 \makeatletter\newenvironment{sodg}%
-{\VerbatimEnvironment%
+{\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/sodg.tex}}
@@ -532,7 +596,8 @@ print '\endinput%';
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
+    "\eolang@tmpdir/\jobname/\hash.tex"
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 
