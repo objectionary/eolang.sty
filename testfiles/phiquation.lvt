@@ -29,7 +29,7 @@ a -> [[
   b -> [[ c -> \
     |x|(56) \
     .|bye|(55),
-    \rho -> |hello|($),
+    \rho -> |hello|.|x|($),
     \alpha_0->?,
     \Delta ~> |01-FE-C3| ]]]]
 
