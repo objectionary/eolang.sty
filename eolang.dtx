@@ -591,6 +591,7 @@
 % \changes{0.5.0}{2022/11/13}{A new syntax introduced for \texttt{\char`\\alpha}-attributes: \texttt{0->}.}
 % \changes{0.5.0}{2022/11/14}{It's possible to use double names for attributes, such as \texttt{0/g->}.}
 % \changes{0.7.0}{2022/11/17}{Object names are automatically converted to |\char`\\texttt|, provided their names include two or more symbols.}
+% \changes{0.7.0}{2022/11/17}{Text in quotes is automatically converted to |\char`\\texttt|.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -621,6 +622,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
+$tex =~ s/([^\\\{]|^)([a-z0-9]{2,})\(/\1|\2|/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)
@@ -800,7 +802,7 @@ foreach my $t (split (/\n/g, $tex)) {
 print "% ---\n";
 $tex =~ s/\\\\/\n/g;
 $tex =~ s/\\\n//g;
-$tex =~ s/(\\[a-zA-Z]+) +/\1/g;
+$tex =~ s/(\\[a-zA-Z]+)\s+/\1/g;
 $tex =~ s/\n{2,}/\n/g;
 my @cmds = split(/\n/g, $tex);
 print '% --- before processing:' . "\n";
