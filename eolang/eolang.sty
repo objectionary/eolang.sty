@@ -66,6 +66,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -186,8 +187,6 @@ print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
-  "\eolang@tmpdir/eolang-phi.pl"}
 \makeatother
 
 \makeatletter\newcommand\eolang@process[1]{
@@ -486,8 +485,6 @@ print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
-  "\eolang@tmpdir/eolang-sodg.pl"}
 \makeatother
 
 \setcounter{FancyVerbLine}{0}
