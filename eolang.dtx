@@ -102,10 +102,10 @@
 % \begin{phiquation*}
 % a -> [[ % it's abstract!
 %   ^ !-> $.b.^{^2}, 0/t-> TRUE,
-%   b -> [[ *-> |fn|(56),
-%     @ -> |hello|($),
+%   b -> [[ *-> fn(56),
+%     @ -> hello($),
 %     \Delta ..> 01-FE-C3 ]]]],\\
-% x -> [[ \alpha_0 -> ? ]].
+% x -> [[ \alpha_i -> ? ]].
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -159,6 +159,8 @@
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
 % |TRUE| and |FALSE| are automatically converted to fixed-width font too.
+
+% Object names are automatically converted to fixed-width font too, if they have more than one letter.
 
 % \DescribeMacro{\phiq}
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
@@ -588,7 +590,8 @@
 % \changes{0.5.0}{2022/11/11}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} added.}
 % \changes{0.5.0}{2022/11/13}{A new syntax introduced for \texttt{\char`\\alpha}-attributes: \texttt{0->}.}
 % \changes{0.5.0}{2022/11/14}{It's possible to use double names for attributes, such as \texttt{0/g->}.}
-% Then, we create a Perl script for |phiquation| processing using |VerbatimOut| from
+% \changes{0.7.0}{2022/11/17}{Object names are automatically converted to |\char`\\texttt|, provided their names include two or more symbols.}
+% Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
@@ -684,8 +687,6 @@ print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
-  "\eolang@tmpdir/eolang-phi.pl"}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -1013,8 +1014,6 @@ print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
-\iexec[trace,null]{perl -pi -e 's/(\\\\[a-zA-Z])\\s+/\\1/g'
-  "\eolang@tmpdir/eolang-sodg.pl"}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
