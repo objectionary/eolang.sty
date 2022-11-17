@@ -50,7 +50,7 @@ v3a xy:v0a,1,1
 v5a xy:v3a,0,4
 v5a->v0a a:x'
 v6a xy:v5a,1,1
-v6a->v5a a:\psi
+v6a->v5a a:\psi{}
 
 v0a+b xy:v0a,10,6
 v0b=>
