@@ -769,7 +769,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{nodollar}
-% \changes{0.6.0}{2022/11/16}{Now it is possible to use dollar sign instead of \texttt{\char`\\phiq}.}
+% \changes{0.7.0}{2022/11/18}{Now it is possible to use dollar sign instead of \texttt{\char`\\phiq}.}
 % Then, we redefine dollar sign:
 %    \begin{macrocode}
 \ifdefined\eolang@nodollar\else
@@ -1067,7 +1067,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{tikz}
-% Then, we include |tikz| package and its libraries:
+% Then, we include \href{https://ctan.org/pkg/tikz}{tikz} package and its libraries:
 %    \begin{macrocode}
 \RequirePackage{tikz}
   \usetikzlibrary{arrows}
@@ -1170,7 +1170,7 @@ print '\endinput';
 
 % \begin{macro}{sodg}
 % \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
-% Then, create a new environment |sodg|, as suggested
+% Then, we create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
 \makeatletter\newenvironment{sodg}%
