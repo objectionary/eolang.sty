@@ -67,3 +67,13 @@ B85B2B5ABD731DAC30B8A12998-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
 d
 (_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex)
 iexec: The content of '_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex' was included into the document
+runsystem(( /bin/echo '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/e
+cho -n $?% >iexec.ret)...executed
+runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/6AEF13C32ED7A13D254A
+2FBB3F5D50AD.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/6AEF13C32ED7
+A13D254A2FBB3F5D50AD.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/6AEF13
+C32ED7A13D254A2FBB3F5D50AD-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
+(_eolang-lua/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex)
+iexec: The content of '_eolang-lua/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex' was included into the document
