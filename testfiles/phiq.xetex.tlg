@@ -1,5 +1,14 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+runsystem(( /bin/echo 'x->y') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex
+LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
+(../Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+msa on input line ....
+LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+iexec: The content of '_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex' was included into the document
 runsystem(( /bin/echo '') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -9,10 +18,6 @@ runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-xe/phiq/phiq.tex 
 runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex
-LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
-(../Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line ....
-LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )

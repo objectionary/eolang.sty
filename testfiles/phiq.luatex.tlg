@@ -1,5 +1,19 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+runsystem(( /bin/echo 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?%
+ >iexec.ret)...executed
+runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/C952EF9BB7253E7BD668
+2AFC957AAB28.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/C952EF9BB725
+3E7BD6682AFC957AAB28.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/C952EF
+9BB7253E7BD6682AFC957AAB28-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+d
+(_eolang-lua/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex
+LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
+(../Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+msa on input line ....
+LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+iexec: The content of '_eolang-lua/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex' was included into the document
 runsystem(( /bin/echo '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >ie
 xec.ret)...executed
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/68B329DA9893E34099C7
@@ -19,10 +33,6 @@ runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/9D7FCBD26A9D
 D26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
 d
 (_eolang-lua/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex
-LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
-(../Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line ....
-LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 )

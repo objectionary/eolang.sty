@@ -170,7 +170,7 @@
 
 % \DescribeMacro{\phiq}
 % The command |\phiq| lets you inline a $\varphi$-calculus expressions
-% using the same simple plain-text notation:
+% using the same simple plain-text notation. You can use dollar sign directly too:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -181,7 +181,7 @@
 % \phiq{x -> [[@ -> y]]} \\
 % is a decorator of
 % the data object \\
-% \phiq{y -> [[\Delta ..> 42]]}.
+% $y -> [[\Delta ..> 42]]$.
 % \end{document}
 % \end{docshot}
 
@@ -317,6 +317,18 @@
 %\fi
 \begin{verbatim}
 \usepackage[tmpdir=/tmp/foo]{eolang}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+
+% \DescribeMacro{nodollar}
+% You may disable special treatment of the dollar sign:
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\usepackage[nodollar]{eolang}
 \end{verbatim}
 %\iffalse
 %</verb>
@@ -746,11 +758,27 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
     "\eolang@tmpdir/\jobname/\hash.tex"
     \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+  \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
 }\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{nodollar}
+% \changes{0.6.0}{2022/11/16}{Now it is possible to use dollar sign instead of \texttt{\char`\\phiq}.}
+% Then, we redefine dollar sign:
+%    \begin{macrocode}
+\ifdefined\eolang@nodollar\else
+  \begingroup
+  \catcode`\$=\active
+  \protected\gdef$#1${\phiq{#1}}
+  \endgroup
+  \AtBeginDocument{\catcode`\$=\active}
+\fi
 %    \end{macrocode}
 % \end{macro}
 
@@ -1155,10 +1183,12 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/sodg.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \catcode`\$=3 %
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"
     \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+  \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 %    \end{macrocode}
@@ -1260,7 +1290,7 @@ print '\endinput';
 \newcommand{\phiDotted}{%
   \mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
 \newcommand{\phiDotted@}[2]{%
-  \begingroup
+  \begingroup%
   \settowidth{\dimen\z@}{$\m@th#1\rightarrow$}%
   \settoheight{\dimen\tw@}{$\m@th#1\rightarrow$}%
   \sbox\z@{%
@@ -1275,7 +1305,9 @@ print '\endinput';
   }%
   \ht\z@=\dimen\tw@ \dp\z@=\z@%
   \box\z@%
-  \endgroup}\makeatother
+  \endgroup%
+}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 

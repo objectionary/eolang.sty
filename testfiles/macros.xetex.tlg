@@ -4,5 +4,26 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
+runsystem(( /bin/echo '\phiSlot {abc}') > _eolang-xe/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/macros/phiq.tex" "_eolang-xe/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A.tex" ) > _eolang-xe/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
+)
+iexec: The content of '_eolang-xe/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex' was included into the document
+runsystem(( /bin/echo '\phiWave {}') > _eolang-xe/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/macros/phiq.tex" "_eolang-xe/macros/9FF172197C77A78726CD9D2F316AACF2.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/macros/9FF172197C77A78726CD9D2F316AACF2.tex" ) > _eolang-xe/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex)
+iexec: The content of '_eolang-xe/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex' was included into the document
+runsystem(( /bin/echo '\phiConst {}') > _eolang-xe/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/macros/phiq.tex" "_eolang-xe/macros/07262A34F7984D950EE32FA0B23DD77A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/macros/07262A34F7984D950EE32FA0B23DD77A.tex" ) > _eolang-xe/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex)
+iexec: The content of '_eolang-xe/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex' was included into the document
+runsystem(( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-xe/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/macros/phiq.tex" "_eolang-xe/macros/03D7A56284CBF4ACFA49E77AA32E3186.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/macros/03D7A56284CBF4ACFA49E77AA32E3186.tex" ) > _eolang-xe/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex)
+iexec: The content of '_eolang-xe/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex' was included into the document

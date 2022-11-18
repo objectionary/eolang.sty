@@ -5,6 +5,8 @@
 
 \START
 
+$x->y$
+
 \phiq{}
 \phiq{x := [ \alpha_0 -rqst> ? ]}
 \phiq{& -> ^.$.|alpha|(42)}
