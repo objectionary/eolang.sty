@@ -160,7 +160,7 @@
 
 % You can append a slash and a title to the number of an attribute, such as |0/g->x|.
 % this will render as \phiq{0/g->x}. You can use fixed-width words too, for example
-% \verb=\phiq{0/|foo|->x}= will render as ``\phiq{0/|foo|->x}''. It's also possible
+% \verb=\phiq{0/|f|->x}= will render as ``\phiq{0/|f|->x}''. It's also possible
 % to use an asterix instead of a number, such that |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
@@ -371,7 +371,7 @@
 % \begin{phiquation*}
 % \dfrac{\begin{split}
 % x->[[@->y, z->42,
-%   0/g->?, 1/|foo|->42]]
+%   0/g->?, 1/foo->42]]
 % \end{split}}{\begin{split}
 % x->[[@->y, z->?, f ~> |pi|(
 %   0->[[ \psi !-> |hello|(12) ]],
@@ -649,7 +649,7 @@ $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
-$tex =~ s/([ )(.>]|^)([a-z0-9]{2,})(?=[ )(.])/\1|\2|/g;
+$tex =~ s/([ )(.>\/]|^)([a-z0-9]{2,})(?=[ )(.])/\1|\2|/g;
 $tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)
