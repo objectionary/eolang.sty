@@ -12,5 +12,6 @@ $x->y$
 \phiq{& -> ^.$.|alpha|(42)}
 \phiq{0/g->x}
 \phiq{0/|foo|->x}
+\phiq{[[x -> Q.a.^]]}
 
 \END

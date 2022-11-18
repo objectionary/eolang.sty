@@ -103,7 +103,7 @@
 % app -> [[ % it's abstract!
 %   ^ !-> $.b.^{^2}, 0/t~> TRUE,
 %   b -> [[ *-> fn(56),
-%     @ -> \Phi.hello.bye($),
+%     @ -> Q.hello.bye($),
 %     D> 01-FE-C3 ]]]],\\
 % x -> [[ \lambda ..> ? ]].
 % \end{phiquation*}
@@ -124,6 +124,8 @@
 %     (|\sigma|),
 %   \item ``|?|'' maps to ``$\varnothing$''
 %     (|\varnothing|),
+%   \item ``|Q|'' maps to ``$\Phi$''
+%     (|\Phi|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|~>|'' maps to ``$\phiWave$''
@@ -140,7 +142,7 @@
 %     (|\llbracket|),
 %   \item ``|]]|'' maps to ``$\rrbracket$''
 %     (|\rrbracket|),
-%   \item ``$\vert$|abc|$\vert$'' maps to ``\texttt{abc}''
+%   \item ``\texttt{\textbar{abc}\textbar}'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
 % \end{itemize}
 % Also, a few symbols are supported for $\varphi$PU architecture:
@@ -611,6 +613,7 @@
 % \changes{0.7.0}{2022/11/17}{Object names are automatically converted to \texttt{\char`\\texttt}, provided their names include two or more symbols.}
 % \changes{0.7.0}{2022/11/17}{Text in quotes is automatically converted to \texttt{\char`\\texttt}.}
 % \changes{0.7.0}{2022/11/17}{New syntax sugar constructs added: \texttt{D>} and \texttt{L>} for \texttt{\char`\\Delta} and \texttt{\char`\\lambda} with a dotted arrow respectively.}
+% \changes{0.7.0}{2022/11/18}{New syntax sugar for $\Phi$, just using capital ``\texttt{Q}'' is enough.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -641,6 +644,7 @@ if ($env ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 $tex =~ s/&/\\sigma{}/g;
+$tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
