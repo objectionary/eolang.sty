@@ -68,6 +68,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -227,11 +228,21 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl \eolang@tmpdir/eolang-phi.pl 'phiq'
     "\eolang@tmpdir/\jobname/\hash.tex"
     \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+  \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
 }\makeatother
+
+\ifdefined\eolang@nodollar\else
+  \begingroup
+  \catcode`\$=\active
+  \protected\gdef$#1${\phiq{#1}}
+  \endgroup
+  \AtBeginDocument{\catcode`\$=\active}
+\fi
 
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
@@ -596,10 +607,12 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/sodg.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \catcode`\$=3 %
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"
     \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+  \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
 }\makeatother
 
@@ -648,7 +661,7 @@ print '\endinput';
 \newcommand{\phiDotted}{%
   \mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
 \newcommand{\phiDotted@}[2]{%
-  \begingroup
+  \begingroup%
   \settowidth{\dimen\z@}{$\m@th#1\rightarrow$}%
   \settoheight{\dimen\tw@}{$\m@th#1\rightarrow$}%
   \sbox\z@{%
@@ -663,7 +676,9 @@ print '\endinput';
   }%
   \ht\z@=\dimen\tw@ \dp\z@=\z@%
   \box\z@%
-  \endgroup}\makeatother
+  \endgroup%
+}
+\makeatother
 
 
 
