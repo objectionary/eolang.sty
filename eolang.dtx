@@ -415,6 +415,20 @@
 % \end{document}
 % \end{docshot}
 
+% If you don't use |nodollar| package option, you can still use normal parsing of the dollar sign, by means of |\(...\)| syntax:
+% \docshotOptions{firstline=6,lastline=8}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}\noindent
+% The object formation $[[0->x]]$
+% may be replaced with a formula
+% \( Q \times a^2 \).
+% \end{document}
+% \end{docshot}
+
 % The |phiquation| environment will automatically align formulas by the first
 % arrow, if there are only left-aligned formulas:
 % \docshotOptions{firstline=5,lastline=10}
