@@ -151,8 +151,8 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
-$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
-  [0-9]+(?:\.[0-9]+)?)/\1|\2|/xg;
+$tex =~ s/([\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
+  [0-9]+(?:\.[0-9]+)?)(?!\{)/\1|\2|/xg;
 $tex =~ s/TRUE/|TRUE|/g;
 $tex =~ s/FALSE/|FALSE|/g;
 $tex =~ s/\?/\\varnothing{}/g;
