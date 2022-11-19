@@ -396,7 +396,7 @@
 % \end{document}
 % \end{docshot}
 
-% It's possible to use |\label| inside |phiquation| environment:
+% It's possible to use |\label| inside |phiquation| environment (pay attention to how you can disable our custom parsing of math formulas by means of curled brackets around the |4| number):
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -407,7 +407,7 @@
 % Discriminant can be calculated using
 % the following simple formula:
 % \begin{phiquation}
-% D = b{^2} - 4ac.
+% D = b{^2} - {4}ac.
 % \label{d}
 % \end{phiquation}
 % Eq.~\ref{d} is also widely used in
@@ -673,8 +673,8 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
 $tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
-$tex =~ s/([\s,>\(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
-  [0-9]+(?:\.[0-9]+)?)/\1|\2|/xg;
+$tex =~ s/([\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
+  [0-9]+(?:\.[0-9]+)?)(?!\{)/\1|\2|/xg;
 $tex =~ s/TRUE/|TRUE|/g;
 $tex =~ s/FALSE/|FALSE|/g;
 $tex =~ s/\?/\\varnothing{}/g;
