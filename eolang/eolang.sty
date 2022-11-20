@@ -70,6 +70,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -169,7 +170,7 @@ $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\begin{', $env, '}';
+  print '\vbox{\begin{', $env, '}';
   if ($gathered) {
     print '\begin{gathered}';
   } else {
@@ -189,12 +190,16 @@ if ($env eq 'phiq') {
   } else {
     print '\end{split}';
   }
-  print '\end{', $env, '}';
+  print '\end{', $env, '}}';
 }
 print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
+\makeatother
+
+\makeatletter
+\newcommand\phiSaveTo[1]{\def\eolang@phiSaveTo{#1}}
 \makeatother
 
 \makeatletter\newcommand\eolang@process[1]{
@@ -206,8 +211,10 @@ print '\endinput';
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
     "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+    \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
+  \def\eolang@phiSaveTo{\relax}%
 }
 \newenvironment{phiquation*}%
 {\catcode`\|=12 \VerbatimEnvironment%
@@ -298,7 +305,7 @@ foreach my $t (split (/\n/g, $tex)) {
 }
 print '% ---';
 print ' (' . (0+@cmds) . " lines)\n";
-print '\begin{phicture}', "\n";
+print '\vbox{\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
@@ -493,7 +500,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   }
   print ";\n";
 }
-print '\end{phicture}%', "\n";
+print '\end{phicture}}%', "\n";
 print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
@@ -599,6 +606,10 @@ print '\endinput';
   above=2pt,sloped/.append style={transform shape},
   font={\scriptsize},color=black]
 
+\makeatletter
+\newcommand\sodgSaveTo[1]{\def\eolang@sodgSaveTo{#1}}
+\makeatother
+
 \makeatletter\newenvironment{sodg}%
 {\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
@@ -613,9 +624,11 @@ print '\endinput';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+    \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
   \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
+  \def\eolang@sodgSaveTo{\relax}%
 }\makeatother
 
 \newcommand\eolang{%
