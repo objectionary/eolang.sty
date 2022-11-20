@@ -436,6 +436,22 @@
 % \end{document}
 % \end{docshot}
 
+% You can add comments to your equations, using the |&&| command:
+% \docshotOptions{firstline=6,lastline=10}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage[paperwidth=4in]{geometry}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% [[ 0->x ]] && \text{Formation}
+% [[ 0->? ]] && \text{Abstraction}
+% x(D>42) && \text{Application}
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % If you don't use |nodollar| package option, you can still use normal parsing of the dollar sign, by means of |\(...\)| syntax:
 % \docshotOptions{firstline=6,lastline=8}
 % \begin{docshot}
@@ -655,7 +671,7 @@
 %    \begin{macrocode}
 \makeatletter
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
-$env = $ARGV[0];
+$macro = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
 my $tex; { local $/; $tex = <$fh>; }
 print '% This file is auto-generated', "\n";
@@ -674,12 +690,17 @@ print '% ---', "\n";
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $gathered = (0 == $tex =~ /\n\s+/g);
-if ($env ne 'phiq') {
+my $align = 0;
+if (index($tex, '&&') >= 0) {
+  $macro =~ s/equation/align/g;
+  $align = 1;
+}
+if ($macro ne 'phiq') {
   $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
-$tex =~ s/&/\\sigma{}/g;
+$tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
@@ -689,7 +710,7 @@ $tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
 $tex =~ s/([^^_]|^)([0-9]+|\*)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
-if ($env ne 'phiq') {
+if ($macro ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
   $tex =~ s/\n\n/\\\\&/g;
@@ -722,30 +743,34 @@ $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
-if ($env eq 'phiq') {
+if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\begin{', $env, '}';
-  if ($gathered) {
-    print '\begin{gathered}';
-  } else {
-    print '\begin{split}';
+  print '\begin{', $macro, '}';
+  if (not($align)) {
+	  if ($gathered) {
+	    print '\begin{gathered}';
+	  } else {
+	    print '\begin{split}';
+	  }
   }
 }
-if ($gathered) {
+if ($gathered and not($align)) {
   $tex =~ s/(\\\\(?:\[[^\]]+\])?)&/\1/g;
   $tex =~ s/^&//g;
 }
 print $tex;
-if ($env eq 'phiq') {
+if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  if ($gathered) {
-    print '\end{gathered}';
-  } else {
-    print '\end{split}';
+  if (not($align)) {
+	  if ($gathered) {
+	    print '\end{gathered}';
+	  } else {
+	    print '\end{split}';
+	  }
   }
-  print '\end{', $env, '}';
+  print '\end{', $macro, '}';
 }
 print '\endinput';
 \end{VerbatimOut}
