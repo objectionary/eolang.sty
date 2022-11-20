@@ -176,10 +176,10 @@ E18906DBEC7C2FA7.tex" > a.tex) > _eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2F
 A7-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex)
 iexec: The content of '_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-post.tex' was included into the document
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/60EF6419B90BD8E43AEF
-3D9DA9F7C5BB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/60EF6419B90BD8E4
-3AEF3D9DA9F7C5BB.tex" > a.tex) > _eolang-lua/sodg/60EF6419B90BD8E43AEF3D9DA9F7C5
-BB-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/sodg/60EF6419B90BD8E43AEF3D9DA9F7C5BB-post.tex)
-iexec: The content of '_eolang-lua/sodg/60EF6419B90BD8E43AEF3D9DA9F7C5BB-post.tex' was included into the document
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/1EA1993CE595EB82246E
+9898689720C3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl "_eolang-lua/eolang-sodg.pl" "_eolang-lua/sodg/1EA1993CE595EB82
+246E9898689720C3.tex" > a.tex) > _eolang-lua/sodg/1EA1993CE595EB82246E9898689720
+C3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-post.tex)
+iexec: The content of '_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-post.tex' was included into the document

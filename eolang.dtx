@@ -196,8 +196,8 @@
 % \begin{document}
 % \begin{sodg}
 % v0 \\ v0===> \\ v0!!A
-% v1 xy:v0,-.8,2.8 data:42 \\ =>v1
-% v0->v1 a:x rho
+% v1 xy:v0,-.8,2.8 data:42 tag:d_1
+% v0->v1 a:x rho \\ =>v1
 % v2 xy:v0,+1,+1 atom:\xi.x+1
 % v1->v2 a:|hi| bend:-15
 % v2->v0 pi bend:10 % a comment
@@ -212,6 +212,7 @@
 
 % The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
+%   \item ``|tag:<math>|'' puts a custom label |<math>| into the circle,
 %   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached ``|<box>|''
 %     (the content of the box may only be numeric data),
 %   \item ``|atom:[<box>]|'' makes it an atom with an optional attached ``|<box>|''
@@ -845,6 +846,7 @@ print '\endinput';
 % \changes{0.5.0}{2022/11/10}{It is possible to use multiple the ``equaltion sign'' symbols for transition arrows \texttt{=>}.}
 % \changes{0.5.0}{2022/11/12}{It is possible to use TikZ commands inside the \texttt{sodg} environment.}
 % \changes{0.6.0}{2022/11/13}{The \texttt{rrho} attribute is retired, now \texttt{rho} works just fine in all situations.}
+% \changes{0.8.0}{2022/11/20}{The \texttt{tag} attribute is introduced for changing labels inside a vertex circle.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1083,8 +1085,20 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       print ',phi-object';
     }
     print ']';
-    print ' (', $head, ')';
-    print ' {$' . vertex($head) . '$}';
+    print ' (' . $head . ')';
+    print ' {';
+    if (exists $opts{'tag'}) {
+      my $t = $opts{'tag'};
+      if (index($t, '$') == -1) {
+        $t = '$' . $t . '$';
+      } else {
+      	$t = fmt($t);
+  	  }
+  	  print $t;
+    } else {
+      print '$' . vertex($head) . '$';
+    }
+    print '}';
     if (exists $opts{'box'}) {
       print ' node[phi-box] at (';
       print $head, '.south east) {';

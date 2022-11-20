@@ -47,7 +47,7 @@ v1->v2 a:|hi| bend:-15
 ===>v2
 v2->v0 pi bend:10
 v1=>
-v3 xy:v0,.5,+.2
+v3 xy:v0,.5,+.2 tag:v_{3_i}
 v0=>v3
 v2->v3 a:\varphi
 v3->v0 break:45 a:q
