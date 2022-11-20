@@ -313,23 +313,20 @@
 
 % \DescribeMacro{\phiSaveTo}
 % \DescribeMacro{\sodgSaveTo}
-% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro (don't forget the |\vbox|):
-% \docshotOptions{firstline=6,lastline=15}
+% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro (don't forget the |\parbox|):
+% \docshotOptions{firstline=5,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
-% \pagestyle{empty}
-% \usepackage[paperwidth=3in]{geometry}
 % \usepackage{eolang}
+% \pagestyle{empty}
 % \begin{document}
 % \phiSaveTo{a.tex}
 % \begin{phiquation*}
-% [[ x -> ?, y -> [[D>42]] ]]
+% [[ x -> [[D>42]] ]]
 % \end{phiquation*}
-% \begin{tabular}{ll}
-% \hline
-% Consider this object formation: &
-% \vbox{\input{a.tex}} \\
-% \hline
+% \begin{tabular}{p{.5in}l}
+% Free: & $[[x -> ?]]$ \\
+% Bound: & \parbox{1in}{\input{a.tex}} \\
 % \end{tabular}
 % \end{document}
 % \end{docshot}
