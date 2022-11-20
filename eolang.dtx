@@ -291,7 +291,7 @@
 % \end{docshot}
 
 % \DescribeMacro{\phiMany}
-% Sometimes you may need to simplify the way you describe an object:
+% Sometimes you may need to simplify the way you describe an object (the typesetting is a bit off, but this is not because of us, but because of \href{https://tex.stackexchange.com/questions/664772}{this}):
 % \docshotOptions{firstline=6,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
@@ -320,13 +320,13 @@
 % \usepackage{eolang}
 % \pagestyle{empty}
 % \begin{document}
-% \phiSaveTo{a.tex}
+% \phiSaveTo{a}
 % \begin{phiquation*}
 % [[ x -> [[D>42]] ]]
 % \end{phiquation*}
 % \begin{tabular}{p{.5in}l}
 % Free: & $[[x -> ?]]$ \\
-% Bound: & \parbox{1in}{\input{a.tex}} \\
+% Bound: & \parbox{1in}{\input{a}} \\
 % \end{tabular}
 % \end{document}
 % \end{docshot}
@@ -334,7 +334,7 @@
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
-% The default location of temp files is |_eolang|. You can change this using |tmpdir| option:
+% The default location of temp files is |_eolang|. You can change this with the help of the |tmpdir| package option:
 %\iffalse
 %<*verb>
 %\fi
@@ -346,7 +346,7 @@
 %\fi
 
 % \DescribeMacro{nodollar}
-% You may disable special treatment of the dollar sign:
+% You may disable the special treatment of the dollar sign by using the |nodollar| package option:
 %\iffalse
 %<*verb>
 %\fi
