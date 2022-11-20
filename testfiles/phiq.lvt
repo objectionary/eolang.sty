@@ -15,4 +15,8 @@ $x->y$
 \phiq{x.save}
 \phiq{[[x -> Q.a.^]]}
 
+\begin{tabular}{ll}
+\phiq{x->y} & \phiq{y->x} \\
+\end{tabular}
+
 \END

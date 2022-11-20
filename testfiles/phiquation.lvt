@@ -16,6 +16,14 @@ x -> [[ a -> ?]] \\
 y -> [[ \Delta ..> 4 ]].
 \end{phiquation*}
 
+\phiSaveTo{a.tex}
+\begin{phiquation*}
+x -> y
+\end{phiquation*}
+\begin{tabular}{l}
+\input{a.tex} \\
+\end{tabular}
+
 \begin{phiquation*}
 % leading comment
 a -> [[

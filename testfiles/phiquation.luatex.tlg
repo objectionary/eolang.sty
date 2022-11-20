@@ -20,14 +20,85 @@ runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/phiquation
 4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex)
 iexec: The content of '_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
+runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/6C
+CEAC75DCE62C68770C22D9AB7505AE.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.r
+et)...executed
+runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/phiquation
+/6CCEAC75DCE62C68770C22D9AB7505AE.tex" > a.tex) > _eolang-lua/phiquation/6CCEAC7
+5DCE62C68770C22D9AB7505AE-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex)
+iexec: The content of '_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex' was included into the document
+(a.tex)
+Overfull \hbox (27.00002pt too wide) in paragraph at lines 23--26
+[][] 
+\hbox(13.30002+8.30002)x345.0, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(0.0+0.0)x15.0, direction TLT
+.\hbox(13.30002+8.30002)x357.00002, direction TLT
+..\mathon
+..\vbox(13.30002+8.30002)x357.00002, direction TLT
+...\hbox(18.0+3.60004)x357.00002, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(18.0+3.60004)x357.00002, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue 6.0
+.....\glue 0.00002
+.....\vbox(18.0+0.0)x345.0, direction TLT
+......\hbox(0.0+0.0)x345.0, glue set 330.0fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x15.0, direction TLT
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+......\penalty 10000
+......\glue(\abovedisplayshortskip) 0.0 plus 3.0
+......\glue(\lineskip) 0.0
+......\hbox(8.5+3.5)x26.5323, shifted 159.23386, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\vbox(8.5+3.5)x26.5323, direction TLT
+........\hbox(8.39996+3.60004)x26.5323, direction TLT
+.........\glue(\tabskip) 0.0
+.........\hbox(8.39996+3.60004)x26.5323, direction TLT
+..........\glue 0.0 plus 1.0fil
+..........\hbox(8.39996+3.60004)x0.0, direction TLT
+...........\vbox(8.39996+3.60004)x0.0, direction TLT
+............\kern0.0
+............\hbox(8.39996+3.60004)x0.0, direction TLT
+.............\rule(8.39996+3.60004)x0.0
+..........\mathon
+..........\OML/cmm/m/it/10 x
+..........\glue(\thickmuskip) 2.77771 plus 2.77771
+..........\hbox(3.66875+0.0)x10.00002, direction TLT
+...........\OMS/cmsy/m/n/10 7
+...........\OMS/cmsy/m/n/10 !
+..........\glue(\thickmuskip) 2.77771 plus 2.77771
+..........\OML/cmm/m/it/10 y
+..........\kern0.35878 (italic)
+..........\mathoff
+..........\glue 0.0 plus 1.0fil
+.........\glue(\tabskip) 0.0
+......\penalty 0
+......\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+....\glue(\tabskip) 0.0
+..\mathoff
+.\penalty 10000
+.\glue(\parfillskip) 0.0 plus 1.0fil
+.\glue(\rightskip) 0.0
 runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/90
 6E0B20680FF021237C15B37ECBDB1E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.r
 et)...executed
 runsystem(( perl "_eolang-lua/eolang-phi.pl" 'equation*' "_eolang-lua/phiquation
-/906E0B20680FF021237C15B37ECBDB1E.tex" ) > _eolang-lua/phiquation/906E0B20680FF0
-21237C15B37ECBDB1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex
-LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
-)
+/906E0B20680FF021237C15B37ECBDB1E.tex" > a.tex) > _eolang-lua/phiquation/906E0B2
+0680FF021237C15B37ECBDB1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex)
 iexec: The content of '_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex' was included into the document

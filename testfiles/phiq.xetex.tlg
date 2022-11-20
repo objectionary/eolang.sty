@@ -47,3 +47,13 @@ runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/6AEF13C32ED7A13D254A2F
 runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-xe/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex)
 iexec: The content of '_eolang-xe/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex' was included into the document
+runsystem(( /bin/echo 'x->y') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex)
+iexec: The content of '_eolang-xe/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex' was included into the document
+runsystem(( /bin/echo 'y->x') > _eolang-xe/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-xe/phiq/phiq.tex" "_eolang-xe/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-xe/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A-post.tex)
+iexec: The content of '_eolang-xe/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A-post.tex' was included into the document

@@ -311,6 +311,29 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\phiSaveTo}
+% \DescribeMacro{\sodgSaveTo}
+% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro:
+% \docshotOptions{firstline=6,lastline=15}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{eolang}
+% \begin{document}
+% \phiSaveTo{a.tex}
+% \begin{phiquation*}
+% [[ x -> ?, y -> [[D>42]] ]]
+% \end{phiquation*}
+% \begin{tabular}{ll}
+% \hline
+% Consider this object formation: &
+% \input{a.tex} \\
+% \hline
+% \end{tabular}
+% \end{document}
+% \end{docshot}
+
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
@@ -618,12 +641,12 @@
 % \begin{macro}{eolang-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``\texttt{[}'' and ``\texttt{]}'' replaced with ``\texttt{[[}'' and ``\texttt{]]}'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
-% \changes{0.0.2}{2022/10/21}{Parsing of symbols ``\texttt{@},'' ``\texttt{\^{}},'' and ``\texttt{\&}'' enabled (\texttt{\char`\\varphi}, \texttt{\char`\\rho}, and \texttt{\char`\\sigma})}
+% \changes{0.0.2}{2022/10/21}{Parsing of the symbols ``\texttt{@},'' ``\texttt{\^{}},'' and ``\texttt{\&}'' enabled (\texttt{\char`\\varphi}, \texttt{\char`\\rho}, and \texttt{\char`\\sigma})}
 % \changes{0.1.0}{2022/10/26}{A new Perl script "\texttt{eolang-phi.pl}" added for parsing of phi expressions.}
 % \changes{0.2.0}{2022/10/29}{Numbers automatically render as \texttt{\char`\\texttt}. No need to use vertical bars around them anymore.}
 % \changes{0.3.0}{2022/10/30}{New arrow added, that looks like \texttt{\char`\\leadsto}.}
 % \changes{0.5.0}{2022/11/11}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} added.}
-% \changes{0.5.0}{2022/11/13}{A new syntax introduced for \texttt{\char`\\alpha}-attributes: \texttt{0->}.}
+% \changes{0.5.0}{2022/11/13}{A new syntax introduced for the \texttt{\char`\\alpha} attributes: \texttt{0->}.}
 % \changes{0.5.0}{2022/11/14}{It's possible to use double names for attributes, such as \texttt{0/g->}.}
 % \changes{0.7.0}{2022/11/17}{Object names are automatically converted to \texttt{\char`\\texttt}, provided their names include two or more symbols.}
 % \changes{0.7.0}{2022/11/17}{Text in quotes is automatically converted to \texttt{\char`\\texttt}.}
@@ -704,7 +727,7 @@ $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\begin{', $env, '}';
+  print '\vbox{\begin{', $env, '}';
   if ($gathered) {
     print '\begin{gathered}';
   } else {
@@ -724,7 +747,7 @@ if ($env eq 'phiq') {
   } else {
     print '\end{split}';
   }
-  print '\end{', $env, '}';
+  print '\end{', $env, '}}';
 }
 print '\endinput';
 \end{VerbatimOut}
@@ -734,8 +757,18 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{\phiSaveTo}
+% \changes{0.8.0}{2022/11/20}{The output of the \texttt{phiquation} environment can be redirected to a file.}
+% Then, we define the |\phiSaveTo| command to instruct the |phiquation| environment that the output should not be sent to the document but saved to the file instead:
+%    \begin{macrocode}
+\makeatletter
+\newcommand\phiSaveTo[1]{\def\eolang@phiSaveTo{#1}}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{phiquation}
-% Then, we define |phiquation| and |phiquation*| environments through a supplementary
+% Then, we define the |phiquation| and the |phiquation*| environments through a supplementary
 % |\eolang@process| command:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@process[1]{
@@ -747,8 +780,10 @@ print '\endinput';
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
     "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+    \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
+  \def\eolang@phiSaveTo{\relax}%
 }
 \newenvironment{phiquation*}%
 {\catcode`\|=12 \VerbatimEnvironment%
@@ -788,7 +823,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{nodollar}
-% \changes{0.7.0}{2022/11/18}{Now it is possible to use dollar sign instead of \texttt{\char`\\phiq}.}
+% \changes{0.7.0}{2022/11/18}{Now it is possible to use dollar sign instead of the \texttt{\char`\\phiq} command.}
 % Then, we redefine dollar sign:
 %    \begin{macrocode}
 \ifdefined\eolang@nodollar\else
@@ -804,15 +839,15 @@ print '\endinput';
 % \begin{macro}{eolang-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for \texttt{phiquation}, another one for \texttt{sodg}.}
-% \changes{0.2.0}{2022/10/28}{The content of \texttt{atom} and \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
-% \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with \texttt{\char`\\Delta} and \texttt{\char`\\lambda} commands.}
+% \changes{0.2.0}{2022/10/28}{The content of the \texttt{atom} and the \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
+% \changes{0.4.0}{2022/10/31}{Labels on the edges are automatically printed as math formulas. Also, boxes are prefixed with the \texttt{\char`\\Delta} and the \texttt{\char`\\lambda} commands.}
 % \changes{0.4.0}{2022/10/31}{Relative positioning of vertices fixed.}
-% \changes{0.4.0}{2022/10/31}{Transforming arrows added with \texttt{=>} syntax, also markers with exclamation mark syntax.}
+% \changes{0.4.0}{2022/10/31}{Transforming arrows added with the \texttt{=>} syntax, also markers with exclamation mark syntax.}
 % \changes{0.5.0}{2022/11/09}{New syntax introduced that allows to make clones of vertices and all their dependants.}
-% \changes{0.5.0}{2022/11/09}{Now edges may have \texttt{break} attribute, to make them shorter.}
-% \changes{0.5.0}{2022/11/10}{It is possible to use multiple ``equaltion sign'' symbols for transition arrows \texttt{=>}.}
-% \changes{0.5.0}{2022/11/12}{It is possible to use tikz commands inside \texttt{sodg} environment.}
-% \changes{0.6.0}{2022/11/13}{The attribute \texttt{rrho} is retired, now \texttt{rho} works just fine in all situations.}
+% \changes{0.5.0}{2022/11/09}{Now edges may have the \texttt{break} attribute, to make them shorter.}
+% \changes{0.5.0}{2022/11/10}{It is possible to use multiple the ``equaltion sign'' symbols for transition arrows \texttt{=>}.}
+% \changes{0.5.0}{2022/11/12}{It is possible to use TikZ commands inside the \texttt{sodg} environment.}
+% \changes{0.6.0}{2022/11/13}{The \texttt{rrho} attribute is retired, now \texttt{rho} works just fine in all situations.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -868,7 +903,7 @@ foreach my $t (split (/\n/g, $tex)) {
 }
 print '% ---';
 print ' (' . (0+@cmds) . " lines)\n";
-print '\begin{phicture}', "\n";
+print '\vbox{\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
@@ -1063,7 +1098,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   }
   print ";\n";
 }
-print '\end{phicture}%', "\n";
+print '\end{phicture}}%', "\n";
 print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
@@ -1187,6 +1222,16 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{\sodgSaveTo}
+% \changes{0.8.0}{2022/11/20}{The output of the \texttt{sodg} environment can be redirected to a file.}
+% Then, we define the |\sodgSaveTo| command to instruct the |sodg| environment that the output should not be sent to the document but saved to the file instead:
+%    \begin{macrocode}
+\makeatletter
+\newcommand\sodgSaveTo[1]{\def\eolang@sodgSaveTo{#1}}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{sodg}
 % \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
 % Then, we create a new environment |sodg|, as suggested
@@ -1206,9 +1251,11 @@ print '\endinput';
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+    \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
   \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
+  \def\eolang@sodgSaveTo{\relax}%
 }\makeatother
 %    \end{macrocode}
 % \end{macro}
