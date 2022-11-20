@@ -488,8 +488,20 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       print ',phi-object';
     }
     print ']';
-    print ' (', $head, ')';
-    print ' {$' . vertex($head) . '$}';
+    print ' (' . $head . ')';
+    print ' {';
+    if (exists $opts{'tag'}) {
+      my $t = $opts{'tag'};
+      if (index($t, '$') == -1) {
+        $t = '$' . $t . '$';
+      } else {
+       $t = fmt($t);
+     }
+     print $t;
+    } else {
+      print '$' . vertex($head) . '$';
+    }
+    print '}';
     if (exists $opts{'box'}) {
       print ' node[phi-box] at (';
       print $head, '.south east) {';
