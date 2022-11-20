@@ -11,7 +11,7 @@ v0
 v1 xy:v0,1,1
 \end{sodg}
 \begin{tabular}{l}
-\input{a.tex} \\
+\vbox{\input{a.tex}} \\
 \end{tabular}
 
 \begin{sodg}

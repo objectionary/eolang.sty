@@ -313,7 +313,7 @@
 
 % \DescribeMacro{\phiSaveTo}
 % \DescribeMacro{\sodgSaveTo}
-% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro:
+% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro (don't forget the |\vbox|):
 % \docshotOptions{firstline=6,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
@@ -328,7 +328,7 @@
 % \begin{tabular}{ll}
 % \hline
 % Consider this object formation: &
-% \input{a.tex} \\
+% \vbox{\input{a.tex}} \\
 % \hline
 % \end{tabular}
 % \end{document}
@@ -727,7 +727,7 @@ $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\vbox{\begin{', $env, '}';
+  print '\begin{', $env, '}';
   if ($gathered) {
     print '\begin{gathered}';
   } else {
@@ -747,7 +747,7 @@ if ($env eq 'phiq') {
   } else {
     print '\end{split}';
   }
-  print '\end{', $env, '}}';
+  print '\end{', $env, '}';
 }
 print '\endinput';
 \end{VerbatimOut}
@@ -903,7 +903,7 @@ foreach my $t (split (/\n/g, $tex)) {
 }
 print '% ---';
 print ' (' . (0+@cmds) . " lines)\n";
-print '\vbox{\begin{phicture}', "\n";
+print '\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
@@ -1098,7 +1098,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   }
   print ";\n";
 }
-print '\end{phicture}}%', "\n";
+print '\end{phicture}%', "\n";
 print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";

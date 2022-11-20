@@ -21,7 +21,7 @@ y -> [[ \Delta ..> 4 ]].
 x -> y
 \end{phiquation*}
 \begin{tabular}{l}
-\input{a.tex} \\
+\vbox{\input{a.tex}} \\
 \end{tabular}
 
 \begin{phiquation*}
