@@ -72,6 +72,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -688,8 +689,19 @@ print '\endinput';
 \newcommand\phiSlot[1]{%
   \xrightarrow{\text{\sffamily\scshape #1}}}
 
+\makeatletter
+\newcommand{\phiOset}[2]{%
+  \mathrel{\mathop{#2}\limits^{
+    \vbox to 0ex{\kern-2\ex@
+    \hbox{$\scriptscriptstyle#1$}\vss}}}}
+\newcommand{\phiUset}[2]{%
+  \mathrel{\mathop{#2}\limits_{
+    \vbox to 0ex{\kern-6.3\ex@
+    \hbox{$\scriptscriptstyle#1$}\vss}}}}
+\makeatother
+
 \newcommand\phiMany[3]{%
-  \overunderset{\scriptscriptstyle #3}{\scriptscriptstyle #2}{#1}}
+  \phiOset{#3}{\phiUset{#2}{#1}}}
 
 \RequirePackage{trimclip}
 \RequirePackage{amsfonts}
