@@ -43,3 +43,21 @@ CBF4ACFA49E77AA32E3186.tex" ) > _eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3
 186-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex)
 iexec: The content of '_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex' was included into the document
+runsystem(( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
+in/echo -n $?% >iexec.ret)...executed
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/9242510F2DA221D8
+E1C0131E9B3D1DE3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/9242510F2D
+A221D8E1C0131E9B3D1DE3.tex" ) > _eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1
+DE3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex)
+iexec: The content of '_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex' was included into the document
+runsystem(( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
+in/echo -n $?% >iexec.ret)...executed
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/96C48C93AA69A4BE
+805C89DB7CB8E872.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/96C48C93AA
+69A4BE805C89DB7CB8E872.tex" ) > _eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E
+872-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+(_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex)
+iexec: The content of '_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex' was included into the document

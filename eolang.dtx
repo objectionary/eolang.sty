@@ -291,6 +291,25 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\phiOset}
+% \DescribeMacro{\phiUset}
+% If you want to put a text over an arrow or under it, use |\phiOset| and |\phiUset| respectively:
+% \docshotOptions{firstline=6,lastline=11}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{eolang}
+% \begin{document}\noindent
+% When the names of attributes and their
+% values don't matter, we use an arrow
+% with a star, for example:
+% \begin{phiquation*}
+% [[ \phiOset{*}{->} ]].
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % \DescribeMacro{\phiMany}
 % Sometimes you may need to simplify the way you describe an object (the typesetting is a bit off, but this is not because of us, but because of \href{https://tex.stackexchange.com/questions/664772}{this}):
 % \docshotOptions{firstline=6,lastline=14}
@@ -1371,12 +1390,29 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{\phiOset}
+% \changes{0.8.0}{2022/11/20}{New commands \texttt{\char`\\phiOset} and \texttt{\char`\\phiUset} help position text over and under an arrow.}
+% Then, we define two commands to position a text over and under an arrow, as suggested \href{https://tex.stackexchange.com/a/194805/1449}{here}:
+%    \begin{macrocode}
+\makeatletter
+\newcommand{\phiOset}[2]{%
+  \mathrel{\mathop{#2}\limits^{
+    \vbox to 0ex{\kern-2\ex@
+    \hbox{$\scriptscriptstyle#1$}\vss}}}}
+\newcommand{\phiUset}[2]{%
+  \mathrel{\mathop{#2}\limits_{
+    \vbox to 0ex{\kern-6.3\ex@
+    \hbox{$\scriptscriptstyle#1$}\vss}}}}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{\phiMany}
 % \changes{0.5.0}{2022/11/10}{New command \texttt{\char`\\phiMany} enables iterating over an arrow.}
 % Then, we define a command to an arrow with iterating indecies:
 %    \begin{macrocode}
 \newcommand\phiMany[3]{%
-  \overunderset{\scriptscriptstyle #3}{\scriptscriptstyle #2}{#1}}
+  \phiOset{#3}{\phiUset{#2}{#1}}}
 %    \end{macrocode}
 % \end{macro}
 
