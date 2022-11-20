@@ -170,7 +170,7 @@ $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 if ($env eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\vbox{\begin{', $env, '}';
+  print '\begin{', $env, '}';
   if ($gathered) {
     print '\begin{gathered}';
   } else {
@@ -190,7 +190,7 @@ if ($env eq 'phiq') {
   } else {
     print '\end{split}';
   }
-  print '\end{', $env, '}}';
+  print '\end{', $env, '}';
 }
 print '\endinput';
 \end{VerbatimOut}
@@ -305,7 +305,7 @@ foreach my $t (split (/\n/g, $tex)) {
 }
 print '% ---';
 print ' (' . (0+@cmds) . " lines)\n";
-print '\vbox{\begin{phicture}', "\n";
+print '\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
@@ -500,7 +500,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   }
   print ";\n";
 }
-print '\end{phicture}}%', "\n";
+print '\end{phicture}%', "\n";
 print "% --- after processing:\n%";
 foreach my $c (@cmds) {
   print '% ', $c, "\n";
