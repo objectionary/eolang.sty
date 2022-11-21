@@ -131,6 +131,8 @@ if ($macro ne 'phiq') {
   $tex =~ s/\\\\\n/\n\n/g;
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
+my @texts = ();
+$tex =~ s/\\text\{([^}{]+)\}/push(@texts, "$1"); '{TEXT' . (0+@texts - 1) . '}';/ge;
 $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
@@ -174,6 +176,7 @@ $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
+$tex =~ s/\{TEXT(\d+)\}/'\\text{' . @texts[$1] . '}';/ge;
 if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
