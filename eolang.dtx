@@ -251,7 +251,7 @@
 % \DescribeMacro{\phic}
 % \DescribeMacro{\xmir}
 % There is also a no-argument command |\eolang| to help you print the name of
-% \eolang{} language. It understands |anonymous| mode of \href{https://ctan.org/pkg/acmart}{acmart} and prints itself
+% \eolang{} language. It understands the |anonymous| mode of \href{https://ctan.org/pkg/acmart}{acmart} and prints itself
 % differently, to double-blind your paper. There is also |\phic| command to print
 % the name of \phic{}, also sensitive to |anonymous| mode. The macro |\xmir| prints "XMIR".
 % \docshotOptions{firstline=4,lastline=10}
@@ -1340,7 +1340,7 @@ print '\endinput';
 % \begin{macro}{\eolang}
 % Then, we define a simple supplementary command to help you print \eolang{}, the name of our language.
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\eolang} added to print the name of the language in both
-% normal and anonymous mode of \texttt{acmart}.}
+% normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\eolang{%
   \ifdefined\anon%
@@ -1355,7 +1355,7 @@ print '\endinput';
 % \begin{macro}{\phic}
 % Then, we define a simple supplementary command to help you print \phic{}, the name of our formal apparatus.
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of $\varphi$-calculus in both
-% normal and anonymous mode of \texttt{acmart}.}
+% normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \RequirePackage{hyperref}
 \newcommand\phic{%
@@ -1371,7 +1371,7 @@ print '\endinput';
 
 % \begin{macro}{\xmir}
 % Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
-% \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and anonymous mode of \texttt{acmart}.}
+% \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\xmir{%
   \ifdefined\anon%
