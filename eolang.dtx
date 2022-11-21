@@ -272,7 +272,7 @@
 % \DescribeMacro{\phiWave}
 % \DescribeMacro{\phiDotted}
 % A few simple commands are defined to help you render arrows.
-% It is recommende not to use them directly, but use |!->| instead. However, if you
+% It is recommended not to use them directly, but use |!->| instead. However, if you
 % want to use |\phiConst|, wrap it in |\mathrel| for better display:
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
@@ -399,7 +399,7 @@
 % \end{document}
 % \end{docshot}
 
-% This is how you can use |\dfrac| from |amsmath| for large inference rules,
+% This is how you can use |\dfrac| from \href{https://ctan.org/pkg/amsmath}{amsmath} for large inference rules,
 % with the help of |\begin{split}| and |\end{split}|:
 % \docshotOptions{firstline=6,lastline=15}
 % \begin{docshot}
@@ -421,7 +421,7 @@
 % \end{document}
 % \end{docshot}
 
-% The |phiquation| environment may be used together with \href{https://ctan.org/pkg/acmart}{acmart}:
+% The |phiquation| environment may be used together with the \href{https://ctan.org/pkg/acmart}{acmart} package:
 % \begin{docshot}
 % \documentclass{acmart}
 % \usepackage{eolang}
@@ -436,7 +436,7 @@
 % \end{document}
 % \end{docshot}
 
-% It's possible to use |\label| inside |phiquation| environment (pay attention to how you can disable our custom parsing of math formulas by means of curled brackets around the |4| number):
+% It's possible to use |\label| inside the |phiquation| environment (pay attention to how you can disable our custom parsing of math formulas by means of curled brackets around the ``|4|'' number):
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -510,7 +510,7 @@
 % \thispagestyle{empty}
 % \begin{document}
 % \begin{phiquation*}
-% [[ b -> ? ]], \\
+% [[ b -> ? ]],
 % [[ @ -> TRUE, \Delta ..> 42 ]], \\
 % \Delta = |43-09|.
 % \end{phiquation*}
@@ -1432,7 +1432,7 @@ print '\endinput';
 
 % \begin{macro}{\phiMany}
 % \changes{0.5.0}{2022/11/10}{New command \texttt{\char`\\phiMany} enables iterating over an arrow.}
-% Then, we define a command to an arrow with iterating indecies:
+% Then, we define a command for an arrow with iterating indecies:
 %    \begin{macrocode}
 \newcommand\phiMany[3]{%
   \phiOset{#3}{\phiUset{#2}{#1}}}
