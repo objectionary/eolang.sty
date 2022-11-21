@@ -16,8 +16,8 @@ and then use in the preamble:
 \begin{document}
 \begin{phiquation}
 x -> [
-  @ -> |foo|(5),
-  y -> [ \lambda -> M_1 ]].
+  @ -> foo(5),
+  y -> [ L> M_1 ]].
 \end{phiquation}
 \end{document}
 ```
