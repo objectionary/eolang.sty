@@ -455,7 +455,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can add comments to your equations, using the |&&| command:
+% You can add comments to your equations, using the |&&| command (pay attention, the text inside |\text{}| is not processed and treated like a plain text):
 % \docshotOptions{firstline=6,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -464,7 +464,7 @@
 % \pagestyle{empty}
 % \begin{document}
 % \begin{phiquation*}
-% [[ 0->x ]] && \text{Formation}
+% [[ 0->x ]] && \text{This is formation}
 % [[ 0->? ]] && \text{Abstraction}
 % x(D>42) && \text{Application}
 % \end{phiquation*}
@@ -719,6 +719,8 @@ if ($macro ne 'phiq') {
   $tex =~ s/\\\\\n/\n\n/g;
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
+my @texts = ();
+$tex =~ s/\\text\{([^}{]+)\}/push(@texts, "$1"); '{TEXT' . (0+@texts - 1) . '}';/ge;
 $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
@@ -762,6 +764,7 @@ $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
+$tex =~ s/\{TEXT(\d+)\}/'\\text{' . @texts[$1] . '}';/ge;
 if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
