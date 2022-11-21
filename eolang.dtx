@@ -685,6 +685,7 @@
 % \changes{0.7.0}{2022/11/17}{Text in quotes is automatically converted to \texttt{\char`\\texttt}.}
 % \changes{0.7.0}{2022/11/17}{New syntax sugar constructs added: \texttt{D>} and \texttt{L>} for \texttt{\char`\\Delta} and \texttt{\char`\\lambda} with a dotted arrow respectively.}
 % \changes{0.7.0}{2022/11/18}{New syntax sugar for $\Phi$, just using capital ``\texttt{Q}'' is enough.}
+% \changes{0.8.0}{2022/11/21}{Inside \texttt{phiquation} any text inside the \texttt{\char`\\text} macro is not processed.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -720,7 +721,26 @@ if ($macro ne 'phiq') {
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
 }
 my @texts = ();
-$tex =~ s/\\text\{([^}{]+)\}/push(@texts, "$1"); '{TEXT' . (0+@texts - 1) . '}';/ge;
+sub trep {
+  my ($s) = @_;
+  my $open = 0;
+  my $p = 0;
+  for (; $p < length($s); $p++) {
+    $c = substr($s, $p, 1);
+  	if ($c eq '}') {
+  		if ($open eq 0) {
+  	  	last;
+	  	}
+  	  $open--;
+  	}
+  	if ($c eq '{') {
+  	  $open++;
+  	}
+	}
+  push(@texts, substr($s, 0, $p));
+  return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
+}
+$tex =~ s/\\text\{(.+)/trep("$1")/ge;
 $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
