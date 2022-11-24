@@ -755,7 +755,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
   $tex =~ s/\n\n/\\\\&/g;
-  $tex =~ s/\n/\\\\[-4pt]&/g;
+  $tex =~ s/\n/\\phiEOL{}&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
   my @leads = $tex =~ /&[^\s]+\s(->|:=|=)/g;
@@ -798,7 +798,7 @@ if ($macro eq 'phiq') {
   }
 }
 if ($gathered and not($align)) {
-  $tex =~ s/(\\\\(?:\[[^\]]+\])?)&/\1/g;
+  $tex =~ s/(\\\\|\\phiEOL\{\})&/\1/g;
   $tex =~ s/^&//g;
 }
 print $tex;
@@ -1436,6 +1436,14 @@ print '\endinput';
 %    \begin{macrocode}
 \newcommand\phiMany[3]{%
   \phiOset{#3}{\phiUset{#2}{#1}}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiEOL}
+% \changes{0.9.0}{2022/11/24}{New command \texttt{\char`\\phiEOL} added, instead of \texttt{\char`\\\char`\\[-4pt]}.}
+% Then, we define a command for line breaks in formulas:
+%    \begin{macrocode}
+\newcommand\phiEOL{\\[-4pt]}
 %    \end{macrocode}
 % \end{macro}
 
