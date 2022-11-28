@@ -177,7 +177,8 @@ if ($macro ne 'phiq') {
   if (0+@leads == 0+@eols && 0+@eols > 0) {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
     $gathered = 0;
-  print '% The "gathered" is NOT used because NOT all ' . (0+@eols) . " lines are leads\n";
+  print '% The "gathered" is NOT used because all ' .
+    (0+@eols) . " lines are leads\n";
   }
 }
 $tex =~ s/\$/\\xi{}/g;
