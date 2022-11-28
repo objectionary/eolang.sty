@@ -765,6 +765,7 @@ if ($macro ne 'phiq') {
   if (0+@leads == 0+@eols && 0+@eols > 0) {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
     $gathered = 0;
+	  print '% The "gathered" is used because all ' . (0+@eols) . " lines are leads\n";
   }
 }
 $tex =~ s/\$/\\xi{}/g;
@@ -789,17 +790,18 @@ $tex =~ s/\{TEXT(\d+)\}/'\\text{' . @texts[$1] . '}';/ge;
 if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
-  print '\begin{', $macro, '}';
+  print '\begin{', $macro, "}\n";
   if (not($align)) {
 	  if ($gathered) {
 	    print '\begin{gathered}';
 	  } else {
 	    print '\begin{split}';
 	  }
+	  print "\n";
   }
 }
 if ($gathered and not($align)) {
-  $tex =~ s/(\\\\|\\phiEOL\{\})&/\1/g;
+	$tex =~ s/(\\\\|\\phiEOL\{\})&/\1/g;
   $tex =~ s/^&//g;
 }
 print $tex;
@@ -807,13 +809,14 @@ if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
   if (not($align)) {
+	  print "\n";
 	  if ($gathered) {
 	    print '\end{gathered}';
 	  } else {
 	    print '\end{split}';
 	  }
   }
-  print '\end{', $macro, '}';
+  print "\n" . '\end{' . $macro . '}';
 }
 print '\endinput';
 \end{VerbatimOut}
