@@ -688,29 +688,34 @@ print '\endinput';
 }\makeatother
 
 \newcommand\eolang{%
-  \ifdefined\anon%
-    \anon[XYZ]{{\sffamily EO}}%
-  \else%
-    {\sffamily EO}%
-  \fi%
+  \texorpdfstring{%
+    \ifdefined\anon%
+      \anon[XYZ]{{\sffamily EO}}%
+    \else%
+      {\sffamily EO}%
+    \fi%
+  }{EO}
 }
 
 \RequirePackage{hyperref}
 \newcommand\phic{%
+  \texorpdfstring{%
   \ifdefined\anon%
-    \anon[\texorpdfstring{$\alpha$}{a}-cal\-cu\-lus]
-      {\texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus}%
+    \anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}%
   \else%
-    \texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus%
+    $\varphi$-cal\-cu\-lus%
   \fi%
+  }{phi-calculus}%
 }
 
 \newcommand\xmir{%
+  \texorpdfstring{%
   \ifdefined\anon%
     \anon[XML$^+$]{XMIR}%
   \else%
     XMIR%
   \fi%
+}{XMIR}%
 }
 
 \newcommand\phiConst{%
