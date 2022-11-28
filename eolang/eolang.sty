@@ -252,6 +252,7 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/phiquation.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
+  \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-phi.pl"
     '#1'
@@ -677,6 +678,7 @@ print '\endinput';
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \catcode`\$=3 %
+  \message{Start parsing `sodg' at line no. \the\inputlineno^^J}
   \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
     perl "\eolang@tmpdir/eolang-sodg.pl"
     "\eolang@tmpdir/\jobname/\hash.tex"
