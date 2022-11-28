@@ -125,6 +125,7 @@ my $align = 0;
 if (index($tex, '&&') >= 0) {
   $macro =~ s/equation/align/g;
   $align = 1;
+  print '% The "align" is used because of && seen in the text' . "\n";
 }
 if ($macro ne 'phiq') {
   $tex =~ s/\\\\\n/\n\n/g;
@@ -170,13 +171,13 @@ if ($macro ne 'phiq') {
   $tex =~ s/\n/\\phiEOL{}&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
-  my @leads = $tex =~ /&[^\s\[\]]+\s(->|:=|=)/g;
+  my @leads = $tex =~ /&[^\[\s]+\s(->|:=|=)/g;
   my @eols = $tex =~ /&/g;
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
     $gathered = 0;
-  print '% The "gathered" is used because all ' . (0+@eols) . " lines are leads\n";
+  print '% The "gathered" is NOT used because NOT all ' . (0+@eols) . " lines are leads\n";
   }
 }
 $tex =~ s/\$/\\xi{}/g;
