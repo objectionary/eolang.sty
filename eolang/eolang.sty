@@ -170,7 +170,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/\n/\\phiEOL{}&/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
-  my @leads = $tex =~ /&[^\s]+\s(->|:=|=)/g;
+  my @leads = $tex =~ /&[^\s\[\]]+\s(->|:=|=)/g;
   my @eols = $tex =~ /&/g;
   $tex = '&' . $tex;
   if (0+@leads == 0+@eols && 0+@eols > 0) {
