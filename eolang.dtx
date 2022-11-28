@@ -766,11 +766,11 @@ if ($macro ne 'phiq') {
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
   $tex = '&' . $tex;
-  my $lead = '[^\s]+\s(->|:=|=)';
+  my $lead = '[^\s]+\s(?:->|:=|=)';
   my @leads = $tex =~ /&${lead}/g;
   my @eols = $tex =~ /&/g;
-  if (0+@leads == 0+@eols && 0+@eols > 0) {
-    $tex =~ s/&${lead}/\1&/g;
+  if (0+@leads == 0+@eols && 0+@eols > 1) {
+    $tex =~ s/&(${lead})/\1&/g;
     $gathered = 0;
 	  print '% The "gathered" is NOT used because all ' .
 	    (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
