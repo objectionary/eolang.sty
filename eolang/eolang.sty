@@ -127,9 +127,10 @@ if (index($tex, '&&') >= 0) {
   $align = 1;
 }
 if ($macro ne 'phiq') {
-  $tex =~ s/\s+\\\n\s*//g;
   $tex =~ s/\\\\\n/\n\n/g;
+  $tex =~ s/\\\n\s*//g;
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
+  $tex =~ s/\n{3,}/\n\n/g;
 }
 my @texts = ();
 sub trep {
@@ -686,10 +687,10 @@ print '\endinput';
 \RequirePackage{hyperref}
 \newcommand\phic{%
   \ifdefined\anon%
-    \anon[\texorpdfstring{$\alpha$}{a}-calculus]
-      {\texorpdfstring{$\varphi$}{phi}-calculus}%
+    \anon[\texorpdfstring{$\alpha$}{a}-cal\-cu\-lus]
+      {\texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus}%
   \else%
-    \texorpdfstring{$\varphi$}{phi}-calculus%
+    \texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus%
   \fi%
 }
 
