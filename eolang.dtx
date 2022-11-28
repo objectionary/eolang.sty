@@ -710,7 +710,11 @@ print '% ---', "\n";
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $gathered = (0 == $tex =~ /\n\s+/g);
+if ($gathered) {
+	print '% The "gathered" is used since all lines are left-aligned' . "\n";
+}
 my $align = 0;
+print '% The "align" is NOT used by default' . "\n";
 if (index($tex, '&&') >= 0) {
   $macro =~ s/equation/align/g;
   $align = 1;
@@ -757,7 +761,8 @@ if ($macro ne 'phiq') {
   $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
   $tex =~ s/\n\n/\\\\&/g;
-  $tex =~ s/\n/\\phiEOL{}&/g;
+  $tex =~ s/\n/\\phiEOL{}\n&/g;
+  $tex =~ s/\\\\/\\\\\n/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
   my @leads = $tex =~ /&[^\[\s]+\s(->|:=|=)/g;
@@ -767,7 +772,7 @@ if ($macro ne 'phiq') {
     $tex =~ s/&([^\s\}]+)\s/\1&/g;
     $gathered = 0;
 	  print '% The "gathered" is NOT used because all ' .
-	    (0+@eols) . " lines are leads\n";
+	    (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
   }
 }
 $tex =~ s/\$/\\xi{}/g;
@@ -803,8 +808,8 @@ if ($macro eq 'phiq') {
   }
 }
 if ($gathered and not($align)) {
-	$tex =~ s/(\\\\|\\phiEOL\{\})&/\1/g;
   $tex =~ s/^&//g;
+  $tex =~ s/\n&/\n/g;
 }
 print $tex;
 if ($macro eq 'phiq') {
