@@ -719,6 +719,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/\\\\\n/\n\n/g;
   $tex =~ s/\\\n\s*//g;
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
+  $tex =~ s/\n{3,}/\n\n/g;
 }
 my @texts = ();
 sub trep {
