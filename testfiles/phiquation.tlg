@@ -2,6 +2,7 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/56371098126692269B26CD95699CBC21.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
+Start parsing 'phi' at line no. 12
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/56371098126692269B26CD95699CBC21.tex" ) > _eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
@@ -11,11 +12,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: The content of '_eolang/phiquation/56371098126692269B26CD95699CBC21-post.tex' was included into the document
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
+Start parsing 'phi' at line no. 17
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex" ) > _eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex)
 iexec: The content of '_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
+Start parsing 'phi' at line no. 22
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex" > a.tex) > _eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex)
 iexec: The content of '_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex' was included into the document
@@ -111,6 +114,7 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 23--26
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
+Start parsing 'phi' at line no. 46
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex" > a.tex) > _eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex)
 iexec: The content of '_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex' was included into the document
