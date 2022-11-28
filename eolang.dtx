@@ -1355,11 +1355,13 @@ print '\endinput';
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\eolang{%
-  \ifdefined\anon%
-    \anon[XYZ]{{\sffamily EO}}%
-  \else%
-    {\sffamily EO}%
-  \fi%
+  \texorpdfstring{%
+    \ifdefined\anon%
+      \anon[XYZ]{{\sffamily EO}}%
+    \else%
+      {\sffamily EO}%
+    \fi%
+  }{EO}
 }
 %    \end{macrocode}
 % \end{macro}
@@ -1371,12 +1373,13 @@ print '\endinput';
 %    \begin{macrocode}
 \RequirePackage{hyperref}
 \newcommand\phic{%
-  \ifdefined\anon%
-    \anon[\texorpdfstring{$\alpha$}{a}-cal\-cu\-lus]
-      {\texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus}%
-  \else%
-    \texorpdfstring{$\varphi$}{phi}-cal\-cu\-lus%
-  \fi%
+  \texorpdfstring{%
+	  \ifdefined\anon%
+	    \anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}%
+	  \else%
+	    $\varphi$-cal\-cu\-lus%
+	  \fi%
+  }{phi-calculus}%
 }
 %    \end{macrocode}
 % \end{macro}
@@ -1386,11 +1389,13 @@ print '\endinput';
 % \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\xmir{%
-  \ifdefined\anon%
-    \anon[XML$^+$]{XMIR}%
-  \else%
-    XMIR%
-  \fi%
+  \texorpdfstring{%
+	  \ifdefined\anon%
+	    \anon[XML$^+$]{XMIR}%
+	  \else%
+	    XMIR%
+	  \fi%
+	}{XMIR}%
 }
 %    \end{macrocode}
 % \end{macro}
