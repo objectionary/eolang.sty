@@ -251,7 +251,7 @@
 % \DescribeMacro{\phic}
 % \DescribeMacro{\xmir}
 % There is also a no-argument command |\eolang| to help you print the name of
-% \eolang{} language. It understands the |anonymous| mode of \href{https://ctan.org/pkg/acmart}{acmart} and prints itself
+% \eolang{} language. It understands the |anonymous| package option and prints itself
 % differently, to double-blind your paper. There is also |\phic| command to print
 % the name of \phic{}, also sensitive to |anonymous| mode. The macro |\xmir| prints "XMIR".
 % \docshotOptions{firstline=4,lastline=10}
@@ -372,6 +372,18 @@
 %\fi
 \begin{verbatim}
 \usepackage[nodollar]{eolang}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+
+% \DescribeMacro{anonymous}
+% You may anonymize |\eolang|, |\XMIR|, and |\phic| commands by using |anonymous| package option:
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\usepackage[anonymou]{eolang}
 \end{verbatim}
 %\iffalse
 %</verb>
@@ -633,6 +645,7 @@
 % Then, we process package options:
 % \changes{0.1.0}{2022/10/26}{Parsing of package options introduced.}
 % \changes{0.6.0}{2022/11/14}{Package option \texttt{nocomments} added in order to enable comments suppression in temporary \texttt{.tex} files (may be pretty important for \texttt{.dtx} documents).}
+% \changes{0.8.0}{2022/11/29}{The \texttt{anonymous} package option added.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \RequirePackage{ifluatex}
@@ -642,6 +655,7 @@
   tmpdir/.store in=\eolang@tmpdir,
   tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
   nocomments/.store in=\eolang@nocomments,
+  anonymous/.store in=\eolang@anonymous,
   tmpdir
 }
 \ProcessPgfOptions{/eolang}
@@ -1351,20 +1365,29 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{\eolang@anon}
+% Then, we define a supplementary command to help us anonymize some content.
+% \changes{0.9.0}{2022/11/29}{New command \texttt{\char`\\eolang@anon} added.}
+%    \begin{macrocode}
+\makeatletter
+\NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
+  \ifdefined\eolang@anonymous%
+	  \textcolor{orange}{#1}%
+  \else%
+    #2%
+  \fi%
+}\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{\eolang}
 % Then, we define a simple supplementary command to help you print \eolang{}, the name of our language.
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\eolang} added to print the name of the language in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\newcommand\eolang{%
-  \texorpdfstring{%
-    \ifdefined\anon%
-      \anon[XYZ]{{\sffamily EO}}%
-    \else%
-      {\sffamily EO}%
-    \fi%
-  }{EO}%
-}
+\makeatletter\newcommand\eolang{%
+  \eolang@anon[XYZ]{{\sffamily EO}}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -1374,15 +1397,9 @@ print '\endinput';
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \RequirePackage{hyperref}
-\newcommand\phic{%
-  \texorpdfstring{%
-	  \ifdefined\anon%
-	    \anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}%
-	  \else%
-	    $\varphi$-cal\-cu\-lus%
-	  \fi%
-  }{phi-calculus}%
-}
+\makeatletter\newcommand\phic{%
+  \eolang@anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
@@ -1390,15 +1407,9 @@ print '\endinput';
 % Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
 % \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\newcommand\xmir{%
-  \texorpdfstring{%
-	  \ifdefined\anon%
-	    \anon[XML$^+$]{XMIR}%
-	  \else%
-	    XMIR%
-	  \fi%
-	}{XMIR}%
-}
+\makeatletter\newcommand\xmir{%
+  \eolang@anon[XML$^+$]{XMIR}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
