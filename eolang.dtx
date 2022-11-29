@@ -1383,6 +1383,13 @@ print '\endinput';
 % Then, we define a supplementary command to help us anonymize some content.
 % \changes{0.9.0}{2022/11/29}{New command \texttt{\char`\\eolang@anon} added.}
 %    \begin{macrocode}
+\RequirePackage{hyperref}
+\pdfstringdefDisableCommands{
+  \def\({}%
+  \def\){}%
+  \def\alpha{alpha}%
+  \def\varphi{phi}%
+}
 \makeatletter
 \NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
@@ -1410,9 +1417,8 @@ print '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of $\varphi$-calculus in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\RequirePackage{hyperref}
 \makeatletter\newcommand\phic{%
-  \eolang@anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}}
+  \eolang@anon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
