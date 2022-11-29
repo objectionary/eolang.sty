@@ -73,6 +73,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -87,6 +88,7 @@
   tmpdir/.store in=\eolang@tmpdir,
   tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
   nocomments/.store in=\eolang@nocomments,
+  anonymous/.store in=\eolang@anonymous,
   tmpdir
 }
 \ProcessPgfOptions{/eolang}
@@ -689,36 +691,27 @@ print '\endinput';
   \def\eolang@sodgSaveTo{\relax}%
 }\makeatother
 
-\newcommand\eolang{%
-  \texorpdfstring{%
-    \ifdefined\anon%
-      \anon[XYZ]{{\sffamily EO}}%
-    \else%
-      {\sffamily EO}%
-    \fi%
-  }{EO}%
-}
+\makeatletter
+\NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
+  \ifdefined\eolang@anonymous%
+  \textcolor{orange}{#1}%
+  \else%
+    #2%
+  \fi%
+}\makeatother
+
+\makeatletter\newcommand\eolang{%
+  \eolang@anon[XYZ]{{\sffamily EO}}}
+\makeatother
 
 \RequirePackage{hyperref}
-\newcommand\phic{%
-  \texorpdfstring{%
-  \ifdefined\anon%
-    \anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}%
-  \else%
-    $\varphi$-cal\-cu\-lus%
-  \fi%
-  }{phi-calculus}%
-}
+\makeatletter\newcommand\phic{%
+  \eolang@anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}}
+\makeatother
 
-\newcommand\xmir{%
-  \texorpdfstring{%
-  \ifdefined\anon%
-    \anon[XML$^+$]{XMIR}%
-  \else%
-    XMIR%
-  \fi%
-}{XMIR}%
-}
+\makeatletter\newcommand\xmir{%
+  \eolang@anon[XML$^+$]{XMIR}}
+\makeatother
 
 \newcommand\phiConst{%
   \mathrel{\hspace{.15em}}%
