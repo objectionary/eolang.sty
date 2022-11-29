@@ -267,6 +267,20 @@
 % its XML-based presentation.
 % \end{document}
 % \end{docshot}
+% Without the |anonymous| option there will be no orange color:
+% \docshotOptions{firstline=3,lastline=10}
+% \begin{docshot}
+% \documentclass[anonymous]{acmart}
+% \thispagestyle{empty}
+% \usepackage{eolang}
+% \begin{document}
+% In our research we use \eolang{}, \\
+% an experimental object-oriented \\
+% dataflow language, \phic{}, as its \\
+% formal foundation, and \xmir{} --- \\
+% its XML-based presentation.
+% \end{document}
+% \end{docshot}
 
 % \DescribeMacro{\phiConst}
 % \DescribeMacro{\phiWave}
@@ -658,7 +672,7 @@
   anonymous/.store in=\eolang@anonymous,
   tmpdir
 }
-\ProcessPgfOptions{/eolang}
+\ProcessPgfPackageOptions{/eolang}
 %    \end{macrocode}
 
 % Then, we make a directory where all temporary files will be kept:
