@@ -691,6 +691,13 @@ print '\endinput';
   \def\eolang@sodgSaveTo{\relax}%
 }\makeatother
 
+\RequirePackage{hyperref}
+\pdfstringdefDisableCommands{
+  \def\({}%
+  \def\){}%
+  \def\alpha{alpha}%
+  \def\varphi{phi}%
+}
 \makeatletter
 \NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
@@ -704,9 +711,8 @@ print '\endinput';
   \eolang@anon[XYZ]{{\sffamily EO}}}
 \makeatother
 
-\RequirePackage{hyperref}
 \makeatletter\newcommand\phic{%
-  \eolang@anon[$\alpha$-cal\-cu\-lus]{$\varphi$-cal\-cu\-lus}}
+  \eolang@anon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
 \makeatother
 
 \makeatletter\newcommand\xmir{%
