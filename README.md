@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/objectionary/eolang.sty/blob/master/LICENSE.txt)
 
 This LaTeX package helps you write 𝜑-calculus formulas and
-[SODG](https://github.com/objectionary/sodg) graphs
+draw [SODG](https://github.com/objectionary/sodg) graphs
 for [EO](https://www.eolang.org) programming language.
 
 First, [install it](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages)

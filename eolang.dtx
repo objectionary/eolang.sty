@@ -365,6 +365,9 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\eoAnon}
+% You may want to hide some of the content with the help of the |anonymous| package option. The command |\eoAnon| may help you with this. It has two parameters: one mandatory and one optional. The mandatory one is the content you want to show and the optional one is the substituion we will render if the |anonymous| package option is set.
+
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
@@ -392,7 +395,7 @@
 %\fi
 
 % \DescribeMacro{anonymous}
-% You may anonymize |\eolang|, |\XMIR|, and |\phic| commands by using |anonymous| package option:
+% You may anonymize |\eolang|, |\XMIR|, and |\phic| commands by using |anonymous| package option (they all use the |\eoAnon| command mentioned earlier):
 %\iffalse
 %<*verb>
 %\fi
@@ -1379,9 +1382,9 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{\eolang@anon}
+% \begin{macro}{\eoAnon}
 % Then, we define a supplementary command to help us anonymize some content.
-% \changes{0.9.0}{2022/11/29}{New command \texttt{\char`\\eolang@anon} added.}
+% \changes{0.9.0}{2022/11/29}{New command \texttt{\char`\\eoAnon} added.}
 %    \begin{macrocode}
 \RequirePackage{hyperref}
 \pdfstringdefDisableCommands{
@@ -1391,7 +1394,7 @@ print '\endinput';
   \def\varphi{phi}%
 }
 \makeatletter
-\NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
+\NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
 	  \textcolor{orange}{#1}%
   \else%
@@ -1406,9 +1409,8 @@ print '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\eolang} added to print the name of the language in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\makeatletter\newcommand\eolang{%
-  \eolang@anon[XYZ]{{\sffamily EO}}}
-\makeatother
+\newcommand\eolang{%
+  \eoAnon[XYZ]{{\sffamily EO}}}
 %    \end{macrocode}
 % \end{macro}
 
@@ -1417,9 +1419,8 @@ print '\endinput';
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of $\varphi$-calculus in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\makeatletter\newcommand\phic{%
-  \eolang@anon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
-\makeatother
+\newcommand\phic{%
+  \eoAnon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
 %    \end{macrocode}
 % \end{macro}
 
@@ -1427,9 +1428,8 @@ print '\endinput';
 % Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
 % \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
-\makeatletter\newcommand\xmir{%
-  \eolang@anon[XML$^+$]{XMIR}}
-\makeatother
+\newcommand\xmir{%
+  \eoAnon[XML\(^+\)]{XMIR}}
 %    \end{macrocode}
 % \end{macro}
 
