@@ -74,6 +74,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -699,7 +700,7 @@ print '\endinput';
   \def\varphi{phi}%
 }
 \makeatletter
-\NewExpandableDocumentCommand{\eolang@anon}{O{ANONYMIZED}m}{%
+\NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
   \textcolor{orange}{#1}%
   \else%
@@ -707,17 +708,14 @@ print '\endinput';
   \fi%
 }\makeatother
 
-\makeatletter\newcommand\eolang{%
-  \eolang@anon[XYZ]{{\sffamily EO}}}
-\makeatother
+\newcommand\eolang{%
+  \eoAnon[XYZ]{{\sffamily EO}}}
 
-\makeatletter\newcommand\phic{%
-  \eolang@anon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
-\makeatother
+\newcommand\phic{%
+  \eoAnon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
 
-\makeatletter\newcommand\xmir{%
-  \eolang@anon[XML$^+$]{XMIR}}
-\makeatother
+\newcommand\xmir{%
+  \eoAnon[XML\(^+\)]{XMIR}}
 
 \newcommand\phiConst{%
   \mathrel{\hspace{.15em}}%
