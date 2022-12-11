@@ -512,7 +512,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     }
     if (exists $opts{'data'}) {
       print ',phi-data';
-      if (not $opts{'data'} eq '') {
+      if ($opts{'data'} ne '') {
         my $d = $opts{'data'};
         if (index($d, '|') == -1) {
           $d = '$\Delta\phiDotted\text{' .
@@ -524,7 +524,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       }
     } elsif (exists $opts{'atom'}) {
       print ',phi-atom';
-      if (not $opts{'atom'} eq '') {
+      if ($opts{'atom'} ne '') {
         my $a = $opts{'atom'};
         if (index($a, '$') == -1) {
           $a = '$\lambda\phiDotted{}' . fmt($a) . '$';
