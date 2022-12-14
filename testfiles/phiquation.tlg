@@ -16,71 +16,12 @@ Start parsing 'phi' at line no. 17
 runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex" ) > _eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex)
 iexec: The content of '_eolang/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
-runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
+runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/0A0D061DED49F51B3F2BEC5FA8C4E8F4.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
 executed.
-Start parsing 'phi' at line no. 22
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex" > a.tex) > _eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex)
-iexec: The content of '_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex' was included into the document
-(a.tex)
-Overfull \hbox (27.00002pt too wide) in paragraph at lines 23--26
-[][] 
-\hbox(13.30002+8.30002)x345.0
-.\hbox(0.0+0.0)x15.0
-.\hbox(13.30002+8.30002)x357.00002
-..\mathon
-..\vbox(13.30002+8.30002)x357.00002
-...\hbox(18.0+3.60004)x357.00002
-....\glue(\tabskip) 0.0
-....\hbox(18.0+3.60004)x357.00002
-.....\rule(8.39996+3.60004)x0.0
-.....\glue 6.0
-.....\glue 0.00002
-.....\vbox(18.0+0.0)x345.0
-......\hbox(0.0+0.0)x345.0, glue set 330.0fil
-.......\hbox(0.0+0.0)x15.0
-.......\penalty 10000
-.......\glue(\parfillskip) 0.0 plus 1.0fil
-.......\glue(\rightskip) 0.0
-......\penalty 10000
-......\glue(\abovedisplayshortskip) 0.0 plus 3.0
-......\glue(\lineskip) 0.0
-......\hbox(8.5+3.5)x26.5323, shifted 159.23386, display
-.......\hbox(0.0+0.0)x0.0
-.......\vbox(8.5+3.5)x26.5323
-........\hbox(8.39996+3.60004)x26.5323
-.........\glue(\tabskip) 0.0
-.........\hbox(8.39996+3.60004)x26.5323
-..........\glue 0.0 plus 1.0fil
-..........\hbox(8.39996+3.60004)x0.0
-...........\vbox(8.39996+3.60004)x0.0
-............\kern 0.0
-............\hbox(8.39996+3.60004)x0.0
-.............\rule(8.39996+3.60004)x0.0
-..........\mathon
-..........\OML/cmm/m/it/10 x
-..........\glue(\thickmuskip) 2.77771 plus 2.77771
-..........\hbox(3.66875+0.0)x10.00002
-...........\OMS/cmsy/m/n/10 7
-...........\OMS/cmsy/m/n/10 !
-..........\glue(\thickmuskip) 2.77771 plus 2.77771
-..........\OML/cmm/m/it/10 y
-..........\kern0.35878
-..........\mathoff
-..........\glue 0.0 plus 1.0fil
-.........\glue(\tabskip) 0.0
-......\penalty 0
-......\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.....\glue 0.0 plus 1.0fil
-.....\glue 6.0
-....\glue(\tabskip) 0.0
-..\mathoff
-.\penalty 10000
-.\glue(\parfillskip) 0.0 plus 1.0fil
-.\glue(\rightskip) 0.0
-runsystem((cp "_eolang/phiquation/phiquation.tex" "_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...
-executed.
-Start parsing 'phi' at line no. 46
-runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex" > a.tex) > _eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex)
-iexec: The content of '_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex' was included into the document
+Start parsing 'phi' at line no. 21
+runsystem(( perl "_eolang/eolang-phi.pl" 'equation*' "_eolang/phiquation/0A0D061DED49F51B3F2BEC5FA8C4E8F4.tex" ) > _eolang/phiquation/0A0D061DED49F51B3F2BEC5FA8C4E8F4-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/phiquation/0A0D061DED49F51B3F2BEC5FA8C4E8F4-post.tex
+! Missing $ inserted.
+<inserted text> 
+                $
+l. ...

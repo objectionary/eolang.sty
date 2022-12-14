@@ -16,6 +16,10 @@ x -> [[ a -> ?]] \\
 y -> [[ \Delta ..> 4 ]].
 \end{phiquation*}
 
+\begin{phiquation*}
+x -> [[ a -> ?]] \\
+\end{phiquation*}
+
 \phiSaveTo{a.tex}
 \begin{phiquation*}
 x -> y
