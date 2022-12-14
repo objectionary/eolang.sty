@@ -6,6 +6,11 @@
 \START
 
 \begin{phiquation*}
+x -> ? \\
+y -> ? \\
+\end{phiquation*}
+
+\begin{phiquation*}
 [[ a -> x]]
 [[ b -> ?]], \\
 \Delta = 43.6
@@ -14,10 +19,6 @@
 \begin{phiquation*}
 x -> [[ a -> ?]] \\
 y -> [[ \Delta ..> 4 ]].
-\end{phiquation*}
-
-\begin{phiquation*}
-x -> [[ a -> ?]] \\
 \end{phiquation*}
 
 \phiSaveTo{a.tex}

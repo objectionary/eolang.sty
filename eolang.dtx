@@ -793,6 +793,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
   $tex =~ s/\n\n/\\\\&/g;
   $tex =~ s/\n/\\phiEOL{}\n&/g;
+  $tex =~ s/\\\\$//g;
   $tex =~ s/\\\\/\\\\\n/g;
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
