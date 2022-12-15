@@ -450,6 +450,23 @@
 % \end{document}
 % \end{docshot}
 
+% You can use |matrix| environment too, in order to group a few lines:
+% \docshotOptions{firstline=5,lastline=11}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% x -> \left\{\begin{matrix} \
+% ? \\
+% [[ L> ^ \times $.\alpha_0 ]] \\
+% [[ D> 42 ]] \
+% \end{matrix}\right\}
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % The |phiquation| environment may be used together with the \href{https://ctan.org/pkg/acmart}{acmart} package:
 % \begin{docshot}
 % \documentclass{acmart}
@@ -807,6 +824,13 @@ if ($macro ne 'phiq') {
 	  print '% The "gathered" is NOT used because all ' .
 	    (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
   }
+}
+if ($macro ne 'phiq') {
+	sub strip_tabs {
+		$tex = shift; $tex =~ s/&//g;
+	  return '\begin{matrix}' . $tex . '\end{matrix}';
+  }
+	$tex =~ s/\\begin\{matrix\}(.+)\\end\{matrix\}/strip_tabs($1)/sge;
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
