@@ -194,10 +194,11 @@ if ($macro ne 'phiq') {
 }
 if ($macro ne 'phiq') {
 sub strip_tabs {
-$tex = shift; $tex =~ s/&//g;
-  return '\begin{matrix}' . $tex . '\end{matrix}';
+    my ($env, $tex) = @_;
+$tex =~ s/&//g;
+  return "\\begin{$env}" . $tex . "\\end{$env}";
   }
-$tex =~ s/\\begin\{matrix\}(.+)\\end\{matrix\}/strip_tabs($1)/sge;
+$tex =~ s/\\begin\{(matrix\*?)\}(.+)\\end\{matrix\*?\}/strip_tabs($1, $2)/sge;
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
