@@ -1,6 +1,12 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 runsystem(( /bin/echo 'x->y') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo 'x->y') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+x->y
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (5 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex
@@ -10,11 +16,22 @@ LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 iexec: The content of '_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex' was included into the document
 runsystem(( /bin/echo '') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (1 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/68B329DA9893E34099C7D8AD5CB9C940.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex)
 iexec: The content of '_eolang/phiq/68B329DA9893E34099C7D8AD5CB9C940-post.tex' was included into the document
 runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+x := [ \alpha _0 -rqst> ? ]
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (28 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/9D7FCBD26A9D15A9B351FB0F98E53596.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex
@@ -23,41 +40,89 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 )
 iexec: The content of '_eolang/phiq/9D7FCBD26A9D15A9B351FB0F98E53596-post.tex' was included into the document
 runsystem(( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+& -> ^.$.|alpha|(42)
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (21 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex)
 iexec: The content of '_eolang/phiq/C7ADAC4E7EC7A974B8789672D058DDFB-post.tex' was included into the document
 runsystem(( /bin/echo '0/g->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '0/g->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+0/g->x
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (7 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex)
 iexec: The content of '_eolang/phiq/A142672D39974D7C4A4E43F2B731E3D8-post.tex' was included into the document
 runsystem(( /bin/echo '0/|foo|->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '0/|foo|->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+0/|foo|->x
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (11 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex)
 iexec: The content of '_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex' was included into the document
 runsystem(( /bin/echo '<< a, b >>') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '<< a, b >>') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+<< a, b >>
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (11 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/7672363DD864D4291F42C67D49B3862E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/7672363DD864D4291F42C67D49B3862E.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex)
 iexec: The content of '_eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex' was included into the document
 runsystem(( /bin/echo 'x.save') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo 'x.save') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+x.save
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (7 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/D56A5C9C617DA191E9EB5BE66282D29B.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/D56A5C9C617DA191E9EB5BE66282D29B.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/D56A5C9C617DA191E9EB5BE66282D29B-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/D56A5C9C617DA191E9EB5BE66282D29B-post.tex)
 iexec: The content of '_eolang/phiq/D56A5C9C617DA191E9EB5BE66282D29B-post.tex' was included into the document
 runsystem(( /bin/echo '[[x -> Q.a.^]]') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '[[x -> Q.a.^]]') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+[[x -> Q.a.^]]
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (15 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex)
 iexec: The content of '_eolang/phiq/6AEF13C32ED7A13D254A2FBB3F5D50AD-post.tex' was included into the document
 runsystem(( /bin/echo 'x->y') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo 'x->y') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+x->y
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (5 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex)
 iexec: The content of '_eolang/phiq/C952EF9BB7253E7BD6682AFC957AAB28-post.tex' was included into the document
 runsystem(( /bin/echo 'y->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo 'y->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/phiq/phiq.tex':
+y->x
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (5 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/AE2F64FEFF2F2632625DEE2D1A3E288A-post.tex)

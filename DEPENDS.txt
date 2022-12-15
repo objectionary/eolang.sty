@@ -10,3 +10,4 @@ hard ifluatex
 hard ifxetex
 hard adjustbox
 hard hyperref
+hard xstring

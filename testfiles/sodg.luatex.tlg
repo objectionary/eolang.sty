@@ -14,6 +14,12 @@ LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 runsystem(( /bin/echo '\Phi ') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?
 % >iexec.ret)...executed
+iexec: [( /bin/echo '\Phi ') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang-lua/sodg/phiq.tex':
+\Phi
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex' 
+iexec: Due to 'trace' package option, the files '_eolang-lua/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/6C4EDB4E3A5FFAE97CC2
 2668F48494FB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/sodg/6C4EDB4E3A5F
@@ -23,6 +29,12 @@ post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 iexec: The content of '_eolang-lua/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-post.tex' was included into the document
 runsystem(( /bin/echo 'v_1') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% 
 >iexec.ret)...executed
+iexec: [( /bin/echo 'v_1') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang-lua/sodg/phiq.tex':
+v_1
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex' 
+iexec: Due to 'trace' package option, the files '_eolang-lua/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/21ADDB980875A5E20A6C
 B54069634F52.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/sodg/21ADDB980875

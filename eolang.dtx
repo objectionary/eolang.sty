@@ -966,9 +966,11 @@ print '\endinput';
 % \changes{0.0.2}{2022/10/21}{Parsing of additional symbols enabled.}
 % Then, we define |\phiq| command:
 %    \begin{macrocode}
+\RequirePackage{xstring}
 \makeatletter\newcommand\phiq[1]{%
-  \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
-    /bin/echo '\detokenize{#1}'}%
+	\StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
+  \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
+    /bin/echo '\clean'}%
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
