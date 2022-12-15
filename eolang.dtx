@@ -471,6 +471,22 @@
 % \end{document}
 % \end{docshot}
 
+% The |cases| environment works too:
+% \docshotOptions{firstline=5,lastline=11}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{eolang}
+% \pagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% \beta := \left\{\begin{cases} \
+% << a, b >> \\
+% << c, d>> \
+% \end{cases}\right.
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % The |phiquation| environment may be used together with the \href{https://ctan.org/pkg/acmart}{acmart} package:
 % \begin{docshot}
 % \documentclass{acmart}
@@ -837,7 +853,9 @@ if ($macro ne 'phiq') {
 		$tex =~ s/&//g;
 	  return "\\begin{$env}" . $tex . "\\end{$env}";
   }
-	$tex =~ s/\\begin\{(matrix\*?)\}(.+)\\end\{matrix\*?\}/strip_tabs($1, $2)/sge;
+  foreach my $e (('matrix', 'cases')) {
+		$tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
+	}
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
