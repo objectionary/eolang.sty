@@ -215,6 +215,8 @@ $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
+$tex =~ s/<</\\langle/g;
+$tex =~ s/>>/\\rangle/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 $tex =~ s/\{TEXT(\d+)\}/'\\text{' . @texts[$1] . '}';/ge;
