@@ -738,6 +738,7 @@
 % \changes{0.7.0}{2022/11/17}{New syntax sugar constructs added: \texttt{D>} and \texttt{L>} for \texttt{\char`\\Delta} and \texttt{\char`\\lambda} with a dotted arrow respectively.}
 % \changes{0.7.0}{2022/11/18}{New syntax sugar for $\Phi$, just using capital ``\texttt{Q}'' is enough.}
 % \changes{0.8.0}{2022/11/21}{Inside \texttt{phiquation} any text inside the \texttt{\char`\\text} macro is not processed.}
+% \changes{0.9.0}{2022/12/15}{Proper handling of the \texttt{matrix} environment.}
 % \changes{0.9.0}{2022/12/15}{Parsing of \texttt{<<} and \texttt{>>} implemented.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
@@ -832,10 +833,11 @@ if ($macro ne 'phiq') {
 }
 if ($macro ne 'phiq') {
 	sub strip_tabs {
-		$tex = shift; $tex =~ s/&//g;
-	  return '\begin{matrix}' . $tex . '\end{matrix}';
+ 	 	my ($env, $tex) = @_;
+		$tex =~ s/&//g;
+	  return "\\begin{$env}" . $tex . "\\end{$env}";
   }
-	$tex =~ s/\\begin\{matrix\}(.+)\\end\{matrix\}/strip_tabs($1)/sge;
+	$tex =~ s/\\begin\{(matrix\*?)\}(.+)\\end\{matrix\*?\}/strip_tabs($1, $2)/sge;
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
