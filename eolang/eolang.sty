@@ -75,6 +75,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -190,6 +191,13 @@ if ($macro ne 'phiq') {
   print '% The "gathered" is NOT used because all ' .
     (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
   }
+}
+if ($macro ne 'phiq') {
+sub strip_tabs {
+$tex = shift; $tex =~ s/&//g;
+  return '\begin{matrix}' . $tex . '\end{matrix}';
+  }
+$tex =~ s/\\begin\{matrix\}(.+)\\end\{matrix\}/strip_tabs($1)/sge;
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
