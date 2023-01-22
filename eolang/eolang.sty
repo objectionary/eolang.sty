@@ -183,7 +183,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
   $tex = '&' . $tex;
-  my $lead = '[^\s]+\s(?:->|:=|=)';
+  my $lead = '[^\s]+\s(?:->|:=|=|==)\s';
   my @leads = $tex =~ /&${lead}/g;
   my @eols = $tex =~ /&/g;
   if (0+@leads == 0+@eols && 0+@eols > 1) {
@@ -218,6 +218,7 @@ $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/==/\\mathrel{\\equiv}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
