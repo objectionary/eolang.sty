@@ -72,17 +72,17 @@ runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A1
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex)
 iexec: The content of '_eolang/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex' was included into the document
-runsystem(( /bin/echo '<< a, b >>') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '<< a, b >>') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( /bin/echo '<< a, b >> == 7') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( /bin/echo '<< a, b >> == 7') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang/phiq/phiq.tex':
-<< a, b >>
+<< a, b >> == 7
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (11 bytes)
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/phiq/phiq.tex' (16 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/7672363DD864D4291F42C67D49B3862E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/7672363DD864D4291F42C67D49B3862E.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex)
-iexec: The content of '_eolang/phiq/7672363DD864D4291F42C67D49B3862E-post.tex' was included into the document
+runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/C006958E27555CD2F5A1A392A81C0162.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/C006958E27555CD2F5A1A392A81C0162.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang/phiq/C006958E27555CD2F5A1A392A81C0162-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/phiq/C006958E27555CD2F5A1A392A81C0162-post.tex)
+iexec: The content of '_eolang/phiq/C006958E27555CD2F5A1A392A81C0162-post.tex' was included into the document
 runsystem(( /bin/echo 'x.save') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 iexec: [( /bin/echo 'x.save') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang/phiq/phiq.tex':

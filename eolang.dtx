@@ -143,6 +143,8 @@
 %     (|\llbracket|),
 %   \item ``|]]|'' maps to ``$\rrbracket$''
 %     (|\rrbracket|),
+%   \item ``|==|'' maps to ``$\equiv$''
+%     (|\equiv|),
 %   \item ``\texttt{\textbar{abc}\textbar}'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
 % \end{itemize}
@@ -553,7 +555,7 @@
 
 % The |phiquation| environment will automatically align formulas by the first
 % arrow, if there are only left-aligned formulas:
-% \docshotOptions{firstline=5,lastline=10}
+% \docshotOptions{firstline=5,lastline=11}
 % \begin{docshot}
 % \documentclass{acmart}
 % \usepackage{eolang}
@@ -563,7 +565,8 @@
 % x(\pi) -> [[\lambda ..> f_1]], \\
 % x(a,b,c) -> [[ \alpha_0 -> ?, \
 %   @ -> |hello|($), x -> |FALSE| ]], \\
-% \Delta = |43-09|.
+% \Delta = |43-09|,
+% x(y) == x(0-> y).
 % \end{phiquation*}
 % \end{document}
 % \end{docshot}
@@ -756,6 +759,7 @@
 % \changes{0.8.0}{2022/11/21}{Inside \texttt{phiquation} any text inside the \texttt{\char`\\text} macro is not processed.}
 % \changes{0.9.0}{2022/12/15}{Proper handling of the \texttt{matrix} environment.}
 % \changes{0.9.0}{2022/12/15}{Parsing of \texttt{<<} and \texttt{>>} implemented.}
+% \changes{0.10.0}{2023/01/22}{Parsing of \texttt{==} into \texttt{\char`\\equiv} implemented.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -837,7 +841,7 @@ if ($macro ne 'phiq') {
   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
   $tex =~ s/\s{2}/ \\quad{}/g;
   $tex = '&' . $tex;
-  my $lead = '[^\s]+\s(?:->|:=|=)';
+  my $lead = '[^\s]+\s(?:->|:=|=|==)\s';
   my @leads = $tex =~ /&${lead}/g;
   my @eols = $tex =~ /&/g;
   if (0+@leads == 0+@eols && 0+@eols > 1) {
@@ -872,6 +876,7 @@ $tex =~ s/!->/\\mathrel{\\phiConst}/g;
 $tex =~ s/->/\\mathrel{\\mapsto}/g;
 $tex =~ s/~>/\\mathrel{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/==/\\mathrel{\\equiv}/g;
 $tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;

@@ -102,22 +102,22 @@ B85B2B5ABD731DAC30B8A12998-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
 d
 (_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex)
 iexec: The content of '_eolang-lua/phiq/08B23BB85B2B5ABD731DAC30B8A12998-post.tex' was included into the document
-runsystem(( /bin/echo '<< a, b >>') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo 
--n $?% >iexec.ret)...executed
-iexec: [( /bin/echo '<< a, b >>') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( /bin/echo '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/
+echo -n $?% >iexec.ret)...executed
+iexec: [( /bin/echo '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
-<< a, b >>
+<< a, b >> == 7
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/7672363DD864D4291F42
-C67D49B3862E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/7672363DD864
-D4291F42C67D49B3862E.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/767236
-3DD864D4291F42C67D49B3862E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
+runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/C006958E27555CD2F5A1
+A392A81C0162.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/phiq/C006958E2755
+5CD2F5A1A392A81C0162.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/phiq/C00695
+8E27555CD2F5A1A392A81C0162-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...execute
 d
-(_eolang-lua/phiq/7672363DD864D4291F42C67D49B3862E-post.tex)
-iexec: The content of '_eolang-lua/phiq/7672363DD864D4291F42C67D49B3862E-post.tex' was included into the document
+(_eolang-lua/phiq/C006958E27555CD2F5A1A392A81C0162-post.tex)
+iexec: The content of '_eolang-lua/phiq/C006958E27555CD2F5A1A392A81C0162-post.tex' was included into the document
 runsystem(( /bin/echo 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $
 ?% >iexec.ret)...executed
 iexec: [( /bin/echo 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]

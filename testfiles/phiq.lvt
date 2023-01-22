@@ -12,7 +12,7 @@ $x->y$
 \phiq{& -> ^.$.|alpha|(42)}
 \phiq{0/g->x}
 \phiq{0/|foo|->x}
-\phiq{<< a, b >>}
+\phiq{<< a, b >> == 7}
 \phiq{x.save}
 \phiq{[[x -> Q.a.^]]}
 
