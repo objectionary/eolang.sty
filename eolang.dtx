@@ -862,8 +862,8 @@ if ($macro ne 'phiq') {
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^/\\rho{}/g;
-$tex =~ s/\[\[/\\llbracket\\mathrel{}/g;
-$tex =~ s/\]\]/\\mathrel{}\\rrbracket{}/g;
+$tex =~ s/\[\[/\\llbracket\\mathbin{}/g;
+$tex =~ s/\]\]/\\mathbin{}\\rrbracket{}/g;
 $tex =~ s/([\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
   [0-9]+(?:\.[0-9]+)?)(?!\{)/\1|\2|/xg;
 $tex =~ s/TRUE/|TRUE|/g;
@@ -871,12 +871,12 @@ $tex =~ s/FALSE/|FALSE|/g;
 $tex =~ s/\?/\\varnothing{}/g;
 $tex =~ s/@/\\varphi{}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
-$tex =~ s/!->/\\mathrel{\\phiConst}/g;
-$tex =~ s/->/\\mathrel{\\mapsto}/g;
-$tex =~ s/~>/\\mathrel{\\phiWave}/g;
+$tex =~ s/!->/\\mathbin{\\phiConst}/g;
+$tex =~ s/->/\\mathbin{\\mapsto}/g;
+$tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
-$tex =~ s/\.\.>/\\mathrel{\\phiDotted}/g;
+$tex =~ s/\.\.>/\\mathbin{\\phiDotted}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
 $tex =~ s/\|{2,}/|/g;
