@@ -204,7 +204,7 @@ $tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
 }
 }
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/(?<!\{)\^(?!\})/\\rho{}/g;
+$tex =~ s/(?<!\{)\^(?!\{)/\\rho{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathbin{}/g;
 $tex =~ s/\]\]/\\mathbin{}\\rrbracket{}/g;
 $tex =~ s/([\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
