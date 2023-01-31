@@ -861,7 +861,7 @@ if ($macro ne 'phiq') {
 	}
 }
 $tex =~ s/\$/\\xi{}/g;
-$tex =~ s/(?<!\{)\^(?!\})/\\rho{}/g;
+$tex =~ s/(?<!\{)\^(?!\{)/\\rho{}/g;
 $tex =~ s/\[\[/\\llbracket\\mathbin{}/g;
 $tex =~ s/\]\]/\\mathbin{}\\rrbracket{}/g;
 $tex =~ s/([\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+|
