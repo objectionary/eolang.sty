@@ -585,6 +585,22 @@
 % \end{document}
 % \end{docshot}
 
+% It is possible to use ``manual splitting'' mode in the |phiquation| environment by starting the body with |\begin{split}|:
+% \docshotOptions{firstline=5,lastline=10}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{eolang}
+% \thispagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% \begin{split}
+% x(\pi) & -> 4 \\
+% x(a,b,c) & -> [[ \alpha_0 -> ? ]] \\
+% \end{split}
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % You can make a copy of a vertex together with its kids:
 % \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
@@ -782,10 +798,19 @@ foreach my $t (@lines) {
 print '% ---', "\n";
 $tex =~ s/%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
+my $splitting = $tex =~ /^\\begin\{split\}/;
+if ($splitting) {
+	print '% The manual splitting mode is ON since \begin{split} started the text' . "\n";
+}
 my $indents = $tex =~ /\n +/g;
 my $gathered = (0 == $indents);
 if ($gathered) {
-	print '% The "gathered" is used since all lines are left-aligned' . "\n";
+  if ($splitting) {
+	  print '% The "gathered" is NOT used because of manual splitting' . "\n";
+	  $gathered = 0;
+	} else {
+	  print '% The "gathered" is used since all lines are left-aligned' . "\n";
+	}
 } else {
   print '% The "gathered" is NOT used because ' .
     $indents . " lines are indented\n";
@@ -798,8 +823,10 @@ if (index($tex, '&&') >= 0) {
   print '% The "align" is used because of && seen in the text' . "\n";
 }
 if ($macro ne 'phiq') {
-  $tex =~ s/\\\\\n/\n\n/g;
-  $tex =~ s/\\\n\s*//g;
+	if (not $splitting) {
+  	$tex =~ s/\\\\\n/\n\n/g;
+	  $tex =~ s/\\\n\s*//g;
+	}
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
   $tex =~ s/\n{3,}/\n\n/g;
 }
@@ -824,7 +851,9 @@ sub trep {
   return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
 }
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
-$tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
+if (not $splitting) {
+	$tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
+}
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
@@ -835,15 +864,17 @@ $tex =~ s/([^^_]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
 $tex =~ s/([^^_]|^)([0-9]+|\*)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
 if ($macro ne 'phiq') {
-  $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
-  $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
-  $tex =~ s/\n\n/\\\\&/g;
-  $tex =~ s/\n/\\phiEOL{}\n&/g;
-  $tex =~ s/\\\\$//g;
-  $tex =~ s/\\\\/\\\\\n/g;
-  $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
-  $tex =~ s/\s{2}/ \\quad{}/g;
-  $tex = '&' . $tex;
+  if (not $splitting) {
+	  $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
+  	$tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
+  	$tex =~ s/\n\n/\\\\&/g;
+	  $tex =~ s/\n/\\phiEOL{}\n&/g;
+	  $tex =~ s/\\\\$//g;
+	  $tex =~ s/\\\\/\\\\\n/g;
+  	$tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
+	  $tex =~ s/\s{2}/ \\quad{}/g;
+  	$tex = '&' . $tex;
+  }
   my $lead = '[^\s]+\s(?:->|:=|=|==)\s';
   my @leads = $tex =~ /&${lead}/g;
   my @eols = $tex =~ /&/g;
@@ -892,11 +923,10 @@ if ($macro eq 'phiq') {
   print '\begin{', $macro, "}\n";
   if (not($align)) {
 	  if ($gathered) {
-	    print '\begin{gathered}';
-	  } else {
-	    print '\begin{split}';
+	    print '\begin{gathered}' . "\n";
+	  } elsif (not $splitting) {
+	    print '\begin{split}' . "\n";
 	  }
-	  print "\n";
   }
 }
 if ($gathered and not($align)) {
@@ -908,11 +938,10 @@ if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
   if (not($align)) {
-	  print "\n";
 	  if ($gathered) {
-	    print '\end{gathered}';
-	  } else {
-	    print '\end{split}';
+	    print "\n" . '\end{gathered}';
+	  } elsif (not $splitting) {
+	    print "\n" . '\end{split}';
 	  }
   }
   print "\n" . '\end{' . $macro . '}';
@@ -954,12 +983,14 @@ print '\endinput';
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
   \def\eolang@phiSaveTo{\relax}%
 }
+%
 \newenvironment{phiquation*}%
 {\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
 \begin{VerbatimOut}
   {\eolang@tmpdir/\jobname/phiquation.tex}}
 {\end{VerbatimOut}\eolang@process{equation*}}
+%
 \newenvironment{phiquation}%
 {\catcode`\|=12 \VerbatimEnvironment%
 \setcounter{eolang@lineno}{\value{FancyVerbLine}}%
