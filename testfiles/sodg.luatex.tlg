@@ -27,21 +27,21 @@ FAE97CC22668F48494FB.tex" ) > _eolang-lua/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-
 post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 (_eolang-lua/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-post.tex)
 iexec: The content of '_eolang-lua/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-post.tex' was included into the document
-runsystem(( /bin/echo 'v_1') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% 
->iexec.ret)...executed
-iexec: [( /bin/echo 'v_1') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( /bin/echo 'v_{1}') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?
+% >iexec.ret)...executed
+iexec: [( /bin/echo 'v_{1}') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/sodg/phiq.tex':
-v_1
+v_{1}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/sodg/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/21ADDB980875A5E20A6C
-B54069634F52.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/sodg/21ADDB980875
-A5E20A6CB54069634F52.tex" ) > _eolang-lua/sodg/21ADDB980875A5E20A6CB54069634F52-
+runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/2A64F27F8C92FAD386DA
+690C89D05A0F.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/sodg/2A64F27F8C92
+FAD386DA690C89D05A0F.tex" ) > _eolang-lua/sodg/2A64F27F8C92FAD386DA690C89D05A0F-
 post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
-(_eolang-lua/sodg/21ADDB980875A5E20A6CB54069634F52-post.tex)
-iexec: The content of '_eolang-lua/sodg/21ADDB980875A5E20A6CB54069634F52-post.tex' was included into the document
+(_eolang-lua/sodg/2A64F27F8C92FAD386DA690C89D05A0F-post.tex)
+iexec: The content of '_eolang-lua/sodg/2A64F27F8C92FAD386DA690C89D05A0F-post.tex' was included into the document
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 [][] 

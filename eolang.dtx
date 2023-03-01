@@ -677,11 +677,11 @@
 % \begin{document}
 % \begin{sodg}
 % v0
-% v1 xy:v0,-1,1 \\ v0->v1
-% v2 xy:v0,0,1 \\ v0->v2
-% v3 xy:v0,1,1 \\ v0->v3
+% v11 xy:v0,-1,1 \\ v0->v11
+% v12 xy:v0,0,1 \\ v0->v12
+% v13 xy:v0,1,1 \\ v0->v13
 % \node[draw=red,rounded corners,\
-%  dotted,fit=(v1) (v2)] {};
+%  dotted,fit=(v11) (v12)] {};
 % \end{sodg}
 % \end{document}
 % \end{docshot}
@@ -1051,6 +1051,7 @@ print '\endinput';
 % \changes{0.5.0}{2022/11/12}{It is possible to use TikZ commands inside the \texttt{sodg} environment.}
 % \changes{0.6.0}{2022/11/13}{The \texttt{rrho} attribute is retired, now \texttt{rho} works just fine in all situations.}
 % \changes{0.8.0}{2022/11/20}{The \texttt{tag} attribute is introduced for changing labels inside a vertex circle.}
+% \changes{0.12.1}{2023/03/01}{The bug is fixed related to the formatting of indexes of vertices.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1071,9 +1072,9 @@ sub vertex {
   if (index($v, 'v0') == 0) {
     return '\Phi';
   } else {
-    $v =~ s/^v/v_/g;
+    $v =~ s/^v/v_{/g;
     $v =~ s/[^0-9]$//g;
-    return $v;
+    return $v . '}';
   }
 }
 sub tailor {
