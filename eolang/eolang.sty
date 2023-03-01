@@ -355,9 +355,9 @@ sub vertex {
   if (index($v, 'v0') == 0) {
     return '\Phi';
   } else {
-    $v =~ s/^v/v_/g;
+    $v =~ s/^v/v_{/g;
     $v =~ s/[^0-9]$//g;
-    return $v;
+    return $v . '}';
   }
 }
 sub tailor {
