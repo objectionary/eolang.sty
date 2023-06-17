@@ -601,6 +601,19 @@
 % \end{document}
 % \end{docshot}
 
+% When necessary to use a percentage sign, prepend it with a backward slash:
+% \docshotOptions{firstline=5,lastline=10}
+% \begin{docshot}
+% \documentclass{article}
+% \usepackage{eolang}
+% \thispagestyle{empty}
+% \begin{document}
+% \begin{phiquation*}
+% x -> sprintf("Hello, \%s!", name)
+% \end{phiquation*}
+% \end{document}
+% \end{docshot}
+
 % You can make a copy of a vertex together with its kids:
 % \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
@@ -796,7 +809,7 @@ foreach my $t (@lines) {
   print '% ', $t, "\n";
 }
 print '% ---', "\n";
-$tex =~ s/%.*\n/\n/g;
+$tex =~ s/(?<!\\)%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $splitting = $tex =~ /^\\begin\{split\}/;
 if ($splitting) {
@@ -1111,7 +1124,7 @@ print '\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
-  $cmd =~ s/%.*//g;
+  $cmd =~ s/(?<!\\)%.*//g;
   my ($head, $tail) = split(/ /, $cmd, 2);
   my %opts = {};
   foreach my $p (split(/ /, $tail)) {
