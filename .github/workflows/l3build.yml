@@ -18,7 +18,7 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex l3build biblatex biber iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox
+          packages: scheme-basic xetex l3build biblatex biber iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox shellesc
       - run: l3build ctan --show-log-on-error --halt-on-error
       - uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
