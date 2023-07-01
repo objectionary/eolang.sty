@@ -1,6 +1,6 @@
 \input{regression-test.tex}
 \documentclass{article}
-\usepackage{eolang}
+\usepackage[nocomments]{eolang}
 \begin{document}
 
 \START
