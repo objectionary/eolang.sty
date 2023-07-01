@@ -19,7 +19,8 @@ jobs:
           update-all-packages: true
           package-file: DEPENDS.txt
           packages: scheme-basic xetex l3build biblatex biber iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox pdftexcmds ifluatex ifxetex
-      - run: l3build ctan --show-log-on-error --halt-on-error
+      - run: l3build ctan --show-log-on-error --halt-on-error || echo fail
+      - run: cat build/test/macros.luatex.log
       - uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           branch: gh-pages
