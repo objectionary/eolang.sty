@@ -78,6 +78,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -124,7 +125,7 @@ foreach my $t (@lines) {
   print '% ', $t, "\n";
 }
 print '% ---', "\n";
-$tex =~ s/%.*\n/\n/g;
+$tex =~ s/(?<!\\)%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $splitting = $tex =~ /^\\begin\{split\}/;
 if ($splitting) {
@@ -182,6 +183,7 @@ $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 if (not $splitting) {
 $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 }
+$tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
@@ -394,7 +396,7 @@ print '\begin{phicture}', "\n";
 for (my $c = 0; $c < 0+@cmds; $c++) {
   my $cmd = $cmds[$c];
   $cmd =~ s/^\s+//g;
-  $cmd =~ s/%.*//g;
+  $cmd =~ s/(?<!\\)%.*//g;
   my ($head, $tail) = split(/ /, $cmd, 2);
   my %opts = {};
   foreach my $p (split(/ /, $tail)) {
