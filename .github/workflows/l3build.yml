@@ -18,7 +18,7 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-          packages: scheme-basic xetex l3build biblatex biber minted tools iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox libertine microtype
+          packages: scheme-basic xetex l3build biblatex biber minted tools iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox libertine microtype href-ul
       - run: l3build ctan --show-log-on-error --halt-on-error || echo fail
       - run: cat build/doc/eolang.log
       - uses: JamesIves/github-pages-deploy-action@v4.4.2
