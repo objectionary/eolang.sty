@@ -7,7 +7,7 @@ install: |-
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
   sudo tlmgr --verify-repo=none install l3build
-  sudo tlmgr --verify-repo=none install iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox
+  sudo tlmgr --verify-repo=none install iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox libertine
 merge:
   script: |-
     l3build check
