@@ -6,8 +6,8 @@ install: |-
   sudo apt-get -y update
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install l3build
-  sudo tlmgr --verify-repo=none update iexec docshots acmart booktabs totpages setspace stmaryrd textcase hyperxmp ifmtarg cmap caption comment hyperref xstring adjustbox libertine tools
+  sudo tlmgr --verify-repo=none install l3build tools $(cut -d' ' -f2 DEPENDS.txt | uniq)
+  sudo tlmgr --verify-repo=none update l3build tools
 merge:
   script: |-
     l3build check
