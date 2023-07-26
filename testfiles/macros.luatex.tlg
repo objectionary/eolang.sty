@@ -4,66 +4,102 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( /bin/echo '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( /bin/echo '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin
+/echo -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiSlot {abc}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/087AEC1370AC5BBB
+0E1D7CDC2C34AD6A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/087AEC1370
+AC5BBB0E1D7CDC2C34AD6A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/08
+7AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
 (_eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
-) iexec: The content of '_eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex' was included into the document
-runsystem(( /bin/echo '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+)
+iexec: The content of '_eolang-lua/macros/087AEC1370AC5BBB0E1D7CDC2C34AD6A-post.tex' was included into the document
+runsystem(( /bin/echo '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/ec
+ho -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiWave {}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex) iexec: The content of '_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex' was included into the document
-runsystem(( /bin/echo '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/9FF172197C77A787
+26CD9D2F316AACF2.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/9FF172197C
+77A78726CD9D2F316AACF2.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/9F
+F172197C77A78726CD9D2F316AACF2-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
+(_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex)
+iexec: The content of '_eolang-lua/macros/9FF172197C77A78726CD9D2F316AACF2-post.tex' was included into the document
+runsystem(( /bin/echo '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/e
+cho -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiConst {}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex) iexec: The content of '_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex' was included into the document
-runsystem(( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/07262A34F7984D95
+0EE32FA0B23DD77A.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/07262A34F7
+984D950EE32FA0B23DD77A.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/07
+262A34F7984D950EE32FA0B23DD77A-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
+(_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex)
+iexec: The content of '_eolang-lua/macros/07262A34F7984D950EE32FA0B23DD77A-post.tex' was included into the document
+runsystem(( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.
+tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiMany {\phiWave }{i=1}{n}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex) iexec: The content of '_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex' was included into the document
-runsystem(( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/03D7A56284CBF4AC
+FA49E77AA32E3186.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/03D7A56284
+CBF4ACFA49E77AA32E3186.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/03
+D7A56284CBF4ACFA49E77AA32E3186-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
+(_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex)
+iexec: The content of '_eolang-lua/macros/03D7A56284CBF4ACFA49E77AA32E3186-post.tex' was included into the document
+runsystem(( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
+in/echo -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiOset {*}{->}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex) iexec: The content of '_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex' was included into the document
-runsystem(( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/9242510F2DA221D8
+E1C0131E9B3D1DE3.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/9242510F2D
+A221D8E1C0131E9B3D1DE3.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/92
+42510F2DA221D8E1C0131E9B3D1DE3-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
+(_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex)
+iexec: The content of '_eolang-lua/macros/9242510F2DA221D8E1C0131E9B3D1DE3-post.tex' was included into the document
+runsystem(( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
+in/echo -n $?% >iexec.ret)...executed
 iexec: [( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiUset {*}{->}
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex) iexec: The content of '_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex' was included into the document
+runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/96C48C93AA69A4BE
+805C89DB7CB8E872.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed
+runsystem(( perl _eolang-lua/eolang-phi.pl 'phiq' "_eolang-lua/macros/96C48C93AA
+69A4BE805C89DB7CB8E872.tex" | perl -pe 's/%.*(\n|$)//g') > _eolang-lua/macros/96
+C48C93AA69A4BE805C89DB7CB8E872-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...exe
+cuted
+(_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex)
+iexec: The content of '_eolang-lua/macros/96C48C93AA69A4BE805C89DB7CB8E872-post.tex' was included into the document

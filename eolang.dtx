@@ -219,15 +219,16 @@
 
 % The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|tag:<math>|'' puts a custom label |<math>| into the circle,
+%   \item ``|tag:<math>|'' puts a custom label |<math>| into the circle;
 %   \item ``|data:[<box>]|'' makes it a data vertex with an optional attached ``|<box>|''
-%     (the content of the box may only be numeric data),
+%     (the content of the box may only be numeric data);
 %   \item ``|atom:[<box>]|'' makes it an atom with an optional attached ``|<box>|''
-%     (the content of the box is a math formula),
-%   \item ``|box:<txt>|'' attaches a ``|<box>|'' to it,
+%     (the content of the box is a math formula);
+%   \item ``|box:<txt>|'' attaches a ``|<box>|'' to it;
 %   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex ``|<v>|,''
-%     shifting it right by ``|<r>|'' and down by ``|<d>|'' centimetres.
-%   \item ``|+:<v>|'' makes a copy of an existing vertex and all its kids.
+%     shifting it right by ``|<r>|'' and down by ``|<d>|'' centimetres;
+%   \item ``|+:<v>|'' makes a copy of an existing vertex and all its kids;
+%   \item ``|edgeless|'' removes the border from the vertex.
 % \end{itemize}
 
 % The following markers are supported for an edge:
@@ -691,7 +692,7 @@
 % \usetikzlibrary{fit}
 % \begin{document}
 % \begin{sodg}
-% v0
+% v0 edgeless
 % v11 xy:v0,-1,1 \\ v0->v11
 % v12 xy:v0,0,1 \\ v0->v12
 % v13 xy:v0,1,1 \\ v0->v13
@@ -1069,6 +1070,7 @@ print '\endinput';
 % \changes{0.6.0}{2022/11/13}{The \texttt{rrho} attribute is retired, now \texttt{rho} works just fine in all situations.}
 % \changes{0.8.0}{2022/11/20}{The \texttt{tag} attribute is introduced for changing labels inside a vertex circle.}
 % \changes{0.12.1}{2023/03/01}{The bug is fixed related to the formatting of indexes of vertices.}
+% \changes{0.14.0}{2023/07/26}{The \texttt{edgeless} tag of a vertex removes the border of it.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1305,6 +1307,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       }
     } else {
       print ',phi-object';
+    }
+    if (exists $opts{'edgeless'}) {
+      print ',draw=none';
     }
     print ']';
     print ' (' . $head . ')';
