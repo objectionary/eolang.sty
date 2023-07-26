@@ -8,22 +8,18 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-iexec: The content of '_eolang-xe/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-post.tex' was included into the document
 runsystem((cp "_eolang-xe/phiquation/phiquation.tex" "_eolang-xe/phiquation/56371098126692269B26CD95699CBC21.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 17
 runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/phiquation/56371098126692269B26CD95699CBC21.tex" ) > _eolang-xe/phiquation/56371098126692269B26CD95699CBC21-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/phiquation/56371098126692269B26CD95699CBC21-post.tex)
-iexec: The content of '_eolang-xe/phiquation/56371098126692269B26CD95699CBC21-post.tex' was included into the document
+(_eolang-xe/phiquation/56371098126692269B26CD95699CBC21-post.tex) iexec: The content of '_eolang-xe/phiquation/56371098126692269B26CD95699CBC21-post.tex' was included into the document
 runsystem((cp "_eolang-xe/phiquation/phiquation.tex" "_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 22
 runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25.tex" ) > _eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex)
-iexec: The content of '_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
+(_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex) iexec: The content of '_eolang-xe/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-post.tex' was included into the document
 runsystem((cp "_eolang-xe/phiquation/phiquation.tex" "_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 27
 runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE.tex" > a.tex) > _eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex)
-iexec: The content of '_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex' was included into the document
+(_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex) iexec: The content of '_eolang-xe/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-post.tex' was included into the document
 (a.tex)
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 28--31
 [][] 
@@ -83,5 +79,4 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 28--31
 runsystem((cp "_eolang-xe/phiquation/phiquation.tex" "_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 51
 runsystem(( perl "_eolang-xe/eolang-phi.pl" 'equation*' "_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E.tex" > a.tex) > _eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex)
-iexec: The content of '_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex' was included into the document
+(_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex) iexec: The content of '_eolang-xe/phiquation/906E0B20680FF021237C15B37ECBDB1E-post.tex' was included into the document
