@@ -1137,7 +1137,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     my ($q, $t) = split(/:/, $p);
     $opts{$q} = $t;
   }
-  if (index($head, '->') >= 0) {
+  if (index($head, '\\') == 0) {
+    print $cmd;
+  } elsif (index($head, '->') >= 0) {
     my $draw = '\draw[';
     if (exists $opts{'pi'}) {
       $draw = $draw . '<MB:phi-pi><F:draw=none>';
@@ -1331,8 +1333,6 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       print $head, '.south east) {';
       print $opts{'box'}, '}';
     }
-  } else {
-    print $cmd;
   }
   print ";\n";
 }
