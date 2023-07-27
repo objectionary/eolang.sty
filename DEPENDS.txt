@@ -23,3 +23,4 @@ soft textcase
 soft tools
 soft totpages
 soft biblatex
+soft href-ul
