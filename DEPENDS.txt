@@ -22,3 +22,4 @@ soft libertine
 soft textcase
 soft tools
 soft totpages
+soft biblatex
