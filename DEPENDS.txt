@@ -17,6 +17,7 @@ soft caption
 soft cmap
 soft comment
 soft docshots
+soft environ
 soft href-ul
 soft hypdoc
 soft hyperxmp
