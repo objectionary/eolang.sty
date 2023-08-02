@@ -10,6 +10,7 @@ hard pgfopts
 hard stmaryrd
 hard xstring
 soft acmart
+soft biber
 soft biblatex
 soft booktabs
 soft caption
@@ -23,8 +24,10 @@ soft iexec
 soft ifmtarg
 soft l3build
 soft libertine
+soft ncctools
 soft scheme-basic
 soft setspace
+soft standalone
 soft textcase
 soft tools
 soft totpages
