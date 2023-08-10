@@ -79,6 +79,7 @@
 
 
 
+
 \RequirePackage{stmaryrd}
 \RequirePackage{amsmath}
 \let\Bbbk\relax\RequirePackage{amssymb}
@@ -129,17 +130,17 @@ $tex =~ s/(?<!\\)%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $splitting = $tex =~ /^\\begin\{split\}/;
 if ($splitting) {
-print '% The manual splitting mode is ON since \begin{split} started the text' . "\n";
+  print '% The manual splitting mode is ON since \begin{split} started the text' . "\n";
 }
 my $indents = $tex =~ /\n +/g;
 my $gathered = (0 == $indents);
 if ($gathered) {
   if ($splitting) {
-  print '% The "gathered" is NOT used because of manual splitting' . "\n";
-  $gathered = 0;
-} else {
-  print '% The "gathered" is used since all lines are left-aligned' . "\n";
-}
+    print '% The "gathered" is NOT used because of manual splitting' . "\n";
+    $gathered = 0;
+  } else {
+    print '% The "gathered" is used since all lines are left-aligned' . "\n";
+  }
 } else {
   print '% The "gathered" is NOT used because ' .
     $indents . " lines are indented\n";
@@ -152,10 +153,10 @@ if (index($tex, '&&') >= 0) {
   print '% The "align" is used because of && seen in the text' . "\n";
 }
 if ($macro ne 'phiq') {
-if (not $splitting) {
-   $tex =~ s/\\\\\n/\n\n/g;
-  $tex =~ s/\\\n\s*//g;
-}
+  if (not $splitting) {
+    $tex =~ s/\\\\\n/\n\n/g;
+    $tex =~ s/\\\n\s*//g;
+  }
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
   $tex =~ s/\n{3,}/\n\n/g;
 }
@@ -166,22 +167,22 @@ sub trep {
   my $p = 0;
   for (; $p < length($s); $p++) {
     $c = substr($s, $p, 1);
-   if ($c eq '}') {
-   if ($open eq 0) {
-      last;
-   }
-     $open--;
-   }
-   if ($c eq '{') {
-     $open++;
-   }
-}
+    if ($c eq '}') {
+      if ($open eq 0) {
+        last;
+      }
+      $open--;
+    }
+    if ($c eq '{') {
+      $open++;
+    }
+  }
   push(@texts, substr($s, 0, $p));
   return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
 }
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 if (not $splitting) {
-$tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
+  $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 }
 $tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
@@ -195,15 +196,15 @@ $tex =~ s/([^^_]|^)([0-9]+|\*)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
 if ($macro ne 'phiq') {
   if (not $splitting) {
-  $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
-   $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
-   $tex =~ s/\n\n/\\\\&/g;
-  $tex =~ s/\n/\\phiEOL{}\n&/g;
-  $tex =~ s/\\\\$//g;
-  $tex =~ s/\\\\/\\\\\n/g;
-   $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
-  $tex =~ s/\s{2}/ \\quad{}/g;
-   $tex = '&' . $tex;
+    $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
+    $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
+    $tex =~ s/\n\n/\\\\&/g;
+    $tex =~ s/\n/\\phiEOL{}\n&/g;
+    $tex =~ s/\\\\$//g;
+    $tex =~ s/\\\\/\\\\\n/g;
+    $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
+    $tex =~ s/\s{2}/ \\quad{}/g;
+    $tex = '&' . $tex;
   }
   my $lead = '[^\s]+\s(?:->|:=|=|==)\s';
   my @leads = $tex =~ /&${lead}/g;
@@ -211,19 +212,19 @@ if ($macro ne 'phiq') {
   if (0+@leads == 0+@eols && 0+@eols > 1) {
     $tex =~ s/&(${lead})/\1&~/g;
     $gathered = 0;
-  print '% The "gathered" is NOT used because all ' .
-    (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
+    print '% The "gathered" is NOT used because all ' .
+      (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
   }
 }
 if ($macro ne 'phiq') {
-sub strip_tabs {
+  sub strip_tabs {
     my ($env, $tex) = @_;
-$tex =~ s/&//g;
-  return "\\begin{$env}" . $tex . "\\end{$env}";
+    $tex =~ s/&//g;
+    return "\\begin{$env}" . $tex . "\\end{$env}";
   }
   foreach my $e (('matrix', 'cases')) {
-$tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
-}
+    $tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
+  }
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\rho{}/g;
@@ -252,11 +253,11 @@ if ($macro eq 'phiq') {
 } else {
   print '\begin{', $macro, "}\n";
   if (not($align)) {
-  if ($gathered) {
-    print '\begin{gathered}' . "\n";
-  } elsif (not $splitting) {
-    print '\begin{split}' . "\n";
-  }
+    if ($gathered) {
+      print '\begin{gathered}' . "\n";
+    } elsif (not $splitting) {
+      print '\begin{split}' . "\n";
+    }
   }
 }
 if ($gathered and not($align)) {
@@ -268,11 +269,11 @@ if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
   if (not($align)) {
-  if ($gathered) {
-    print "\n" . '\end{gathered}';
-  } elsif (not $splitting) {
-    print "\n" . '\end{split}';
-  }
+    if ($gathered) {
+      print "\n" . '\end{gathered}';
+    } elsif (not $splitting) {
+      print "\n" . '\end{split}';
+    }
   }
   print "\n" . '\end{' . $macro . '}';
 }
@@ -317,7 +318,7 @@ print '\endinput';
 
 \RequirePackage{xstring}
 \makeatletter\newcommand\phiq[1]{%
-\StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
+  \StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
   \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\clean'}%
   \def\hash{\eolang@mdfive
@@ -399,6 +400,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   $cmd =~ s/(?<!\\)%.*//g;
   my ($head, $tail) = split(/ /, $cmd, 2);
   my %opts = {};
+  my ($body, $style) = split(/style:/, $tail, 2);
+  $opts{'style'} = $style;
+  $tail = $body;
   foreach my $p (split(/ /, $tail)) {
     my ($q, $t) = split(/:/, $p);
     $opts{$q} = $t;
@@ -416,7 +420,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     if (exists $opts{'rho'} and not(exists $opts{'bend'})) {
       $draw = $draw . '<MB:,phi-rho>';
     }
-    $draw = $draw . ']';
+    $draw = $draw . ',' . $opts{'style'} . ']';
     my ($from, $to) = split (/->/, $head);
     $draw = $draw . " (${from}) ";
     if (exists $opts{'bend'}) {
@@ -579,7 +583,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     if (exists $opts{'edgeless'}) {
       print ',draw=none';
     }
-    print ']';
+    print ',' . $opts{'style'} . ']';
     print ' (' . $head . ')';
     print ' {';
     if (exists $opts{'tag'}) {
@@ -587,9 +591,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       if (index($t, '$') == -1) {
         $t = '$' . $t . '$';
       } else {
-       $t = fmt($t);
-     }
-     print $t;
+        $t = fmt($t);
+      }
+      print $t;
     } else {
       print '$' . vertex($head) . '$';
     }
@@ -743,7 +747,7 @@ print '\endinput';
 \makeatletter
 \NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
-  \textcolor{orange}{#1}%
+    \textcolor{orange}{#1}%
   \else%
     #2%
   \fi%
