@@ -70,9 +70,9 @@
 \CodelineIndex
 \RecordChanges
 \begin{document}
-	\DocInput{eolang.dtx}
-	\PrintChanges
-	\PrintIndex
+  \DocInput{eolang.dtx}
+  \PrintChanges
+  \PrintIndex
 \end{document}
 %</driver>
 % \fi
@@ -228,7 +228,8 @@
 %   \item ``|xy:<v>,<r>,<d>|'' places this vertex in a position relative to the vertex ``|<v>|,''
 %     shifting it right by ``|<r>|'' and down by ``|<d>|'' centimetres;
 %   \item ``|+:<v>|'' makes a copy of an existing vertex and all its kids;
-%   \item ``|edgeless|'' removes the border from the vertex.
+%   \item ``|edgeless|'' removes the border from the vertex;
+%   \item ``|style:{...}|'' adds this TikZ style to the vertex |\node|.
 % \end{itemize}
 
 % The following markers are supported for an edge:
@@ -236,7 +237,8 @@
 %   \item ``|rho|'' places a backward snake arrow to the edge,
 %   \item ``|bend:<angle>|'' bend it right by the amount of ``|<angle>|,''
 %   \item ``|a:<txt>|'' attaches label ``|<txt>|'' to it,
-%   \item ``|pi|'' makes it dotted, with $\pi$ label.
+%   \item ``|pi|'' makes it dotted, with $\pi$ label;
+%   \item ``|style:{...}|'' adds this TikZ style to the edge |\path|.
 % \end{itemize}
 
 % It is also possible to put transformation arrows to the graph, with the help of ``|v0=>v1|'' syntax. The arrow
@@ -702,6 +704,24 @@
 % \end{document}
 % \end{docshot}
 
+% You can modify TikZ style yourself (make sure |style:| stays at the end of the line!), for example:
+% \docshotOptions{firstline=6,lastline=12}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage{eolang}
+% \usetikzlibrary{fit}
+% \begin{document}
+% \begin{sodg}
+% v0
+% v1 xy:v0,-2,1 style:font=\color{red}
+% v2 xy:v0,2,1
+% v0->v1 style:line width=2pt
+% v0->v2 style:draw=orange
+% \end{sodg}
+% \end{document}
+% \end{docshot}
+
 % \StopEventually{}
 
 % \section{Implementation}
@@ -817,17 +837,17 @@ $tex =~ s/(?<!\\)%.*\n/\n/g;
 $tex =~ s/^\s+|\s+$//g;
 my $splitting = $tex =~ /^\\begin\{split\}/;
 if ($splitting) {
-	print '% The manual splitting mode is ON since \begin{split} started the text' . "\n";
+  print '% The manual splitting mode is ON since \begin{split} started the text' . "\n";
 }
 my $indents = $tex =~ /\n +/g;
 my $gathered = (0 == $indents);
 if ($gathered) {
   if ($splitting) {
-	  print '% The "gathered" is NOT used because of manual splitting' . "\n";
-	  $gathered = 0;
-	} else {
-	  print '% The "gathered" is used since all lines are left-aligned' . "\n";
-	}
+    print '% The "gathered" is NOT used because of manual splitting' . "\n";
+    $gathered = 0;
+  } else {
+    print '% The "gathered" is used since all lines are left-aligned' . "\n";
+  }
 } else {
   print '% The "gathered" is NOT used because ' .
     $indents . " lines are indented\n";
@@ -840,10 +860,10 @@ if (index($tex, '&&') >= 0) {
   print '% The "align" is used because of && seen in the text' . "\n";
 }
 if ($macro ne 'phiq') {
-	if (not $splitting) {
-  	$tex =~ s/\\\\\n/\n\n/g;
-	  $tex =~ s/\\\n\s*//g;
-	}
+  if (not $splitting) {
+    $tex =~ s/\\\\\n/\n\n/g;
+    $tex =~ s/\\\n\s*//g;
+  }
   $tex =~ s/\n*(\\label\{[^\}]+\})\n*/\1/g;
   $tex =~ s/\n{3,}/\n\n/g;
 }
@@ -854,22 +874,22 @@ sub trep {
   my $p = 0;
   for (; $p < length($s); $p++) {
     $c = substr($s, $p, 1);
-  	if ($c eq '}') {
-  		if ($open eq 0) {
-  	  	last;
-	  	}
-  	  $open--;
-  	}
-  	if ($c eq '{') {
-  	  $open++;
-  	}
-	}
+    if ($c eq '}') {
+      if ($open eq 0) {
+        last;
+      }
+      $open--;
+    }
+    if ($c eq '{') {
+      $open++;
+    }
+  }
   push(@texts, substr($s, 0, $p));
   return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
 }
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 if (not $splitting) {
-	$tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
+  $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
 }
 $tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
@@ -883,15 +903,15 @@ $tex =~ s/([^^_]|^)([0-9]+|\*)
   (->|\.\.>|~>|:=|!->)/\1\\alpha_{\2}\\space{}\3/xg;
 if ($macro ne 'phiq') {
   if (not $splitting) {
-	  $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
-  	$tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
-  	$tex =~ s/\n\n/\\\\&/g;
-	  $tex =~ s/\n/\\phiEOL{}\n&/g;
-	  $tex =~ s/\\\\$//g;
-	  $tex =~ s/\\\\/\\\\\n/g;
-  	$tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
-	  $tex =~ s/\s{2}/ \\quad{}/g;
-  	$tex = '&' . $tex;
+    $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
+    $tex =~ s/\n\s*\\end\{split\}/\\end{split}/g;
+    $tex =~ s/\n\n/\\\\&/g;
+    $tex =~ s/\n/\\phiEOL{}\n&/g;
+    $tex =~ s/\\\\$//g;
+    $tex =~ s/\\\\/\\\\\n/g;
+    $tex =~ s/([^&\s])\s{2}([^\s])/\1 \2/g;
+    $tex =~ s/\s{2}/ \\quad{}/g;
+    $tex = '&' . $tex;
   }
   my $lead = '[^\s]+\s(?:->|:=|=|==)\s';
   my @leads = $tex =~ /&${lead}/g;
@@ -899,19 +919,19 @@ if ($macro ne 'phiq') {
   if (0+@leads == 0+@eols && 0+@eols > 1) {
     $tex =~ s/&(${lead})/\1&~/g;
     $gathered = 0;
-	  print '% The "gathered" is NOT used because all ' .
-	    (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
+    print '% The "gathered" is NOT used because all ' .
+      (0+@eols) . ' lines are ' . (0+@leads) . " leads\n";
   }
 }
 if ($macro ne 'phiq') {
-	sub strip_tabs {
- 	 	my ($env, $tex) = @_;
-		$tex =~ s/&//g;
-	  return "\\begin{$env}" . $tex . "\\end{$env}";
+  sub strip_tabs {
+      my ($env, $tex) = @_;
+    $tex =~ s/&//g;
+    return "\\begin{$env}" . $tex . "\\end{$env}";
   }
   foreach my $e (('matrix', 'cases')) {
-		$tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
-	}
+    $tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
+  }
 }
 $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\rho{}/g;
@@ -940,11 +960,11 @@ if ($macro eq 'phiq') {
 } else {
   print '\begin{', $macro, "}\n";
   if (not($align)) {
-	  if ($gathered) {
-	    print '\begin{gathered}' . "\n";
-	  } elsif (not $splitting) {
-	    print '\begin{split}' . "\n";
-	  }
+    if ($gathered) {
+      print '\begin{gathered}' . "\n";
+    } elsif (not $splitting) {
+      print '\begin{split}' . "\n";
+    }
   }
 }
 if ($gathered and not($align)) {
@@ -956,11 +976,11 @@ if ($macro eq 'phiq') {
   print '$' if ($tex ne '');
 } else {
   if (not($align)) {
-	  if ($gathered) {
-	    print "\n" . '\end{gathered}';
-	  } elsif (not $splitting) {
-	    print "\n" . '\end{split}';
-	  }
+    if ($gathered) {
+      print "\n" . '\end{gathered}';
+    } elsif (not $splitting) {
+      print "\n" . '\end{split}';
+    }
   }
   print "\n" . '\end{' . $macro . '}';
 }
@@ -1025,7 +1045,7 @@ print '\endinput';
 %    \begin{macrocode}
 \RequirePackage{xstring}
 \makeatletter\newcommand\phiq[1]{%
-	\StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
+  \StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
   \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
     /bin/echo '\clean'}%
   \def\hash{\eolang@mdfive
@@ -1071,6 +1091,7 @@ print '\endinput';
 % \changes{0.8.0}{2022/11/20}{The \texttt{tag} attribute is introduced for changing labels inside a vertex circle.}
 % \changes{0.12.1}{2023/03/01}{The bug is fixed related to the formatting of indexes of vertices.}
 % \changes{0.14.0}{2023/07/26}{The \texttt{edgeless} tag of a vertex removes the border of it.}
+% \changes{0.15.0}{2023/08/210}{The \texttt{style} tag of vertices and edges.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1133,6 +1154,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
   $cmd =~ s/(?<!\\)%.*//g;
   my ($head, $tail) = split(/ /, $cmd, 2);
   my %opts = {};
+  my ($body, $style) = split(/style:/, $tail, 2);
+  $opts{'style'} = $style;
+  $tail = $body;
   foreach my $p (split(/ /, $tail)) {
     my ($q, $t) = split(/:/, $p);
     $opts{$q} = $t;
@@ -1150,7 +1174,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     if (exists $opts{'rho'} and not(exists $opts{'bend'})) {
       $draw = $draw . '<MB:,phi-rho>';
     }
-    $draw = $draw . ']';
+    $draw = $draw . ',' . $opts{'style'} . ']';
     my ($from, $to) = split (/->/, $head);
     $draw = $draw . " (${from}) ";
     if (exists $opts{'bend'}) {
@@ -1313,7 +1337,7 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
     if (exists $opts{'edgeless'}) {
       print ',draw=none';
     }
-    print ']';
+    print ',' . $opts{'style'} . ']';
     print ' (' . $head . ')';
     print ' {';
     if (exists $opts{'tag'}) {
@@ -1321,9 +1345,9 @@ for (my $c = 0; $c < 0+@cmds; $c++) {
       if (index($t, '$') == -1) {
         $t = '$' . $t . '$';
       } else {
-      	$t = fmt($t);
-  	  }
-  	  print $t;
+        $t = fmt($t);
+      }
+      print $t;
     } else {
       print '$' . vertex($head) . '$';
     }
@@ -1512,7 +1536,7 @@ print '\endinput';
 \makeatletter
 \NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
-	  \textcolor{orange}{#1}%
+    \textcolor{orange}{#1}%
   \else%
     #2%
   \fi%
