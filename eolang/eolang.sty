@@ -733,13 +733,13 @@ print '\endinput';
 {\end{VerbatimOut}%
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/sodg.tex}}%
-  \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
   \catcode`\$=3 %
   \IfFileExists
     {\eolang@tmpdir/\jobname/\hash-sodg-post.tex}
     {\input{\eolang@tmpdir/\jobname/\hash-sodg-post.tex}}
     {%
+      \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
+        "\eolang@tmpdir/\jobname/\hash.tex"}%
       \message{Start parsing `sodg' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-sodg-post.tex]{
         perl "\eolang@tmpdir/eolang-sodg.pl"
