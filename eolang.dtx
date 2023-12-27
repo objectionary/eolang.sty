@@ -1003,6 +1003,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{phiquation}
+% \changes{0.16.0}{2023/12/27}{The processing of \texttt{phiquation} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we define the |phiquation| and the |phiquation*| environments through a supplementary
 % |\eolang@process| command:
 %    \begin{macrocode}
@@ -1505,6 +1506,7 @@ print '\endinput';
 
 % \begin{macro}{sodg}
 % \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
+% \changes{0.16.0}{2023/12/27}{The processing of \texttt{sodg} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
 %    \begin{macrocode}
