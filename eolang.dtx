@@ -1519,12 +1519,17 @@ print '\endinput';
   \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
     "\eolang@tmpdir/\jobname/\hash.tex"}%
   \catcode`\$=3 %
-  \message{Start parsing `sodg' at line no. \the\inputlineno^^J}
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
-    perl "\eolang@tmpdir/eolang-sodg.pl"
-    "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
-    \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
+  \IfFileExists
+    {\eolang@tmpdir/\jobname/\hash-sodg-post.tex}
+    {\input{\eolang@tmpdir/\jobname/\hash-sodg-post.tex}}
+    {%
+      \message{Start parsing `sodg' at line no. \the\inputlineno^^J}
+      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-sodg-post.tex]{
+        perl "\eolang@tmpdir/eolang-sodg.pl"
+        "\eolang@tmpdir/\jobname/\hash.tex"
+        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+        \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
+    }
   \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
   \def\eolang@sodgSaveTo{\relax}%
