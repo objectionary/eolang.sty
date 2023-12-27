@@ -324,15 +324,14 @@ print '\endinput';
 \RequirePackage{xstring}
 \makeatletter\newcommand\phiq[1]{%
   \StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
-  \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
-    /bin/echo '\clean'}%
-  \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/phiq.tex}}%
+  \def\hash{\pdf@mdfivesum{\clean}}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \IfFileExists
     {\eolang@tmpdir/\jobname/\hash-phiq-post.tex}
     {\input{\eolang@tmpdir/\jobname/\hash-phiq-post.tex}}
     {%
+      \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
+        /bin/echo '\clean'}%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
         "\eolang@tmpdir/\jobname/\hash.tex"}%
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-phiq-post.tex]{
