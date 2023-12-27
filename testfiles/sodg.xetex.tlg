@@ -16,8 +16,8 @@ iexec: This is the content of '_eolang-xe/sodg/phiq.tex':
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/phiq.tex' (\pdffilesize {_eolang-xe/sodg/phiq.tex} bytes)
 iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-xe/sodg/phiq.tex" "_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB.tex" ) > _eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB{}-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB{}-phiq-post.tex) iexec: The content of '_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB{}-phiq-post.tex' was included into the document
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB.tex" ) > _eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-phiq-post.tex) iexec: The content of '_eolang-xe/sodg/6C4EDB4E3A5FFAE97CC22668F48494FB-phiq-post.tex' was included into the document
 runsystem(( /bin/echo 'v_{1}') > _eolang-xe/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 iexec: [( /bin/echo 'v_{1}') > _eolang-xe/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-xe/sodg/phiq.tex':
@@ -26,8 +26,8 @@ v_{1}
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/phiq.tex' (\pdffilesize {_eolang-xe/sodg/phiq.tex} bytes)
 iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-xe/sodg/phiq.tex" "_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F.tex" ) > _eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F{}-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F{}-phiq-post.tex) iexec: The content of '_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F{}-phiq-post.tex' was included into the document
+runsystem(( perl _eolang-xe/eolang-phi.pl 'phiq' "_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F.tex" ) > _eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F-phiq-post.tex) iexec: The content of '_eolang-xe/sodg/2A64F27F8C92FAD386DA690C89D05A0F-phiq-post.tex' was included into the document
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 [][] 
