@@ -290,15 +290,20 @@ print '\endinput';
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiquation.tex}}%
-  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
-  \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
-    perl "\eolang@tmpdir/eolang-phi.pl"
-    '#1'
-    "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
-    \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
+  \IfFileExists
+    {\eolang@tmpdir/\jobname/\hash-post.tex}
+    {\input{\eolang@tmpdir/\jobname/\hash-post.tex}}
+    {%
+      \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
+        "\eolang@tmpdir/\jobname/\hash.tex"}%
+      \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
+      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
+        perl "\eolang@tmpdir/eolang-phi.pl"
+        '#1'
+        "\eolang@tmpdir/\jobname/\hash.tex"
+        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
+        \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
+    }%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
   \def\eolang@phiSaveTo{\relax}%
 }
