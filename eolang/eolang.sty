@@ -330,12 +330,12 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/phiq.tex}}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \IfFileExists
-    {\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex}
-    {\input{\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex}}
+    {\eolang@tmpdir/\jobname/\hash-phiq-post.tex}
+    {\input{\eolang@tmpdir/\jobname/\hash-phiq-post.tex}}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
         "\eolang@tmpdir/\jobname/\hash.tex"}%
-      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex]{
+      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-phiq-post.tex]{
         perl \eolang@tmpdir/eolang-phi.pl 'phiq'
         "\eolang@tmpdir/\jobname/\hash.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g' \fi}%
