@@ -328,13 +328,18 @@ print '\endinput';
     /bin/echo '\clean'}%
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiq.tex}}%
-  \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
-    "\eolang@tmpdir/\jobname/\hash.tex"}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
-  \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
-    perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-    "\eolang@tmpdir/\jobname/\hash.tex"
-    \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+  \IfFileExists
+    {\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex}
+    {\input{\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex}}
+    {%
+      \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
+        "\eolang@tmpdir/\jobname/\hash.tex"}%
+      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash{}-phiq-post.tex]{
+        perl \eolang@tmpdir/eolang-phi.pl 'phiq'
+        "\eolang@tmpdir/\jobname/\hash.tex"
+        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g' \fi}%
+    }%
   \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
 }\makeatother
 
