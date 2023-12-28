@@ -1095,10 +1095,10 @@ print '\endinput';
       \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
         /bin/echo '\clean'}%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
-        "\eolang@tmpdir/\jobname/\hash.tex"}%
+        "\eolang@tmpdir/\jobname/\hash-phiq.tex"}%
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-phiq-post.tex]{
         perl \eolang@tmpdir/eolang-phi.pl 'phiq'
-        "\eolang@tmpdir/\jobname/\hash.tex"
+        "\eolang@tmpdir/\jobname/\hash-phiq.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g' \fi}%
     }%
   \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
