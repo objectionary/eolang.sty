@@ -1014,6 +1014,21 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{\eolang@ifabsent}
+% \changes{0.17.0}{2023/12/28}{A new supplementary \texttt{eolang@ifabsent} command added}
+% Then, we define the |\eolang@ifabsent| command, which if a given file is absent, runs a processing command, otherwise just inputs it:
+%    \begin{macrocode}
+\makeatletter
+\newcommand\eolang@ifabsent[2]{%
+  \IfFileExists
+    {#1}
+    {\input{#1}}
+    {#2}%
+}
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{phiquation}
 % \changes{0.16.0}{2023/12/27}{The processing of \texttt{phiquation} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we define the |phiquation| and the |phiquation*| environments through a supplementary
@@ -1022,9 +1037,8 @@ print '\endinput';
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiquation.tex}}%
-  \IfFileExists
+  \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-post.tex}
-    {\input{\eolang@tmpdir/\jobname/\hash-post.tex}}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
         "\eolang@tmpdir/\jobname/\hash.tex"}%
