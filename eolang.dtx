@@ -1022,7 +1022,9 @@ print '\endinput';
 \newcommand\eolang@ifabsent[2]{%
   \IfFileExists
     {#1}
-    {\input{#1}}
+    {%
+      \message{eolang: File "#1" already exists ^^J}%
+      \input{#1}}
     {#2}%
 }
 \makeatother
@@ -1080,9 +1082,8 @@ print '\endinput';
   \StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
   \def\hash{\pdf@mdfivesum{\clean}}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
-  \IfFileExists
+  \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-phiq-post.tex}
-    {\input{\eolang@tmpdir/\jobname/\hash-phiq-post.tex}}
     {%
       \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
         /bin/echo '\clean'}%
@@ -1544,13 +1545,12 @@ print '\endinput';
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/sodg.tex}}%
   \catcode`\$=3 %
-  \IfFileExists
+  \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-sodg-post.tex}
-    {\input{\eolang@tmpdir/\jobname/\hash-sodg-post.tex}}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
         "\eolang@tmpdir/\jobname/\hash.tex"}%
-      \message{Start parsing `sodg' at line no. \the\inputlineno^^J}
+      \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-sodg-post.tex]{
         perl "\eolang@tmpdir/eolang-sodg.pl"
         "\eolang@tmpdir/\jobname/\hash.tex"

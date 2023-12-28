@@ -96,6 +96,7 @@ iexec: Due to 'trace' package option, the files '_eolang/phiq/phiq.tex' and 'iex
 runsystem((cp "_eolang/phiq/phiq.tex" "_eolang/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/eolang-phi.pl 'phiq' "_eolang/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-phiq-post.tex) iexec: The content of '_eolang/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-phiq-post.tex' was included into the document
+eolang: File "_eolang/phiq/9BA1A908F61278BEE28919612E6A26D7-phiq-post.tex" already exists 
 (_eolang/phiq/9BA1A908F61278BEE28919612E6A26D7-phiq-post.tex) 
 runsystem(( /bin/echo 'y->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 iexec: [( /bin/echo 'y->x') > _eolang/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
