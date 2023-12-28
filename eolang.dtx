@@ -1025,7 +1025,14 @@ print '\endinput';
     {%
       \message{eolang: File "#1" already exists ^^J}%
       \input{#1}}
-    {#2}%
+    {%
+      \ifnum\ShellEscapeStatus=1\else%
+        \message{eolang: The --shell-escape command line
+        option is not provided, most probably compilation
+        will fail now:^^J}%
+      \fi%
+      #2%
+    }%
 }
 \makeatother
 %    \end{macrocode}
