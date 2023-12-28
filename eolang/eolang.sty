@@ -99,7 +99,12 @@
 }
 \ProcessPgfPackageOptions{/eolang}
 
-\iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
+\ifnum\ShellEscapeStatus=1%
+  \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
+\else%
+  \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
+    is not created, because --shell-escape is not set^^J}%
+\fi%
 
 \makeatletter\newcounter{eolang@lineno}\makeatother
 
