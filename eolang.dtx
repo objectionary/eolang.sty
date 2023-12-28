@@ -1045,7 +1045,7 @@ print '\endinput';
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/phiquation.tex}}%
+    {\eolang@tmpdir/\jobname/phiquation.tex}-\the\inputlineno}%
   \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-post.tex}
     {%
@@ -1087,7 +1087,7 @@ print '\endinput';
 \RequirePackage{xstring}
 \makeatletter\newcommand\phiq[1]{%
   \StrSubstitute{\detokenize{#1}}{'}{'"'"'}[\clean]%
-  \def\hash{\pdf@mdfivesum{\clean}}%
+  \def\hash{\pdf@mdfivesum{\clean}-\the\inputlineno}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-phiq-post.tex}
@@ -1550,7 +1550,7 @@ print '\endinput';
   {\eolang@tmpdir/\jobname/sodg.tex}}
 {\end{VerbatimOut}%
   \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/sodg.tex}}%
+    {\eolang@tmpdir/\jobname/sodg.tex}-\the\inputlineno}%
   \catcode`\$=3 %
   \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\hash-sodg-post.tex}
