@@ -22,7 +22,7 @@ x -> [
 \end{document}
 ```
 
-Otherwise, you can download [`eolang.sty`](https://raw.githubusercontent.com/objectionary/eolang.sty/gh-pages/eolang/eolang.sty) and add to your project.
+Otherwise, you can download [`eolang.sty`](https://yegor256.github.io/eolang/eolang.sty) and add to your project.
 
 If you want to contribute yourself, make a fork, then create a branch, 
 then run `l3build ctan` in the root directory.
