@@ -778,12 +778,20 @@
 
 % Then, we make a directory where all temporary files will be kept:
 %    \begin{macrocode}
-\ifnum\ShellEscapeStatus=1%
-  \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
-\else%
-  \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
-    is not created, because --shell-escape is not set^^J}%
-\fi%
+\RequirePackage{shellesc}
+\IfFileExists
+  {\eolang@tmpdir/\jobname}
+  {\message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
+    already exists^^J}}
+  {%
+    \ifnum\ShellEscapeStatus=1%
+      \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
+    \else%
+      \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
+        is not created, because --shell-escape is not set, and
+        it doesn't exist, most probably the compilation will fail^^J}%
+    \fi%
+  }
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@lineno}
@@ -828,6 +836,7 @@
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
+\ifnum\ShellEscapeStatus=1%
 \begin{VerbatimOut}{\eolang@tmpdir/eolang-phi.pl}
 $macro = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
@@ -1000,6 +1009,11 @@ print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
   '\eolang@tmpdir/eolang-phi.pl' saved^^J}%
+\else%
+  \message{eolang: Perl script not saved
+    to "\eolang@tmpdir/eolang-phi.pl"
+    because --shell-escape is not set^^J}%
+\fi%
 \makeatother
 %    \end{macrocode}
 % \end{macro}
