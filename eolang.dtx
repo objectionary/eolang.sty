@@ -1135,7 +1135,7 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{eolang-sodg.pl}
+% \begin{macro}{-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for \texttt{phiquation}, another one for \texttt{sodg}.}
 % \changes{0.2.0}{2022/10/28}{The content of the \texttt{atom} and the \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
@@ -1155,7 +1155,9 @@ print '\endinput';
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
-\begin{VerbatimOut}{\eolang@tmpdir/eolang-sodg.pl}
+\openin 15=\eolang@tmpdir/\jobname-sodg.pl
+\ifeof 15
+\begin{VerbatimOut}{\eolang@tmpdir/\jobname-sodg.pl}
 sub num {
   my ($i) = @_;
   $i =~ s/(\+|-)\./\10./g;
@@ -1428,7 +1430,12 @@ print '% --- (' . (0+@cmds) . " lines)\n";
 print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
-  '\eolang@tmpdir/eolang-sodg.pl' saved^^J}%
+  '\eolang@tmpdir/\jobname-sodg.pl' saved^^J}
+\else
+  \message{eolang: Perl script already exists at
+    "\eolang@tmpdir/\jobname-sodg.pl"^^J}
+\fi
+\closein 15
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -1574,7 +1581,7 @@ print '\endinput';
         "\eolang@tmpdir/\jobname/\hash.tex"}%
       \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-sodg-post.tex]{
-        perl "\eolang@tmpdir/eolang-sodg.pl"
+        perl "\eolang@tmpdir/\jobname-sodg.pl"
         "\eolang@tmpdir/\jobname/\hash.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
         \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
