@@ -842,6 +842,10 @@
 \makeatletter
 \openin 15=\eolang@tmpdir/\jobname-phi.pl
 \ifeof 15
+\message{eolang: Perl script is going to be created,
+  because it is absent at "\eolang@tmpdir/\jobname-phi.pl",
+  but if -shell-escape is not set, the compilation will
+  most likely fail now^^J}
 \begin{VerbatimOut}{\eolang@tmpdir/\jobname-phi.pl}
 $macro = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
@@ -1161,6 +1165,10 @@ print '\endinput';
 \makeatletter
 \openin 15=\eolang@tmpdir/\jobname-sodg.pl
 \ifeof 15
+\message{eolang: Perl script is going to be created,
+  because it is absent at "\eolang@tmpdir/\jobname-sodg.pl",
+  but if -shell-escape is not set, the compilation will
+  most likely fail now^^J}
 \begin{VerbatimOut}{\eolang@tmpdir/\jobname-sodg.pl}
 sub num {
   my ($i) = @_;
