@@ -84,16 +84,19 @@
 % \maketitle
 %
 % \textbf{\color{red}NB!}
-% You must run \TeX{} processor with |--shell-escape| option
+% You must run \TeX{} processor with |-shell-escape| option
 % and you must have \href{https://www.perl.org}{Perl} installed.
-% If you omit the |--shell-escape| option, the package will try
+% If you omit the |-shell-escape| option, the package will try
 % to use cached files, if they exist. If they don't, compilation will
-% crash. Thus, when you must prepare your document for a compilation
-% without the |--shell-escape| option, run it locally with the option
-% and then package all files (including the files in the |_eolang| directory)
-% into a single ZIP archive.
+% fail. Thus, when you must prepare your document for a compilation
+% without the |-shell-escape| option, run it locally with the option provided
+% and then package all files (including the files in the |_eolang-*| directories)
+% into a single ZIP archive. It is advised to use |tmpdir| package option
+% in this case, in order to make the directory name not depend on the
+% \LaTeX{} engine.
 %
-% If |--shell-escape| is set, this package doesn't work on Windows.
+% If |-shell-escape| is set, this package won't work on Windows, because
+% it uses POSIX command line interface.
 
 % \section{Introduction}
 %
@@ -788,8 +791,9 @@
       \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
     \else%
       \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
-        is not created, because --shell-escape is not set, and
-        it doesn't exist, most probably the compilation will fail^^J}%
+        is not created, because -shell-escape is not set, and
+        it doesn't exist, most probably the compilation
+        will fail later^^J}%
     \fi%
   }
 %    \end{macrocode}
@@ -1042,7 +1046,7 @@ print '\endinput';
       \input{#1}}
     {%
       \ifnum\ShellEscapeStatus=1\else%
-        \message{eolang: The --shell-escape command line
+        \message{eolang: The -shell-escape command line
         option is not provided, most probably compilation
         will fail now:^^J}%
       \fi%
