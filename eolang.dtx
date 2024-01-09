@@ -426,6 +426,19 @@
 %</verb>
 %\fi
 
+% \DescribeMacro{noshell}
+% You may prohibit any interactions with the shell by using the |noshell| option. This may be helpful when you send your document
+% for outside processing and want to make sure the compilation won't break due to shell errors:
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\usepackage[noshell]{eolang}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+
 % \section{More Examples}
 
 % The |phiquation| environment treats ends of line as signals to start
@@ -757,7 +770,7 @@
 %    \end{macrocode}
 % We need \href{https://ctan.org/pkg/iexec}{iexec} for executing Perl scripts:
 %    \begin{macrocode}
-\RequirePackage{iexec}
+\ifdefined\eolang@noshell\else\RequirePackage{iexec}\fi
 %    \end{macrocode}
 
 % Then, we process package options:
@@ -781,20 +794,26 @@
 
 % Then, we make a directory where all temporary files will be kept:
 %    \begin{macrocode}
-\RequirePackage{shellesc}
+\ifdefined\eolang@noshell\else\RequirePackage{shellesc}\fi
 \IfFileExists
   {\eolang@tmpdir/\jobname}
   {\message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
     already exists^^J}}
-  {%
-    \ifnum\ShellEscapeStatus=1%
-      \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}%
-    \else%
+  {
+    \ifdefined\eolang@noshell
       \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
-        is not created, because -shell-escape is not set, and
-        it doesn't exist, most probably the compilation
-        will fail later^^J}%
-    \fi%
+        is not created, because of the "noshell" package option,
+        most probably the compilation will fail later^^J}
+    \else
+      \ifnum\ShellEscapeStatus=1
+        \iexec[null]{mkdir -p "\eolang@tmpdir/\jobname"}
+      \else
+        \message{eolang: Temporary directory "\eolang@tmpdir/\jobname"
+          is not created, because -shell-escape is not set, and
+          it doesn't exist, most probably the compilation
+          will fail later^^J}
+      \fi
+    \fi
   }
 %    \end{macrocode}
 
@@ -840,6 +859,11 @@
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
+\ifdefined\eolang@noshell
+  \message{eolang: Perl script is not going to be created,
+  at "\eolang@tmpdir/\jobname-phi.pl" because of the "noshell"
+  package option^^J}
+\else
 \openin 15=\eolang@tmpdir/\jobname-phi.pl
 \ifeof 15
 \message{eolang: Perl script is going to be created,
@@ -1023,6 +1047,7 @@ print '\endinput';
     "\eolang@tmpdir/\jobname-phi.pl"^^J}
 \fi
 \closein 15
+\fi
 \makeatother
 %    \end{macrocode}
 % \end{macro}
@@ -1039,6 +1064,7 @@ print '\endinput';
 
 % \begin{macro}{\eolang@ifabsent}
 % \changes{0.17.0}{2023/12/28}{A new supplementary \texttt{eolang@ifabsent} command added}
+% \changes{0.18.0}{2024/01/09}{The \texttt{noshell} package option added in order to enable complete prohibition of shell interactions.}
 % Then, we define the |\eolang@ifabsent| command, which if a given file is absent, runs a processing command, otherwise just inputs it:
 %    \begin{macrocode}
 \makeatletter
@@ -1049,12 +1075,16 @@ print '\endinput';
       \message{eolang: File "#1" already exists ^^J}%
       \input{#1}}
     {%
-      \ifnum\ShellEscapeStatus=1\else%
-        \message{eolang: The -shell-escape command line
-        option is not provided, most probably compilation
-        will fail now:^^J}%
+      \ifdefined\eolang@noshell%
+        \message{eolang: Shell processing is disabled^^J}%
+      \else%
+        \ifnum\ShellEscapeStatus=1\else%
+          \message{eolang: The -shell-escape command line
+          option is not provided, most probably compilation
+          will fail now:^^J}%
+        \fi%
+        #2%
       \fi%
-      #2%
     }%
 }
 \makeatother
@@ -1163,6 +1193,11 @@ print '\endinput';
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
 \makeatletter
+\ifdefined\eolang@noshell
+\message{eolang: Perl script is not going to be created
+  at "\eolang@tmpdir/\jobname-sodg.pl", because of the
+  "noshell" package option^^J}
+\else
 \openin 15=\eolang@tmpdir/\jobname-sodg.pl
 \ifeof 15
 \message{eolang: Perl script is going to be created,
@@ -1448,6 +1483,7 @@ print '\endinput';
     "\eolang@tmpdir/\jobname-sodg.pl"^^J}
 \fi
 \closein 15
+\fi
 \makeatother
 %    \end{macrocode}
 % \end{macro}
