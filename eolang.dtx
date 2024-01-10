@@ -795,6 +795,7 @@
 
 % Then, we make a directory where all temporary files will be kept:
 %    \begin{macrocode}
+\makeatletter
 \ifdefined\eolang@noshell\else\RequirePackage{shellesc}\fi
 \IfFileExists
   {\eolang@tmpdir/\jobname}
@@ -816,6 +817,7 @@
       \fi
     \fi
   }
+\makeatother
 %    \end{macrocode}
 
 % \begin{macro}{\eolang@lineno}
