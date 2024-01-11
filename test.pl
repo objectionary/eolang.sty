@@ -88,6 +88,7 @@ sub replaces_verbatim {
 }
 
 replaces_phiq('Hello, $@$!', '@');
+replaces_phiq('Hello, $y_2$!', 'y_2');
 replaces_phiq('Hello, $P\'$!', 'P\'');
 replaces_phiq('Hello, $@$ and $^$!', '^');
 replaces_phiq('Hello, $abc -> @  $!', '  abc -> @ ');

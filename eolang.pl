@@ -101,7 +101,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     my $search = quotemeta($phiq);
     $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
     $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
-    my $re = '\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . "}\% 'phiq' replaced \n";
+    my $re = '\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . "}";
     my $count = 0;
     while (1) {
       my $applied = $tex =~ s/${search}/${re}/g;
@@ -125,7 +125,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       $id =~ s/-${k}$//;
       my $search = quotemeta(readfile($f));
       $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
-      my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced \n\n";
+      my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced\n\n";
       my $count = 0;
       while (1) {
         my $applied = $tex =~ s/${search}/${re}/g;
