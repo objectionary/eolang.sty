@@ -55,7 +55,7 @@ sub replaces {
   my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
   print $stdout;
   my $after = readfile($target);
-  if (index($after, '\\input') == -1) {
+  if (index($after, '\\input') eq -1) {
     print "Didn't inject \\phiq:\n";
     print "---\n";
     print $after;
@@ -67,6 +67,7 @@ sub replaces {
 }
 
 replaces('Hello, $@$!', '@');
+replaces('Hello, $P\'$!', 'P\'');
 replaces('Hello, $@$ and $^$!', '^');
 replaces('Hello, $abc -> @  $!', '  abc -> @ ');
 replaces('Hello, $[[]]$!', '[[]] ');
