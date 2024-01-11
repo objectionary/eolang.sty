@@ -39,6 +39,14 @@ sub readfile {
   return $content;
 }
 
+# Save content to file.
+sub savefile {
+  my ($path, $content) = @_;
+  open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
+  print $f $content;
+  close($f);
+}
+
 # Print INFO message to the console.
 sub info {
   my ($txt) = @_;
@@ -116,7 +124,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       $id =~ s/\.[^.]+$//;
       $id =~ s/-${k}$//;
       my $search = quotemeta(readfile($f));
-      $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\n\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
+      $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
       my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced \n\n";
       my $count = 0;
       while (1) {
@@ -137,9 +145,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     exit(1);
   }
   debug('Target: ' . $target);
-  open(my $out, '>', $target) or error('Cannot open file for writing: ' . $target);
-  print $out $tex;
-  close($out);
+  savefile($target, $tex);
   info("New TeX file save to: ". $target);
 }
 
