@@ -99,6 +99,7 @@ replaces_phiq('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
 replaces_phiq('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
 
 replaces_verbatim('phiquation', "Hello, \n\\begin{phiquation}\n  a -> \@\n\\end{phiquation}\n", '  a -> @');
+replaces_verbatim('sodg', "Hello, \n\\begin{sodg}\nv1\nv2\n  v3\n\\end{sodg}\n", "v1\nv2\n  v3");
 
 print "SUCCESS\n";
 
