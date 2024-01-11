@@ -27,37 +27,54 @@ use strict;
 use warnings;
 use File::Temp qw/ tempdir /;
 
-my $home = tempdir(CLEANUP => 1);
-
-my $src = $home . '/main.tex';
-my $target = $home . '/new.tex';
-
-print `echo 'Hello, \\\\phiq{ abc -> \@, \\\\alpha -> []}!' > '$src'`;
-print `mkdir -p $home/_eolang/main`;
-print `echo 'abc -> \@, \\\\alpha -> []' > '$home/_eolang/main/A1B2C3-phiq.tex'`;
-my $post = '\\(|abc| \\to \\varphi\\)';
-print `echo '\\\\(|abc| \\\\to \\\\varphi\\\\)' > '$home/_eolang/main/A1B2C3-phiq-post.tex'`;
-# print `tree '$home'`;
-# print `cat '$src'`;
-# print `cat '$home/_eolang/main/A1B2C3-phiq.tex'`;
-# print `cat '$home/_eolang/main/A1B2C3-phiq-post.tex'`;
-
-my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
-print $stdout;
-
-open(my $in, '<', $target) or die('No target file');
-my $after; { local $/; $after = <$in>; }
-close($in);
-
-if (index($after, '\\(|abc| \\to \\varphi\\)') == -1) {
-  print "Didn't inject \\phiq:\n";
-  print "---\n";
-  print $after;
-  print "\n---\n";
-  exit 1;
+# Read file content.
+sub readfile {
+  my ($path) = @_;
+  open(my $h, '<', $path) or die('Cannot open file: ' . $path);
+  my $content; { local $/; $content = <$h>; }
+  return $content;
 }
 
-print `cat '$target'`;
+# Save content to file.
+sub savefile {
+  my ($path, $content) = @_;
+  open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
+  print $f $content;
+  close($f);
+}
+
+# Checks whether replace happens.
+sub replaces {
+  my ($doc, $phiq) = @_;
+  my $home = tempdir(CLEANUP => 1);
+  my $src = $home . '/main.tex';
+  my $target = $home . '/new.tex';
+  savefile($src, $doc);
+  `mkdir -p $home/_eolang/main`;
+  savefile($home . '/_eolang/main/A1B2C3-phiq.tex', $phiq);
+  my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
+  print $stdout;
+  my $after = readfile($target);
+  if (index($after, '\\input') == -1) {
+    print "Didn't inject \\phiq:\n";
+    print "---\n";
+    print $after;
+    print "\n---\n";
+    exit(1);
+  }
+  # print `cat '$target'`;
+  print "OK!\n\n";
+}
+
+replaces('Hello, $@$!', '@');
+replaces('Hello, $@$ and $^$!', '^');
+replaces('Hello, $abc -> @  $!', '  abc -> @ ');
+replaces('Hello, $[[]]$!', '[[]] ');
+replaces('Hello, $\\a -> b$!', '\\a -> b');
+replaces('Hello, $-> []$!', ' -> [] ');
+replaces('Hello, \\phiq  {  [[ \alpha-> ]] }!', '  [[ \alpha -> ]] ');
+replaces('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
+replaces('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
 
 print "SUCCESS\n";
 

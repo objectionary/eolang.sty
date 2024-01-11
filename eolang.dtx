@@ -1013,7 +1013,7 @@ $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 $tex =~ s/\{TEXT(\d+)\}/'\\text{' . @texts[$1] . '}';/ge;
 if ($macro eq 'phiq') {
-  print '$' if ($tex ne '');
+  print '\(' if ($tex ne '');
 } else {
   print '\begin{', $macro, "}\n";
   if (not($align)) {
@@ -1030,7 +1030,7 @@ if ($gathered and not($align)) {
 }
 print $tex;
 if ($macro eq 'phiq') {
-  print '$' if ($tex ne '');
+  print '\)' if ($tex ne '');
 } else {
   if (not($align)) {
     if ($gathered) {
@@ -1156,6 +1156,7 @@ print '\endinput';
         perl \eolang@tmpdir/\jobname-phi.pl 'phiq'
         "\eolang@tmpdir/\jobname/\hash-phiq.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g' \fi}%
+      \message{eolang: Parsed `phiq' at line no. \the\inputlineno^^J}%
     }%
   \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
 }\makeatother
