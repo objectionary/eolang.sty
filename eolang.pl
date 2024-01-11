@@ -104,7 +104,32 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       $count += 1;
     }
   }
-
+  my @kinds = ('sodg', 'phiquation');
+  for my $kind (@kinds) {
+    foreach my $f (glob($tmpdir . '/*-' . $kind . '.tex')) {
+      my $id = basename($f);
+      $id =~ s/\.[^.]+$//;
+      $id =~ s/-phiq$//;
+      my $phiq = readfile($f);
+      $phiq =~ s/^\s+|\s+$//g;
+      my $search = quotemeta($phiq);
+      $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
+      $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
+      my $re = '\\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . '}';
+      my $count = 0;
+      while (1) {
+        my $applied = $tex =~ s/${search}/${re}/g;
+        if (!$applied) {
+          if ($count eq 0) {
+            debug("Neither \\phiq{$phiq} nor \$$phiq\$ found, suggested by $f");
+          }
+          last;
+        }
+        debug('\\phiq ' . $id . '( ' . $phiq . ' ) -> ' . $re);
+        $count += 1;
+      }
+    }
+  }
   if (not $target) {
     error('Target file name must be specified');
     exit(1);
