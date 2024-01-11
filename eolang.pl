@@ -48,7 +48,9 @@ sub info {
 # Print DEBUG message to the console.
 sub debug {
   my ($txt) = @_;
-  print $txt . "\n";
+  if (exists $args{'--verbose'}) {
+    print $txt . "\n";
+  }
 }
 
 # Print ERROR message to the console.
@@ -64,6 +66,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     "Options:\n" .
     "  -v, --version        Print the current version of the tool and exit\n" .
     "  -?, --help           Print this help screen\n" .
+    "      --verbose        Print all possible debugging information\n" .
     "      --tmpdir=path    Temp directory with .tex files ('_eolang' by default)\n\n" .
     "If any issues, report to GitHub: https://github.com/yegor256/bibcop");
 } elsif (exists $args{'--version'} or exists $args{'-v'}) {
