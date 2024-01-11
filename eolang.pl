@@ -90,7 +90,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     my $search = quotemeta($phiq);
     $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
     $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
-    my $re = '\\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . '}';
+    my $re = '\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . "}\% 'phiq' replaced \n";
     my $count = 0;
     while (1) {
       my $applied = $tex =~ s/${search}/${re}/g;
@@ -104,28 +104,27 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       $count += 1;
     }
   }
-  my @kinds = ('sodg', 'phiquation');
+  my @kinds = ('sodg', 'phiquation', 'phiquation*');
   for my $kind (@kinds) {
-    foreach my $f (glob($tmpdir . '/*-' . $kind . '.tex')) {
+    my $k = $kind;
+    $k =~ s/\*$//;
+    foreach my $f (glob($tmpdir . '/*-' . $k . '.tex')) {
       my $id = basename($f);
       $id =~ s/\.[^.]+$//;
-      $id =~ s/-phiq$//;
-      my $phiq = readfile($f);
-      $phiq =~ s/^\s+|\s+$//g;
-      my $search = quotemeta($phiq);
-      $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
-      $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
-      my $re = '\\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . '}';
+      $id =~ s/-${k}$//;
+      my $search = quotemeta(readfile($f));
+      $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\n\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
+      my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced \n\n";
       my $count = 0;
       while (1) {
         my $applied = $tex =~ s/${search}/${re}/g;
         if (!$applied) {
           if ($count eq 0) {
-            debug("Neither \\phiq{$phiq} nor \$$phiq\$ found, suggested by $f");
+            debug("Didn't find \\begin{$kind} suggested by $f");
           }
           last;
         }
-        debug('\\phiq ' . $id . '( ' . $phiq . ' ) -> ' . $re);
+        debug('\\begin{' . $kind . '} ' . $id . ' -> ' . $re);
         $count += 1;
       }
     }

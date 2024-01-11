@@ -43,8 +43,8 @@ sub savefile {
   close($f);
 }
 
-# Checks whether replace happens.
-sub replaces {
+# Checks whether replace happens for \phiq.
+sub replaces_phiq {
   my ($doc, $phiq) = @_;
   my $home = tempdir(CLEANUP => 1);
   my $src = $home . '/main.tex';
@@ -62,20 +62,43 @@ sub replaces {
     print "\n---\n";
     exit(1);
   }
-  # print `cat '$target'`;
   print "OK!\n\n";
 }
 
-replaces('Hello, $@$!', '@');
-replaces('Hello, $P\'$!', 'P\'');
-replaces('Hello, $@$ and $^$!', '^');
-replaces('Hello, $abc -> @  $!', '  abc -> @ ');
-replaces('Hello, $[[]]$!', '[[]] ');
-replaces('Hello, $\\a -> b$!', '\\a -> b');
-replaces('Hello, $-> []$!', ' -> [] ');
-replaces('Hello, \\phiq  {  [[ \alpha-> ]] }!', '  [[ \alpha -> ]] ');
-replaces('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
-replaces('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
+# Checks whether replace happens for \begin{phiquation}.
+sub replaces_verbatim {
+  my ($kind, $doc, $verbatim) = @_;
+  my $home = tempdir(CLEANUP => 1);
+  my $src = $home . '/main.tex';
+  my $target = $home . '/new.tex';
+  savefile($src, $doc);
+  `mkdir -p $home/_eolang/main`;
+  savefile($home . '/_eolang/main/A1B2C3-' . $kind . '.tex', $verbatim);
+  my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
+  print $stdout;
+  my $after = readfile($target);
+  if (index($after, '\\input') eq -1) {
+    print "Didn't replace \\begin{$kind}:\n";
+    print "---\n";
+    print $after;
+    print "\n---\n";
+    exit(1);
+  }
+  print "OK!\n\n";
+}
+
+replaces_phiq('Hello, $@$!', '@');
+replaces_phiq('Hello, $P\'$!', 'P\'');
+replaces_phiq('Hello, $@$ and $^$!', '^');
+replaces_phiq('Hello, $abc -> @  $!', '  abc -> @ ');
+replaces_phiq('Hello, $[[]]$!', '[[]] ');
+replaces_phiq('Hello, $\\a -> b$!', '\\a -> b');
+replaces_phiq('Hello, $-> []$!', ' -> [] ');
+replaces_phiq('Hello, \\phiq  {  [[ \alpha-> ]] }!', '  [[ \alpha -> ]] ');
+replaces_phiq('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
+replaces_phiq('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
+
+replaces_verbatim('phiquation', "Hello, \n\\begin{phiquation}\n  a -> \@\n\\end{phiquation}\n", '  a -> @');
 
 print "SUCCESS\n";
 
