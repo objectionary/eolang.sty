@@ -1103,15 +1103,15 @@ print '\endinput';
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/phiquation.tex}-\the\inputlineno}%
   \eolang@ifabsent
-    {\eolang@tmpdir/\jobname/\hash-post.tex}
+    {\eolang@tmpdir/\jobname/\hash-phi-post.tex}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/phiquation.tex"
-        "\eolang@tmpdir/\jobname/\hash.tex"}%
+        "\eolang@tmpdir/\jobname/\hash-phi.tex"}%
       \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
-      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-post.tex]{
+      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-phi-post.tex]{
         perl "\eolang@tmpdir/\jobname-phi.pl"
         '#1'
-        "\eolang@tmpdir/\jobname/\hash.tex"
+        "\eolang@tmpdir/\jobname/\hash-phi.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
         \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
     }%
@@ -1630,11 +1630,11 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/\hash-sodg-post.tex}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/sodg.tex"
-        "\eolang@tmpdir/\jobname/\hash.tex"}%
+        "\eolang@tmpdir/\jobname/\hash-sodg.tex"}%
       \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-sodg-post.tex]{
         perl "\eolang@tmpdir/\jobname-sodg.pl"
-        "\eolang@tmpdir/\jobname/\hash.tex"
+        "\eolang@tmpdir/\jobname/\hash-sodg.tex"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
         \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
     }
