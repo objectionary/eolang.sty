@@ -2,10 +2,14 @@ module = "eolang"
 ctanupload = true
 typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
+exefiles = {"eolang.pl"}
 checkengines = {"pdftex", "luatex", "xetex"}
 tagfiles = {"build.lua", "eolang.dtx"}
 docfiles = {"cactus.pdf", "eolang.bib"}
 cleanfiles = {"build", "_docshots", "*.pl.eolang", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "eolang.pdf"}
+checkfiles = {"eolang.pl"}
+scriptfiles  = {"eolang.pl"}
+scriptmanfiles = {"eolang.1"}
 typesetruns = 2
 
 uploadconfig = {
