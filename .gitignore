@@ -3,7 +3,6 @@ build/
 _docshots/
 _minted-*/
 eolang.tex
-eolang.pl
 eolang-phi.pl
 eolang-sodg.pl
 eolang.ret
