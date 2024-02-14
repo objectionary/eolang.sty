@@ -45,6 +45,8 @@ sub savefile {
   open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
   print $f $content;
   close($f);
+  my $size = -s $path;
+  info("File saved to '$path' ($size bytes)");
 }
 
 # Print INFO message to the console.
@@ -146,7 +148,6 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   }
   debug('Target: ' . $target);
   savefile($target, $tex);
-  info("New TeX file save to: ". $target);
 }
 
 # In order to finish it with success:
