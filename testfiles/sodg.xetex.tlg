@@ -33,22 +33,22 @@ eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 [][] 
-\hbox(35.08405+30.08405)x345.0
+\hbox(34.81331+29.8133)x345.0
 .\hbox(0.0+0.0)x15.0
-.\hbox(35.08405+30.08405)x357.00002
+.\hbox(34.81331+29.8133)x357.00002
 ..\mathon
-..\vbox(35.08405+30.08405)x357.00002
-...\hbox(61.56805+3.60004)x357.00002
+..\vbox(34.81331+29.8133)x357.00002
+...\hbox(61.02657+3.60004)x357.00002
 ....\glue(\tabskip) 0.0
-....\hbox(61.56805+3.60004)x357.00002
+....\hbox(61.02657+3.60004)x357.00002
 .....\rule(8.39996+3.60004)x0.0
 .....\glue 6.0
 .....\glue 0.00002
-.....\vbox(61.56805+0.0)x345.0
-......\hbox(61.56805+0.0)x345.0, glue set 283.43195fil
-.......\hbox(61.56805+0.0)x61.56805
-........\glue 12.39996
-........\hbox(0.0+0.0)x0.0, shifted -49.16809
+.....\vbox(61.02657+0.0)x345.0
+......\hbox(61.02657+0.0)x345.0, glue set 283.97343fil
+.......\hbox(61.02657+0.0)x61.02657
+........\glue 12.19994
+........\hbox(0.0+0.0)x0.0, shifted -48.82663
 .........\special{pdf:bcontent}
 .........\special{pdf:code q }
 .........\special{pdf:code 0 G }
@@ -56,14 +56,11 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 .........\special{pdf:code 0.3985 w }
 .........\hbox(0.0+0.0)x0.0
 ..........\special{pdf:code q }
-..........\special{pdf:code 0.79701 w }
+..........\special{pdf:code 0.39844 w }
 ..........\glue 0.0
 ..........\hbox(0.0+0.0)x0.0
 ...........\hbox(0.0+0.0)x0.0
 ............\special{pdf:code q }
-............\special{pdf:code 0.79701 w }
-............\special{pdf:code q }
-............\special{pdf:code 0.79701 w }
 ............\special{pdf:code 11.95529 0.0 m }
 ............\special{pdf:code 11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
 ............\special{pdf:code -6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
@@ -73,7 +70,6 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 ............\special{pdf:code 0.0 0.0 m }
 ............\special{pdf:code S }
 ............\glue 0.0
-............\special{pdf:code Q }
 ............\special{pdf:code q }
 ............\special{pdf:code q -1 0 0 -1 0 0 cm q}
 ............\special{pdf: econtent}
@@ -107,21 +103,17 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 ..........\hbox(0.0+0.0)x0.0
 ...........\hbox(0.0+0.0)x0.0
 ............\special{pdf:code q }
-............\special{pdf:code 0.79701 w }
 ............\glue 0.0
 ............\glue 0.0
-............\special{pdf:code q }
-............\special{pdf:code 0.79701 w }
-............\special{pdf:code 48.58652 -36.63123 m }
-............\special{pdf:code 48.58652 -30.02843 43.23402 -24.67593 36.63123 -24.67593 c }
-............\special{pdf:code 30.02843 -24.67593 24.67593 -30.02843 24.67593 -36.63123 c }
-............\special{pdf:code 24.67593 -43.23402 30.02843 -48.58652 36.63123 -48.58652 c }
-............\special{pdf:code 43.23402 -48.58652 48.58652 -43.23402 48.58652 -36.63123 c }
+............\special{pdf:code 48.44562 -36.49033 m }
+............\special{pdf:code 48.44562 -29.88753 43.09311 -24.53503 36.49033 -24.53503 c }
+............\special{pdf:code 29.88753 -24.53503 24.53503 -29.88753 24.53503 -36.49033 c }
+............\special{pdf:code 24.53503 -43.09311 29.88753 -48.44562 36.49033 -48.44562 c }
+............\special{pdf:code 43.09311 -48.44562 48.44562 -43.09311 48.44562 -36.49033 c }
 ............\special{pdf:code h }
-............\special{pdf:code 36.63123 -36.63123 m }
+............\special{pdf:code 36.49033 -36.49033 m }
 ............\special{pdf:code S }
 ............\glue 0.0
-............\special{pdf:code Q }
 ............\special{pdf:code q }
 ............\special{pdf:code q -1 0 0 -1 0 0 cm q}
 ............\special{pdf: econtent}
@@ -132,7 +124,7 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 ............\special{pdf:code 0 J [] 0 d}
 ............\special{pdf:bcolor [1]}
 ............\special{pdf:bcolor [0]}
-............\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 32.31754 -38.06337}
+............\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 32.17662 -37.92247}
 ............\hbox(0.0+0.0)x0.0
 .............\hbox(3.87498+0.99998)x8.65964
 ..............\special{pdf:code 0 G }
