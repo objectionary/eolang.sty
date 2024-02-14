@@ -33,32 +33,32 @@ eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 [][] 
-\hbox(35.31041+30.3104)x345.0, direction TLT
+\hbox(35.08405+30.08405)x345.0, direction TLT
 .\localpar
 ..\localinterlinepenalty=0
 ..\localbrokenpenalty=0
 ..\localleftbox=null
 ..\localrightbox=null
 .\hbox(0.0+0.0)x15.0, direction TLT
-.\hbox(35.31041+30.3104)x357.00002, direction TLT
+.\hbox(35.08405+30.08405)x357.00002, direction TLT
 ..\mathon
-..\vbox(35.31041+30.3104)x357.00002, direction TLT
-...\hbox(62.02077+3.60004)x357.00002, direction TLT
+..\vbox(35.08405+30.08405)x357.00002, direction TLT
+...\hbox(61.56805+3.60004)x357.00002, direction TLT
 ....\glue(\tabskip) 0.0
-....\hbox(62.02077+3.60004)x357.00002, direction TLT
+....\hbox(61.56805+3.60004)x357.00002, direction TLT
 .....\rule(8.39996+3.60004)x0.0
 .....\glue 6.0
 .....\glue 0.00002
-.....\vbox(62.02077+0.0)x345.0, direction TLT
-......\hbox(62.02077+0.0)x345.0, glue set 282.97925fil, direction TLT
+.....\vbox(61.56805+0.0)x345.0, direction TLT
+......\hbox(61.56805+0.0)x345.0, glue set 283.43195fil, direction TLT
 .......\localpar
 ........\localinterlinepenalty=0
 ........\localbrokenpenalty=0
 ........\localleftbox=null
 ........\localrightbox=null
-.......\hbox(62.02077+0.0)x62.02077, direction TLT
+.......\hbox(61.56805+0.0)x61.56805, direction TLT
 ........\glue 12.39996
-........\hbox(0.0+0.0)x0.0, shifted -49.6208, direction TLT
+........\hbox(0.0+0.0)x0.0, shifted -49.16809, direction TLT
 .........\pdfliteral origin{q }
 .........\pdfliteral origin{0 G }
 .........\pdfliteral origin{0 g }
@@ -113,20 +113,20 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 ............\glue(\spaceskip) 0.0
 ............\pdfliteral origin{q }
 ............\pdfliteral origin{0.79701 w }
-............\pdfliteral origin{49.03755 -37.08226 m }
-............\pdfliteral origin{49.03755 -30.47946 43.68506 -25.12697 37.08226 -25.12697 c }
-............\pdfliteral origin{30.47946 -25.12697 25.12697 -30.47946 25.12697 -37.08226 c }
-............\pdfliteral origin{25.12697 -43.68506 30.47946 -49.03755 37.08226 -49.03755 c }
-............\pdfliteral origin{43.68506 -49.03755 49.03755 -43.68506 49.03755 -37.08226 c }
+............\pdfliteral origin{48.58652 -36.63123 m }
+............\pdfliteral origin{48.58652 -30.02843 43.23402 -24.67593 36.63123 -24.67593 c }
+............\pdfliteral origin{30.02843 -24.67593 24.67593 -30.02843 24.67593 -36.63123 c }
+............\pdfliteral origin{24.67593 -43.23402 30.02843 -48.58652 36.63123 -48.58652 c }
+............\pdfliteral origin{43.23402 -48.58652 48.58652 -43.23402 48.58652 -36.63123 c }
 ............\pdfliteral origin{h }
-............\pdfliteral origin{37.08226 -37.08226 m }
+............\pdfliteral origin{36.63123 -36.63123 m }
 ............\pdfliteral origin{S }
 ............\glue(\spaceskip) 0.0
 ............\pdfliteral origin{Q }
 ............\pdfliteral origin{q }
 ............\hbox(0.0+0.0)x0.0, direction TLT
-.............\glue 32.89102
-.............\hbox(0.0+0.0)x0.0, shifted 38.65834, direction TLT
+.............\glue 32.43831
+.............\hbox(0.0+0.0)x0.0, shifted 38.20563, direction TLT
 ..............\pdfliteral origin{1.0 0.0 0.0 1.0 0.0 0.0 cm }
 ..............\pdfliteral origin{q }
 ..............\hbox(0.0+0.0)x0.0, direction TLT
