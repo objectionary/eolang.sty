@@ -25,25 +25,11 @@ package eolang;
 
 use strict;
 use warnings;
+use lib('.');
+use tools;
 use File::Temp qw/ tempdir /;
 use File::Basename;
 use File::Spec;
-
-# Read file content.
-sub readfile {
-  my ($path) = @_;
-  open(my $h, '<', $path) or die('Cannot open file: ' . $path);
-  my $content; { local $/; $content = <$h>; }
-  return $content;
-}
-
-# Save content to file.
-sub savefile {
-  my ($path, $content) = @_;
-  open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
-  print $f $content;
-  close($f);
-}
 
 # Checks whether rewritting happens for \phiq.
 sub rewrites_phiq {
