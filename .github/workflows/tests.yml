@@ -38,5 +38,7 @@ jobs:
           update-all-packages: true
           package-file: DEPENDS.txt
       - run: |
-          scripts=$(find tests -name '*.pl')
-          for t in $(); do $t; done
+          scripts=$(find ./tests -name '*.pl')
+          while IFS= read -r s; do
+            "${s}"
+          done <<< "${scripts}"
