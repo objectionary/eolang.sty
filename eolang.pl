@@ -72,7 +72,7 @@ sub error {
 if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   info("This script helps embedding \\phiquation and \\phiq into .tex document\n\n" .
     "Usage:\n" .
-    "  eolang [<options>] <.tex file path>\n\n" .
+    "  eolang [<options>] <.tex input file path> <.tex output file path>\n\n" .
     "Options:\n" .
     "  -v, --version        Print the current version of the tool and exit\n" .
     "  -?, --help           Print this help screen\n" .
