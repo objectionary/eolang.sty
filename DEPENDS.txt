@@ -1,6 +1,7 @@
 hard adjustbox
 hard amsfonts
 hard amsmath
+hard everyshi
 hard fancyvrb
 hard hyperref
 hard iexec
