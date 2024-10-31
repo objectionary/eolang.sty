@@ -33,26 +33,6 @@ use File::Basename;
 # Hash of incoming command line arguments.
 my %args = map { $_ => 1 } @ARGV;
 
-# Print INFO message to the console.
-sub info {
-  my ($txt) = @_;
-  print $txt . "\n";
-}
-
-# Print DEBUG message to the console.
-sub debug {
-  my ($txt) = @_;
-  if (exists $args{'--verbose'}) {
-    print $txt . "\n";
-  }
-}
-
-# Print ERROR message to the console.
-sub error {
-  my ($txt) = @_;
-  print STDERR $txt . "\n";
-}
-
 if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   info("This script helps embedding \\phiquation and \\phiq into .tex document\n\n" .
     "Usage:\n" .

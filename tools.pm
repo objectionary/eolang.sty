@@ -28,7 +28,7 @@ use warnings;
 use Exporter;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( readfile savefile );
+our @EXPORT = qw( readfile savefile info debug error );
 
 # Read file content.
 sub readfile {
@@ -44,6 +44,29 @@ sub savefile {
   open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
   print $f $content;
   close($f);
+}
+
+# Hash of incoming command line arguments.
+my %args = map { $_ => 1 } @ARGV;
+
+# Print INFO message to the console.
+sub info {
+  my ($txt) = @_;
+  print $txt . "\n";
+}
+
+# Print DEBUG message to the console.
+sub debug {
+  my ($txt) = @_;
+  if (exists $args{'--verbose'}) {
+    print $txt . "\n";
+  }
+}
+
+# Print ERROR message to the console.
+sub error {
+  my ($txt) = @_;
+  print STDERR $txt . "\n";
 }
 
 1;

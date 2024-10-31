@@ -39,16 +39,16 @@ sub replaces_phiq {
   `mkdir -p $home/_eolang/main`;
   savefile($home . '/_eolang/main/A1B2C3-phiq.tex', $phiq);
   my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
-  print $stdout;
+  debug($stdout);
   my $after = readfile($target);
   if (index($after, '\\input') eq -1) {
-    print "Didn't inject \\phiq:\n";
-    print "---\n";
-    print $after;
-    print "\n---\n";
+    error("Didn't inject \\phiq:\n");
+    error("---\n");
+    error($after);
+    error("\n---\n");
     exit(1);
   }
-  print "OK!\n\n";
+  info("OK!");
 }
 
 # Checks whether replace happens for \begin{phiquation}.
@@ -61,16 +61,16 @@ sub replaces_verbatim {
   `mkdir -p $home/_eolang/main`;
   savefile($home . '/_eolang/main/A1B2C3-' . $kind . '.tex', $verbatim);
   my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
-  print $stdout;
+  debug($stdout);
   my $after = readfile($target);
   if (index($after, '\\input') eq -1) {
-    print "Didn't replace \\begin{$kind}:\n";
-    print "---\n";
-    print $after;
-    print "\n---\n";
+    error("Didn't replace \\begin{$kind}:\n");
+    error("---\n");
+    error($after);
+    error("\n---\n");
     exit(1);
   }
-  print "OK!\n\n";
+  info("OK!");
 }
 
 replaces_phiq('Hello, $@$!', '@');
