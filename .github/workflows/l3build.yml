@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get -y install ghostscript
-        if: matrix.os == 'ubuntu-22.04'
+        if: matrix.os == 'ubuntu-24.04'
       - uses: teatimeguest/setup-texlive-action@v3.3.1
         with:
           update-all-packages: true
@@ -48,10 +48,10 @@ jobs:
           cp build/distrib/tds/tex/latex/eolang/eolang.sty build/gh-pages
           sed -i "s/0\.0\.0/$(date +%H.%M.%S)/g" build/gh-pages/eolang.sty
           sed -i "s/0000-00-00/$(date +%Y-%m-%d)/g" build/gh-pages/eolang.sty
-        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-22.04'
+        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-24.04'
       - uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
           folder: build/gh-pages
           clean: true
-        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-22.04'
+        if: github.ref == 'refs/heads/master' && matrix.os == 'ubuntu-24.04'
