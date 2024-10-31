@@ -37,4 +37,4 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-      - run: for t in $(ls tests/*.pl); do $t; done
+      - run: for t in $(find tests -name '*.pl'); do $t; done
