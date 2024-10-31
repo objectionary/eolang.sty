@@ -33,7 +33,7 @@ our @EXPORT = qw( readfile savefile info debug error );
 # Read file content.
 sub readfile {
   my ($path) = @_;
-  open(my $h, '<', $path) or die('Cannot open file: ' . $path);
+  open(my $h, '<', $path) or die('Cannot read from file: ' . $path);
   my $content; { local $/; $content = <$h>; }
   return $content;
 }

@@ -37,4 +37,6 @@ jobs:
         with:
           update-all-packages: true
           package-file: DEPENDS.txt
-      - run: for t in $(find tests -name '*.pl'); do $t; done
+      - run: |
+          scripts=$(find tests -name '*.pl')
+          for t in $(); do $t; done

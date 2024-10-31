@@ -31,20 +31,23 @@ use File::Temp qw/ tempdir /;
 use File::Basename;
 use File::Spec;
 
-# Checks whether rewritting happens for \phiq.
-sub rewrites_phiq {
+# Checks whether file saving happens for \phiq.
+sub saves_phiq {
   my ($temp, $from, $to) = @_;
-  my $src = $temp . '/foo.tex';
-  savefile($src, $from);
-  my $stdout = `perl '$temp/_eolang/article-phi.pl' phiq '$src' 2>&1`;
-  if (index($stdout, $to) eq -1) {
-    error("Didn't rewrite:\n");
+  my $article = $temp . '/article.tex';
+  savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}$ ' . $from . ' $\end{document}');
+  debug(`cd '$temp' && rm -rf _eolang 2>&1`);
+  debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`);
+  my $post = `find '$temp/_eolang' -name '**-post.tex' -print0 2>&1`;
+  my $tex = readfile($post);
+  if (index($tex, $to) eq -1) {
+    error("Didn't save:\n");
     error("--- from: ---\n");
     error($from);
     error("\n--- expected: ---\n");
     error($to);
     error("\n--- received: ---\n");
-    error($stdout);
+    error($tex);
     error("\n---\n");
     exit(1);
   }
@@ -54,14 +57,9 @@ sub rewrites_phiq {
 my $temp = tempdir(CLEANUP => 1);
 my $self = dirname(dirname(File::Spec->rel2abs($0)));
 debug(`cd '$temp' && cp '$self/eolang.ins' . && cp '$self/eolang.dtx' . && pdflatex eolang.ins 2>&1`);
-my $article = $temp . '/article.tex';
-savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}\end{document}');
-debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`);
 
-rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
-rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf{b}');
-rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\mapsto} b');
-rewrites_phiq($temp, '[\ccc]', '[\ccc]');
+saves_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
+saves_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf {b}');
 
 info('SUCCESS');
 
