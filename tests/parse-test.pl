@@ -60,6 +60,7 @@ debug(`cd '$temp' && cp '$self/eolang.ins' . && cp '$self/eolang.dtx' . && pdfla
 
 saves_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
 saves_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf {b}');
+saves_phiq($temp, 'a -> \ccc', 'a \mathbin{\mapsto} \ccc');
 
 info('SUCCESS');
 

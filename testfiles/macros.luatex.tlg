@@ -4,8 +4,8 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( /bin/echo '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiSlot {abc}
 <EOF>
@@ -18,8 +18,8 @@ LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 ) iexec: The content of '_eolang-lua/macros/6658405E4AD6612F4D7E3E1F3C4BF794-12-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 12
-runsystem(( /bin/echo '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiWave {}
 <EOF>
@@ -29,8 +29,8 @@ runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/BF7FA545864BA8C5
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq-post.tex) iexec: The content of '_eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 13
-runsystem(( /bin/echo '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiConst {}
 <EOF>
@@ -40,8 +40,8 @@ runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/D594B53A1176C726
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq-post.tex) iexec: The content of '_eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 14
-runsystem(( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiMany {\phiWave }{i=1}{n}
 <EOF>
@@ -51,8 +51,8 @@ runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/A1233E9195882207
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq-post.tex) iexec: The content of '_eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 15
-runsystem(( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiOset {*}{->}
 <EOF>
@@ -62,8 +62,8 @@ runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/FBCE819343A7CEDA
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq-post.tex) iexec: The content of '_eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 17
-runsystem(( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiUset {*}{->}
 <EOF>

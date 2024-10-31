@@ -1149,7 +1149,7 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/\hash-phiq-post.tex}
     {%
       \iexec[log,trace,quiet,stdout=\eolang@tmpdir/\jobname/phiq.tex]{
-        /bin/echo '\clean'}%
+        printf '\%s' '\clean'}%
       \iexec[quiet,null]{cp "\eolang@tmpdir/\jobname/phiq.tex"
         "\eolang@tmpdir/\jobname/\hash-phiq.tex"}%
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\hash-phiq-post.tex]{

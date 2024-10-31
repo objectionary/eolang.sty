@@ -8,23 +8,23 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( /bin/echo '\Phi ') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '\Phi ') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '\Phi ') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\Phi ') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang/sodg/phiq.tex':
 \Phi
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (6 bytes)
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (5 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/sodg/phiq.tex" "_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/sodg-phi.pl 'phiq' "_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex" ) > _eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex) iexec: The content of '_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 12
-runsystem(( /bin/echo 'v_{1}') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'v_{1}') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'v_{1}') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'v_{1}') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang/sodg/phiq.tex':
 v_{1}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (6 bytes)
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (5 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/sodg/phiq.tex" "_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang/sodg-phi.pl 'phiq' "_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex" ) > _eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.

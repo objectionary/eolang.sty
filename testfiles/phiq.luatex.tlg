@@ -1,7 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem(( /bin/echo 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x->y
 <EOF>
@@ -15,8 +15,8 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line ..
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
 eolang: Parsed `phiq' at line no. 8
-runsystem(( /bin/echo '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 <EOF>
 iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
@@ -25,8 +25,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/D41D8CD98F00B204E980
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 10
-runsystem(( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x := [ \alpha _0 -rqst> ? ]
 <EOF>
@@ -39,8 +39,8 @@ LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
 (Font)              Font shape `TU/lmr/m/sc' tried instead on input line ....
 ) iexec: The content of '_eolang-lua/phiq/C067BC5D0C105864AC33839EC7DF9A09-11-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 11
-runsystem(( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 & -> ^.$.|alpha|(42)
 <EOF>
@@ -50,8 +50,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/3FD572925D9C799DC53D
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 12
-runsystem(( /bin/echo '0/g->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '0/g->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '0/g->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '0/g->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 0/g->x
 <EOF>
@@ -61,8 +61,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/FB2AC6983BD86B21C5D2
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 13
-runsystem(( /bin/echo '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 0/|foo|->x
 <EOF>
@@ -72,8 +72,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/BD05A94E89B82F46527F
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 14
-runsystem(( /bin/echo '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 << a, b >> == 7
 <EOF>
@@ -83,8 +83,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/DFFAA518DB4A5388BDAA
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 15
-runsystem(( /bin/echo 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x.save
 <EOF>
@@ -94,8 +94,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/E536D28396AF93662FE6
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 16
-runsystem(( /bin/echo '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 [[x -> Q.a.^]]
 <EOF>
@@ -105,8 +105,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/E21FACB5FE408EB4D7D8
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 17
-runsystem(( /bin/echo 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x->y
 <EOF>
@@ -116,8 +116,8 @@ runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/9BA1A908F61278BEE289
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq-post.tex) iexec: The content of '_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 20
-runsystem(( /bin/echo 'y->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( /bin/echo 'y->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+runsystem(( printf '%s' 'y->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'y->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 y->x
 <EOF>
