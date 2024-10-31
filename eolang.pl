@@ -26,28 +26,12 @@ package eolang;
 
 use warnings;
 use strict;
+use lib('.');
+use tools;
 use File::Basename;
 
 # Hash of incoming command line arguments.
 my %args = map { $_ => 1 } @ARGV;
-
-# Read file content.
-sub readfile {
-  my ($path) = @_;
-  open(my $h, '<', $path) or die('Cannot open file: ' . $path);
-  my $content; { local $/; $content = <$h>; }
-  return $content;
-}
-
-# Save content to file.
-sub savefile {
-  my ($path, $content) = @_;
-  open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
-  print $f $content;
-  close($f);
-  my $size = -s $path;
-  info("File saved to '$path' ($size bytes)");
-}
 
 # Print INFO message to the console.
 sub info {
