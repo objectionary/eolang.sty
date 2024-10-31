@@ -73,6 +73,8 @@ savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}
 print `cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`;
 
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
+rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf{b}');
+rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\mapsto} b');
 
 print "SUCCESS\n";
 
