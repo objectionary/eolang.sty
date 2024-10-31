@@ -52,7 +52,7 @@ sub rewrites_phiq {
 }
 
 my $temp = tempdir(CLEANUP => 1);
-my $self = dirname(File::Spec->rel2abs($0));
+my $self = dirname(dirname(File::Spec->rel2abs($0)));
 debug(`cd '$temp' && cp '$self/eolang.ins' . && cp '$self/eolang.dtx' . && pdflatex eolang.ins 2>&1`);
 my $article = $temp . '/article.tex';
 savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}\end{document}');
