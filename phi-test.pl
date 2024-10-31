@@ -75,6 +75,7 @@ print `cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmod
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
 rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf{b}');
 rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\mapsto} b');
+rewrites_phiq($temp, '[\ccc]', '[\ccc]');
 
 print "SUCCESS\n";
 
