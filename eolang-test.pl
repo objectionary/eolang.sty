@@ -87,28 +87,6 @@ sub replaces_verbatim {
   print "OK!\n\n";
 }
 
-# Checks whether conversion happens for \phiq.
-sub converts_phiq {
-  my ($tex, $match) = @_;
-  my $home = tempdir(CLEANUP => 1);
-  my $src = $home . '/main.tex';
-  my $target = $home . '/new.tex';
-  savefile($src, $tex);
-  `mkdir -p $home/_eolang/main`;
-  savefile($home . '/_eolang/main/FFF-phiq.tex', $tex);
-  my $stdout = `perl ./eolang.pl '$src' '$target' 2>&1`;
-  print $stdout;
-  my $after = readfile($target);
-  if (index($after, '\\input') eq -1) {
-    print "Didn't inject \\phiq:\n";
-    print "---\n";
-    print $after;
-    print "\n---\n";
-    exit(1);
-  }
-  print "OK!\n\n";
-}
-
 replaces_phiq('Hello, $@$!', '@');
 replaces_phiq('Hello, $y_2$!', 'y_2');
 replaces_phiq('Hello, $P\'$!', 'P\'');

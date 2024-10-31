@@ -34,3 +34,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ./eolang-test.pl
+      - run: ./phi-test.pl
