@@ -9,7 +9,7 @@ iexec: [( printf '%s' '\phiSlot {abc}') > _eolang-lua/macros/phiq.tex 2>&1; /bin
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiSlot {abc}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/6658405E4AD6612F4D7E3E1F3C4BF794-12-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/6658405E4AD6612F4D7E3E1F3C4BF794-12-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/6658405E4AD6612F4D7E3E1F3C4BF794-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -23,7 +23,7 @@ iexec: [( printf '%s' '\phiWave {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/ec
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiWave {}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/BF7FA545864BA8C5338192DC3CABD1D3-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -34,7 +34,7 @@ iexec: [( printf '%s' '\phiConst {}') > _eolang-lua/macros/phiq.tex 2>&1; /bin/e
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiConst {}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/D594B53A1176C7263873C16BCA24513F-14-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -45,7 +45,7 @@ iexec: [( printf '%s' '\phiMany {\phiWave }{i=1}{n}') > _eolang-lua/macros/phiq.
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiMany {\phiWave }{i=1}{n}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/A1233E91958822073DA8DEB79FCF0C84-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -56,7 +56,7 @@ iexec: [( printf '%s' '\phiOset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiOset {*}{->}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/FBCE819343A7CEDA793E1366B0F891AE-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -67,7 +67,7 @@ iexec: [( printf '%s' '\phiUset {*}{->}') > _eolang-lua/macros/phiq.tex 2>&1; /b
 iexec: This is the content of '_eolang-lua/macros/phiq.tex':
 \phiUset {*}{->}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/macros/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/macros/phiq.tex" "_eolang-lua/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-18-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/macros-phi.pl 'phiq' "_eolang-lua/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-18-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-18-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.

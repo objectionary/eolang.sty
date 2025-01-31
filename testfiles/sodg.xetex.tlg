@@ -32,7 +32,7 @@ runsystem(( perl _eolang-xe/sodg-phi.pl 'phiq' "_eolang-xe/sodg/175FB02DC71571BB
 eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
-[][] 
+[][]
 \hbox(35.08408+30.08406)x345.0
 .\hbox(0.0+0.0)x15.0
 .\hbox(35.08408+30.08406)x357.00002

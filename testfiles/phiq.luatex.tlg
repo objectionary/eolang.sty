@@ -5,7 +5,7 @@ iexec: [( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?%
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x->y
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-8-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-8-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-8-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -19,7 +19,7 @@ runsystem(( printf '%s' '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >
 iexec: [( printf '%s' '') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/D41D8CD98F00B204E9800998ECF8427E-10-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -30,7 +30,7 @@ iexec: [( printf '%s' 'x := [ \alpha _0 -rqst> ? ]') > _eolang-lua/phiq/phiq.tex
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x := [ \alpha _0 -rqst> ? ]
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/C067BC5D0C105864AC33839EC7DF9A09-11-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/C067BC5D0C105864AC33839EC7DF9A09-11-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/C067BC5D0C105864AC33839EC7DF9A09-11-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -44,7 +44,7 @@ iexec: [( printf '%s' '& -> ^.$.|alpha|(42)') > _eolang-lua/phiq/phiq.tex 2>&1; 
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 & -> ^.$.|alpha|(42)
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/3FD572925D9C799DC53DAB4D8A63E841-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -55,7 +55,7 @@ iexec: [( printf '%s' '0/g->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 0/g->x
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/FB2AC6983BD86B21C5D232C0114D8563-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -66,7 +66,7 @@ iexec: [( printf '%s' '0/|foo|->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo 
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 0/|foo|->x
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/BD05A94E89B82F46527F56069860B187-14-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -77,7 +77,7 @@ iexec: [( printf '%s' '<< a, b >> == 7') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 << a, b >> == 7
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/DFFAA518DB4A5388BDAA4AABEDF531D2-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -88,7 +88,7 @@ iexec: [( printf '%s' 'x.save') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x.save
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/E536D28396AF93662FE6AA5041B86398-16-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -99,7 +99,7 @@ iexec: [( printf '%s' '[[x -> Q.a.^]]') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/e
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 [[x -> Q.a.^]]
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/E21FACB5FE408EB4D7D8D6E2F3135ECB-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -110,7 +110,7 @@ iexec: [( printf '%s' 'x->y') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?%
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 x->y
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/9BA1A908F61278BEE28919612E6A26D7-20-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -121,7 +121,7 @@ iexec: [( printf '%s' 'y->x') > _eolang-lua/phiq/phiq.tex 2>&1; /bin/echo -n $?%
 iexec: This is the content of '_eolang-lua/phiq/phiq.tex':
 y->x
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex' 
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/phiq/phiq.tex'
 iexec: Due to 'trace' package option, the files '_eolang-lua/phiq/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/phiq/phiq.tex" "_eolang-lua/phiq/6502FA19742AE2965A549792214367C4-20-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/phiq-phi.pl 'phiq' "_eolang-lua/phiq/6502FA19742AE2965A549792214367C4-20-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang-lua/phiq/6502FA19742AE2965A549792214367C4-20-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.

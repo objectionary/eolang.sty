@@ -22,7 +22,7 @@ runsystem(( perl "_eolang/phiquation-phi.pl" 'equation*' "_eolang/phiquation/6CC
 (_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-27-phiquation-post.tex) iexec: The content of '_eolang/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-27-phiquation-post.tex' was included into the document
 (a.tex)
 Overfull \hbox (27.00002pt too wide) in paragraph at lines 28--31
-[][] 
+[][]
 \hbox(13.30002+8.30002)x345.0
 .\hbox(0.0+0.0)x15.0
 .\hbox(13.30002+8.30002)x357.00002
