@@ -43,3 +43,21 @@ function update_tag(file, content, tagname, tagdate)
     "0000/00/00", os.date("%Y/%m/%d")
   )
 end
+
+-- Run all Perl test scripts before packaging
+function ctan_pre_action()
+  print("Running Perl test scripts from tests/ directory...")
+  local handle = io.popen("ls -1 tests/*.pl")
+  local result = handle:read("*a")
+  handle:close()
+  
+  for script in string.gmatch(result, "([^\n]+)") do
+    print("Running " .. script)
+    os.execute("perl " .. script)
+    if not os.execute("perl " .. script) then
+      error("Test script " .. script .. " failed!")
+    end
+  end
+  
+  return true
+end
