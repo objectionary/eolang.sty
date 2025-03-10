@@ -50,7 +50,6 @@ function ctan_pre_action()
   local handle = io.popen("ls -1 tests/*.pl")
   local result = handle:read("*a")
   handle:close()
-  
   for script in string.gmatch(result, "([^\n]+)") do
     print("Running " .. script)
     os.execute("perl " .. script)
@@ -58,6 +57,5 @@ function ctan_pre_action()
       error("Test script " .. script .. " failed!")
     end
   end
-  
   return true
 end
