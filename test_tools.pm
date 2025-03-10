@@ -40,9 +40,7 @@ sub info {
 # Print DEBUG message to the console.
 sub debug {
   my ($txt) = @_;
-  if (exists $args{'--verbose'}) {
-    print $txt . "\n";
-  }
+  print $txt . "\n";
 }
 
 # Print ERROR message to the console.
