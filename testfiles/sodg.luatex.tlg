@@ -1,9 +1,9 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-12-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 12
-runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-12-sodg.tex" > a.tex) > _eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-12-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-12-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-12-sodg-post.tex' was included into the document
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 15
+runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex" > a.tex) > _eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex' was included into the document
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
@@ -31,7 +31,7 @@ runsystem(( perl _eolang-lua/sodg-phi.pl 'phiq' "_eolang-lua/sodg/175FB02DC71571
 (_eolang-lua/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex) iexec: The content of '_eolang-lua/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 13
 )
-Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
+Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 [][]
 \hbox(35.08408+30.08406)x345.0, direction TLT
 .\localpar
@@ -155,15 +155,19 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines 13--16
 .\penalty 10000
 .\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-25-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 25
-runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-25-sodg.tex" > a.tex) > _eolang-lua/sodg/248628695479BBC0FC68838C527338F3-25-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-25-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-25-sodg-post.tex' was included into the document
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-37-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 37
-runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-37-sodg.tex" > a.tex) > _eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-37-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-37-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-37-sodg-post.tex' was included into the document
-runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-69-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 69
-runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-69-sodg.tex" > a.tex) > _eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-69-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-69-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-69-sodg-post.tex' was included into the document
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 28
+runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex" > a.tex) > _eolang-lua/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex' was included into the document
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 40
+runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex" > a.tex) > _eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex' was included into the document
+runsystem((cp "_eolang-lua/sodg/sodg.tex" "_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 72
+runsystem(( perl "_eolang-lua/sodg-sodg.pl" "_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex" > a.tex) > _eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex) iexec: The content of '_eolang-lua/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex' was included into the document
+[1
+] (sodg.aux)
+Package rerunfilecheck Info: File `sodg.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

@@ -23,4 +23,5 @@ $x->y$
 \phiq{x->y} & \phiq{y->x} \\
 \end{tabular}
 
+\end{document}
 \END
