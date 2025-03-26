@@ -6,7 +6,7 @@ package eolang;
 
 use strict;
 use warnings;
-use lib('.');
+use lib('tests');
 use test_tools;
 use File::Temp qw/ tempdir /;
 
