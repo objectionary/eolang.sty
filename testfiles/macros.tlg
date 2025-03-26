@@ -75,5 +75,9 @@ runsystem(( perl _eolang/macros-phi.pl 'phiq' "_eolang/macros/C8C2F59BEC8B8E0A4E
 eolang: Parsed `phiq' at line no. 21
 [1
 ] (macros.aux)
-Package rerunfilecheck Info: File `macros.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Warning: File `macros.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Info: Checksums for `macros.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.

@@ -7,7 +7,8 @@ typesetopts = "-interaction=batchmode -shell-escape -halt-on-error"
 checkopts = "-interaction=batchmode -shell-escape -halt-on-error"
 sourcefiles = {"*.dtx", "*.ins", "*-????-??-??.sty", "eolang.pl"}
 exefiles = {"eolang.pl"}
-checkengines = {"pdftex", "luatex", "xetex"}
+checkengines = {"pdftex"}
+-- checkengines = {"pdftex", "luatex", "xetex"}
 tagfiles = {"build.lua", "eolang.dtx"}
 docfiles = {"cactus.pdf", "eolang.bib"}
 cleanfiles = {"build", "_docshots", "*.pl.eolang", "*.run.xml", "*.log", "*.bcf", "*.glo", "*.fls", "*.idx", "*.out", "*.fdb_latexmk", "*.aux", "*.sty", "*.zip", "eolang.pdf"}

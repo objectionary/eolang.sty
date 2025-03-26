@@ -129,5 +129,9 @@ runsystem(( perl _eolang/phiq-phi.pl 'phiq' "_eolang/phiq/6502FA19742AE2965A5497
 eolang: Parsed `phiq' at line no. 23
 [1
 ] (phiq.aux)
-Package rerunfilecheck Info: File `phiq.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Warning: File `phiq.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Info: Checksums for `phiq.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.

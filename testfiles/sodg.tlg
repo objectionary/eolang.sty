@@ -161,5 +161,9 @@ runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/1EA1993CE595EB82246E989868
 (_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex) iexec: The content of '_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex' was included into the document
 [1
 ] (sodg.aux)
-Package rerunfilecheck Info: File `sodg.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Warning: File `sodg.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Info: Checksums for `sodg.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.

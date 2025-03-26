@@ -82,5 +82,9 @@ runsystem(( perl "_eolang/phiquation-phi.pl" 'equation*' "_eolang/phiquation/906
 (_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post.tex) iexec: The content of '_eolang/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post.tex' was included into the document
 [1
 ] (phiquation.aux)
-Package rerunfilecheck Info: File `phiquation.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Warning: File `phiquation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Info: Checksums for `phiquation.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
