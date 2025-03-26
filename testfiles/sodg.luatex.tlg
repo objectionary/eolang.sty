@@ -13,7 +13,7 @@ iexec: [( printf '%s' '\Phi ') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?
 iexec: This is the content of '_eolang-lua/sodg/phiq.tex':
 \Phi
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex'
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/sodg-phi.pl 'phiq' "_eolang-lua/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex" ) > _eolang-lua/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -24,7 +24,7 @@ iexec: [( printf '%s' 'v_{1}') > _eolang-lua/sodg/phiq.tex 2>&1; /bin/echo -n $?
 iexec: This is the content of '_eolang-lua/sodg/phiq.tex':
 v_{1}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex'
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-lua/sodg/phiq.tex' 
 iexec: Due to 'trace' package option, the files '_eolang-lua/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang-lua/sodg/phiq.tex" "_eolang-lua/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 runsystem(( perl _eolang-lua/sodg-phi.pl 'phiq' "_eolang-lua/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex" ) > _eolang-lua/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -32,7 +32,7 @@ runsystem(( perl _eolang-lua/sodg-phi.pl 'phiq' "_eolang-lua/sodg/175FB02DC71571
 eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
-[][]
+[][] 
 \hbox(35.08408+30.08406)x345.0, direction TLT
 .\localpar
 ..\localinterlinepenalty=0
