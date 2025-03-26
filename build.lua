@@ -15,7 +15,8 @@ checkfiles = {"eolang.pl"}
 scriptfiles  = {"eolang.pl"}
 scriptmanfiles = {"eolang.1"}
 tagfiles = {"eolang.dtx", "eolang.pl", "build.lua", "eolang.1"}
-typesetruns = 2
+typesetruns = 1
+checkruns = 1
 
 uploadconfig = {
   pkg = "eolang",

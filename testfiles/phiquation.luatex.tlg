@@ -1,25 +1,25 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/phiquation/phiquation-lua.tex" "_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-lua.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 14
-runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation.tex" ) > _eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-post.tex
+runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-lua.tex" ) > _eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-post-lua.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/phiquation/E0BF49B05D983EB5F2DD4D6AECF93BAF-14-phiquation-post-lua.tex
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/phiquation/phiquation-lua.tex" "_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-lua.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 20
-runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation.tex" ) > _eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post.tex) iexec: The content of '_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post.tex' was included into the document
-runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-lua.tex" ) > _eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post-lua.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post-lua.tex) iexec: The content of '_eolang-lua/phiquation/56371098126692269B26CD95699CBC21-20-phiquation-post-lua.tex' was included into the document
+runsystem((cp "_eolang-lua/phiquation/phiquation-lua.tex" "_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-lua.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 25
-runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation.tex" ) > _eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post.tex) iexec: The content of '_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post.tex' was included into the document
-runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-lua.tex" ) > _eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post-lua.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post-lua.tex) iexec: The content of '_eolang-lua/phiquation/19B6A419C8ED1E4FFAB7004E18A37A25-25-phiquation-post-lua.tex' was included into the document
+runsystem((cp "_eolang-lua/phiquation/phiquation-lua.tex" "_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-lua.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 30
-runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation.tex" > a.tex) > _eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post.tex) iexec: The content of '_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post.tex' was included into the document
+runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-lua.tex" > a.tex) > _eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post-lua.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post-lua.tex) iexec: The content of '_eolang-lua/phiquation/6CCEAC75DCE62C68770C22D9AB7505AE-30-phiquation-post-lua.tex' was included into the document
 (a.tex)
 Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 [][] 
@@ -86,10 +86,10 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 .\penalty 10000
 .\glue(\parfillskip) 0.0 plus 1.0fil
 .\glue(\rightskip) 0.0
-runsystem((cp "_eolang-lua/phiquation/phiquation.tex" "_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem((cp "_eolang-lua/phiquation/phiquation-lua.tex" "_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-lua.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 Start parsing 'phi' at line no. 54
-runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation.tex" > a.tex) > _eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post.tex) iexec: The content of '_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post.tex' was included into the document
+runsystem(( perl "_eolang-lua/phiquation-phi.pl" 'equation*' "_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-lua.tex" > a.tex) > _eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post-lua.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post-lua.tex) iexec: The content of '_eolang-lua/phiquation/906E0B20680FF021237C15B37ECBDB1E-54-phiquation-post-lua.tex' was included into the document
 [1
 ] (phiquation.aux)
 Package rerunfilecheck Info: File `phiquation.out' has not changed.
