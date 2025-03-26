@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2021-2025 Yegor Bugayenko
 # SPDX-License-Identifier: MIT
 
-package tools;
+package test_tools;
 
 use strict;
 use warnings;
@@ -40,9 +40,7 @@ sub info {
 # Print DEBUG message to the console.
 sub debug {
   my ($txt) = @_;
-  if (exists $args{'--verbose'}) {
-    print $txt . "\n";
-  }
+  print $txt . "\n";
 }
 
 # Print ERROR message to the console.
