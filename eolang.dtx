@@ -154,12 +154,12 @@
 
 % Before any arrow you can put a number, which will be rendered as |\alpha| with an index, for example
 % |\phiq{0->x}| will render ``\phiq{0->x}''.
-% Instead of a number you can use asterix too.
+% Instead of a number you can use asterisk too.
 
 % You can append a slash and a title to the number of an attribute, such as |0/g->x|.
-% this will render as \phiq{0/g->x}. You can use fixed-width words too, for example
+% This will render as \phiq{0/g->x}. You can use fixed-width words too, for example
 % \verb=\phiq{0/|f|->x}= will render as ``\phiq{0/|f|->x}''. It's also possible
-% to use an asterix instead of a number, such that |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''
+% to use an asterisk instead of a number, such that |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
@@ -234,12 +234,12 @@
 
 % It is also possible to put transformation arrows to the graph, with the help of ``|v0=>v1|'' syntax. The arrow
 % will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
-% saying for example ``|v3=>|'', of from the left to the vertes, by saying for example ``|=>v5|.'' If you
-% want the arrow to stay further away from the vertex than usually, use a few ``|=|'' symbols, for example ``|===>v0|.''
+% saying for example ``|v3=>|'', or from the left to the vertex, by saying for example ``|=>v5|.'' If you
+% want the arrow to stay further away from the vertex than usual, use a few ``|=|'' symbols, for example ``|===>v0|.''
 
 % You can also put a marker at the left side of a vertex, using ``|v5!A|'' syntax, where ``|v5|'' is the vertex
 % and ``|A|'' is the text in the marker. They are useful when you put a few graphs on a picture
-% explaining how one graph is transformed to another one and so forth. You can make a distance between the vertex
+% explaining how one graph is transformed to another one and so forth. You can make the distance between the vertex
 % and the marker a bit larger by using a few exclamation marks,
 % for example ``|v5!!!A|'' will make a distance three times bigger.
 
@@ -265,7 +265,7 @@
 % an experimental object-oriented \\
 % dataflow language, \phic{}, as its \\
 % formal foundation, and \xmir{} --- \\
-% its XML-based presentation.
+% its XML-based representation.
 % \end{document}
 % \end{docshot}
 % Without the |anonymous| option there will be no orange color:
@@ -279,7 +279,7 @@
 % an experimental object-oriented \\
 % dataflow language, \phic{}, as its \\
 % formal foundation, and \xmir{} --- \\
-% its XML-based presentation.
+% its XML-based representation.
 % \end{document}
 % \end{docshot}
 
@@ -326,7 +326,7 @@
 % \end{docshot}
 
 % \DescribeMacro{\phiMany}
-% Sometimes you may need to simplify the way you describe an object (the typesetting is a bit off, but this is not because of us, but because of \href{https://tex.stackexchange.com/questions/664772}{this}):
+% Sometimes you may need to simplify the way you describe an object (the typesetting is a bit off, but this is not because of us, but rather because of \href{https://tex.stackexchange.com/questions/664772}{this}):
 % \docshotOptions{firstline=6,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
@@ -396,7 +396,7 @@
 %\fi
 
 % \DescribeMacro{anonymous}
-% You may anonymize |\eolang|, |\XMIR|, and |\phic| commands by using |anonymous| package option (they all use the |\eoAnon| command mentioned earlier):
+% You may anonymize |\eolang|, |\xmir|, and |\phic| commands by using |anonymous| package option (they all use the |\eoAnon| command mentioned earlier):
 %\iffalse
 %<*verb>
 %\fi
@@ -424,7 +424,7 @@
 
 % The |phiquation| environment treats ends of line as signals to start
 % new lines in the formula. If you don't want this to happen and want to parse
-% the next line as the a continuation of the current line, you can use a single
+% the next line as a continuation of the current line, you can use a single
 % backslash as it's done here:
 % \docshotOptions{firstline=6,lastline=11}
 % \begin{docshot}
@@ -666,7 +666,7 @@
 % \end{docshot}
 
 % You can have ``broken'' edges, using ``|break|'' attribute of an edge.
-% The attribute must have a value, which is the percentange of the path
+% The attribute must have a value, which is the percentage of the path
 % between vertices that the arrow should take (can't be more than 80 and less than 20).
 % This may be convenient when you can't fit all edges into the graph,
 % for example:
