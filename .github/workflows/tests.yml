@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: teatimeguest/setup-texlive-action@v3.3.4
+      - uses: zauguin/install-texlive@v4.0.0
         with:
-          update-all-packages: true
-          package-file: DEPENDS.txt
+          package_file: DEPENDS.txt
+          texlive_version: 2025
       - run: |
           scripts=$(find ./tests -name '*.pl')
           while IFS= read -r s; do
