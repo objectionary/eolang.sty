@@ -113,6 +113,8 @@
 %     (|\xi|),
 %   \item ``|?|'' maps to ``$\varnothing$''
 %     (|\varnothing|),
+%   \item ``|T|'' maps to ``$\bot$''
+%     (|\bot|),
 %   \item ``|Q|'' maps to ``$\Phi$''
 %     (|\Phi|),
 %   \item ``|QQ|'' maps to ``$\dot{\Phi}$''
@@ -826,6 +828,7 @@
 % \changes{0.9.0}{2022/12/15}{Parsing of \texttt{<<} and \texttt{>>} implemented.}
 % \changes{0.10.0}{2023/01/22}{Parsing of \texttt{==} into \texttt{\char`\\equiv} implemented.}
 % \changes{0.13.0}{2023/06/28}{Parsing of \texttt{QQ} into \texttt{\char`\\dot\{\char`\\Phi\}} implemented.}
+% \changes{0.13.0}{2025/09/29}{Parsing of \texttt{T} into \texttt{\char`\\dead} implemented.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -915,6 +918,7 @@ sub trep {
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 $tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
+$tex =~ s/([^\\{a-z0-9]|^)T(?![a-z0-9])/\1\\bot{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
 $tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
