@@ -121,10 +121,6 @@
 %     (|\mapsto|),
 %   \item ``|~>|'' maps to ``$\phiWave$''
 %     (|\phiWave|),
-%   \item ``|!->|'' maps to ``$\phiConst$''
-%     (|\phiConst|),
-%   \item ``|..>|'' maps to ``$\phiDotted$''
-%     (|\phiDotted|),
 %   \item ``|D>|'' maps to ``$\Delta\phiDotted$''
 %     (|\Delta ..>|),
 %   \item ``|L>|'' maps to ``$\lambda\phiDotted$''
@@ -281,12 +277,8 @@
 % \end{document}
 % \end{docshot}
 
-% \DescribeMacro{\phiConst}
 % \DescribeMacro{\phiWave}
-% \DescribeMacro{\phiDotted}
 % A few simple commands are defined to help you render arrows.
-% It is recommended not to use them directly, but use |!->| instead. However, if you
-% want to use |\phiConst|, wrap it in |\mathrel| for better display:
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
@@ -295,12 +287,9 @@
 % \usepackage{eolang}
 % \begin{document}\noindent
 % If $x$ is an identifier and $y$ is
-% an object, then $x \phiConst y$
-% makes $y$ a constant,
-% $x \phiWave y$ makes it a decoratee
-% of an arbitrary number of objects,
-% while $x \phiDotted y$ makes it
-% a special attribute.
+% an object, then $x \phiWave y$
+% makes it a decoratee
+% of an arbitrary number of objects.
 % \end{document}
 % \end{docshot}
 
@@ -982,7 +971,6 @@ $tex =~ s/->/\\mathbin{\\mapsto}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
-$tex =~ s/\.\.>/\\mathbin{\\phiDotted}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
 $tex =~ s/\|{2,}/|/g;
