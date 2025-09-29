@@ -12,7 +12,7 @@ use File::Temp qw/ tempdir /;
 use File::Basename;
 use File::Spec;
 
-# Checks whether rewritting happens for \phiq.
+# Checks whether rewriting happens for \phiq.
 sub rewrites_phiq {
   my ($temp, $from, $to) = @_;
   my $src = $temp . '/foo.tex';
