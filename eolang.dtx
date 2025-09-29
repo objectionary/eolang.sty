@@ -111,8 +111,6 @@
 %     (|\rho|),
 %   \item ``|$|'' maps to ``$\xi$''
 %     (|\xi|),
-%   \item ``|&|'' maps to ``$\sigma$''
-%     (|\sigma|),
 %   \item ``|?|'' maps to ``$\varnothing$''
 %     (|\varnothing|),
 %   \item ``|Q|'' maps to ``$\Phi$''
@@ -926,9 +924,6 @@ sub trep {
   return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
 }
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
-if (not $splitting) {
-  $tex =~ s/(?<![{&])&(?![&}])/\\sigma{}/g;
-}
 $tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
 $tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
 $tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
