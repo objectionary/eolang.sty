@@ -27,6 +27,7 @@ soft iexec
 soft ifmtarg
 soft l3build
 soft libertine
+soft luaotfload
 soft microtype
 soft ncctools
 soft scheme-basic
