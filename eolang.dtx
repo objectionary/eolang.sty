@@ -121,6 +121,8 @@
 %     (|\dot{\Phi}|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
+%   \item ``|..>|'' maps to ``$\phiDotted$''
+%     (|\phiDotted|),
 %   \item ``|~>|'' maps to ``$\phiWave$''
 %     (|\phiWave|),
 %   \item ``|D>|'' maps to ``$\Delta\phiDotted$''
@@ -280,6 +282,7 @@
 % \end{docshot}
 
 % \DescribeMacro{\phiWave}
+% \DescribeMacro{\phiDotted}
 % A few simple commands are defined to help you render arrows.
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
@@ -291,7 +294,9 @@
 % If $x$ is an identifier and $y$ is
 % an object, then $x \phiWave y$
 % makes it a decoratee
-% of an arbitrary number of objects.
+% of an arbitrary number of objects,
+% while $x \phiDotted y$ makes it
+% a special attribute.
 % \end{document}
 % \end{docshot}
 
@@ -975,6 +980,7 @@ $tex =~ s/->/\\mathbin{\\mapsto}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
+$tex =~ s/\.\.>/\\mathbin{\\phiDotted}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
 $tex =~ s/\|{2,}/|/g;
