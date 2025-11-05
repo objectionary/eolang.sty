@@ -425,7 +425,7 @@
 % \begin{phiquation*}
 % \dfrac \
 %  {x->[[@->y]] \quad y->[[z->42]]} \
-%  {x.z -> 42} \
+%  {x.z -> T} \
 %  \text{\sffamily R1}
 % \end{phiquation*}
 % \end{document}
@@ -917,11 +917,11 @@ sub trep {
   return '{TEXT' . (0+@texts - 1) . '}' . substr($s, $p + 1);
 }
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
-$tex =~ s/([^\\{a-z0-9]|^)QQ(?![a-z0-9])/\1\\dot{\\Phi{}}/g;
-$tex =~ s/([^\\{a-z0-9]|^)Q(?![a-z0-9])/\1\\Phi{}/g;
-$tex =~ s/([^\\{a-z0-9]|^)T(?![a-z0-9])/\1\\bot{}/g;
-$tex =~ s/([^\\{a-z0-9]|^)D>/\1\\Delta{}..>/g;
-$tex =~ s/([^\\{a-z0-9]|^)L>/\1\\lambda{}..>/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)QQ(?![a-zA-Z0-9])/\1\\dot{\\Phi{}}/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)Q(?![a-zA-Z0-9])/\1\\Phi{}/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)T(?![a-zA-Z0-9])/\1\\bot{}/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)D>/\1\\Delta{}..>/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)L>/\1\\lambda{}..>/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
 $tex =~ s/(^|(?<=[\s)(\]\[,.>\/]))([a-z][a-zA-Z0-9]+)(?=[\s)(\]\[,.-]|$)/|\2|/g;
 $tex =~ s/([^_^]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
