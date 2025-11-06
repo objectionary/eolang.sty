@@ -1,16 +1,13 @@
-# LaTeX package for 𝜑-calculus
+# LaTeX package for EOLANG and 𝜑-calculus
 
 [![l3build](https://github.com/objectionary/eolang.sty/actions/workflows/l3build.yml/badge.svg)](https://github.com/objectionary/eolang.sty/actions/workflows/l3build.yml)
 [![CTAN](https://img.shields.io/ctan/v/eolang)](https://ctan.org/pkg/eolang)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/objectionary/eolang.sty/blob/master/LICENSE.txt)
 
-This LaTeX package helps you write 𝜑-calculus formulas and
-draw [SODG](https://github.com/objectionary/sodg) graphs
-for [EO](https://www.eolang.org) programming language.
+This LaTeX package helps you write [𝜑-calculus] formulas and
+draw [SODG] graphs for [EOLANG] programming language.
 
-First, [install it][install]
-from [CTAN](https://ctan.org/pkg/eolang)
-and then use in the preamble:
+First, [install it][install] from [CTAN] and then use in the preamble:
 
 ```tex
 \documentclass{article}
@@ -34,3 +31,7 @@ still clean, submit a pull request.
 
 [install]: https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages
 [sty]: https://objectionary.github.io/eolang.sty/eolang.sty
+[𝜑-calculus]: https://arxiv.org/abs/2111.13384
+[EOLANG]: https://www.eolang.org
+[SODG]: https://github.com/objectionary/sodg
+[CTAN]: https://ctan.org/pkg/eolang
