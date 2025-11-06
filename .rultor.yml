@@ -16,5 +16,7 @@ release:
     l3build ctan --show-log-on-error
     texsc
     texqc
+    sed -i "s|0000/00/00|$(date +%Y/%m/%d)|g" eolang.pl
+    sed -i "s|0.0.0|${tag}|g" eolang.pl
     git commit -am "version set to ${tag}"
     echo 'y' | l3build upload --halt-on-error
