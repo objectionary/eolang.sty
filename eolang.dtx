@@ -36,7 +36,7 @@
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
-\usepackage[maxnames=1,minnames=1,maxbibnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\usepackage[maxnames=1,minnames=1,maxbibnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false]{biblatex}
 \addbibresource{eolang.bib}
 \usepackage[tt=false, type1=true]{libertine}
 \usepackage{microtype}
@@ -835,7 +835,7 @@
 % \changes{0.9.0}{2022/12/15}{Parsing of \texttt{<<} and \texttt{>>} implemented.}
 % \changes{0.10.0}{2023/01/22}{Parsing of \texttt{==} into \texttt{\char`\\equiv} implemented.}
 % \changes{0.13.0}{2023/06/28}{Parsing of \texttt{QQ} into \texttt{\char`\\dot\{\char`\\Phi\}} implemented.}
-% \changes{0.13.0}{2025/09/29}{Parsing of \texttt{T} into \texttt{\char`\\dead} implemented.}
+% \changes{0.19.0}{2025/09/29}{Parsing of \texttt{T} into \texttt{\char`\\bot} implemented.}
 % \changes{0.20.0}{2025/11/05}{Parsing of \texttt{~0} into \texttt{\char`\\alpha\_0} implemented.}
 % \changes{0.20.2}{2025/11/24}{Formatting of numbers fixed, now it works in any place inside an expression.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
@@ -1174,13 +1174,13 @@ print '\endinput';
 % \changes{0.4.0}{2022/10/31}{Transforming arrows added with the \texttt{=>} syntax, also markers with exclamation mark syntax.}
 % \changes{0.5.0}{2022/11/09}{New syntax introduced that allows to make clones of vertices and all their dependants.}
 % \changes{0.5.0}{2022/11/09}{Now edges may have the \texttt{break} attribute, to make them shorter.}
-% \changes{0.5.0}{2022/11/10}{It is possible to use multiple the ``equaltion sign'' symbols for transition arrows \texttt{=>}.}
+% \changes{0.5.0}{2022/11/10}{It is possible to use multiple ``equation sign'' symbols for transition arrows \texttt{=>}.}
 % \changes{0.5.0}{2022/11/12}{It is possible to use TikZ commands inside the \texttt{sodg} environment.}
 % \changes{0.6.0}{2022/11/13}{The \texttt{rrho} attribute is retired, now \texttt{rho} works just fine in all situations.}
 % \changes{0.8.0}{2022/11/20}{The \texttt{tag} attribute is introduced for changing labels inside a vertex circle.}
 % \changes{0.12.1}{2023/03/01}{The bug is fixed related to the formatting of indexes of vertices.}
 % \changes{0.14.0}{2023/07/26}{The \texttt{edgeless} tag of a vertex removes the border of it.}
-% \changes{0.15.0}{2023/08/210}{The \texttt{style} tag of vertices and edges.}
+% \changes{0.15.0}{2023/08/21}{The \texttt{style} tag of vertices and edges.}
 % Then, we create a Perl script for |sodg| graphs processing using |VerbatimOut| from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
