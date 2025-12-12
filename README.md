@@ -29,6 +29,8 @@ It should compile everything without errors. If not, submit an issue and wait.
 Otherwise, make your changes and then run `l3build ctan` again. If the build is
 still clean, submit a pull request.
 
+Currently, @yegor256 is the maintainer of the project.
+
 [install]: https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages
 [sty]: https://objectionary.github.io/eolang.sty/eolang.sty
 [𝜑-calculus]: https://arxiv.org/abs/2111.13384
