@@ -58,7 +58,7 @@
 %</driver>
 % \fi
 
-% \title{\includegraphics[height=1in]{cactus.pdf} \\ |eolang|: \LaTeX{} Package \\ for Formulas and Graphs \\ of EO Programming Language \\ and $\varphi$-calculus\thanks{The sources are in GitHub at \href{https://github.com/objectionary/eolang.sty}{objectionary/eolang.sty}}}
+% \title{\includegraphics[height=1in]{cactus.pdf} \\ |eolang|: \LaTeX{} Package \\ for Formulas and Graphs \\ of EO Programming Language \\ and \(\varphi\)-Calculus\thanks{The sources are in GitHub at \href{https://github.com/objectionary/eolang.sty}{objectionary/eolang.sty}}}
 % \author{Yegor Bugayenko \\ \texttt{yegor256@gmail.com}}
 % \date{\filedate, \fileversion}
 %
@@ -169,7 +169,7 @@
 % Texts in double quotes are automatically converted to fixed-width font too.
 
 % \DescribeMacro{\phiq}
-% The command |\phiq| lets you inline a $\varphi$-calculus expressions
+% The command |\phiq| lets you inline a \phic{} expressions
 % using the same simple plain-text notation. You can use dollar sign directly too:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
@@ -1671,7 +1671,7 @@ print '\endinput';
 
 % \begin{macro}{\phic}
 % Then, we define a simple supplementary command to help you print \phic{}, the name of our formal apparatus.
-% \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of $\varphi$-calculus in both
+% \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of \phic{} in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\phic{%
