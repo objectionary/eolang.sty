@@ -162,8 +162,6 @@
 
 % Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
 
-% |TRUE| and |FALSE| are automatically converted to fixed-width font too.
-
 % Object names are automatically converted to fixed-width font too, if they have more than one letter.
 
 % Texts in double quotes are automatically converted to fixed-width font too.
@@ -567,7 +565,7 @@
 % \begin{phiquation*}
 % x(\pi) -> [[\lambda ..> f_1]], \\
 % x(a,b,c) -> [[ ~0 -> ?, L> Foo, \
-%   @ -> QQ.hello($), x -> |FALSE| ]], \\
+%   @ -> QQ.hello($), x -> false ]], \\
 % \Delta = |43-09|,
 % x(y) == x(~0 -> y).
 % \end{phiquation*}
@@ -838,6 +836,7 @@
 % \changes{0.19.0}{2025/09/29}{Parsing of \texttt{T} into \texttt{\char`\\bot} implemented.}
 % \changes{0.20.0}{2025/11/05}{Parsing of \texttt{~0} into \texttt{\char`\\alpha\_0} implemented.}
 % \changes{0.20.2}{2025/11/24}{Formatting of numbers fixed, now it works in any place inside an expression.}
+% \changes{0.21.0}{2025/12/15}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} removed.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -933,12 +932,9 @@ $tex =~ s/([^\\{a-zA-Z0-9]|^)T(?![a-zA-Z0-9])/\1\\phiTerminal{\\bot{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9]|^)D>/\1\\phiTerminal{\\Delta{}..>}/g;
 $tex =~ s/([^\\{a-zA-Z0-9]|^)L>/\1\\phiTerminal{\\lambda{}..>}/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
-$tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
 $tex =~ s/(?:^|(?<=[\s)(\]\[,.>\/]))([a-zA-Z][a-zA-Z0-9]+)(?=[\s)(\]\[,.-]|$)/|\1|/g;
 $tex =~ s/([^_^]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
   (->|\.\.>|~>|:=)/\1\\alpha_{\2}\\vert{}\3\\space{}\4/xg;
-$tex =~ s/([^_^]|^)([0-9]+|\*)
-  (->|\.\.>|~>|:=)/\1\\phiTerminal{\\alpha_{\2}}\\space{}\3/xg;
 if ($macro ne 'phiq') {
   if (not $splitting) {
     $tex =~ s/\\begin\{split\}\n/\\begin{split}&/g;
@@ -975,8 +971,6 @@ $tex =~ s/\$/\\xi{}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\phiTerminal{\\rho{}}/g;
 $tex =~ s/\[\[/\\phiTerminal{\\llbracket}\\mathbin{}/g;
 $tex =~ s/\]\]/\\mathbin{}\\phiTerminal{\\rrbracket{}}/g;
-$tex =~ s/TRUE/\\phiTerminal{\\texttt{TRUE}}/g;
-$tex =~ s/FALSE/\\phiTerminal{\\texttt{FALSE}}/g;
 $tex =~ s/\?/\\phiTerminal{\\varnothing{}}/g;
 $tex =~ s/@/\\phiTerminal{\\varphi{}}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
@@ -984,9 +978,12 @@ $tex =~ s/->/\\mathbin{\\phiTerminal{\\mapsto}}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
-$tex =~ s/\.\.>/\\mathbin{\\phiTerminal{\\phiDotted}}/g;
+$tex =~ s/\.\.>/\\mathbin{\\phiDotted}/g;
+$tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
+$tex =~ s/([)(.])/\\phiTerminal{\1}/g;
+$tex =~ s/,/\\phiTerminal{,}\\;/g;
 $tex =~ s/\|{2,}/|/g;
 $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
 $tex =~ s/\{TEXT(\d+)\}/'\\text{' . $texts[$1] . '}';/ge;
@@ -1742,7 +1739,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phiTerminal}
-% \changes{0.9.0}{2025/12/15}{New command \texttt{\char`\\phiTerminal} added, to highlight all terminals in phi expressions.}
+% \changes{0.21.0}{2025/12/15}{New command \texttt{\char`\\phiTerminal} added, to highlight all terminals in phi expressions.}
 % Then, we define a command to wrap all terminals in all expressions:
 %    \begin{macrocode}
 \RequirePackage{xcolor}
@@ -1759,7 +1756,7 @@ print '\endinput';
 \RequirePackage{amsfonts}
 \makeatletter
 \newcommand{\phiDotted}{%
-  \mapstochar\mathrel{\mathpalette\phiDotted@\relax}}
+  \phiTerminal{\mapstochar\mathrel{\mathpalette\phiDotted@\relax}}}
 \newcommand{\phiDotted@}[2]{%
   \begingroup%
   \settowidth{\dimen\z@}{$\m@th#1\rightarrow$}%
