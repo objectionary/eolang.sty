@@ -12,7 +12,7 @@ iexec: This is the content of '_eolang/macros/phiq.tex' (14 bytes):
 iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (14 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/macros-phi.pl 'phiq' "_eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/macros/6658405E4AD6612F4D7E3E1F3C4BF794-15-phiq-post.tex
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line ....
@@ -26,7 +26,7 @@ iexec: This is the content of '_eolang/macros/phiq.tex' (11 bytes):
 iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (11 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/macros-phi.pl 'phiq' "_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex) iexec: The content of '_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 16
 runsystem(( printf '%s' '\phiConst {}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -37,7 +37,7 @@ iexec: This is the content of '_eolang/macros/phiq.tex' (12 bytes):
 iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (12 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/macros-phi.pl 'phiq' "_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq-post.tex
 ! Undefined control sequence.
 l. ...\(\phiConst
