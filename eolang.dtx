@@ -967,7 +967,7 @@ if ($macro ne 'phiq') {
     $tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
   }
 }
-$tex =~ s/\$/\\xi{}/g;
+$tex =~ s/\$/\\phiTerminal{\\xi{}}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\phiTerminal{\\rho{}}/g;
 $tex =~ s/\[\[/\\phiTerminal{\\llbracket}\\mathbin{}/g;
 $tex =~ s/\]\]/\\mathbin{}\\phiTerminal{\\rrbracket{}}/g;
