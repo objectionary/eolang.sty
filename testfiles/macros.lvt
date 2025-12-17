@@ -14,7 +14,6 @@
 
 $\phiSlot{abc}$
 $\phiWave{}$
-$\phiConst{}$
 $\phiMany{\phiWave}{i=1}{n}$
 
 $\phiOset{*}{->}$

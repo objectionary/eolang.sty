@@ -29,21 +29,44 @@ runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/BF7FA545864BA8C5338192DC
 runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex) iexec: The content of '_eolang/macros/BF7FA545864BA8C5338192DC3CABD1D3-16-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 16
-runsystem(( printf '%s' '\phiConst {}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( printf '%s' '\phiConst {}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
-iexec: This is the content of '_eolang/macros/phiq.tex' (12 bytes):
-\phiConst {}
+runsystem(( printf '%s' '\phiMany {\phiWave }{i=1}{n}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiMany {\phiWave }{i=1}{n}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/macros/phiq.tex' (28 bytes):
+\phiMany {\phiWave }{i=1}{n}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (12 bytes)
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (28 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/macros/D594B53A1176C7263873C16BCA24513F-17-phiq-post.tex
-! Undefined control sequence.
-l. ...\(\phiConst
-                {}\)\endinput
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/A1233E91958822073DA8DEB79FCF0C84-17-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/A1233E91958822073DA8DEB79FCF0C84-17-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/A1233E91958822073DA8DEB79FCF0C84-17-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/macros/A1233E91958822073DA8DEB79FCF0C84-17-phiq-post.tex) iexec: The content of '_eolang/macros/A1233E91958822073DA8DEB79FCF0C84-17-phiq-post.tex' was included into the document
+eolang: Parsed `phiq' at line no. 17
+runsystem(( printf '%s' '\phiOset {*}{->}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiOset {*}{->}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/macros/phiq.tex' (16 bytes):
+\phiOset {*}{->}
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (16 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
+runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/FBCE819343A7CEDA793E1366B0F891AE-19-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/FBCE819343A7CEDA793E1366B0F891AE-19-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/FBCE819343A7CEDA793E1366B0F891AE-19-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/macros/FBCE819343A7CEDA793E1366B0F891AE-19-phiq-post.tex) iexec: The content of '_eolang/macros/FBCE819343A7CEDA793E1366B0F891AE-19-phiq-post.tex' was included into the document
+eolang: Parsed `phiq' at line no. 19
+runsystem(( printf '%s' '\phiUset {*}{->}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\phiUset {*}{->}') > _eolang/macros/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang/macros/phiq.tex' (16 bytes):
+\phiUset {*}{->}
+<EOF>
+iexec: Due to 'quiet' option we didn't read the content of '_eolang/macros/phiq.tex' (16 bytes)
+iexec: Due to 'trace' package option, the files '_eolang/macros/phiq.tex' and 'iexec.ret' were not deleted
+runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-20-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/macros-phi-0.0.0.pl 'phiq' "_eolang/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-20-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-20-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-20-phiq-post.tex) iexec: The content of '_eolang/macros/C8C2F59BEC8B8E0A4E99D6DF97C16EE5-20-phiq-post.tex' was included into the document
+eolang: Parsed `phiq' at line no. 20
+[1
+] (macros.aux)
+Package rerunfilecheck Warning: File `macros.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Info: Checksums for `macros.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
