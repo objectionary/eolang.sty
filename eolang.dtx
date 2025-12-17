@@ -976,8 +976,8 @@ if ($macro ne 'phiq') {
 }
 $tex =~ s/\$/\\phiTerminal{\\xi{}}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\phiTerminal{\\rho{}}/g;
-$tex =~ s/\[\[/\\phiTerminal{\\llbracket}\\mathbin{}/g;
-$tex =~ s/\]\]/\\mathbin{}\\phiTerminal{\\rrbracket{}}/g;
+$tex =~ s/\[\[/\\phiTerminal{\\llbracket}/g;
+$tex =~ s/\]\]/\\phiTerminal{\\rrbracket{}}/g;
 $tex =~ s/\?/\\phiTerminal{\\varnothing{}}/g;
 $tex =~ s/@/\\phiTerminal{\\varphi{}}/g;
 $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
