@@ -125,6 +125,10 @@
 %     (|\phiDotted|),
 %   \item ``|~>|'' maps to ``$\phiWave$''
 %     (|\phiWave|),
+%   \item ``|D|'' maps to ``$\Delta$''
+%     (|\Delta|),
+%   \item ``|L|'' maps to ``$\lambda$''
+%     (|\lambda|),
 %   \item ``|D>|'' maps to ``$\Delta\phiDotted$''
 %     (|\Delta ..>|),
 %   \item ``|L>|'' maps to ``$\lambda\phiDotted$''
@@ -837,6 +841,7 @@
 % \changes{0.20.0}{2025/11/05}{Parsing of \texttt{~0} into \texttt{\char`\\alpha\_0} implemented.}
 % \changes{0.20.2}{2025/11/24}{Formatting of numbers fixed, now it works in any place inside an expression.}
 % \changes{0.21.0}{2025/12/15}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} removed.}
+% \changes{0.22.0}{2025/12/17}{Automated formatting of \texttt{D} and \texttt{L} added.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -931,6 +936,8 @@ $tex =~ s/([^\\{a-zA-Z0-9]|^)Q(?![a-zA-Z0-9])/\1\\phiTerminal{\\Phi{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9]|^)T(?![a-zA-Z0-9])/\1\\phiTerminal{\\bot{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9]|^)D>/\1\\phiTerminal{\\Delta{}..>}/g;
 $tex =~ s/([^\\{a-zA-Z0-9]|^)L>/\1\\phiTerminal{\\lambda{}..>}/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)D(?![a-zA-Z0-9])/\1\\phiTerminal{\\Delta{}}/g;
+$tex =~ s/([^\\{a-zA-Z0-9]|^)L(?![a-zA-Z0-9])/\1\\phiTerminal{\\lambda{}}/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
 $tex =~ s/(?:^|(?<=[\s)(\]\[,.>\/]))([a-zA-Z][a-zA-Z0-9]+)(?=[\s)(\]\[,.-]|$)/|\1|/g;
 $tex =~ s/([^_^]|^)([0-9]+|\*)\/(\\?[a-z]+|\|[a-z]+\|)
