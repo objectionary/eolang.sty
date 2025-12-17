@@ -814,11 +814,11 @@
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{-phi-0.0.0.pl}
+% \begin{macro}{-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``\texttt{[}'' and ``\texttt{]}'' replaced with ``\texttt{[[}'' and ``\texttt{]]}'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
 % \changes{0.0.2}{2022/10/21}{Parsing of the symbols ``\texttt{@},'' ``\texttt{\^{}},'' and ``\texttt{\&}'' enabled (\texttt{\char`\\varphi}, \texttt{\char`\\rho}, and \texttt{\char`\\sigma})}
-% \changes{0.1.0}{2022/10/26}{A new Perl script "\texttt{eolang-phi-0.0.0.pl}" added for parsing of phi expressions.}
+% \changes{0.1.0}{2022/10/26}{A new Perl script "\texttt{eolang-phi.pl}" added for parsing of phi expressions.}
 % \changes{0.2.0}{2022/10/29}{Numbers automatically render as \texttt{\char`\\texttt}. No need to use vertical bars around them anymore.}
 % \changes{0.3.0}{2022/10/30}{New arrow added, that looks like \texttt{\char`\\leadsto}.}
 % \changes{0.5.0}{2022/11/11}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} added.}
@@ -843,16 +843,16 @@
 \makeatletter
 \ifdefined\eolang@noshell
   \message{eolang: Perl script is not going to be created,
-  at "\eolang@tmpdir/\jobname-phi-0.0.0.pl" because of the "noshell"
+  at "\eolang@tmpdir/\jobname-phi.pl" because of the "noshell"
   package option^^J}
 \else
-\openin 15=\eolang@tmpdir/\jobname-phi-0.0.0.pl
+\openin 15=\eolang@tmpdir/\jobname-phi.pl
 \ifeof 15
 \message{eolang: Perl script is going to be created,
-  because it is absent at "\eolang@tmpdir/\jobname-phi-0.0.0.pl",
+  because it is absent at "\eolang@tmpdir/\jobname-phi.pl",
   but if -shell-escape is not set, the compilation will
   most likely fail now^^J}
-\begin{VerbatimOut}{\eolang@tmpdir/\jobname-phi-0.0.0.pl}
+\begin{VerbatimOut}{\eolang@tmpdir/\jobname-phi.pl}
 $macro = $ARGV[0];
 open(my $fh, '<', $ARGV[1]);
 my $tex; { local $/; $tex = <$fh>; }
@@ -1019,10 +1019,10 @@ if ($macro eq 'phiq') {
 print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
-  '\eolang@tmpdir/\jobname-phi-0.0.0.pl' saved^^J}
+  '\eolang@tmpdir/\jobname-phi.pl' saved^^J}
 \else
   \message{eolang: Perl script already exists at
-    "\eolang@tmpdir/\jobname-phi-0.0.0.pl"^^J}
+    "\eolang@tmpdir/\jobname-phi.pl"^^J}
 \fi
 \closein 15
 \fi
@@ -1094,7 +1094,7 @@ print '\endinput';
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"}%
       \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
-        perl "\eolang@tmpdir/\jobname-phi-0.0.0.pl"
+        perl "\eolang@tmpdir/\jobname-phi.pl"
         '#1'
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
@@ -1138,7 +1138,7 @@ print '\endinput';
       \iexec[quiet,null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{phiq}"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq}"}%
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq-post}]{
-        perl \eolang@tmpdir/\jobname-phi-0.0.0.pl 'phiq'
+        perl \eolang@tmpdir/\jobname-phi.pl 'phiq'
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq}"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g' \fi}%
       \message{eolang: Parsed `phiq' at line no. \the\inputlineno^^J}%
@@ -1162,7 +1162,7 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
-% \begin{macro}{-sodg-0.0.0.pl}
+% \begin{macro}{-sodg.pl}
 % \changes{0.0.2}{2022/10/24}{The Perl file now has a fixed name, which doesn't depend on the name of the TeX job. This file may be shared among jobs, no need to make it uniquely named.}
 % \changes{0.1.0}{2022/10/26}{There are two Perl scripts now: one for \texttt{phiquation}, another one for \texttt{sodg}.}
 % \changes{0.2.0}{2022/10/28}{The content of the \texttt{atom} and the \texttt{data} boxes is parsed automatically as formulas and numbers, respectively.}
@@ -1184,16 +1184,16 @@ print '\endinput';
 \makeatletter
 \ifdefined\eolang@noshell
 \message{eolang: Perl script is not going to be created
-  at "\eolang@tmpdir/\jobname-sodg-0.0.0.pl", because of the
+  at "\eolang@tmpdir/\jobname-sodg.pl", because of the
   "noshell" package option^^J}
 \else
-\openin 15=\eolang@tmpdir/\jobname-sodg-0.0.0.pl
+\openin 15=\eolang@tmpdir/\jobname-sodg.pl
 \ifeof 15
 \message{eolang: Perl script is going to be created,
-  because it is absent at "\eolang@tmpdir/\jobname-sodg-0.0.0.pl",
+  because it is absent at "\eolang@tmpdir/\jobname-sodg.pl",
   but if -shell-escape is not set, the compilation will
   most likely fail now^^J}
-\begin{VerbatimOut}{\eolang@tmpdir/\jobname-sodg-0.0.0.pl}
+\begin{VerbatimOut}{\eolang@tmpdir/\jobname-sodg.pl}
 sub num {
   my ($i) = @_;
   $i =~ s/(\+|-)\./\10./g;
@@ -1470,10 +1470,10 @@ print '% --- (' . (0+@cmds) . " lines)\n";
 print '\endinput';
 \end{VerbatimOut}
 \message{eolang: File with Perl script
-  '\eolang@tmpdir/\jobname-sodg-0.0.0.pl' saved^^J}
+  '\eolang@tmpdir/\jobname-sodg.pl' saved^^J}
 \else
   \message{eolang: Perl script already exists at
-    "\eolang@tmpdir/\jobname-sodg-0.0.0.pl"^^J}
+    "\eolang@tmpdir/\jobname-sodg.pl"^^J}
 \fi
 \closein 15
 \fi
@@ -1622,7 +1622,7 @@ print '\endinput';
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"}%
       \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
-        perl "\eolang@tmpdir/\jobname-sodg-0.0.0.pl"
+        perl "\eolang@tmpdir/\jobname-sodg.pl"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
         \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
         \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%

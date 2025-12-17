@@ -2,7 +2,7 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 eolang: Start parsing `sodg' at line no. 15
-runsystem(( perl "_eolang/sodg-sodg-0.0.0.pl" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex" > a.tex) > _eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex" > a.tex) > _eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex) iexec: The content of '_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex' was included into the document
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
@@ -16,7 +16,7 @@ iexec: This is the content of '_eolang/sodg/phiq.tex' (5 bytes):
 iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (5 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/sodg/phiq.tex" "_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/sodg-phi-0.0.0.pl 'phiq' "_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex" ) > _eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/sodg-phi.pl 'phiq' "_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq.tex" ) > _eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex) iexec: The content of '_eolang/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 12
 runsystem(( printf '%s' 'v_{1}') > _eolang/sodg/phiq.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
@@ -27,7 +27,7 @@ v_{1}
 iexec: Due to 'quiet' option we didn't read the content of '_eolang/sodg/phiq.tex' (5 bytes)
 iexec: Due to 'trace' package option, the files '_eolang/sodg/phiq.tex' and 'iexec.ret' were not deleted
 runsystem((cp "_eolang/sodg/phiq.tex" "_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang/sodg-phi-0.0.0.pl 'phiq' "_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex" ) > _eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang/sodg-phi.pl 'phiq' "_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq.tex" ) > _eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex) iexec: The content of '_eolang/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 13
 )
@@ -149,15 +149,15 @@ Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 .\glue(\rightskip) 0.0
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 eolang: Start parsing `sodg' at line no. 28
-runsystem(( perl "_eolang/sodg-sodg-0.0.0.pl" "_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex" > a.tex) > _eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex" > a.tex) > _eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex) iexec: The content of '_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex' was included into the document
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 eolang: Start parsing `sodg' at line no. 40
-runsystem(( perl "_eolang/sodg-sodg-0.0.0.pl" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex" > a.tex) > _eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex" > a.tex) > _eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex) iexec: The content of '_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex' was included into the document
 runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 eolang: Start parsing `sodg' at line no. 72
-runsystem(( perl "_eolang/sodg-sodg-0.0.0.pl" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex" > a.tex) > _eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex" > a.tex) > _eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex) iexec: The content of '_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex' was included into the document
 [1
 ] (sodg.aux)
