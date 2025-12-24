@@ -105,37 +105,37 @@
 % The environment |phiquation| lets you write a \phic{} expressions
 % using simple plain-text notation, where:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|@|'' maps to ``$\varphi$''
+%   \item ``|@|'' maps to ``$@$''
 %     (|\varphi|),
-%   \item ``|^|'' maps to ``$\rho$''
+%   \item ``|^|'' maps to ``$^$''
 %     (|\rho|),
-%   \item ``|$|'' maps to ``$\xi$''
+%   \item ``|$|'' maps to ``\(\phiTerminal{\xi}\)''
 %     (|\xi|),
-%   \item ``|?|'' maps to ``$\varnothing$''
+%   \item ``|?|'' maps to ``$?$''
 %     (|\varnothing|),
-%   \item ``|T|'' maps to ``$\bot$''
+%   \item ``|T|'' maps to ``$T$''
 %     (|\bot|),
-%   \item ``|Q|'' maps to ``$\Phi$''
+%   \item ``|Q|'' maps to ``$Q$''
 %     (|\Phi|),
-%   \item ``|->|'' maps to ``$\mapsto$''
+%   \item ``|->|'' maps to ``$->$''
 %     (|\mapsto|),
-%   \item ``|..>|'' maps to ``$\phiDotted$''
+%   \item ``|..>|'' maps to ``$..>$''
 %     (|\phiDotted|),
-%   \item ``|~>|'' maps to ``$\phiWave$''
+%   \item ``|~>|'' maps to ``$~>$''
 %     (|\phiWave|),
-%   \item ``|D|'' maps to ``$\Delta$''
+%   \item ``|D|'' maps to ``$D$''
 %     (|\Delta|),
-%   \item ``|L|'' maps to ``$\lambda$''
+%   \item ``|L|'' maps to ``$L$''
 %     (|\lambda|),
-%   \item ``|D>|'' maps to ``$\Delta\phiDotted$''
+%   \item ``|D>|'' maps to ``$D>$''
 %     (|\Delta ..>|),
-%   \item ``|L>|'' maps to ``$\lambda\phiDotted$''
+%   \item ``|L>|'' maps to ``$L>$''
 %     (|\lambda ..>|),
-%   \item ``|[[|'' maps to ``$\llbracket$''
+%   \item ``|[[|'' maps to ``$[[$''
 %     (|\llbracket|),
-%   \item ``|]]|'' maps to ``$\rrbracket$''
+%   \item ``|]]|'' maps to ``$]]$''
 %     (|\rrbracket|),
-%   \item ``|==|'' maps to ``$\equiv$''
+%   \item ``|==|'' maps to ``$==$''
 %     (|\equiv|),
 %   \item ``\texttt{\textbar{abc}\textbar}'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
@@ -1784,12 +1784,16 @@ print '\endinput';
 %    \end{macrocode}
 % \end{macro}
 
+%    \begin{macrocode}
+\endinput
+%    \end{macrocode}
+
 % \Finale
 
 % \clearpage
 % \printbibliography
 % \clearpage
 
-% \PrintChanges
-% \clearpage
-% \PrintIndex
+%\PrintChanges
+%\clearpage
+%\PrintIndex
