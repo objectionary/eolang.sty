@@ -930,10 +930,10 @@ sub trep {
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 $tex =~ s/(?<=[\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+)(?!\{)/|\1|/g;
 $tex =~ s/(?<=[\s,>(])([0-9]+(?:\.[0-9]+)?)(?!\{)/|\1|/g;
-$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)Q(?![a-zA-Z0-9])/\1\\phiTerminal{\\Phi{}}/g;
-$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)T(?![a-zA-Z0-9])/\1\\phiTerminal{\\bot{}}/g;
-$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)D>/\1\\phiTerminal{\\Delta{}..>}/g;
-$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)L>/\1\\phiTerminal{\\lambda{}..>}/g;
+$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)Q(?![a-zA-Z0-9])/\1 \\phiTerminal{\\Phi{}}/g;
+$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)T(?![a-zA-Z0-9])/\1 \\phiTerminal{\\bot{}}/g;
+$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)D>/\1\\phiTerminal{\\Delta{}} ..>/g;
+$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)L>/\1\\phiTerminal{\\lambda{}} ..>/g;
 $tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)D(?![a-zA-Z0-9\\])/\1\\phiTerminal{\\Delta{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)L(?![a-zA-Z0-9\\])/\1\\phiTerminal{\\lambda{}}/g;
 $tex =~ s/"([^"]+)"/|"\1"|/g;
@@ -1696,7 +1696,7 @@ print '\endinput';
 % as suggested \href{https://tex.stackexchange.com/questions/198755}{here}:
 %    \begin{macrocode}
 \newcommand\phiWave{%
-  \mapstochar\mathrel{\mspace{0.45mu}}\phiTerminal{\leadsto}}
+  \phiTerminal{\mapstochar\mathrel{\mspace{0.45mu}}\leadsto}}
 %    \end{macrocode}
 % \end{macro}
 
