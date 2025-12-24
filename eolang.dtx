@@ -94,7 +94,7 @@
 % app -> [[ % it's abstract!
 %   ^ -> $.b.^{^2}, 0/t~> TRUE,
 %   b -> [[ *-> Q.fn(56),
-%     @ -> QQ.string.trim($),
+%     @ -> Q.string.trim($),
 %     D> 01-FE-C3 ]]]],\\
 % x -> [[ \lambda ..> ? ]].
 % \end{phiquation*}
@@ -117,8 +117,6 @@
 %     (|\bot|),
 %   \item ``|Q|'' maps to ``$\Phi$''
 %     (|\Phi|),
-%   \item ``|QQ|'' maps to ``$\dot{\Phi}$''
-%     (|\dot{\Phi}|),
 %   \item ``|->|'' maps to ``$\mapsto$''
 %     (|\mapsto|),
 %   \item ``|..>|'' maps to ``$\phiDotted$''
@@ -569,7 +567,7 @@
 % \begin{phiquation*}
 % x(\pi) -> [[\lambda ..> f_1]], \\
 % x(a,b,c) -> [[ ~0 -> ?, L> Foo, \
-%   @ -> QQ.hello($), x -> false ]], \\
+%   @ -> Q.hello($), x -> false ]], \\
 % \Delta = |43-09|,
 % x(y) == x(~0 -> y).
 % \end{phiquation*}
@@ -842,6 +840,7 @@
 % \changes{0.20.2}{2025/11/24}{Formatting of numbers fixed, now it works in any place inside an expression.}
 % \changes{0.21.0}{2025/12/15}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} removed.}
 % \changes{0.22.0}{2025/12/17}{Automated formatting of \texttt{D} and \texttt{L} added.}
+% \changes{0.23.0}{2023/12/25}{Parsing of \texttt{QQ} into \texttt{\char`\\dot\{\char`\\Phi\}} removed.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -931,7 +930,6 @@ sub trep {
 $tex =~ s/\\text\{(.+)/trep("$1")/ge;
 $tex =~ s/(?<=[\s,>(])([0-9A-F]{2}(?:-[0-9A-F]{2})+)(?!\{)/|\1|/g;
 $tex =~ s/(?<=[\s,>(])([0-9]+(?:\.[0-9]+)?)(?!\{)/|\1|/g;
-$tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)QQ(?![a-zA-Z0-9])/\1\\phiTerminal{\\dot{\\Phi{}}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)Q(?![a-zA-Z0-9])/\1\\phiTerminal{\\Phi{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)T(?![a-zA-Z0-9])/\1\\phiTerminal{\\bot{}}/g;
 $tex =~ s/([^\\{a-zA-Z0-9\\\{]|^)D>/\1\\phiTerminal{\\Delta{}..>}/g;
@@ -985,7 +983,7 @@ $tex =~ s/->/\\mathbin{\\phiTerminal{\\mapsto}}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
-$tex =~ s/\.\.>/\\mathbin{\\phiDotted}/g;
+$tex =~ s/\.\.>/\\mathbin{\\phiTerminal{\\phiDotted}}/g;
 $tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
