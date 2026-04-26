@@ -26,7 +26,7 @@ soft hyperxmp
 soft iexec
 soft ifmtarg
 soft l3build
-soft libertine
+soft paratype
 soft luaotfload
 soft microtype
 soft ncctools
