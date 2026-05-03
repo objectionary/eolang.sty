@@ -102,7 +102,7 @@
 % \end{docshot}
 
 % \DescribeEnv{phiquation}
-% The environment |phiquation| lets you write a \phic{} expressions
+% The environment |phiquation| lets you write \phic{} expressions
 % using simple plain-text notation, where:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|@|'' maps to ``$@$''
@@ -169,7 +169,7 @@
 % Texts in double quotes are automatically converted to fixed-width font too.
 
 % \DescribeMacro{\phiq}
-% The command |\phiq| lets you inline a \phic{} expressions
+% The command |\phiq| lets you inline \phic{} expressions
 % using the same simple plain-text notation. You can use dollar sign directly too:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
@@ -224,9 +224,9 @@
 
 % The following markers are supported for an edge:
 % \begin{itemize}\setlength\itemsep{0em}
-%   \item ``|rho|'' places a backward snake arrow to the edge,
-%   \item ``|bend:<angle>|'' bend it right by the amount of ``|<angle>|,''
-%   \item ``|a:<txt>|'' attaches label ``|<txt>|'' to it,
+%   \item ``|rho|'' places a backward snake arrow on the edge;
+%   \item ``|bend:<angle>|'' bends it right by the amount of ``|<angle>|'';
+%   \item ``|a:<txt>|'' attaches label ``|<txt>|'' to it;
 %   \item ``|pi|'' makes it dotted, with $\pi$ label;
 %   \item ``|style:{...}|'' adds this TikZ style to the edge |\path|.
 % \end{itemize}
@@ -1606,7 +1606,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{sodg}
-% \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantic. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
+% \changes{0.0.2}{2022/10/20}{The environment \texttt{phigure} renamed to \texttt{sodg} for the sake of better semantics. The graph in the picture is solely a SODG graph, that's why the name \texttt{sodg} is better.}
 % \changes{0.16.0}{2023/12/27}{The processing of \texttt{sodg} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we create a new environment |sodg|, as suggested
 % \href{https://tex.stackexchange.com/questions/661056}{here}:
