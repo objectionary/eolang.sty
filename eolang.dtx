@@ -64,27 +64,27 @@
 % \maketitle
 %
 % \textbf{\color{red}NB!}
-% You must run \TeX{} processor with |-shell-escape| option
-% and you must have \href{https://www.perl.org}{Perl} installed.
-% If you omit the |-shell-escape| option, the package will try
-% to use cached files, if they exist. If they don't, compilation will
-% fail. Thus, when you must prepare your document for a compilation
-% without the |-shell-escape| option, run it locally with the option provided
-% and then package all files (including the files in the |_eolang-*| directories)
-% into a single ZIP archive. It is advised to use |tmpdir| package option
-% in this case, in order to make the directory name not depend on the
-% \LaTeX{} engine.
+% The \TeX{} processor must be invoked with the |-shell-escape| option,
+% and \href{https://www.perl.org}{Perl} must be installed on the host system.
+% Should the |-shell-escape| option be omitted, the package falls back to
+% cached files, if any are present; in their absence, compilation fails.
+% When a document is to be prepared for compilation without the
+% |-shell-escape| option, it should be compiled locally with the option enabled,
+% whereupon all files (including those within the |_eolang-*| directories)
+% must be bundled into a single ZIP archive. The use of the |tmpdir| package
+% option is advised in such cases, so that the directory name is not made
+% dependent upon the \LaTeX{} engine.
 %
-% If |-shell-escape| is set, this package won't work on Windows, because
-% it uses POSIX command line interface.
+% When |-shell-escape| is set, this package does not operate on Windows, since
+% it employs a POSIX command-line interface.
 
 % \section{Introduction}
 %
-% This package helps you print formulas of \phic{},
-% which is a formal foundation of \href{https://www.eolang.org}{EO}
+% This package typesets formulas of \phic{},
+% the formal foundation of the \href{https://www.eolang.org}{EO}
 % programming language. The calculus was introduced by \citet{bugayenko2021eolang}
-% and later formalized by \citet{kudasov2021}. Here is how you render
-% a simple expression:
+% and subsequently formalised by \citet{kudasov2021}. A simple expression is
+% rendered as follows:
 % \begin{docshot}
 % \documentclass{minimal}
 % \usepackage{eolang}
@@ -101,8 +101,8 @@
 % \end{docshot}
 
 % \DescribeEnv{phiquation}
-% The environment |phiquation| lets you write \phic{} expressions
-% using simple plain-text notation, where:
+% The |phiquation| environment permits the writing of \phic{} expressions
+% in a simple plain-text notation, in which:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|@|'' maps to ``$@$''
 %     (|\varphi|),
@@ -139,7 +139,7 @@
 %   \item ``\texttt{\textbar{abc}\textbar}'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
 % \end{itemize}
-% Also, a few symbols are supported for $\varphi$PU architecture:
+% Furthermore, several symbols are supported for the $\varphi$PU architecture:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|<<|'' maps to ``$\langle$''
 %     (|\langle|),
@@ -151,25 +151,25 @@
 %     (|\vDash|).
 % \end{itemize}
 
-% Before any arrow you can put a number, which will be rendered as |\alpha| with an index, for example
-% |\phiq{~0 -> x}| will render ``\phiq{~0 -> x}''.
-% It's also possible to use |~0| to render \(\alpha_0\).
-% Instead of a number you can use asterisk too.
+% A number may precede any arrow, in which case it is rendered as |\alpha| bearing an index; for instance,
+% |\phiq{~0 -> x}| produces ``\phiq{~0 -> x}''.
+% The form |~0| likewise yields \(\alpha_0\).
+% An asterisk may be employed in place of a number.
 
-% You can append a slash and a title to the number of an attribute, such as |0/g->x|.
-% This will render as \phiq{0/g->x}. You can use fixed-width words too, for example
-% \verb=\phiq{0/|f|->x}= will render as ``\phiq{0/|f|->x}''. It's also possible
-% to use an asterisk instead of a number, such that |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''
+% A slash followed by a title may be appended to the number of an attribute, as in |0/g->x|.
+% This is rendered as \phiq{0/g->x}. Fixed-width words are likewise admissible, for instance
+% \verb=\phiq{0/|f|->x}= renders as ``\phiq{0/|f|->x}''. An asterisk may replace
+% the number, whereby |\phiq{*/g->x}| renders as ``\phiq{*/g->x}''.
 
-% Numbers are automatically converted to fixed-width font, no need to always decorate them with vertical bars.
+% Numbers are automatically rendered in fixed-width font; vertical bars need not always be supplied.
 
-% Object names are automatically converted to fixed-width font too, if they have more than one letter.
+% Object names of more than one letter are likewise rendered in fixed-width font.
 
-% Texts in double quotes are automatically converted to fixed-width font too.
+% Texts within double quotes are likewise rendered in fixed-width font.
 
 % \DescribeMacro{\phiq}
-% The command |\phiq| lets you inline \phic{} expressions
-% using the same simple plain-text notation. You can use dollar sign directly too:
+% The |\phiq| command permits the inlining of \phic{} expressions
+% in the same simple plain-text notation. The dollar sign may be employed directly:
 % \docshotOptions{firstline=4,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -185,7 +185,7 @@
 % \end{docshot}
 
 % \DescribeEnv{sodg}
-% The environment |sodg| allows you to draw a \href{https://github.com/objectionary/sodg}{SODG} graph:
+% The |sodg| environment permits the drawing of a \href{https://github.com/objectionary/sodg}{SODG} graph:
 % \begin{docshot}
 % \documentclass{standalone}
 % \usepackage{eolang}
@@ -200,11 +200,11 @@
 % \end{sodg}
 % \end{document}
 % \end{docshot}
-% The content of the environment is parsed line by line. Markers in each line are
-% separated by a single space. The first marker is either a unique name of a
-% vertex, like ``|v1|'' in the example above, or an edge, like ``|v0->v1|.'' All other markers are either
-% unary like ``|rho|'' or binary like ``|atom:$\xi.x+1$|.'' Binary markers have two
-% parts, separated by colon.
+% The content of the environment is parsed line by line. Markers within each line are
+% separated by a single space. The first marker is either the unique name of a
+% vertex, such as ``|v1|'' in the example above, or an edge, such as ``|v0->v1|''. All other markers are either
+% unary, such as ``|rho|'', or binary, such as ``|atom:$\xi.x+1$|''. Binary markers consist of two
+% parts separated by a colon.
 
 % The following markers are supported for a vertex:
 % \begin{itemize}\setlength\itemsep{0em}
@@ -230,29 +230,30 @@
 %   \item ``|style:{...}|'' adds this TikZ style to the edge |\path|.
 % \end{itemize}
 
-% It is also possible to put transformation arrows to the graph, with the help of ``|v0=>v1|'' syntax. The arrow
-% will be placed exactly between two vertices. You can also put an arrow from a vertex to the right,
-% saying for example ``|v3=>|'', or from the left to the vertex, by saying for example ``|=>v5|.'' If you
-% want the arrow to stay further away from the vertex than usual, use a few ``|=|'' symbols, for example ``|===>v0|.''
+% Transformation arrows may also be placed within the graph by means of the ``|v0=>v1|'' syntax. The arrow
+% is positioned precisely between the two vertices. An arrow may likewise extend from a vertex
+% to the right, as in ``|v3=>|'', or from the left towards the vertex, as in ``|=>v5|''. Whenever
+% the arrow is to remain further from the vertex than usual, additional ``|=|'' symbols may be used,
+% as in ``|===>v0|''.
 
-% You can also put a marker at the left side of a vertex, using ``|v5!A|'' syntax, where ``|v5|'' is the vertex
-% and ``|A|'' is the text in the marker. They are useful when you put a few graphs on a picture
-% explaining how one graph is transformed to another one and so forth. You can make the distance between the vertex
-% and the marker a bit larger by using a few exclamation marks,
-% for example ``|v5!!!A|'' will make a distance three times bigger.
+% A marker may also be placed to the left of a vertex by means of the ``|v5!A|'' syntax, where ``|v5|'' denotes the vertex
+% and ``|A|'' the text within the marker. Such markers prove useful whenever several graphs are juxtaposed within a single figure
+% to illustrate the transformation of one graph into another. The distance between the vertex
+% and its marker may be increased by additional exclamation marks;
+% for instance, ``|v5!!!A|'' produces a distance three times the original.
 
-% You can make a clone of an existing vertex together with all its dependants, by using this syntax: ``|v0+a|.''
-% Here, we make a copy of ``|v0|'' and call it ``|v0a|.'' See the example below.
+% A clone of an existing vertex together with all of its dependants may be created by means of the ``|v0+a|'' syntax:
+% a copy of ``|v0|'' is thereby produced and named ``|v0a|''. See the example below.
 
-% Be aware, unrecognized markers are simply ignored, without any error reporting.
+% Note that unrecognised markers are silently ignored, without any error reporting.
 
 % \DescribeMacro{\eolang}
 % \DescribeMacro{\phic}
 % \DescribeMacro{\xmir}
-% There is also a no-argument command |\eolang| to help you print the name of
-% \eolang{} language. It understands the |anonymous| package option and prints itself
-% differently, to double-blind your paper. There is also |\phic| command to print
-% the name of \phic{}, also sensitive to |anonymous| mode. The macro |\xmir| prints "XMIR".
+% A no-argument command |\eolang| is also provided for printing the name of the
+% \eolang{} language. It is sensitive to the |anonymous| package option, rendering itself
+% differently to support double-blind submissions. The |\phic| command similarly prints
+% the name of \phic{} and is likewise sensitive to |anonymous| mode. The |\xmir| macro prints ``XMIR''.
 % \docshotOptions{firstline=3,lastline=10}
 % \begin{docshot}
 % \documentclass{acmart}
@@ -266,7 +267,7 @@
 % its XML-based representation.
 % \end{document}
 % \end{docshot}
-% Without the |anonymous| option there will be no orange color:
+% Without the |anonymous| option, no orange colour is applied:
 % \docshotOptions{firstline=3,lastline=10}
 % \begin{docshot}
 % \documentclass[anonymous]{acmart}
@@ -283,7 +284,7 @@
 
 % \DescribeMacro{\phiWave}
 % \DescribeMacro{\phiDotted}
-% A few simple commands are defined to help you render arrows.
+% Several simple commands are defined for the rendering of arrows.
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
@@ -302,7 +303,7 @@
 
 % \DescribeMacro{\phiOset}
 % \DescribeMacro{\phiUset}
-% If you want to put a text over an arrow or under it, use |\phiOset| and |\phiUset| respectively:
+% Should text be placed above or beneath an arrow, |\phiOset| and |\phiUset| are employed, respectively:
 % \docshotOptions{firstline=6,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
@@ -311,8 +312,8 @@
 % \usepackage{eolang}
 % \begin{document}\noindent
 % When the names of attributes and their
-% values don't matter, we use an arrow
-% with a star, for example:
+% values are immaterial, an arrow
+% with a star is employed, for example:
 % \begin{phiquation*}
 % [[ \phiOset{*}{->} ]].
 % \end{phiquation*}
@@ -320,7 +321,7 @@
 % \end{docshot}
 
 % \DescribeMacro{\phiMany}
-% Sometimes you may need to simplify the way you describe an object (the typesetting is a bit off, but this is not because of us, but rather because of \href{https://tex.stackexchange.com/questions/664772}{this}):
+% On occasion, it is convenient to simplify the description of an object (the typesetting is somewhat imperfect, owing not to the package itself but rather to \href{https://tex.stackexchange.com/questions/664772}{this}):
 % \docshotOptions{firstline=6,lastline=14}
 % \begin{docshot}
 % \documentclass{article}
@@ -342,7 +343,7 @@
 
 % \DescribeMacro{\phiSaveTo}
 % \DescribeMacro{\sodgSaveTo}
-% If you want to use |phiquation| or |sodg| environments inside |tabular| or any other environment or command, you won't be able to do this, because |phiquation| and |sodg| are ``verbatim'' environments. |\phiSaveTo| and |\sodgSaveTo| commands will help you in this situation. You use them right before |\begin{phiquation}| or |\begin{sodg}| respectively --- the content of the equation or the graph won't be rendered, but instead saved to the file. Later, inside |tabular|, you can use it through the |\input| macro (don't forget the |\parbox|):
+% The |phiquation| and |sodg| environments cannot be used directly within |tabular| or any other environment or command, since they are ``verbatim'' environments. The |\phiSaveTo| and |\sodgSaveTo| commands address this difficulty. They are placed immediately before |\begin{phiquation}| or |\begin{sodg}|, respectively---the content of the equation or graph is then not rendered but saved to a file. Subsequently, within |tabular|, it may be retrieved by means of the |\input| macro (the |\parbox| should not be omitted):
 % \docshotOptions{firstline=5,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
@@ -361,12 +362,12 @@
 % \end{docshot}
 
 % \DescribeMacro{\eoAnon}
-% You may want to hide some of the content with the help of the |anonymous| package option. The command |\eoAnon| may help you with this. It has two parameters: one mandatory and one optional. The mandatory one is the content you want to show and the optional one is the substitution we will render if the |anonymous| package option is set.
+% Certain content may need to be concealed by means of the |anonymous| package option. The |\eoAnon| command serves this purpose. It accepts two parameters: one mandatory and one optional. The mandatory parameter denotes the content to be displayed; the optional parameter, the substitution rendered whenever the |anonymous| package option is set.
 
 % \section{Package Options}
 
 % \DescribeMacro{tmpdir}
-% The default location of temp files is |_eolang|. You can change this with the help of the |tmpdir| package option:
+% The default location for temporary files is |_eolang|. This may be altered by means of the |tmpdir| package option:
 %\iffalse
 %<*verb>
 %\fi
@@ -378,7 +379,7 @@
 %\fi
 
 % \DescribeMacro{nodollar}
-% You may disable the special treatment of the dollar sign by using the |nodollar| package option:
+% The special treatment of the dollar sign may be disabled by means of the |nodollar| package option:
 %\iffalse
 %<*verb>
 %\fi
@@ -390,7 +391,7 @@
 %\fi
 
 % \DescribeMacro{anonymous}
-% You may anonymize |\eolang|, |\xmir|, and |\phic| commands by using |anonymous| package option (they all use the |\eoAnon| command mentioned earlier):
+% The |\eolang|, |\xmir|, and |\phic| commands may be anonymised by means of the |anonymous| package option (each invokes the |\eoAnon| command mentioned earlier):
 %\iffalse
 %<*verb>
 %\fi
@@ -402,8 +403,8 @@
 %\fi
 
 % \DescribeMacro{noshell}
-% You may prohibit any interactions with the shell by using the |noshell| option. This may be helpful when you send your document
-% for outside processing and want to make sure the compilation won't break due to shell errors:
+% Any interaction with the shell may be prohibited by means of the |noshell| option. This proves useful whenever the document is dispatched
+% for external processing, and assurance is required that compilation will not fail on account of shell errors:
 %\iffalse
 %<*verb>
 %\fi
@@ -416,10 +417,10 @@
 
 % \section{More Examples}
 
-% The |phiquation| environment treats ends of line as signals to start
-% new lines in the formula. If you don't want this to happen and want to parse
-% the next line as a continuation of the current line, you can use a single
-% backslash as it's done here:
+% The |phiquation| environment treats line endings as signals to begin
+% new lines within the formula. Should this behaviour be undesirable, and the
+% subsequent line be parsed instead as a continuation of the current line, a single
+% backslash may be employed as illustrated below:
 % \docshotOptions{firstline=6,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
@@ -436,8 +437,8 @@
 % \end{document}
 % \end{docshot}
 
-% This is how you can use |\dfrac| from \href{https://ctan.org/pkg/amsmath}{amsmath} for large inference rules,
-% with the help of |\begin{split}| and |\end{split}|:
+% The following illustrates the use of |\dfrac| from \href{https://ctan.org/pkg/amsmath}{amsmath} for large inference rules,
+% by means of |\begin{split}| and |\end{split}|:
 % \docshotOptions{firstline=6,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
@@ -458,7 +459,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can use the |matrix| environment too, in order to group a few lines:
+% The |matrix| environment may likewise be employed to group several lines:
 % \docshotOptions{firstline=5,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
@@ -475,7 +476,7 @@
 % \end{document}
 % \end{docshot}
 
-% The |cases| environment works too:
+% The |cases| environment is likewise supported:
 % \docshotOptions{firstline=5,lastline=11}
 % \begin{docshot}
 % \documentclass{article}
@@ -491,7 +492,7 @@
 % \end{document}
 % \end{docshot}
 
-% The |phiquation| environment may be used together with the \href{https://ctan.org/pkg/acmart}{acmart} package:
+% The |phiquation| environment may likewise be employed in conjunction with the \href{https://ctan.org/pkg/acmart}{acmart} package:
 % \begin{docshot}
 % \documentclass{acmart}
 % \usepackage{eolang}
@@ -506,7 +507,7 @@
 % \end{document}
 % \end{docshot}
 
-% It's possible to use |\label| inside the |phiquation| environment (pay attention to how you can disable our custom parsing of math formulas by means of curled brackets around the ``|4|'' number):
+% The |\label| command may be used within the |phiquation| environment (note how the bespoke parsing of math formulas may be suppressed by enclosing the ``|4|'' number in curly brackets):
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -514,18 +515,18 @@
 % \usepackage{eolang}
 % \pagestyle{empty}
 % \begin{document}\noindent
-% Discriminant can be calculated using
-% the following simple formula:
+% The discriminant may be computed by
+% means of the following simple formula:
 % \begin{phiquation}
 % D = b{^2} - {4}ac.
 % \label{d}
 % \end{phiquation}
-% Eq.~\ref{d} is also widely used in
+% Eq.~\ref{d} finds wide application in
 % number theory and polynomial factoring.
 % \end{document}
 % \end{docshot}
 
-% You can add comments to your equations, using the |&&| command (pay attention, the text inside |\text{}| is not processed and treated like a plain text):
+% Comments may be appended to equations by means of the |&&| command (note that the text within |\text{}| is not processed but treated as plain text):
 % \docshotOptions{firstline=6,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -541,7 +542,7 @@
 % \end{document}
 % \end{docshot}
 
-% If you don't use |nodollar| package option, you can still use normal parsing of the dollar sign, by means of |\(...\)| syntax:
+% Even without the |nodollar| package option, the ordinary parsing of the dollar sign remains accessible by means of the |\(...\)| syntax:
 % \docshotOptions{firstline=6,lastline=8}
 % \begin{docshot}
 % \documentclass{article}
@@ -550,13 +551,13 @@
 % \pagestyle{empty}
 % \begin{document}\noindent
 % The object formation $[[~0->x]]$
-% may be replaced with a formula
+% may be replaced by the formula
 % \( Q \times a^2 \).
 % \end{document}
 % \end{docshot}
 
-% The |phiquation| environment will automatically align formulas by the first
-% arrow, if there are only left-aligned formulas:
+% The |phiquation| environment automatically aligns formulas at the first
+% arrow whenever only left-aligned formulas are present:
 % \docshotOptions{firstline=5,lastline=11}
 % \begin{docshot}
 % \documentclass{acmart}
@@ -573,7 +574,7 @@
 % \end{document}
 % \end{docshot}
 
-% If not a single line is indented in |phiquation|, all formulas will be centered:
+% Should no line in |phiquation| be indented, all formulas are centred:
 % \docshotOptions{firstline=5,lastline=9}
 % \begin{docshot}
 % \documentclass{acmart}
@@ -588,7 +589,7 @@
 % \end{document}
 % \end{docshot}
 
-% It is possible to use ``manual splitting'' mode in the |phiquation| environment by starting the body with |\begin{split}|:
+% A ``manual splitting'' mode may be employed in the |phiquation| environment by commencing the body with |\begin{split}|:
 % \docshotOptions{firstline=5,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -604,7 +605,7 @@
 % \end{document}
 % \end{docshot}
 
-% When necessary to use a percentage sign, prepend it with a backward slash:
+% Whenever a percentage sign is required, it must be prefixed with a backslash:
 % \docshotOptions{firstline=5,lastline=10}
 % \begin{docshot}
 % \documentclass{article}
@@ -617,7 +618,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can make a copy of a vertex together with its kids:
+% A copy of a vertex may be made together with its descendants:
 % \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
@@ -638,7 +639,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can make a copy from a copy:
+% A copy may itself be copied in turn:
 % \docshotOptions{firstline=5,lastline=15}
 % \begin{docshot}
 % \documentclass{article}
@@ -659,10 +660,10 @@
 % \end{document}
 % \end{docshot}
 
-% You can have ``broken'' edges, using ``|break|'' attribute of an edge.
-% The attribute must have a value, which is the percentage of the path
-% between vertices that the arrow should take (can't be more than 80 and less than 20).
-% This may be convenient when you can't fit all edges into the graph,
+% ``Broken'' edges are supported by means of the ``|break|'' attribute of an edge.
+% The attribute requires a value denoting the percentage of the path
+% between vertices that the arrow is to traverse (the value cannot exceed 80 nor fall below 20).
+% This proves convenient whenever not all edges can be accommodated within the graph,
 % for example:
 % \docshotOptions{firstline=5,lastline=14}
 % \begin{docshot}
@@ -683,7 +684,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can add \href{https://en.wikipedia.org/wiki/PGF/TikZ}{TikZ} commands to |sodg| graph, for example:
+% \href{https://en.wikipedia.org/wiki/PGF/TikZ}{TikZ} commands may be added to a |sodg| graph, for example:
 % \docshotOptions{firstline=6,lastline=13}
 % \begin{docshot}
 % \documentclass{article}
@@ -702,7 +703,7 @@
 % \end{document}
 % \end{docshot}
 
-% You can modify TikZ style yourself (make sure |style:| stays at the end of the line!), for example:
+% The TikZ style may be modified directly (note that |style:| must remain at the end of the line), for example:
 % \docshotOptions{firstline=6,lastline=12}
 % \begin{docshot}
 % \documentclass{article}
@@ -1661,7 +1662,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{\eolang}
-% Then, we define a simple supplementary command to help you print \eolang{}, the name of our language.
+% Then, we define a simple supplementary command for printing \eolang{}, the name of the language.
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\eolang} added to print the name of the language in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
@@ -1671,7 +1672,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{\phic}
-% Then, we define a simple supplementary command to help you print \phic{}, the name of our formal apparatus.
+% Then, we define a simple supplementary command for printing \phic{}, the name of the formal apparatus.
 % \changes{0.1.0}{2022/10/25}{New command \texttt{\char`\\phic} prints the name of \phic{} in both
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
@@ -1681,7 +1682,7 @@ print '\endinput';
 % \end{macro}
 
 % \begin{macro}{\xmir}
-% Then, we define a simple supplementary command to help you print \xmir{}, the name of our XML-based format of program representation.
+% Then, we define a simple supplementary command for printing \xmir{}, the name of the XML-based format of program representation.
 % \changes{0.2.0}{2022/10/28}{New command \texttt{\char`\\xmir} prints XMIR in both normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\xmir{%
