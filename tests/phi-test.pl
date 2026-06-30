@@ -39,10 +39,12 @@ my $article = $temp . '/article.tex';
 savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}\end{document}');
 debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`);
 
-rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
-rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf{b}');
-rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\mapsto} b');
+rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
+rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\phiTerminal{\mapsto}} \textbf{b}');
+rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\phiTerminal{\mapsto}} b');
 rewrites_phiq($temp, '[\ccc]', '[\ccc]');
+rewrites_phiq($temp, '\char 44{}', '\(\char 44{}\)');
+rewrites_phiq($temp, '\char44{}', '\(\char44{}\)');
 
 info('SUCCESS');
 
