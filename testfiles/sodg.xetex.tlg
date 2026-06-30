@@ -1,180 +1,51 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang-xe/sodg/tmp-sodg-xe.tex" "_eolang-xe/sodg/tmp-263C8FDA3CA9E5738BCA811C453BB670-15-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 15
-runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/tmp-263C8FDA3CA9E5738BCA811C453BB670-15-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/tmp-263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post-xe.tex' was included into the document
+runsystem((cp "_eolang-xe/sodg/sodg-xe.tex" "_eolang-xe/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 17
+runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post-xe.tex' was included into the document
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
 LaTeX Font Info:    Trying to load font information for U+msb on input line ....
-runsystem(( printf '%s' '\Phi ') > _eolang-xe/sodg/tmp-phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( printf '%s' '\Phi ') > _eolang-xe/sodg/tmp-phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret]
-iexec: This is the content of '_eolang-xe/sodg/tmp-phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/tmp-phiq-xe.tex} bytes):
+runsystem(( printf '%s' '\Phi ') > _eolang-xe/sodg/phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' '\Phi ') > _eolang-xe/sodg/phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang-xe/sodg/phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/phiq-xe.tex} bytes):
 \Phi
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/tmp-phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/tmp-phiq-xe.tex} bytes)
-iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/tmp-phiq-xe.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-xe/sodg/tmp-phiq-xe.tex" "_eolang-xe/sodg/tmp-571286850423E91DB6D2802A4857BF03-12-phiq-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-xe/sodg-phi.pl 'phiq' "_eolang-xe/sodg/tmp-571286850423E91DB6D2802A4857BF03-12-phiq-xe.tex" ) > _eolang-xe/sodg/tmp-571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex' was included into the document
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/phiq-xe.tex} bytes)
+iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/phiq-xe.tex' and 'iexec.ret' were not deleted
+runsystem((cp "_eolang-xe/sodg/phiq-xe.tex" "_eolang-xe/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/sodg-phi.pl 'phiq' "_eolang-xe/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-xe.tex" ) > _eolang-xe/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex) iexec: The content of '_eolang-xe/sodg/571286850423E91DB6D2802A4857BF03-12-phiq-post-xe.tex' was included into the document
 eolang: Parsed `phiq' at line no. 12
-runsystem(( printf '%s' 'v_{1}') > _eolang-xe/sodg/tmp-phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-iexec: [( printf '%s' 'v_{1}') > _eolang-xe/sodg/tmp-phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret]
-iexec: This is the content of '_eolang-xe/sodg/tmp-phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/tmp-phiq-xe.tex} bytes):
+runsystem(( printf '%s' 'v_{1}') > _eolang-xe/sodg/phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+iexec: [( printf '%s' 'v_{1}') > _eolang-xe/sodg/phiq-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret]
+iexec: This is the content of '_eolang-xe/sodg/phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/phiq-xe.tex} bytes):
 v_{1}
 <EOF>
-iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/tmp-phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/tmp-phiq-xe.tex} bytes)
-iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/tmp-phiq-xe.tex' and 'iexec.ret' were not deleted
-runsystem((cp "_eolang-xe/sodg/tmp-phiq-xe.tex" "_eolang-xe/sodg/tmp-175FB02DC71571BB97CF42967A26105C-13-phiq-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-runsystem(( perl _eolang-xe/sodg-phi.pl 'phiq' "_eolang-xe/sodg/tmp-175FB02DC71571BB97CF42967A26105C-13-phiq-xe.tex" ) > _eolang-xe/sodg/tmp-175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex' was included into the document
+iexec: Due to 'quiet' option we didn't read the content of '_eolang-xe/sodg/phiq-xe.tex' (\pdffilesize {_eolang-xe/sodg/phiq-xe.tex} bytes)
+iexec: Due to 'trace' package option, the files '_eolang-xe/sodg/phiq-xe.tex' and 'iexec.ret' were not deleted
+runsystem((cp "_eolang-xe/sodg/phiq-xe.tex" "_eolang-xe/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+runsystem(( perl _eolang-xe/sodg-phi.pl 'phiq' "_eolang-xe/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-xe.tex" ) > _eolang-xe/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex) iexec: The content of '_eolang-xe/sodg/175FB02DC71571BB97CF42967A26105C-13-phiq-post-xe.tex' was included into the document
 eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 [][] 
-\hbox(35.08408+30.08406)x345.0
-.\hbox(0.0+0.0)x15.0
-.\hbox(35.08408+30.08406)x357.00002
-..\mathon
-..\vbox(35.08408+30.08406)x357.00002
-...\hbox(61.5681+3.60004)x357.00002
-....\glue(\tabskip) 0.0
-....\hbox(61.5681+3.60004)x357.00002
-.....\rule(8.39996+3.60004)x0.0
-.....\glue 6.0
-.....\glue 0.00002
-.....\vbox(61.5681+0.0)x345.0
-......\hbox(61.5681+0.0)x345.0, glue set 283.4319fil
-.......\hbox(61.5681+0.0)x61.5681
-........\glue 12.39998
-........\hbox(0.0+0.0)x0.0, shifted -49.16812
-.........\special{pdf:bcontent}
-.........\special{pdf:code q }
-.........\special{pdf:code 0 G }
-.........\special{pdf:code 0 g }
-.........\special{pdf:code 0.3985 w }
-.........\hbox(0.0+0.0)x0.0
-..........\special{pdf:code q }
-..........\special{pdf:code 0.79703 w }
-..........\glue 0.0
-..........\hbox(0.0+0.0)x0.0
-...........\hbox(0.0+0.0)x0.0
-............\special{pdf:code q }
-............\special{pdf:code 11.95529 0.0 m }
-............\special{pdf:code 11.95529 6.60278 6.60278 11.95529 0.0 11.95529 c }
-............\special{pdf:code -6.60278 11.95529 -11.95529 6.60278 -11.95529 0.0 c }
-............\special{pdf:code -11.95529 -6.60278 -6.60278 -11.95529 0.0 -11.95529 c }
-............\special{pdf:code 6.60278 -11.95529 11.95529 -6.60278 11.95529 0.0 c }
-............\special{pdf:code h }
-............\special{pdf:code 0.0 0.0 m }
-............\special{pdf:code S }
-............\glue 0.0
-............\special{pdf:code q }
-............\special{pdf:code q -1 0 0 -1 0 0 cm q}
-............\special{pdf: econtent}
-............\special{pdf: bcontent}
-............\special{pdf:code -1 0 0 -1 0 0 cm}
-............\special{pdf:code q}
-............\special{pdf: econtent}
-............\special{pdf:code 0 J [] 0 d}
-............\special{pdf:bcolor [1]}
-............\special{pdf:bcolor [0]}
-............\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 -3.3278 -3.06352}
-............\hbox(0.0+0.0)x0.0
-.............\hbox(6.14998+0.0)x6.68051
-..............\special{pdf:code 0 G }
-..............\special{pdf:code 0 g }
-..............\hbox(6.14998+0.0)x6.68051
-...............\mathon
-...............\OT1/cmr/m/n/9 ^^H
-...............\mathoff
-..............\glue 0.0
-............\special{pdf:etrans}
-............\special{pdf:ecolor}
-............\special{pdf:ecolor}
-............\special{pdf: bcontent}
-............\special{pdf:code Q Q Q}
-............\special{pdf:code Q }
-............\glue 0.0
-............\glue 0.0
-............\special{pdf:code Q }
-..........\glue 0.0
-..........\hbox(0.0+0.0)x0.0
-...........\hbox(0.0+0.0)x0.0
-............\special{pdf:code q }
-............\glue 0.0
-............\glue 0.0
-............\special{pdf:code 48.58653 -36.63124 m }
-............\special{pdf:code 48.58653 -30.02844 43.23404 -24.67595 36.63124 -24.67595 c }
-............\special{pdf:code 30.02844 -24.67595 24.67595 -30.02844 24.67595 -36.63124 c }
-............\special{pdf:code 24.67595 -43.23404 30.02844 -48.58653 36.63124 -48.58653 c }
-............\special{pdf:code 43.23404 -48.58653 48.58653 -43.23404 48.58653 -36.63124 c }
-............\special{pdf:code h }
-............\special{pdf:code 36.63124 -36.63124 m }
-............\special{pdf:code S }
-............\glue 0.0
-............\special{pdf:code q }
-............\special{pdf:code q -1 0 0 -1 0 0 cm q}
-............\special{pdf: econtent}
-............\special{pdf: bcontent}
-............\special{pdf:code -1 0 0 -1 0 0 cm}
-............\special{pdf:code q}
-............\special{pdf: econtent}
-............\special{pdf:code 0 J [] 0 d}
-............\special{pdf:bcolor [1]}
-............\special{pdf:bcolor [0]}
-............\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 32.31755 -38.06339}
-............\hbox(0.0+0.0)x0.0
-.............\hbox(3.87498+0.99998)x8.65964
-..............\special{pdf:code 0 G }
-..............\special{pdf:code 0 g }
-..............\hbox(3.87498+0.99998)x8.65964
-...............\mathon
-...............\OML/cmm/m/it/9 v
-...............\hbox(3.86665+0.0)x4.16661, shifted 0.99998
-................\OT1/cmr/m/n/6 1
-...............\mathoff
-..............\glue 0.0
-............\special{pdf:etrans}
-............\special{pdf:ecolor}
-............\special{pdf:ecolor}
-............\special{pdf: bcontent}
-............\special{pdf:code Q Q Q}
-............\special{pdf:code Q }
-............\glue 0.0
-............\glue 0.0
-............\special{pdf:code Q }
-..........\glue 0.0
-..........\glue 0.0
-..........\special{pdf:code Q }
-..........\glue 0.0 plus 1.0fil minus 1.0fil
-.........\special{pdf:code n }
-.........\special{pdf:code Q }
-.........\special{pdf:econtent}
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-.......\penalty 10000
-.......\glue(\parfillskip) 0.0 plus 1.0fil
-.......\glue(\rightskip) 0.0
-.....\glue 0.0 plus 1.0fil
-.....\glue 6.0
-....\glue(\tabskip) 0.0
-..\mathoff
-.\penalty 10000
-.\glue(\parfillskip) 0.0 plus 1.0fil
-.\glue(\rightskip) 0.0
-runsystem((cp "_eolang-xe/sodg/tmp-sodg-xe.tex" "_eolang-xe/sodg/tmp-248628695479BBC0FC68838C527338F3-28-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 28
-runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/tmp-248628695479BBC0FC68838C527338F3-28-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/tmp-248628695479BBC0FC68838C527338F3-28-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-248628695479BBC0FC68838C527338F3-28-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-248628695479BBC0FC68838C527338F3-28-sodg-post-xe.tex' was included into the document
-runsystem((cp "_eolang-xe/sodg/tmp-sodg-xe.tex" "_eolang-xe/sodg/tmp-FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 40
-runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/tmp-FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/tmp-FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post-xe.tex' was included into the document
-runsystem((cp "_eolang-xe/sodg/tmp-sodg-xe.tex" "_eolang-xe/sodg/tmp-1EA1993CE595EB82246E9898689720C3-72-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 72
-runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/tmp-1EA1993CE595EB82246E9898689720C3-72-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/tmp-1EA1993CE595EB82246E9898689720C3-72-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang-xe/sodg/tmp-1EA1993CE595EB82246E9898689720C3-72-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/tmp-1EA1993CE595EB82246E9898689720C3-72-sodg-post-xe.tex' was included into the document
+ []
+runsystem((cp "_eolang-xe/sodg/sodg-xe.tex" "_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-30-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 30
+runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-30-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post-xe.tex' was included into the document
+runsystem((cp "_eolang-xe/sodg/sodg-xe.tex" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 42
+runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post-xe.tex' was included into the document
+runsystem((cp "_eolang-xe/sodg/sodg-xe.tex" "_eolang-xe/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-xe.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 74
+runsystem(( perl "_eolang-xe/sodg-sodg.pl" "_eolang-xe/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-xe.tex" > a.tex) > _eolang-xe/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post-xe.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang-xe/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post-xe.tex) iexec: The content of '_eolang-xe/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post-xe.tex' was included into the document
 [1
 ] (sodg.aux)
 Package rerunfilecheck Warning: File `sodg.out' has changed.

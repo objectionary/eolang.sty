@@ -1,9 +1,9 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 15
-runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg.tex" > a.tex) > _eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex) iexec: The content of '_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-15-sodg-post.tex' was included into the document
+runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 17
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg.tex" > a.tex) > _eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post.tex) iexec: The content of '_eolang/sodg/263C8FDA3CA9E5738BCA811C453BB670-17-sodg-post.tex' was included into the document
 LaTeX Font Info:    Trying to load font information for U+stmry on input line ....
 (../Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+msa on input line ....
@@ -33,132 +33,19 @@ eolang: Parsed `phiq' at line no. 13
 )
 Overfull \hbox (27.00002pt too wide) in paragraph at lines ...
 [][] 
-\hbox(35.0841+30.0841)x345.0
-.\hbox(0.0+0.0)x15.0
-.\hbox(35.0841+30.0841)x357.00002
-..\mathon
-..\vbox(35.0841+30.0841)x357.00002
-...\hbox(61.56818+3.60004)x357.00002
-....\glue(\tabskip) 0.0
-....\hbox(61.56818+3.60004)x357.00002
-.....\rule(8.39996+3.60004)x0.0
-.....\glue 6.0
-.....\glue 0.00002
-.....\vbox(61.56818+0.0)x345.0
-......\hbox(61.56818+0.0)x345.0, glue set 283.43182fil
-.......\hbox(61.56818+0.0)x61.56818
-........\glue 12.4
-........\hbox(0.0+0.0)x0.0, shifted -49.16818
-.........\pdfliteral{q }
-.........\pdfliteral{0 G }
-.........\pdfliteral{0 g }
-.........\pdfliteral{0.3985 w }
-.........\hbox(0.0+0.0)x0.0
-..........\pdfliteral{q }
-..........\pdfliteral{0.79703 w }
-..........\glue 0.0
-..........\hbox(0.0+0.0)x0.0
-...........\hbox(0.0+0.0)x0.0
-............\pdfliteral{q }
-............\pdfliteral{11.9553 0.0 m }
-............\pdfliteral{11.9553 6.6028 6.6028 11.9553 0.0 11.9553 c }
-............\pdfliteral{-6.6028 11.9553 -11.9553 6.6028 -11.9553 0.0 c }
-............\pdfliteral{-11.9553 -6.6028 -6.6028 -11.9553 0.0 -11.9553 c }
-............\pdfliteral{6.6028 -11.9553 11.9553 -6.6028 11.9553 0.0 c }
-............\pdfliteral{h }
-............\pdfliteral{0.0 0.0 m }
-............\pdfliteral{S }
-............\glue 0.0
-............\pdfliteral{q }
-............\hbox(0.0+0.0)x0.0
-.............\glue -3.34026
-.............\hbox(0.0+0.0)x0.0, shifted 3.07498
-..............\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-..............\pdfliteral{q }
-..............\hbox(0.0+0.0)x0.0
-...............\hbox(6.14998+0.0)x6.68051
-................\pdfliteral{0 G }
-................\pdfliteral{0 g }
-................\hbox(6.14998+0.0)x6.68051
-.................\mathon
-.................\OT1/cmr/m/n/9 ^^H
-.................\mathoff
-................\glue 0.0
-..............\pdfliteral{Q }
-..............\glue 0.0
-.............\glue 0.0 plus 1.0fil minus 1.0fil
-............\pdfliteral{Q }
-............\glue 0.0
-............\glue 0.0
-............\pdfliteral{Q }
-..........\glue 0.0
-..........\hbox(0.0+0.0)x0.0
-...........\hbox(0.0+0.0)x0.0
-............\pdfliteral{q }
-............\glue 0.0
-............\glue 0.0
-............\pdfliteral{48.5866 -36.63129 m }
-............\pdfliteral{48.5866 -30.02847 43.2341 -24.67598 36.63129 -24.67598 c }
-............\pdfliteral{30.02847 -24.67598 24.67598 -30.02847 24.67598 -36.63129 c }
-............\pdfliteral{24.67598 -43.2341 30.02847 -48.5866 36.63129 -48.5866 c }
-............\pdfliteral{43.2341 -48.5866 48.5866 -43.2341 48.5866 -36.63129 c }
-............\pdfliteral{h }
-............\pdfliteral{36.63129 -36.63129 m }
-............\pdfliteral{S }
-............\glue 0.0
-............\pdfliteral{q }
-............\hbox(0.0+0.0)x0.0
-.............\glue 32.43837
-.............\hbox(0.0+0.0)x0.0, shifted 38.20569
-..............\pdfliteral{1.0 0.0 0.0 1.0 0.0 0.0 cm }
-..............\pdfliteral{q }
-..............\hbox(0.0+0.0)x0.0
-...............\hbox(3.87498+0.99998)x8.65964
-................\pdfliteral{0 G }
-................\pdfliteral{0 g }
-................\hbox(3.87498+0.99998)x8.65964
-.................\mathon
-.................\OML/cmm/m/it/9 v
-.................\hbox(3.86665+0.0)x4.16661, shifted 0.99998
-..................\OT1/cmr/m/n/6 1
-.................\mathoff
-................\glue 0.0
-..............\pdfliteral{Q }
-..............\glue 0.0
-.............\glue 0.0 plus 1.0fil minus 1.0fil
-............\pdfliteral{Q }
-............\glue 0.0
-............\glue 0.0
-............\pdfliteral{Q }
-..........\glue 0.0
-..........\glue 0.0
-..........\pdfliteral{Q }
-..........\glue 0.0 plus 1.0fil minus 1.0fil
-.........\pdfliteral{n }
-.........\pdfliteral{Q }
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-.......\penalty 10000
-.......\glue(\parfillskip) 0.0 plus 1.0fil
-.......\glue(\rightskip) 0.0
-.....\glue 0.0 plus 1.0fil
-.....\glue 6.0
-....\glue(\tabskip) 0.0
-..\mathoff
-.\penalty 10000
-.\glue(\parfillskip) 0.0 plus 1.0fil
-.\glue(\rightskip) 0.0
-runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 28
-runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg.tex" > a.tex) > _eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex) iexec: The content of '_eolang/sodg/248628695479BBC0FC68838C527338F3-28-sodg-post.tex' was included into the document
-runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 40
-runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg.tex" > a.tex) > _eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex) iexec: The content of '_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-40-sodg-post.tex' was included into the document
-runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-eolang: Start parsing `sodg' at line no. 72
-runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg.tex" > a.tex) > _eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
-(_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex) iexec: The content of '_eolang/sodg/1EA1993CE595EB82246E9898689720C3-72-sodg-post.tex' was included into the document
+ []
+runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/248628695479BBC0FC68838C527338F3-30-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 30
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/248628695479BBC0FC68838C527338F3-30-sodg.tex" > a.tex) > _eolang/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post.tex) iexec: The content of '_eolang/sodg/248628695479BBC0FC68838C527338F3-30-sodg-post.tex' was included into the document
+runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 42
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg.tex" > a.tex) > _eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post.tex) iexec: The content of '_eolang/sodg/FF8C7694F39FB978E18906DBEC7C2FA7-42-sodg-post.tex' was included into the document
+runsystem((cp "_eolang/sodg/sodg.tex" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg.tex") > /dev/null 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+eolang: Start parsing `sodg' at line no. 74
+runsystem(( perl "_eolang/sodg-sodg.pl" "_eolang/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg.tex" > a.tex) > _eolang/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
+(_eolang/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post.tex) iexec: The content of '_eolang/sodg/1EA1993CE595EB82246E9898689720C3-74-sodg-post.tex' was included into the document
 [1
 ] (sodg.aux)
 Package rerunfilecheck Warning: File `sodg.out' has changed.
