@@ -39,9 +39,9 @@ my $temp = tempdir(CLEANUP => 1);
 my $self = dirname(dirname(File::Spec->rel2abs($0)));
 debug(`cd '$temp' && cp '$self/eolang.ins' . && cp '$self/eolang.dtx' . && pdflatex eolang.ins 2>&1`);
 
-saves_phiq($temp, 'a -> b', '\(a \mathbin{\mapsto} b\)');
-saves_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\mapsto} \textbf {b}');
-saves_phiq($temp, 'a -> \ccc', 'a \mathbin{\mapsto} \ccc');
+saves_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
+saves_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\phiTerminal{\mapsto}} \textbf {b}');
+saves_phiq($temp, 'a -> \ccc', 'a \mathbin{\phiTerminal{\mapsto}} \ccc');
 
 info('SUCCESS');
 
