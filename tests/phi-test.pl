@@ -42,6 +42,8 @@ debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmod
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
 rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\phiTerminal{\mapsto}} \textbf{b}');
 rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\phiTerminal{\mapsto}} b');
+rewrites_phiq($temp, '|--|', '\textnormal{\texttt{-{}-}}{}');
+rewrites_phiq($temp, '|a---b|', '\textnormal{\texttt{a-{}-{}-b}}{}');
 rewrites_phiq($temp, '[\ccc]', '[\ccc]');
 rewrites_phiq($temp, '\char 44{}', '\(\char 44{}\)');
 rewrites_phiq($temp, '\char44{}', '\(\char44{}\)');

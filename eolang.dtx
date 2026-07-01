@@ -991,7 +991,7 @@ $tex =~ s/>>/\\rangle/g;
 $tex =~ s/(?<![\\\{])([)(.])/\\phiTerminal{\1}/g;
 $tex =~ s/(?<![\\\{]),/\\phiTerminal{,}\\;/g;
 $tex =~ s/\|{2,}/|/g;
-$tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}{}/g;
+$tex =~ s/\|([^\|]+)\|/'\\textnormal{\\texttt{' . ($1 =~ s{-(?=-)}{-{}}gr) . '}}{}'/ge;
 $tex =~ s/\{TEXT(\d+)\}/'\\text{' . $texts[$1] . '}';/ge;
 if ($macro eq 'phiq') {
   print '\(' if ($tex ne '');
@@ -1207,7 +1207,7 @@ sub num {
 }
 sub fmt {
   my ($tex) = @_;
-  $tex =~ s/\|([^\|]+)\|/\\textnormal{\\texttt{\1}}/g;
+  $tex =~ s/\|([^\|]+)\|/'\\textnormal{\\texttt{' . ($1 =~ s{-(?=-)}{-{}}gr) . '}}'/ge;
   return $tex;
 }
 sub toem {
