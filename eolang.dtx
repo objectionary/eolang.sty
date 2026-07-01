@@ -391,6 +391,14 @@
 %</verb>
 %\fi
 
+% The dollar sign is turned into an active character only at the beginning
+% of the document, so that packages loaded after |eolang| still read |$| at
+% its normal math-shift catcode throughout the preamble. As a consequence,
+% |$...$| written inside the body of a preamble-defined macro (for example, a
+% |\newcommand|) is \emph{not} converted to |\phiq| automatically. In that
+% situation, use the |\phiq{...}| command directly, since it is
+% catcode-independent and self-wraps its argument.
+
 % \DescribeMacro{anonymous}
 % The |\eolang|, |\xmir|, and |\phic| commands may be anonymised by means of the |anonymous| package option (each invokes the |\eoAnon| command mentioned earlier):
 %\iffalse
@@ -1157,6 +1165,7 @@ print '\endinput';
 % \begin{macro}{nodollar}
 % \changes{0.7.0}{2022/11/18}{Now it is possible to use dollar sign instead of the \texttt{\char`\\phiq} command.}
 % \changes{0.23.1}{2026/07/01}{The dollar sign is made active at the end of the package (\texttt{\char`\\AtEndOfPackage}), so that \texttt{\$...\$} captured inside preamble-defined macros is also converted to \texttt{\char`\\phiq}.}
+% \changes{0.23.2}{2026/07/01}{The \texttt{\char`\\AtEndOfPackage} activation is removed, because it left \texttt{\$} active for the rest of the preamble and broke packages loaded after \texttt{eolang}. The dollar sign is now activated only at the beginning of the document; for \texttt{\$...\$} inside preamble-defined macros, use \texttt{\char`\\phiq\char`\{...\char`\}} instead, which is catcode-independent.}
 % Then, we redefine dollar sign:
 %    \begin{macrocode}
 \ifdefined\eolang@nodollar\else
@@ -1164,7 +1173,6 @@ print '\endinput';
   \catcode`\$=\active
   \protected\gdef$#1${\phiq{#1}}
   \endgroup
-  \AtEndOfPackage{\catcode`\$=\active}%
   \AtBeginDocument{\catcode`\$=\active}
 \fi
 %    \end{macrocode}
