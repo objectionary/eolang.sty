@@ -1156,7 +1156,7 @@ print '\endinput';
 
 % \begin{macro}{nodollar}
 % \changes{0.7.0}{2022/11/18}{Now it is possible to use dollar sign instead of the \texttt{\char`\\phiq} command.}
-% \changes{0.23.1}{2026/07/01}{The dollar sign is made active at load time, so that \texttt{\$...\$} captured inside preamble-defined macros is also converted to \texttt{\char`\\phiq}.}
+% \changes{0.23.1}{2026/07/01}{The dollar sign is made active at the end of the package (\texttt{\char`\\AtEndOfPackage}), so that \texttt{\$...\$} captured inside preamble-defined macros is also converted to \texttt{\char`\\phiq}.}
 % Then, we redefine dollar sign:
 %    \begin{macrocode}
 \ifdefined\eolang@nodollar\else
@@ -1164,7 +1164,7 @@ print '\endinput';
   \catcode`\$=\active
   \protected\gdef$#1${\phiq{#1}}
   \endgroup
-  \catcode`\$=\active
+  \AtEndOfPackage{\catcode`\$=\active}%
   \AtBeginDocument{\catcode`\$=\active}
 \fi
 %    \end{macrocode}
