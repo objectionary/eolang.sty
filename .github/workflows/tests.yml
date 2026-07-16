@@ -20,7 +20,7 @@ jobs:
       - uses: zauguin/install-texlive@v4.4.0
         with:
           package_file: .tl_packages
-          texlive_version: 2025
+          texlive_version: 2026
       - run: |
           scripts=$(find ./tests -name '*.pl')
           while IFS= read -r s; do
