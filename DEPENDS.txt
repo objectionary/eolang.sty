@@ -13,12 +13,14 @@ hard xstring
 soft acmart
 soft biber
 soft biblatex
+soft bookmark
 soft booktabs
 soft caption
 soft cmap
 soft comment
 soft docshots
 soft environ
+soft fail-fast
 soft float
 soft href-ul
 soft hypdoc

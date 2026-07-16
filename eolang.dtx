@@ -37,6 +37,7 @@
 \documentclass{ltxdoc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{fail-fast}
 \usepackage[maxnames=1,minnames=1,maxbibnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false]{biblatex}
 \addbibresource{eolang.bib}
 \usepackage{microtype}
@@ -45,7 +46,10 @@
 \usepackage{xcolor}
 \usepackage[runs=2,dtx]{docshots}
 \usepackage[nocomments]{eolang}
+\PassOptionsToPackage{hyperindex=false}{hyperref}
 \usepackage{href-ul}
+\usepackage{bookmark}
+\renewcommand{\RerunFileCheck}[3]{\AddToHook{enddocument/info}{#2}}
 \PageIndex
 \EnableCrossrefs
 \CodelineIndex
