@@ -21,7 +21,7 @@ checkruns = 1
 
 uploadconfig = {
   pkg = "eolang",
-  version = "0.0.0 0000-00-00",
+  version = "0.24.0 2026-08-11",
   author = "Yegor Bugayenko",
   uploader = "Yegor Bugayenko",
   email = "yegor256@gmail.com",
