@@ -3,7 +3,7 @@
 
 \input{regression-test.tex}
 \documentclass{article}
-\usepackage[nocomments,anonymous,monochrome]{eolang}
+\usepackage[nocomments,anonymous,nocolor]{eolang}
 \begin{document}
 
 \START
