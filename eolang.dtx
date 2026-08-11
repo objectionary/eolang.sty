@@ -415,6 +415,20 @@
 %</verb>
 %\fi
 
+% \DescribeMacro{nocolor}
+% The package paints anonymised content and \phic{} terminals orange. The |nocolor| option
+% suppresses this, so that nothing is ever coloured --- useful for greyscale printing and for
+% venues that forbid colour:
+%\iffalse
+%<*verb>
+%\fi
+\begin{verbatim}
+\usepackage[nocolor]{eolang}
+\end{verbatim}
+%\iffalse
+%</verb>
+%\fi
+
 % \DescribeMacro{noshell}
 % Any interaction with the shell may be prohibited by means of the |noshell| option. This proves useful whenever the document is dispatched
 % for external processing, and assurance is required that compilation will not fail on account of shell errors:
@@ -766,6 +780,7 @@
 % \changes{0.1.0}{2022/10/26}{Parsing of package options introduced.}
 % \changes{0.6.0}{2022/11/14}{Package option \texttt{nocomments} added in order to enable comments suppression in temporary \texttt{.tex} files (may be pretty important for \texttt{.dtx} documents).}
 % \changes{0.8.0}{2022/11/29}{The \texttt{anonymous} package option added.}
+% \changes{0.24.0}{2026/08/11}{The \texttt{nocolor} package option added, in order to suppress the orange colour.}
 %    \begin{macrocode}
 \RequirePackage{pgfopts}
 \RequirePackage{ifluatex}
@@ -776,12 +791,29 @@
   tmpdir/.default=_eolang\ifxetex-xe\else\ifluatex-lua\fi\fi,
   nocomments/.store in=\eolang@nocomments,
   nodollar/.store in=\eolang@nodollar,
+  nocolor/.store in=\eolang@nocolor,
   anonymous/.store in=\eolang@anonymous,
   noshell/.store in=\eolang@noshell,
   tmpdir
 }
 \ProcessPgfPackageOptions{/eolang}
 %    \end{macrocode}
+
+% \begin{macro}{\eolang@ink}
+% \changes{0.24.0}{2026/08/11}{New internal command \texttt{\char`\\eolang@ink} paints its argument, honouring the \texttt{nocolor} package option.}
+% Then, we define an internal command that paints its argument orange, leaving
+% it untouched when the |nocolor| package option is set:
+%    \begin{macrocode}
+\RequirePackage{xcolor}
+\makeatletter
+\ifdefined\eolang@nocolor
+  \newcommand\eolang@ink[1]{#1}
+\else
+  \newcommand\eolang@ink[1]{{\color{orange}#1}}
+\fi
+\makeatother
+%    \end{macrocode}
+% \end{macro}
 
 % Then, we make a directory where all temporary files will be kept:
 %    \begin{macrocode}
@@ -1668,7 +1700,7 @@ print '\endinput';
 \makeatletter
 \NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
   \ifdefined\eolang@anonymous%
-    \textcolor{orange}{#1}%
+    \eolang@ink{#1}%
   \else%
     #2%
   \fi%
@@ -1760,10 +1792,12 @@ print '\endinput';
 
 % \begin{macro}{\phiTerminal}
 % \changes{0.21.0}{2025/12/15}{New command \texttt{\char`\\phiTerminal} added, to highlight all terminals in phi expressions.}
+% \changes{0.24.0}{2026/08/11}{The \texttt{\char`\\phiTerminal} command respects the \texttt{nocolor} package option.}
 % Then, we define a command to wrap all terminals in all expressions:
 %    \begin{macrocode}
-\RequirePackage{xcolor}
-\newcommand\phiTerminal[1]{{\color{orange}#1}}
+\makeatletter
+\newcommand\phiTerminal[1]{\eolang@ink{#1}}
+\makeatother
 %    \end{macrocode}
 % \end{macro}
 
