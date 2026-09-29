@@ -141,6 +141,8 @@
 %     (|\rrbracket|),
 %   \item ``|==|'' maps to ``$==$''
 %     (|\equiv|),
+%   \item ``|:|'' maps to ``$:$''
+%     (|\phiTerminal{:}|),
 %   \item ``\texttt{\textbar{abc}\textbar}'' maps to ``\texttt{abc}''
 %     (|\texttt{abc}|).
 % \end{itemize}
@@ -886,6 +888,7 @@
 % \changes{0.21.0}{2025/12/15}{Automated formatting of \texttt{TRUE} and \texttt{FALSE} removed.}
 % \changes{0.22.0}{2025/12/17}{Automated formatting of \texttt{D} and \texttt{L} added.}
 % \changes{0.23.0}{2023/12/25}{Parsing of \texttt{QQ} into \texttt{\char`\\dot\{\char`\\Phi\}} removed.}
+% \changes{0.25.0}{2026/09/29}{Parsing of \texttt{:} into an orange colon (\texttt{\char`\\phiTerminal\{:\}}) implemented.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1027,6 +1030,7 @@ $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
 $tex =~ s/->/\\mathbin{\\phiTerminal{\\mapsto}}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
+$tex =~ s/(?<![\\\{]):/\\mathrel{\\phiTerminal{:}}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
 $tex =~ s/\.\.>/\\mathbin{\\phiTerminal{\\phiDotted}}/g;
 $tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
