@@ -9,6 +9,7 @@ hard pdftexcmds
 hard pgf
 hard pgfopts
 hard stmaryrd
+hard was
 hard xstring
 soft acmart
 soft biber

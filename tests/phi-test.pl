@@ -40,7 +40,14 @@ savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}
 debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`);
 
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
-rewrites_phiq($temp, '42 : @', '\(42 \mathrel{\phiTerminal{:}} \phiTerminal{\varphi{}}\)');
+rewrites_phiq($temp, '42 : @', '\(42 \mathrel{\phiTerminal{:}} \phiTerminal{\upvarphi{}}\)');
+rewrites_phiq($temp, 'x -> ^', '\phiTerminal{\uprho{}}');
+rewrites_phiq($temp, 'x -> $', '\phiTerminal{\upxi{}}');
+rewrites_phiq($temp, '[[ L> y ]]', '\phiTerminal{\uplambda{}} \mathbin{\phiTerminal{\phiDotted}}');
+rewrites_phiq($temp, '[[ ~7 -> y ]]', '\phiTerminal{\upalpha_{7}}');
+rewrites_phiq($temp, '\rho -> \xi', '\(\uprho \mathbin{\phiTerminal{\mapsto}} \upxi\)');
+rewrites_phiq($temp, '\lambda -> \alpha_3', '\(\uplambda \mathbin{\phiTerminal{\mapsto}} \upalpha_3\)');
+rewrites_phiq($temp, '\varphi -> \rhox', '\(\upvarphi \mathbin{\phiTerminal{\mapsto}} \rhox\)');
 rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\phiTerminal{\mapsto}} \textbf{b}');
 rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\phiTerminal{\mapsto}} b');
 rewrites_phiq($temp, '|--|', '\textnormal{\texttt{-{}-}}{}');

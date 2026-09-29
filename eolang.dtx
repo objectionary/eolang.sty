@@ -110,11 +110,11 @@
 % in a simple plain-text notation, in which:
 % \begin{itemize}\setlength\itemsep{0em}
 %   \item ``|@|'' maps to ``$@$''
-%     (|\varphi|),
+%     (|\upvarphi|),
 %   \item ``|^|'' maps to ``$^$''
-%     (|\rho|),
-%   \item ``|$|'' maps to ``\(\phiTerminal{\xi}\)''
-%     (|\xi|),
+%     (|\uprho|),
+%   \item ``|$|'' maps to ``\(\phiTerminal{\upxi}\)''
+%     (|\upxi|),
 %   \item ``|?|'' maps to ``$?$''
 %     (|\varnothing|),
 %   \item ``|T|'' maps to ``$T$''
@@ -130,11 +130,11 @@
 %   \item ``|D|'' maps to ``$D$''
 %     (|\Delta|),
 %   \item ``|L|'' maps to ``$L$''
-%     (|\lambda|),
+%     (|\uplambda|),
 %   \item ``|D>|'' maps to ``$D>$''
 %     (|\Delta ..>|),
 %   \item ``|L>|'' maps to ``$L>$''
-%     (|\lambda ..>|),
+%     (|\uplambda ..>|),
 %   \item ``|[[|'' maps to ``$[[$''
 %     (|\llbracket|),
 %   \item ``|]]|'' maps to ``$]]$''
@@ -158,9 +158,15 @@
 %     (|\vDash|).
 % \end{itemize}
 
-% A number may precede any arrow, in which case it is rendered as |\alpha| bearing an index; for instance,
+% A number may precede any arrow, in which case it is rendered as |\upalpha| bearing an index; for instance,
 % |\phiq{~0 -> x}| produces ``\phiq{~0 -> x}''.
-% The form |~0| likewise yields \(\alpha_0\).
+% The form |~0| likewise yields \(\upalpha_0\).
+
+% The Greek letters |\rho|, |\xi|, |\lambda|, |\alpha|, and |\varphi|, when typed
+% inside |\phiq| or |phiquation|, are rendered upright too, as |\uprho|, |\upxi|, |\uplambda|,
+% |\upalpha|, and |\upvarphi| from \href{https://ctan.org/pkg/upgreek}{upgreek}, since
+% they are terminals of \phic{}, not variables:
+% |\phiq{\rho -> \xi}| produces ``\phiq{\rho -> \xi}''.
 % An asterisk may be employed in place of a number.
 
 % A slash followed by a title may be appended to the number of an attribute, as in |0/g->x|.
@@ -769,6 +775,10 @@
 %    \begin{macrocode}
 \let\Bbbk\relax\RequirePackage{amssymb}
 %    \end{macrocode}
+% We need \href{https://ctan.org/pkg/upgreek}{upgreek} for upright Greek letters, such as |\uprho|:
+%    \begin{macrocode}
+\RequirePackage{upgreek}
+%    \end{macrocode}
 % We need \href{https://ctan.org/pkg/fancyvrb}{fancyvrb} for |\VerbatimEnvironment| command:
 %    \begin{macrocode}
 \RequirePackage{fancyvrb}
@@ -889,6 +899,7 @@
 % \changes{0.22.0}{2025/12/17}{Automated formatting of \texttt{D} and \texttt{L} added.}
 % \changes{0.23.0}{2023/12/25}{Parsing of \texttt{QQ} into \texttt{\char`\\dot\{\char`\\Phi\}} removed.}
 % \changes{0.25.0}{2026/09/29}{Parsing of \texttt{:} into an orange colon (\texttt{\char`\\phiTerminal\{:\}}) implemented.}
+% \changes{0.26.0}{2026/09/29}{The Greek letters \texttt{\char`\\rho}, \texttt{\char`\\xi}, \texttt{\char`\\lambda}, \texttt{\char`\\alpha}, and \texttt{\char`\\varphi} are rendered upright, with the help of the \texttt{upgreek} package.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1034,6 +1045,7 @@ $tex =~ s/(?<![\\\{]):/\\mathrel{\\phiTerminal{:}}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
 $tex =~ s/\.\.>/\\mathbin{\\phiTerminal{\\phiDotted}}/g;
 $tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
+$tex =~ s/\\(rho|xi|lambda|alpha|varphi)(?![a-zA-Z])/\\up\1/g;
 $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
 $tex =~ s/(?<![\\\{])([)(.])/\\phiTerminal{\1}/g;
