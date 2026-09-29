@@ -40,6 +40,7 @@ savefile($article, '\documentclass{article}\usepackage{./eolang}\begin{document}
 debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmode article.tex 2>&1`);
 
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
+rewrites_phiq($temp, '42 : @', '\(42 \mathrel{\phiTerminal{:}} \phiTerminal{\varphi{}}\)');
 rewrites_phiq($temp, 'a -> \textbf{b}', 'a \mathbin{\phiTerminal{\mapsto}} \textbf{b}');
 rewrites_phiq($temp, '|a| -> b', '\textnormal{\texttt{a}}{} \mathbin{\phiTerminal{\mapsto}} b');
 rewrites_phiq($temp, '|--|', '\textnormal{\texttt{-{}-}}{}');
