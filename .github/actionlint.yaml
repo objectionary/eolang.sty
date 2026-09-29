@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Zerocracy
+# SPDX-License-Identifier: MIT
+
+paths:
+  .github/workflows/*.yml:
+    ignore:
+      - 'label "ubuntu-26.04" is unknown'
