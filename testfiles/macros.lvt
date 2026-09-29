@@ -19,5 +19,16 @@ $\phiMany{\phiWave}{i=1}{n}$
 $\phiOset{*}{->}$
 $\phiUset{*}{->}$
 
+$x \phiNormalize y$
+$x \phiEvaluate y$
+$x \phiDataize y$
+$x \phiMorph y$
+$x \phiContextualize y$
+
+$x \phiNormalize[k] y$
+$x \phiDataize[n] y$
+$x \phiMorph[\sigma] y$
+$x \phiContextualize[3] y$
+
 \end{document}
 \END

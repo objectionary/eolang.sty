@@ -10,6 +10,8 @@
 
 \makeatletter
 \TYPE{\meaning\eolang@ink}
+\TYPE{\meaning\eolang@arrow}
+\TYPE{\meaning\eolang@sub}
 \makeatother
 
 \end{document}

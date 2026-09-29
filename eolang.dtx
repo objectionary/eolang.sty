@@ -314,6 +314,31 @@
 % \end{document}
 % \end{docshot}
 
+% \DescribeMacro{\phiNormalize}
+% \DescribeMacro{\phiEvaluate}
+% \DescribeMacro{\phiDataize}
+% \DescribeMacro{\phiMorph}
+% \DescribeMacro{\phiContextualize}
+% Five further commands render the arrows of the operational semantics of \phic{}, each painted
+% red rather than the orange of |\phiTerminal|, so that a step of computation is never mistaken
+% for a terminal symbol. They are meant to stand between two expressions, exactly as |\phiWave|
+% and |\phiDotted| do above. All save |\phiEvaluate| accept an optional subscript, printed in the
+% ordinary text colour, for instance to name a step count or a substitution:
+% \docshotOptions{firstline=6,lastline=12}
+% \begin{docshot}
+% \documentclass{article}
+% \pagestyle{empty}
+% \usepackage[paperwidth=3in]{geometry}
+% \usepackage{eolang}
+% \begin{document}\noindent
+% Normalization, $x \phiNormalize y$;
+% evaluation, $x \phiEvaluate y$;
+% dataization, $x \phiDataize[n] y$;
+% morphing, $x \phiMorph[\sigma] y$;
+% contextualization, $x \phiContextualize y$.
+% \end{document}
+% \end{docshot}
+
 % \DescribeMacro{\phiOset}
 % \DescribeMacro{\phiUset}
 % Should text be placed above or beneath an arrow, |\phiOset| and |\phiUset| are employed, respectively:
@@ -1845,6 +1870,84 @@ print '\endinput';
   \box\z@%
   \endgroup%
 }
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\eolang@arrow}
+% \changes{0.26.0}{2026/09/29}{New internal command \texttt{\char`\\eolang@arrow} paints a relational arrow red, honouring the \texttt{nocolor} package option.}
+% Then, we define an internal command that paints a relational arrow red, leaving
+% it untouched when the |nocolor| package option is set, mirroring |\eolang@ink|
+% above, save for the colour, which is kept apart from that of |\phiTerminal| so
+% that arrows of operational semantics are never mistaken for terminals. The
+% |\makeatletter| below stays in effect until the matching |\makeatother|, well
+% past the end of this macro, since every command that follows refers to
+% |\eolang@arrow| by name:
+%    \begin{macrocode}
+\makeatletter
+\ifdefined\eolang@nocolor
+  \newcommand\eolang@arrow[1]{\mathrel{#1}}
+\else
+  \newcommand\eolang@arrow[1]{\mathrel{\color{red}#1}}
+\fi
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\eolang@sub}
+% \changes{0.26.0}{2026/09/29}{New internal command \texttt{\char`\\eolang@sub} attaches an optional subscript, in the ordinary text colour, to an arrow.}
+% Then, we define an internal command that attaches an optional subscript to
+% an arrow, in the ordinary text colour, since a subscript is not itself a step
+% of computation:
+%    \begin{macrocode}
+\newcommand\eolang@sub[1]{\IfStrEq{#1}{}{}{_{#1}}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiNormalize}
+% \changes{0.26.0}{2026/09/29}{New command \texttt{\char`\\phiNormalize} added, to render the normalization arrow of \phic{}, with an optional subscript.}
+% Then, we define a command for the normalization arrow of \phic{}, taking an
+% optional subscript, for instance a step count:
+%    \begin{macrocode}
+\newcommand\phiNormalize[1][]{\eolang@arrow\leadsto\eolang@sub{#1}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiEvaluate}
+% \changes{0.26.0}{2026/09/29}{New command \texttt{\char`\\phiEvaluate} added, to render the evaluation arrow of \phic{}.}
+% Then, we define a command for the evaluation arrow of \phic{}:
+%    \begin{macrocode}
+\newcommand\phiEvaluate{\eolang@arrow{%
+  \vcenter{\hbox{\begin{tikzpicture}
+    \draw[-{Triangle[length=1.8mm,width=1.8mm]},line width=0.6pt]
+      (0,0)--(1.3em,0);
+  \end{tikzpicture}}}}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiDataize}
+% \changes{0.26.0}{2026/09/29}{New command \texttt{\char`\\phiDataize} added, to render the dataization arrow of \phic{}, with an optional subscript.}
+% Then, we define a command for the dataization arrow of \phic{}, taking an
+% optional subscript:
+%    \begin{macrocode}
+\newcommand\phiDataize[1][]{\eolang@arrow\Downarrow\eolang@sub{#1}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiMorph}
+% \changes{0.26.0}{2026/09/29}{New command \texttt{\char`\\phiMorph} added, to render the morphing arrow of \phic{}, with an optional subscript.}
+% Then, we define a command for the morphing arrow of \phic{}, taking an
+% optional subscript:
+%    \begin{macrocode}
+\newcommand\phiMorph[1][]{\eolang@arrow\Rrightarrow\eolang@sub{#1}}
+%    \end{macrocode}
+% \end{macro}
+
+% \begin{macro}{\phiContextualize}
+% \changes{0.26.0}{2026/09/29}{New command \texttt{\char`\\phiContextualize} added, to render the contextualization arrow of \phic{}, with an optional subscript.}
+% Then, we define a command for the contextualization arrow of \phic{}, taking
+% an optional subscript:
+%    \begin{macrocode}
+\newcommand\phiContextualize[1][]{\eolang@arrow\Rightarrow\eolang@sub{#1}}
 \makeatother
 %    \end{macrocode}
 % \end{macro}
