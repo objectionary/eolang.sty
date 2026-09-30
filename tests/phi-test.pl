@@ -41,6 +41,8 @@ debug(`cd '$temp' && pdflatex -halt-on-error -shell-escape -interaction=batchmod
 
 rewrites_phiq($temp, 'a -> b', '\(a \mathbin{\phiTerminal{\mapsto}} b\)');
 rewrites_phiq($temp, '42 : @', '\(42 \mathrel{\phiTerminal{:}} \phiTerminal{\upvarphi{}}\)');
+rewrites_phiq($temp, 'x \leadsto_{\nameref{r:copy}} y', '\(x \leadsto_{\nameref{r:copy}} y\)');
+rewrites_phiq($temp, '\ref{a:b} -> \eqref{c:d}', '\ref{a:b} \mathbin{\phiTerminal{\mapsto}} \eqref{c:d}');
 rewrites_phiq($temp, 'x -> ^', '\phiTerminal{\uprho{}}');
 rewrites_phiq($temp, 'x -> $', '\phiTerminal{\upxi{}}');
 rewrites_phiq($temp, '[[ L> y ]]', '\phiTerminal{\uplambda{}} \mathbin{\phiTerminal{\phiDotted}}');
