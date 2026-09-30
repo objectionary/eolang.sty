@@ -9,6 +9,7 @@ use warnings;
 use lib('tests');
 use test_tools;
 use File::Temp qw/ tempdir /;
+use File::Spec;
 
 # Checks whether replace happens for \phiq.
 sub replaces_phiq {
@@ -30,6 +31,28 @@ sub replaces_phiq {
     exit(1);
   }
   info("OK!");
+}
+
+# Checks whether --tmpdir selects a custom directory for generated files.
+sub replaces_phiq_from_custom_tmpdir {
+  my $home = tempdir(CLEANUP => 1);
+  my $src = $home . '/main.tex';
+  my $target = $home . '/new.tex';
+  savefile($src, 'Hello, $@$!');
+  `mkdir -p '$home/custom-dir/main'`;
+  savefile($home . '/custom-dir/main/A1B2C3-phiq.tex', '@');
+  my $script = File::Spec->rel2abs('eolang.pl');
+  my $stdout = `cd '$home' && perl '$script' --tmpdir=custom-dir '$src' '$target' 2>&1`;
+  debug($stdout);
+  my $after = readfile($target);
+  if (index($after, '\\input') eq -1) {
+    error("Didn't read fragments from the custom --tmpdir:\n");
+    error("---\n");
+    error($after);
+    error("\n---\n");
+    exit(1);
+  }
+  info('OK!');
 }
 
 # Checks whether replace happens for \begin{phiquation}.
@@ -66,6 +89,7 @@ replaces_phiq('Hello, $-> []$!', ' -> [] ');
 replaces_phiq('Hello, \\phiq  {  [[ \alpha-> ]] }!', '  [[ \alpha -> ]] ');
 replaces_phiq('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
 replaces_phiq('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
+replaces_phiq_from_custom_tmpdir();
 
 replaces_verbatim('phiquation', "Hello, \n\\begin{phiquation}\n  a -> \@\n\\end{phiquation}\n", "  a -> \@\n");
 replaces_verbatim('sodg', "Hello, \n\\begin{sodg}\nv1\nv2\n  v3\n\\end{sodg}\n", "v1\nv2\n  v3\n");

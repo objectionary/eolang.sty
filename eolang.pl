@@ -71,7 +71,9 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   $job =~ s/\.[^.]+$//;
   debug('Job name: ' . $job);
   my $tex = readfile($src);
-  my $tmpdir = dirname($src) . '/_eolang/' . $job;
+  my ($tmpdir_arg) = map { /^--tmpdir=(.*)$/ ? $1 : () } @ARGV;
+  my $tmpdir_root = defined($tmpdir_arg) ? $tmpdir_arg : dirname($src) . '/_eolang';
+  my $tmpdir = $tmpdir_root . '/' . $job;
   debug('EO tmpdir: ' . $tmpdir);
   foreach my $f (glob($tmpdir . '/*-phiq.tex')) {
     my $id = basename($f);
