@@ -1150,11 +1150,14 @@ print '\endinput';
 %    \begin{macrocode}
 \makeatletter
 \newcommand\eolang@ifabsent[2]{%
+  \eolang@ifabsentwith{#1}{\input{#1}}{#2}%
+}
+\newcommand\eolang@ifabsentwith[3]{%
   \IfFileExists
     {#1}
     {%
       \message{eolang: File "#1" already exists ^^J}%
-      \input{#1}}
+      #2}
     {%
       \ifdefined\eolang@noshell%
         \message{eolang: Shell processing is disabled^^J}%
@@ -1164,7 +1167,7 @@ print '\endinput';
           option is not provided, most probably compilation
           will fail now:^^J}%
         \fi%
-        #2%
+        #3%
       \fi%
     }%
 }
@@ -1180,22 +1183,34 @@ print '\endinput';
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\the\inputlineno}%
-  \eolang@ifabsent
+  \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
+    {}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"}%
       \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
-      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
+      \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
         perl "\eolang@tmpdir/\jobname-phi.pl"
         '#1'
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
-        \ifdefined\eolang@phiSaveTo > \eolang@phiSaveTo\fi}%
+        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
     }%
+  \ifx\eolang@phiSaveTo\relax
+    \IfFileExists
+      {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
+      {\input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}}{}%
+  \else
+    \ifdefined\eolang@noshell\else
+      \IfFileExists
+        {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
+        {\iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}" "\eolang@phiSaveTo"}}{}%
+    \fi
+    \aftergroup\eolang@clearPhiSaveTo
+  \fi
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
-  \def\eolang@phiSaveTo{\relax}%
 }
+\def\eolang@clearPhiSaveTo{\let\eolang@phiSaveTo\relax}
 %
 \newenvironment{phiquation*}%
 {\catcode`\|=12 \VerbatimEnvironment%
@@ -1710,22 +1725,33 @@ print '\endinput';
   \def\hash{\eolang@mdfive
     {\eolang@tmpdir/\jobname/\eolang@tmp{sodg}}-\the\inputlineno}%
   \catcode`\$=3 %
-  \eolang@ifabsent
+  \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
+    {}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{sodg}"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"}%
       \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
-      \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
+      \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
         perl "\eolang@tmpdir/\jobname-sodg.pl"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi
-        \ifdefined\eolang@sodgSaveTo > \eolang@sodgSaveTo\fi}%
+        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
     }
+  \ifx\eolang@sodgSaveTo\relax
+    \IfFileExists
+      {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
+      {\input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}}{}%
+  \else
+    \ifdefined\eolang@noshell\else
+      \IfFileExists
+        {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
+        {\iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}" "\eolang@sodgSaveTo"}}{}%
+    \fi
+    \aftergroup\eolang@clearSodgSaveTo
+  \fi
   \catcode`\$\active%
   \setcounter{FancyVerbLine}{\value{eolang@lineno}}%
-  \def\eolang@sodgSaveTo{\relax}%
-}\makeatother
+}\def\eolang@clearSodgSaveTo{\let\eolang@sodgSaveTo\relax}\makeatother
 %    \end{macrocode}
 % \end{macro}
 
