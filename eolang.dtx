@@ -1186,21 +1186,28 @@ print '\endinput';
     {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\the\inputlineno}%
   \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
-    {}
+    {\ifx\eolang@phiSaveTo\relax
+      \input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}%
+    \fi}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"}%
       \message{Start parsing 'phi' at line no. \the\inputlineno^^J}
-      \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
-        perl "\eolang@tmpdir/\jobname-phi.pl"
-        '#1'
-        "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \ifx\eolang@phiSaveTo\relax
+        \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
+          perl "\eolang@tmpdir/\jobname-phi.pl"
+          '#1'
+          "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
+          \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \else
+        \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
+          perl "\eolang@tmpdir/\jobname-phi.pl"
+          '#1'
+          "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
+          \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \fi
     }%
   \ifx\eolang@phiSaveTo\relax
-    \IfFileExists
-      {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
-      {\input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}}{}%
   \else
     \ifdefined\eolang@noshell\else
       \IfFileExists
@@ -1729,20 +1736,26 @@ print '\endinput';
   \catcode`\$=3 %
   \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
-    {}
+    {\ifx\eolang@sodgSaveTo\relax
+      \input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}%
+    \fi}
     {%
       \iexec[null]{cp "\eolang@tmpdir/\jobname/\eolang@tmp{sodg}"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"}%
       \message{eolang: Start parsing `sodg' at line no. \the\inputlineno^^J}
-      \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
-        perl "\eolang@tmpdir/\jobname-sodg.pl"
-        "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-        \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \ifx\eolang@sodgSaveTo\relax
+        \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
+          perl "\eolang@tmpdir/\jobname-sodg.pl"
+          "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
+          \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \else
+        \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
+          perl "\eolang@tmpdir/\jobname-sodg.pl"
+          "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
+          \ifdefined\eolang@nocomments | perl -pe 's/\%.*(\\n|$)//g'\fi}%
+      \fi
     }
   \ifx\eolang@sodgSaveTo\relax
-    \IfFileExists
-      {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
-      {\input{\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}}{}%
   \else
     \ifdefined\eolang@noshell\else
       \IfFileExists
