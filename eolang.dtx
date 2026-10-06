@@ -927,6 +927,7 @@
 % \changes{0.26.0}{2026/09/29}{The Greek letters \texttt{\char`\\rho}, \texttt{\char`\\xi}, \texttt{\char`\\lambda}, \texttt{\char`\\alpha}, and \texttt{\char`\\varphi} are rendered upright, with the help of the \texttt{upgreek} package.}
 % \changes{0.26.1}{2026/09/30}{The arguments of \texttt{\char`\\label}, \texttt{\char`\\ref}, \texttt{\char`\\eqref}, \texttt{\char`\\nameref}, and \texttt{\char`\\pageref} are not processed inside \texttt{phiquation}, so label names may contain colons.}
 % \changes{0.26.2}{2026/10/06}{The first arguments of \texttt{\char`\\phinoMeet} and \texttt{\char`\\phinoAgain} are not processed inside \texttt{phiquation}, so their label keys may contain colons.}
+% \changes{0.26.3}{2026/10/06}{The dollar sign keeps its math-shift catcode inside TikZ pictures.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1589,6 +1590,8 @@ print '\endinput';
 % Then, we include \href{https://ctan.org/pkg/tikz}{tikz} package and its libraries:
 %    \begin{macrocode}
 \RequirePackage{tikz}
+% Keep TikZ's inline math syntax available while the document uses active dollars.
+\tikzset{execute at begin picture={\catcode`\$=3\relax}}
   \usetikzlibrary{arrows}
   \usetikzlibrary{shapes}
   \usetikzlibrary{decorations}
