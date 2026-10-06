@@ -31,7 +31,7 @@ $x \phiMorph[\sigma] y$
 $x \phiContextualize[3] y$
 
 \begin{tikzpicture}
-\coordinate (phi) at ($ (0,0) + (1,1) $);
+\coordinate (phi) at ($(0,0)+(1,1)$);
 \end{tikzpicture}
 \ifnum\catcode`\$=13\else\errmessage{Dollar catcode changed outside tikzpicture}\fi
 
