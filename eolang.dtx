@@ -1591,7 +1591,7 @@ print '\endinput';
 %    \begin{macrocode}
 \RequirePackage{tikz}
 % Keep TikZ's inline math syntax available while the document uses active dollars.
-\tikzset{execute at begin picture={\catcode`\$=3\relax}}
+\tikzset{every picture/.append style={execute at begin picture={\catcode`\$=3\relax}}}
   \usetikzlibrary{arrows}
   \usetikzlibrary{shapes}
   \usetikzlibrary{decorations}
