@@ -928,6 +928,7 @@
 % \changes{0.26.1}{2026/09/30}{The arguments of \texttt{\char`\\label}, \texttt{\char`\\ref}, \texttt{\char`\\eqref}, \texttt{\char`\\nameref}, and \texttt{\char`\\pageref} are not processed inside \texttt{phiquation}, so label names may contain colons.}
 % \changes{0.26.2}{2026/10/06}{The first arguments of \texttt{\char`\\phinoMeet} and \texttt{\char`\\phinoAgain} are not processed inside \texttt{phiquation}, so their label keys may contain colons.}
 % \changes{0.26.3}{2026/10/06}{The dollar sign keeps its math-shift catcode inside TikZ pictures.}
+% \changes{0.26.4}{2026/10/08}{The colon is rendered inside \texttt{phiquation} without spaces around it, like a dot.}
 % Then, we create a Perl script for |phiquation| processing using |VerbatimOut| environment from
 % \href{https://ctan.org/pkg/fancyvrb}{fancyvrb}:
 %    \begin{macrocode}
@@ -1070,7 +1071,7 @@ $tex =~ s/-([a-z]+)>/\\mathrel{\\phiSlot{\1}}/g;
 $tex =~ s/->/\\mathbin{\\phiTerminal{\\mapsto}}/g;
 $tex =~ s/~>/\\mathbin{\\phiWave}/g;
 $tex =~ s/:=/\\mathrel{\\vDash}/g;
-$tex =~ s/(?<![\\\{]):/\\mathrel{\\phiTerminal{:}}/g;
+$tex =~ s/(?<![\\\{]):/\\mathord{\\phiTerminal{:}}/g;
 $tex =~ s/==/\\mathrel{\\equiv}/g;
 $tex =~ s/\.\.>/\\mathbin{\\phiTerminal{\\phiDotted}}/g;
 $tex =~ s/~([0-9]+)/\\phiTerminal{\\alpha_{\1}}/g;
