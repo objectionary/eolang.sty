@@ -10,6 +10,13 @@
 \showboxbreadth=-1
 \showboxdepth=-1
 
+\input{phiquation-cache.tex}
+\phiSaveTo{cached-phiquation.tex}
+\input{phiquation-cache.tex}
+\begin{tabular}{l}
+\vbox{\input{cached-phiquation.tex}} \\
+\end{tabular}
+
 \begin{phiquation*}
 x -> ? \\
 y -> ? \\
@@ -34,6 +41,11 @@ x -> y
 \vbox{\input{a.tex}} \\
 \end{tabular}
 
+\begin{phiquation*}
+x -> z
+\end{phiquation*}
+
+\phiSaveTo{b.tex}
 \begin{phiquation*}
 % leading comment
 a -> [[
