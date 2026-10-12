@@ -10,6 +10,13 @@
 \showboxbreadth=-1
 \showboxdepth=-1
 
+\input{sodg-cache.tex}
+\sodgSaveTo{cached-sodg.tex}
+\input{sodg-cache.tex}
+\begin{tabular}{l}
+\vbox{\input{cached-sodg.tex}} \\
+\end{tabular}
+
 \sodgSaveTo{a.tex}
 \begin{sodg}
 v0
