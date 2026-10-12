@@ -161,6 +161,7 @@ runsystem((cp "_eolang/macros/phiq.tex" "_eolang/macros/E3F5F7B289CA585584B9E728
 runsystem(( perl _eolang/macros-phi.pl 'phiq' "_eolang/macros/E3F5F7B289CA585584B9E72839F14C17-31-phiq.tex" | perl -pe 's/%.*(\n|$)//g' ) > _eolang/macros/E3F5F7B289CA585584B9E72839F14C17-31-phiq-post.tex 2>&1; /bin/echo -n $?% >iexec.ret)...executed.
 (_eolang/macros/E3F5F7B289CA585584B9E72839F14C17-31-phiq-post.tex) iexec: The content of '_eolang/macros/E3F5F7B289CA585584B9E72839F14C17-31-phiq-post.tex' was included into the document
 eolang: Parsed `phiq' at line no. 31
+macro:->\eoAnon [\(\upalpha \)-cal\-cu\-lus]{\(\upvarphi \)-cal\-cu\-lus}
 [1
 ] (macros.aux)
 Package rerunfilecheck Warning: File `macros.out' has changed.
@@ -168,4 +169,4 @@ Package rerunfilecheck Warning: File `macros.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 Package rerunfilecheck Info: Checksums for `macros.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             After:  DCA59470C20B7CD831523BCE2CDFF75D;169.

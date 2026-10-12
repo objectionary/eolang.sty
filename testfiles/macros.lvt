@@ -36,5 +36,8 @@ $x \phiContextualize[3] y$
 \ifnum\catcode`\$=13\else\errmessage{Dollar catcode changed outside tikzpicture}\fi
 
 
+\TYPE{\meaning\phic}
+\section{Calculus of \phic{}}
+
 \end{document}
 \END

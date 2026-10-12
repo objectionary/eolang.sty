@@ -1744,6 +1744,8 @@ print '\endinput';
   \def\){}%
   \def\alpha{alpha}%
   \def\varphi{phi}%
+  \def\upalpha{alpha}%
+  \def\upvarphi{phi}%
 }
 \makeatletter
 \NewExpandableDocumentCommand{\eoAnon}{O{ANONYMIZED}m}{%
@@ -1772,7 +1774,7 @@ print '\endinput';
 % normal and the anonymous mode of \texttt{acmart}.}
 %    \begin{macrocode}
 \newcommand\phic{%
-  \eoAnon[\(\alpha\)-cal\-cu\-lus]{\(\varphi\)-cal\-cu\-lus}}
+  \eoAnon[\(\upalpha\)-cal\-cu\-lus]{\(\upvarphi\)-cal\-cu\-lus}}
 %    \end{macrocode}
 % \end{macro}
 
