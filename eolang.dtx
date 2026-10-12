@@ -1037,6 +1037,9 @@ if ($macro ne 'phiq') {
     $tex =~ s/\\begin\{(\Q$e\E\*?)\}(.+)\\end\{\Q$e\E\*?\}/strip_tabs($1, $2)/sge;
   }
 }
+my @pipes = ();
+$tex =~ s/\|{2,}/|/g;
+$tex =~ s/\|([^\|]+)\|/push(@pipes, '\\textnormal{\\texttt{' . ($1 =~ s{-(?=-)}{-{}}gr) . '}}{}'), '{PIPE' . (0+@pipes - 1) . '}'/ge;
 $tex =~ s/\$/\\phiTerminal{\\xi{}}/g;
 $tex =~ s/(?<!\{)\^(?!\{)/\\phiTerminal{\\rho{}}/g;
 $tex =~ s/\[\[/\\phiTerminal{\\llbracket}/g;
@@ -1056,8 +1059,7 @@ $tex =~ s/<</\\langle/g;
 $tex =~ s/>>/\\rangle/g;
 $tex =~ s/(?<![\\\{])([)(.])/\\phiTerminal{\1}/g;
 $tex =~ s/(?<![\\\{]),/\\phiTerminal{,}\\;/g;
-$tex =~ s/\|{2,}/|/g;
-$tex =~ s/\|([^\|]+)\|/'\\textnormal{\\texttt{' . ($1 =~ s{-(?=-)}{-{}}gr) . '}}{}'/ge;
+$tex =~ s/\{PIPE(\d+)\}/$pipes[$1]/g;
 $tex =~ s/\{TEXT(\d+)\}/$texts[$1]/g;
 if ($macro eq 'phiq') {
   print '\(' if ($tex ne '');
