@@ -183,8 +183,7 @@
 % \DescribeMacro{\phiq}
 % The |\phiq| command permits the inlining of \phic{} expressions
 % in the same simple plain-text notation. The dollar sign may be employed directly:
-% \docshotOptions{firstline=4,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=4,lastline=10}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
@@ -267,8 +266,7 @@
 % \eolang{} language. It is sensitive to the |anonymous| package option, rendering itself
 % differently to support double-blind submissions. The |\phic| command similarly prints
 % the name of \phic{} and is likewise sensitive to |anonymous| mode. The |\xmir| macro prints ``XMIR''.
-% \docshotOptions{firstline=3,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=3,lastline=10}]
 % \documentclass{acmart}
 % \thispagestyle{empty}
 % \usepackage[anonymous]{eolang}
@@ -281,8 +279,7 @@
 % \end{document}
 % \end{docshot}
 % Without the |anonymous| option, no orange colour is applied:
-% \docshotOptions{firstline=3,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=3,lastline=10}]
 % \documentclass[anonymous]{acmart}
 % \thispagestyle{empty}
 % \usepackage{eolang}
@@ -298,8 +295,7 @@
 % \DescribeMacro{\phiWave}
 % \DescribeMacro{\phiDotted}
 % Several simple commands are defined for the rendering of arrows.
-% \docshotOptions{firstline=6,lastline=12}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=12}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage[paperwidth=3in]{geometry}
@@ -324,8 +320,7 @@
 % for a terminal symbol. They are meant to stand between two expressions, exactly as |\phiWave|
 % and |\phiDotted| do above. All save |\phiEvaluate| accept an optional subscript, printed in the
 % ordinary text colour, for instance to name a step count or a substitution:
-% \docshotOptions{firstline=6,lastline=12}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=12}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage[paperwidth=3in]{geometry}
@@ -342,8 +337,7 @@
 % \DescribeMacro{\phiOset}
 % \DescribeMacro{\phiUset}
 % Should text be placed above or beneath an arrow, |\phiOset| and |\phiUset| are employed, respectively:
-% \docshotOptions{firstline=6,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=11}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage[paperwidth=3in]{geometry}
@@ -360,8 +354,7 @@
 
 % \DescribeMacro{\phiMany}
 % On occasion, it is convenient to simplify the description of an object (the typesetting is somewhat imperfect, owing not to the package itself but rather to \href{https://tex.stackexchange.com/questions/664772}{this}):
-% \docshotOptions{firstline=6,lastline=14}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=14}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage[paperwidth=3in]{geometry}
@@ -382,8 +375,7 @@
 % \DescribeMacro{\phiSaveTo}
 % \DescribeMacro{\sodgSaveTo}
 % The |phiquation| and |sodg| environments cannot be used directly within |tabular| or any other environment or command, since they are ``verbatim'' environments. The |\phiSaveTo| and |\sodgSaveTo| commands address this difficulty. They are placed immediately before |\begin{phiquation}| or |\begin{sodg}|, respectively---the content of the equation or graph is then not rendered but saved to a file. Subsequently, within |tabular|, it may be retrieved by means of the |\input| macro (the |\parbox| should not be omitted):
-% \docshotOptions{firstline=5,lastline=12}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=12}]
 % \documentclass{article}
 % \usepackage{eolang}
 % \pagestyle{empty}
@@ -481,8 +473,7 @@
 % new lines within the formula. Should this behaviour be undesirable, and the
 % subsequent line be parsed instead as a continuation of the current line, a single
 % backslash may be employed as illustrated below:
-% \docshotOptions{firstline=6,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=11}]
 % \documentclass{article}
 % \usepackage{amsmath}
 % \usepackage{eolang}
@@ -499,8 +490,7 @@
 
 % The following illustrates the use of |\dfrac| from \href{https://ctan.org/pkg/amsmath}{amsmath} for large inference rules,
 % by means of |\begin{split}| and |\end{split}|:
-% \docshotOptions{firstline=6,lastline=15}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=15}]
 % \documentclass{article}
 % \usepackage{amsmath}
 % \usepackage{eolang}
@@ -520,8 +510,7 @@
 % \end{docshot}
 
 % The |matrix| environment may likewise be employed to group several lines:
-% \docshotOptions{firstline=5,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=11}]
 % \documentclass{article}
 % \usepackage{eolang}
 % \pagestyle{empty}
@@ -537,8 +526,7 @@
 % \end{docshot}
 
 % The |cases| environment is likewise supported:
-% \docshotOptions{firstline=5,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=11}]
 % \documentclass{article}
 % \usepackage{eolang}
 % \pagestyle{empty}
@@ -568,8 +556,7 @@
 % \end{docshot}
 
 % The |\label| command may be used within the |phiquation| environment (note how the bespoke parsing of math formulas may be suppressed by enclosing the ``|4|'' number in curly brackets):
-% \docshotOptions{firstline=6,lastline=13}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=13}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{eolang}
@@ -587,8 +574,7 @@
 % \end{docshot}
 
 % Comments may be appended to equations by means of the |&&| command (note that the text within |\text{}| is not processed but treated as plain text):
-% \docshotOptions{firstline=6,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=10}]
 % \documentclass{article}
 % \usepackage[paperwidth=4in]{geometry}
 % \usepackage{eolang}
@@ -603,8 +589,7 @@
 % \end{docshot}
 
 % Even without the |nodollar| package option, the ordinary parsing of the dollar sign remains accessible by means of the |\(...\)| syntax:
-% \docshotOptions{firstline=6,lastline=8}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=8}]
 % \documentclass{article}
 % \usepackage[paperwidth=3in]{geometry}
 % \usepackage{eolang}
@@ -618,8 +603,7 @@
 
 % The |phiquation| environment automatically aligns formulas at the first
 % arrow whenever only left-aligned formulas are present:
-% \docshotOptions{firstline=5,lastline=11}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=11}]
 % \documentclass{acmart}
 % \usepackage{eolang}
 % \thispagestyle{empty}
@@ -635,8 +619,7 @@
 % \end{docshot}
 
 % Should no line in |phiquation| be indented, all formulas are centred:
-% \docshotOptions{firstline=5,lastline=9}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=9}]
 % \documentclass{acmart}
 % \usepackage{eolang}
 % \thispagestyle{empty}
@@ -650,8 +633,7 @@
 % \end{docshot}
 
 % A ``manual splitting'' mode may be employed in the |phiquation| environment by commencing the body with |\begin{split}|:
-% \docshotOptions{firstline=5,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=10}]
 % \documentclass{article}
 % \usepackage{eolang}
 % \thispagestyle{empty}
@@ -666,8 +648,7 @@
 % \end{docshot}
 
 % Whenever a percentage sign is required, it must be prefixed with a backslash:
-% \docshotOptions{firstline=5,lastline=10}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=10}]
 % \documentclass{article}
 % \usepackage{eolang}
 % \thispagestyle{empty}
@@ -679,8 +660,7 @@
 % \end{docshot}
 
 % A copy of a vertex may be made together with its descendants:
-% \docshotOptions{firstline=5,lastline=15}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=15}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
@@ -700,8 +680,7 @@
 % \end{docshot}
 
 % A copy may itself be copied in turn:
-% \docshotOptions{firstline=5,lastline=15}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=15}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
@@ -725,8 +704,7 @@
 % between vertices that the arrow is to traverse (the value cannot exceed 80 nor fall below 20).
 % This proves convenient whenever not all edges can be accommodated within the graph,
 % for example:
-% \docshotOptions{firstline=5,lastline=14}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=5,lastline=14}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
@@ -745,8 +723,7 @@
 % \end{docshot}
 
 % \href{https://en.wikipedia.org/wiki/PGF/TikZ}{TikZ} commands may be added to a |sodg| graph, for example:
-% \docshotOptions{firstline=6,lastline=13}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=13}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
@@ -764,8 +741,7 @@
 % \end{docshot}
 
 % The TikZ style may be modified directly (note that |style:| must remain at the end of the line), for example:
-% \docshotOptions{firstline=6,lastline=12}
-% \begin{docshot}
+% \begin{docshot}[options={firstline=6,lastline=12}]
 % \documentclass{article}
 % \pagestyle{empty}
 % \usepackage{eolang}
