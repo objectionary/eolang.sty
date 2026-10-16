@@ -1183,13 +1183,13 @@ print '\endinput';
           perl "\eolang@tmpdir/\jobname-phi.pl"
           "#1"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-          \ifdefined\eolang@nocomments | perl -pe "s/\%.*(\\n|$)//g"\fi}%
+          \ifdefined\eolang@nocomments | perl -pe "s/\%.*\\n?//g"\fi}%
       \else
         \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
           perl "\eolang@tmpdir/\jobname-phi.pl"
           "#1"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-          \ifdefined\eolang@nocomments | perl -pe "s/\%.*(\\n|$)//g"\fi}%
+          \ifdefined\eolang@nocomments | perl -pe "s/\%.*\\n?//g"\fi}%
       \fi
     }%
   \ifx\eolang@phiSaveTo\relax
@@ -1243,7 +1243,7 @@ print '\endinput';
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq-post}]{
         perl \eolang@tmpdir/\jobname-phi.pl "phiq"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq}"
-        \ifdefined\eolang@nocomments | perl -pe "s/\%.*(\\n|$)//g" \fi}%
+        \ifdefined\eolang@nocomments | perl -pe "s/\%.*\\n?//g" \fi}%
       \message{eolang: Parsed `phiq' at line no. \the\inputlineno^^J}%
     }%
   \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
@@ -1737,12 +1737,12 @@ print '\endinput';
         \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
           perl "\eolang@tmpdir/\jobname-sodg.pl"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-          \ifdefined\eolang@nocomments | perl -pe "s/\%.*(\\n|$)//g"\fi}%
+          \ifdefined\eolang@nocomments | perl -pe "s/\%.*\\n?//g"\fi}%
       \else
         \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
           perl "\eolang@tmpdir/\jobname-sodg.pl"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-          \ifdefined\eolang@nocomments | perl -pe "s/\%.*(\\n|$)//g"\fi}%
+          \ifdefined\eolang@nocomments | perl -pe "s/\%.*\\n?//g"\fi}%
       \fi
     }
   \ifx\eolang@sodgSaveTo\relax
