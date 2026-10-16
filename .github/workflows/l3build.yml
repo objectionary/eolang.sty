@@ -16,9 +16,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       TERM: xterm-256color
+    defaults:
+      run:
+        shell: bash
     strategy:
       matrix:
-        os: [ubuntu-24.04, macos-15]
+        os: [ubuntu-24.04, macos-15, windows-2025]
     steps:
       - uses: actions/checkout@v7
       - run: |
@@ -27,12 +30,23 @@ jobs:
         if: matrix.os == 'ubuntu-24.04'
       - run: brew install ghostscript
         if: matrix.os == 'macos-15'
+      - if: matrix.os == 'windows-2025'
+        shell: pwsh
+        run: |
+          choco install --yes --no-progress ghostscript
+          $gs = Get-ChildItem 'C:\Program Files\gs' -Recurse -Filter gswin64c.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $gs) { throw 'gswin64c.exe not found after install' }
+          Write-Host "Ghostscript at $($gs.DirectoryName)"
+          Add-Content -Path $env:GITHUB_PATH -Value $gs.DirectoryName
       - run: sed -E 's/^(hard|soft)[[:space:]]+//' DEPENDS.txt > .texlive-packages.txt
       - uses: zauguin/install-texlive@v4.4.0
         with:
           package_file: .texlive-packages.txt
           texlive_version: 2026
       - run: l3build ctan --show-log-on-error --halt-on-error
+        if: matrix.os != 'windows-2025'
+      - run: l3build doc --halt-on-error
+        if: matrix.os == 'windows-2025'
       - if: failure()
         run: |
           echo '::group::eolang.log'
