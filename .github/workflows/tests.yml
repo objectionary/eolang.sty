@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: sed -E 's/^(hard|soft|build) +//' DEPENDS.txt > .tl_packages
-      - uses: zauguin/install-texlive@v4.4.0
+      - uses: zauguin/install-texlive@v4.5.0
         with:
           package_file: .tl_packages
           texlive_version: 2026
