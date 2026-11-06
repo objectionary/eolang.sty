@@ -1163,12 +1163,12 @@ print '\endinput';
 % \begin{macro}{phiquation}
 % \changes{0.16.0}{2023/12/27}{The processing of \texttt{phiquation} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we define the |phiquation| and the |phiquation*| environments through a supplementary
-% |\eolang@process| command. Each cache key includes the |nocomments| state,
-% so switching this option keeps separate generated fragments:
+% |\eolang@process| command. Each cache key includes the equation mode and
+% the |nocomments| state, so these settings keep separate generated fragments:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\the\inputlineno\ifdefined\eolang@nocomments-nocomments\fi}%
+    {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\pdf@mdfivesum{#1}-\the\inputlineno\ifdefined\eolang@nocomments-nocomments\fi}%
   \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
     {\ifx\eolang@phiSaveTo\relax
