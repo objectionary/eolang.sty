@@ -1163,11 +1163,12 @@ print '\endinput';
 % \begin{macro}{phiquation}
 % \changes{0.16.0}{2023/12/27}{The processing of \texttt{phiquation} data is done only if it's the first time processing, otherwise cache is used, thus making processing faster.}
 % Then, we define the |phiquation| and the |phiquation*| environments through a supplementary
-% |\eolang@process| command:
+% |\eolang@process| command. Each cache key includes the |nocomments| state,
+% so switching this option keeps separate generated fragments:
 %    \begin{macrocode}
 \makeatletter\newcommand\eolang@process[1]{
   \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\the\inputlineno}%
+    {\eolang@tmpdir/\jobname/\eolang@tmp{phiquation}}-\the\inputlineno\ifdefined\eolang@nocomments-nocomments\fi}%
   \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}}
     {\ifx\eolang@phiSaveTo\relax
@@ -1232,7 +1233,7 @@ print '\endinput';
 \makeatletter\newwrite\eolang@phiqout
 \newcommand\phiq[1]{%
   \edef\clean{\detokenize{#1}}%
-  \def\hash{\pdf@mdfivesum{\clean}-\the\inputlineno}%
+  \def\hash{\pdf@mdfivesum{\clean}-\the\inputlineno\ifdefined\eolang@nocomments-nocomments\fi}%
   \ifdefined\eolang@nodollar\else\catcode`\$=3 \fi%
   \eolang@ifabsent
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq-post}}
@@ -1721,7 +1722,7 @@ print '\endinput';
   {\eolang@tmpdir/\jobname/\eolang@tmp{sodg}}}
 {\end{VerbatimOut}%
   \def\hash{\eolang@mdfive
-    {\eolang@tmpdir/\jobname/\eolang@tmp{sodg}}-\the\inputlineno}%
+    {\eolang@tmpdir/\jobname/\eolang@tmp{sodg}}-\the\inputlineno\ifdefined\eolang@nocomments-nocomments\fi}%
   \catcode`\$=3 %
   \eolang@ifabsentwith
     {\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}}
