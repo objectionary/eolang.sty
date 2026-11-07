@@ -8,6 +8,7 @@ package eolang;
 use warnings;
 use strict;
 use File::Basename;
+use File::Glob qw(bsd_glob);
 
 # Hash of incoming command line arguments.
 my %args = map { $_ => 1 } @ARGV;
@@ -75,7 +76,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   my $tmpdir_root = defined($tmpdir_arg) ? $tmpdir_arg : dirname($src) . '/_eolang';
   my $tmpdir = $tmpdir_root . '/' . $job;
   debug('EO tmpdir: ' . $tmpdir);
-  foreach my $f (glob($tmpdir . '/*-phiq.tex')) {
+  foreach my $f (bsd_glob($tmpdir . '/*-phiq.tex')) {
     my $id = basename($f);
     $id =~ s/\.[^.]+$//;
     $id =~ s/-phiq$//;
@@ -102,7 +103,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   for my $kind (@kinds) {
     my $k = $kind;
     $k =~ s/\*$//;
-    foreach my $f (glob($tmpdir . '/*-' . $k . '.tex')) {
+    foreach my $f (bsd_glob($tmpdir . '/*-' . $k . '.tex')) {
       my $id = basename($f);
       $id =~ s/\.[^.]+$//;
       $id =~ s/-${k}$//;
