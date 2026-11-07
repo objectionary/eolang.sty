@@ -33,11 +33,19 @@ jobs:
       - if: matrix.os == 'windows-2025'
         shell: pwsh
         run: |
-          choco install --yes --no-progress ghostscript
-          $gs = Get-ChildItem 'C:\Program Files\gs' -Recurse -Filter gswin64c.exe -ErrorAction SilentlyContinue | Select-Object -First 1
-          if (-not $gs) { throw 'gswin64c.exe not found after install' }
-          Write-Host "Ghostscript at $($gs.DirectoryName)"
-          Add-Content -Path $env:GITHUB_PATH -Value $gs.DirectoryName
+          $archive = Join-Path $env:RUNNER_TEMP 'ghostscript.exe'
+          $destination = Join-Path $env:RUNNER_TEMP 'ghostscript'
+          Invoke-WebRequest 'https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/gs10080w64.exe' -OutFile $archive
+          $expected = '52a91b8bf09298788d7a57b9206127026c23eacd75405f0a131e26dc381dce50'
+          if ((Get-FileHash $archive -Algorithm SHA256).Hash -ne $expected) {
+            throw 'Ghostscript installer checksum mismatch'
+          }
+          & 7z x $archive "-o$destination" -y
+          if ($LASTEXITCODE -ne 0) { throw 'Ghostscript extraction failed' }
+          $gs = Join-Path $destination 'bin\gswin64c.exe'
+          & $gs --version
+          if ($LASTEXITCODE -ne 0) { throw 'Ghostscript failed to run' }
+          Add-Content -Path $env:GITHUB_PATH -Value (Split-Path $gs)
       - run: sed -E 's/^(hard|soft)[[:space:]]+//' DEPENDS.txt > .texlive-packages.txt
       - uses: zauguin/install-texlive@v4.5.0
         with:
