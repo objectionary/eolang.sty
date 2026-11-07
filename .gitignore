@@ -26,6 +26,7 @@ _minted-*/
 *.toc
 *.zip
 build/
+eolang-nocomments.pl
 eolang-phi.pl
 eolang-sodg.pl
 eolang.pdf

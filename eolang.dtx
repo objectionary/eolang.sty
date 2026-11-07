@@ -877,6 +877,25 @@
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{-nocomments.pl}
+% Keep the comment filter in a script so shell quoting cannot interpret
+% the Perl lookbehind as input redirection on Windows:
+%    \begin{macrocode}
+\makeatletter
+\ifdefined\eolang@noshell\else
+\ifdefined\eolang@nocomments
+\begin{VerbatimOut}{\eolang@tmpdir/\jobname-nocomments.pl}
+while (<STDIN>) {
+  s/(?<!\\)%.*\n?//g;
+  print;
+}
+\end{VerbatimOut}
+\fi
+\fi
+\makeatother
+%    \end{macrocode}
+% \end{macro}
+
 % \begin{macro}{-phi.pl}
 % \changes{0.0.2}{2022/10/21}{The symbols ``\texttt{[}'' and ``\texttt{]}'' replaced with ``\texttt{[[}'' and ``\texttt{]]}'' for abstract object brackets, because they conflicted with normal square brackets}
 % \changes{0.0.2}{2022/10/21}{New symbol added for basket slots}
@@ -1184,13 +1203,13 @@ print '\endinput';
           perl "\eolang@tmpdir/\jobname-phi.pl"
           "#1"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-          \ifdefined\eolang@nocomments | perl -pe "s/(?<!\\x5c)\%.*\\n?//g"\fi}%
+          \ifdefined\eolang@nocomments | perl "\eolang@tmpdir/\jobname-nocomments.pl"\fi}%
       \else
         \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation-post}]{
           perl "\eolang@tmpdir/\jobname-phi.pl"
           "#1"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiquation}"
-          \ifdefined\eolang@nocomments | perl -pe "s/(?<!\\x5c)\%.*\\n?//g"\fi}%
+          \ifdefined\eolang@nocomments | perl "\eolang@tmpdir/\jobname-nocomments.pl"\fi}%
       \fi
     }%
   \ifx\eolang@phiSaveTo\relax
@@ -1244,7 +1263,7 @@ print '\endinput';
       \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq-post}]{
         perl \eolang@tmpdir/\jobname-phi.pl "phiq"
         "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-phiq}"
-        \ifdefined\eolang@nocomments | perl -pe "s/(?<!\\x5c)\%.*\\n?//g" \fi}%
+        \ifdefined\eolang@nocomments | perl "\eolang@tmpdir/\jobname-nocomments.pl" \fi}%
       \message{eolang: Parsed `phiq' at line no. \the\inputlineno^^J}%
     }%
   \ifdefined\eolang@nodollar\else\catcode`\$\active\fi%
@@ -1738,12 +1757,12 @@ print '\endinput';
         \iexec[trace,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
           perl "\eolang@tmpdir/\jobname-sodg.pl"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-          \ifdefined\eolang@nocomments | perl -pe "s/(?<!\\x5c)\%.*\\n?//g"\fi}%
+          \ifdefined\eolang@nocomments | perl "\eolang@tmpdir/\jobname-nocomments.pl"\fi}%
       \else
         \iexec[trace,quiet,stdout=\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg-post}]{
           perl "\eolang@tmpdir/\jobname-sodg.pl"
           "\eolang@tmpdir/\jobname/\eolang@tmp{\hash-sodg}"
-          \ifdefined\eolang@nocomments | perl -pe "s/(?<!\\x5c)\%.*\\n?//g"\fi}%
+          \ifdefined\eolang@nocomments | perl "\eolang@tmpdir/\jobname-nocomments.pl"\fi}%
       \fi
     }
   \ifx\eolang@sodgSaveTo\relax
