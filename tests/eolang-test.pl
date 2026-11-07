@@ -10,6 +10,7 @@ use lib('tests');
 use test_tools;
 use File::Temp qw/ tempdir /;
 use File::Spec;
+use Cwd qw/ getcwd /;
 
 # Checks whether replace happens for \phiq.
 sub replaces_phiq {
@@ -55,6 +56,22 @@ sub replaces_phiq_from_custom_tmpdir {
   info('OK!');
 }
 
+# Checks that hyphen-prefixed positional paths survive option parsing.
+sub accepts_hyphenated_paths {
+  my ($src, $target, @options) = @_;
+  my $home = tempdir(CLEANUP => 1);
+  my $script = File::Spec->rel2abs('eolang.pl');
+  my $cwd = getcwd();
+  my $doc = "A document with no generated fragments.\n";
+  chdir($home) or die("Cannot enter $home");
+  savefile($src, $doc);
+  my $status = system('perl', $script, @options, $src, $target);
+  die("Failed to convert $src to $target\n") if $status != 0;
+  die("Changed document contents\n") if readfile($target) ne $doc;
+  chdir($cwd) or die("Cannot return to $cwd");
+  info('OK!');
+}
+
 # Checks whether replace happens for \begin{phiquation}.
 sub replaces_verbatim {
   my ($kind, $doc, $verbatim) = @_;
@@ -90,6 +107,9 @@ replaces_phiq('Hello, \\phiq  {  [[ \alpha-> ]] }!', '  [[ \alpha -> ]] ');
 replaces_phiq('Hello, \\phiq{  abc -> $}!', '  abc -> $ ');
 replaces_phiq('Hello, \\phiq{ abc -> @, \\alpha -> []}!', 'abc -> @, \\alpha -> []');
 replaces_phiq_from_custom_tmpdir();
+accepts_hyphenated_paths('-input.tex', 'result.tex');
+accepts_hyphenated_paths('input.tex', '-result.tex');
+accepts_hyphenated_paths('-input.tex', '-result.tex', '--verbose', '--tmpdir=custom');
 
 replaces_verbatim('phiquation', "Hello, \n\\begin{phiquation}\n  a -> \@\n\\end{phiquation}\n", "  a -> \@\n");
 replaces_verbatim('sodg', "Hello, \n\\begin{sodg}\nv1\nv2\n  v3\n\\end{sodg}\n", "v1\nv2\n  v3\n");

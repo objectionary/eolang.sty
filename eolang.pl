@@ -61,7 +61,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
 } elsif (exists $args{'--version'} or exists $args{'-v'}) {
   info('0.0.0 0000-00-00');
 } else {
-  my ($src, $target) = grep { not($_ =~ /^-.*$/) } @ARGV;
+  my ($src, $target) = grep { not(/^(?:-v|--version|-\?|--help|--verbose|--tmpdir=.*)$/) } @ARGV;
   if (not $src) {
     error('Source file name must be specified');
     exit(1);
