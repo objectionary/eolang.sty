@@ -29,6 +29,14 @@ sub savefile {
   close($f);
 }
 
+# Load a generated fragment, preserving percent signs in its file name.
+sub inputfile {
+  my ($path) = @_;
+  return '\\input{' . $path . '}' if index($path, '%') == -1;
+  return '\\begingroup\\catcode37=12\\relax' .
+    '\\expandafter\\endgroup\\expandafter\\input\\expandafter{\\detokenize{' . $path . '}}';
+}
+
 # Print INFO message to the console.
 sub info {
   my ($txt) = @_;
@@ -85,7 +93,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     my $search = quotemeta($phiq);
     $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
     $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
-    my $re = '\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . "}";
+    my $re = inputfile($tmpdir . '/' . $id . '-phiq-post.tex');
     my $count = 0;
     while (1) {
       my $applied = $tex =~ s/${search}/${re}/g;
@@ -109,7 +117,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       $id =~ s/-${k}$//;
       my $search = quotemeta(readfile($f));
       $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
-      my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced\n\n";
+      my $re = inputfile($tmpdir . '/' . $id . '-' . $k . '-post.tex') . "\% '$kind' replaced\n\n";
       my $count = 0;
       while (1) {
         my $applied = $tex =~ s/${search}/${re}/g;
