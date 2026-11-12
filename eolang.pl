@@ -62,7 +62,12 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
 } elsif (exists $args{'--version'} or exists $args{'-v'}) {
   info('0.0.0 0000-00-00');
 } else {
-  my ($src, $target) = grep { not(/^(?:-v|--version|-\?|--help|--verbose|--tmpdir=.*)$/) } @ARGV;
+  my @paths = grep { not(/^(?:-v|--version|-\?|--help|--verbose|--tmpdir=.*)$/) } @ARGV;
+  if (@paths > 2) {
+    error('Exactly two file paths must be specified');
+    exit(1);
+  }
+  my ($src, $target) = @paths;
   if (not $src) {
     error('Source file name must be specified');
     exit(1);
