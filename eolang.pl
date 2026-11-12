@@ -33,6 +33,7 @@ sub savefile {
 sub inputfile {
   my ($path) = @_;
   return '\\input{' . $path . '}' if index($path, '%') == -1;
+  $path =~ s/%/^^25/g;
   return '\\begingroup\\catcode37=12\\relax' .
     '\\expandafter\\endgroup\\expandafter\\input\\expandafter{\\detokenize{' . $path . '}}';
 }

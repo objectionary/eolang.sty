@@ -20,9 +20,11 @@ for my $custom (0, 1) {
   my $root = $custom ? "$home/cache%two" : "$source/_eolang";
   my $cache = "$root/main";
   make_path($source, $cache);
-  my $doc = "\\documentclass{article}\n\\begin{document}\n\\phiq{answer}\n";
+  my $doc = "\\documentclass{article}\n\\begin{document}\n\\phiq{answer} \\phiq{second}\n";
   savefile("$cache/inline-phiq.tex", 'answer');
   savefile("$cache/inline-phiq-post.tex", "Inline% \\undefinedIfCommentCatcodeChanged\ntext\n");
+  savefile("$cache/second-phiq.tex", 'second');
+  savefile("$cache/second-phiq-post.tex", "Another inline fragment\n");
   for my $kind ('sodg', 'phiquation', 'phiquation*') {
     (my $suffix = $kind) =~ s/\*$//;
     my $id = $kind eq 'phiquation*' ? 'starred' : $kind;
