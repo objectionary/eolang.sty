@@ -24,9 +24,9 @@ sub readfile {
 # Save content to file.
 sub savefile {
   my ($path, $content) = @_;
-  open(my $f, '>', $path) or error('Cannot open file for writing: ' . $path);
-  print $f $content;
-  close($f);
+  open(my $f, '>', $path) or die('Cannot open file for writing: ' . $path . ': ' . $!);
+  print {$f} $content or die('Cannot write to file: ' . $path . ': ' . $!);
+  close($f) or die('Cannot close file: ' . $path . ': ' . $!);
 }
 
 # Print INFO message to the console.
