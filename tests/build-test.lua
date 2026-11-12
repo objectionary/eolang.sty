@@ -5,6 +5,10 @@ kpse.set_program_name("kpsewhich")
 dofile(assert(kpse.lookup("l3build-file-functions.lua", {format = "lua"})))
 dofile("build.lua")
 
+-- Release metadata must use the date requested by l3build.
+assert(update_tag("eolang.pl", "0.0.0 0000-00-00", "1.2.3", "2001-02-03") ==
+  "1.2.3 2001-02-03", "The supplied release date must be preserved")
+
 -- Use l3build's real directory enumeration, but reject Unix shell commands.
 io.popen = function(command)
   error("CTAN test discovery must not invoke a shell: " .. command)
