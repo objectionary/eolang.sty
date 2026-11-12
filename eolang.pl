@@ -107,8 +107,8 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       my $id = basename($f);
       $id =~ s/\.[^.]+$//;
       $id =~ s/-${k}$//;
-      my $search = quotemeta(readfile($f));
-      $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n' . $search . '\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\n';
+      my $search = join('\\r?\\n', map { quotemeta($_) } split(/\r?\n/, readfile($f), -1));
+      $search = '\\\\begin\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}\\r?\\n' . $search . '\\\\end\\s*\\{\\s*' . quotemeta($kind) . '\\s*\\}(?:\\r?\\n|\\z)';
       my $re = '\input{' . $tmpdir . '/' . $id . '-' . $k . '-post.tex' . "}\% '$kind' replaced\n\n";
       my $count = 0;
       while (1) {
