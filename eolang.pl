@@ -8,7 +8,6 @@ package eolang;
 use warnings;
 use strict;
 use File::Basename;
-use File::Glob qw(bsd_glob);
 
 # Hash of incoming command line arguments.
 my %args = map { $_ => 1 } @ARGV;
@@ -76,7 +75,14 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   my $tmpdir_root = defined($tmpdir_arg) ? $tmpdir_arg : dirname($src) . '/_eolang';
   my $tmpdir = $tmpdir_root . '/' . $job;
   debug('EO tmpdir: ' . $tmpdir);
-  foreach my $f (bsd_glob($tmpdir . '/*-phiq.tex')) {
+  my @files;
+  if (-d $tmpdir) {
+    opendir(my $dir, $tmpdir) or die('Cannot open directory: ' . $tmpdir . ': ' . $!);
+    @files = sort grep { !/^\./ } readdir($dir);
+    closedir($dir);
+  }
+  foreach my $name (grep { /-phiq\.tex\z/ } @files) {
+    my $f = $tmpdir . '/' . $name;
     my $id = basename($f);
     $id =~ s/\.[^.]+$//;
     $id =~ s/-phiq$//;
@@ -103,7 +109,8 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   for my $kind (@kinds) {
     my $k = $kind;
     $k =~ s/\*$//;
-    foreach my $f (bsd_glob($tmpdir . '/*-' . $k . '.tex')) {
+    foreach my $name (grep { /-\Q$k\E\.tex\z/ } @files) {
+      my $f = $tmpdir . '/' . $name;
       my $id = basename($f);
       $id =~ s/\.[^.]+$//;
       $id =~ s/-${k}$//;
