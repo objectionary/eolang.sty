@@ -52,7 +52,6 @@ function ctan_pre_action()
   for _, name in ipairs(filelist("tests", "*.pl")) do
     local script = "tests/" .. name
     print("Running " .. script)
-    os.execute("perl " .. script)
     if not os.execute("perl " .. script) then
       error("Test script " .. script .. " failed!")
     end
