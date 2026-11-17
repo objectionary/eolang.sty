@@ -85,6 +85,12 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
   $job =~ s/\.[^.]+$//;
   debug('Job name: ' . $job);
   my $tex = readfile($src);
+  my $literal = qr{
+    (?<!\\)(?:\\\\)*%[^\r\n]*
+    | (?<!\\)(?:\\\\)*\\verb(?![a-zA-Z])\*?(?<delimiter>[^\s])[^\r\n]*?\k<delimiter>
+    | (?<!\\)(?:\\\\)*\\begin\s*\{(?<environment>verbatim\*?|[BL]?Verbatim|SaveVerbatim|lstlisting|minted)\}
+      .*?\\end\s*\{\k<environment>\}
+  }sx;
   my ($tmpdir_arg) = map { /^--tmpdir=(.*)$/ ? $1 : () } @ARGV;
   my $tmpdir_root = defined($tmpdir_arg) ? $tmpdir_arg : dirname($src) . '/_eolang';
   my $tmpdir = $tmpdir_root . '/' . $job;
@@ -108,7 +114,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     my $re = inputfile($tmpdir . '/' . $id . '-phiq-post.tex');
     my $count = 0;
     while (1) {
-      my $applied = $tex =~ s/${search}/${re}/g;
+      my $applied = $tex =~ s/$literal(*SKIP)(*FAIL)|${search}/${re}/g;
       if (!$applied) {
         if ($count eq 0) {
           debug("Neither \\phiq{$phiq} nor \$$phiq\$ found, suggested by $f");
@@ -133,7 +139,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
       my $re = inputfile($tmpdir . '/' . $id . '-' . $k . '-post.tex') . "\% '$kind' replaced\n\n";
       my $count = 0;
       while (1) {
-        my $applied = $tex =~ s/${search}/${re}/g;
+        my $applied = $tex =~ s/$literal(*SKIP)(*FAIL)|${search}/${re}/g;
         if (!$applied) {
           if ($count eq 0) {
             debug("Didn't find \\begin{$kind} suggested by $f");
