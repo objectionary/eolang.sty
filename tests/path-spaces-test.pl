@@ -11,7 +11,7 @@ use File::Temp qw(tempdir);
 use Test::More;
 
 for my $custom (0, 1) {
-  for my $space (' ', "\t") {
+  for my $space (' ', "\t", '[one]', '{one,two}') {
     my $home = tempdir(CLEANUP => 1);
     my $dir = "$home/docs${space}with${space}space";
     my $job = "main${space}file";
@@ -38,7 +38,7 @@ for my $custom (0, 1) {
     savefile($src, $doc);
     my @options = $custom ? ("--tmpdir=$root") : ();
     my $label = ($custom ? 'custom' : 'default') . ' cache, ' .
-      ($space eq ' ' ? 'spaces' : 'tabs');
+      "separator [$space]";
     is(system($^X, './eolang.pl', @options, $src, $target), 0, "$label: converter succeeds");
     is(-f $target ? readfile($target) : '', $expected, "$label: all four fragment kinds replaced exactly");
   }
