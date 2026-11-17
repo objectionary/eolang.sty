@@ -83,7 +83,7 @@ if (@ARGV+0 eq 0 or exists $args{'--help'} or exists $args{'-?'}) {
     my $phiq = readfile($f);
     $phiq =~ s/^\s+|\s+$//g;
     my $search = quotemeta($phiq);
-    $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\ ?/g;
+    $search =~ s/(\\\\[a-zA-Z]+)\\ /$1\\s*/g;
     $search = '\\\\phiq\\s*\\{\\s*' . $search . '\\s*\\}|\\$\\s*' . $search . '\\s*\\$';
     my $re = '\input{' . $tmpdir . '/' . $id . '-phiq-post.tex' . "}";
     my $count = 0;
